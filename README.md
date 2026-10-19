@@ -27,6 +27,7 @@ Snapshot date: **2026-09-21**. Numbers are all-time installs on [skills.sh](http
 - [Most-starred skill repositories](#most-starred-skill-repositories)
 - [Other ecosystems: ClawHub and Tencent SkillHub](#other-ecosystems-clawhub-and-tencent-skillhub)
 - [Data and sources](#data-and-sources)
+- [Skill tags](TAGS.md): suggested tags for every skill in this list
 
 ## What is an agent skill?
 
@@ -505,6 +506,7 @@ skills.sh measures coding agents. Two other registries show what personal and en
 ## Data and sources
 
 - [`data/skills-sh-leaderboard-2026-09-21.csv`](data/skills-sh-leaderboard-2026-09-21.csv): the full 600-entry skills.sh all-time leaderboard as embedded in the site on the snapshot date, with weekly install counts for the last eight weeks.
+- [`data/skill-tags.csv`](data/skill-tags.csv): suggested tags for all 280 skills named in this list, explained in [TAGS.md](TAGS.md).
 - [skills.sh](https://skills.sh) leaderboard, [trending](https://skills.sh/trending) and hot charts, by Vercel.
 - [Best Skills](https://github.com/LinklyAI/best-skills) by Linkly AI: daily cross-registry rankings (skills.sh, ClawHub, Tencent SkillHub, GitHub, social), CC BY 4.0. Star counts, ClawHub and SkillHub numbers above come from its 2026-09-21 raw data.
 - [Agent Skills specification](https://agentskills.io) and [anthropics/skills](https://github.com/anthropics/skills).
