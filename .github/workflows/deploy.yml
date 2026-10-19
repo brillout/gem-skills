@@ -1,0 +1,43 @@
+# Validate the data, build the site with Vite and publish it to GitHub Pages by
+# pushing the build to the `gh-pages` branch (which GitHub serves at
+# https://<owner>.github.io/<repo>). Publishing from a branch needs no Pages
+# settings, unlike the Actions-based deployment.
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Allow only one concurrent deployment, but let in-progress runs finish.
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Validate skills.json and type-check
+        run: pnpm run check
+      - name: Build site
+        # A relative base keeps the build independent of the repository name,
+        # so it works wherever GitHub serves it (https://<owner>.github.io/<repo>).
+        run: pnpm run build
+      - name: Publish to the gh-pages branch
+        # Every branch gets checked; only the default branch, whatever its name, gets published.
+        if: github.ref_name == github.event.repository.default_branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site/dist
+          force_orphan: true

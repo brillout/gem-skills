@@ -1,0 +1,28 @@
+{
+  "name": "gem-skills",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite site --port 3000",
+    "build": "vite build site --base ./",
+    "preview": "vite preview site --base ./ --port 3000",
+    "========= Checks": "",
+    "check": "pnpm run check:data && pnpm run check:types",
+    "check:data": "pnpm run node-ts check.ts",
+    "check:types": "tsc --noEmit",
+    "========= Formatting": "",
+    "format": "oxfmt",
+    "===== Utils": "",
+    "// Run a .ts file with Node.js <=23 — these two flags aren't needed anymore on Node.js 24+": "",
+    "node-ts": "node --experimental-strip-types --no-warnings=ExperimentalWarning",
+    "========= Only allow pnpm; forbid yarn & npm": "",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "oxfmt": "^0.74.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

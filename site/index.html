@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gem Skills: popular agent skills, tagged</title>
+    <meta
+      name="description"
+      content="Browse the most popular agent skills, ranked by installs and tagged by what they do, need and change."
+    />
+    <link rel="icon" type="image/svg+xml" href="/gem.svg" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="#/">
+        <img src="/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views">
+        <a href="#/" data-view="skills">Skills</a>
+        <a href="#/tags" data-view="tags">Tags</a>
+        <a href="#/repos" data-view="repos">Repos</a>
+        <a href="#/about" data-view="about">About</a>
+      </nav>
+      <a id="source-link" href="https://github.com/brillout/gem-skills">GitHub</a>
+    </header>
+    <main id="app">
+      <noscript><p class="empty">This page needs JavaScript to browse the skills.</p></noscript>
+    </main>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>
