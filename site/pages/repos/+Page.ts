@@ -1,7 +1,7 @@
 import { compact, date, esc } from "../../format.ts";
 import { skillsLink } from "../../list.ts";
 import { data, desc } from "../../skills.ts";
-import { github, type Repo, type Skill } from "../../types.ts";
+import { github, retired, type Repo, type Skill } from "../../types.ts";
 
 const KINDS: Record<Repo["kind"], string> = {
   skills: "Skills",
@@ -13,7 +13,7 @@ export default function Page(): string {
   const listed = new Map<string, Skill[]>();
   for (const s of data.skills) {
     const repo = github(s)?.repo;
-    if (repo) listed.set(repo, [...(listed.get(repo) ?? []), s]);
+    if (repo && !retired(s)) listed.set(repo, [...(listed.get(repo) ?? []), s]);
   }
   const rows = [...data.repos]
     .sort((a, b) => desc(a.stars, b.stars) || a.id.localeCompare(b.id))

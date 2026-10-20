@@ -26,7 +26,7 @@ import {
   tagInfo,
   tagOf,
 } from "./skills.ts";
-import type { Registry, Skill } from "./types.ts";
+import { retired, type Registry, type Skill } from "./types.ts";
 
 /** Tags that hold for most skills; the list leaves them to the skill's page. */
 const QUIET = new Set(["by:community"]);
@@ -43,8 +43,10 @@ export interface State {
   sort: Sort;
   /** One skill per repo: the most popular one stands for its bundle. */
   one: boolean;
-  /** Hide republished copies and retired skills. */
+  /** Hide republished copies. */
   hide: boolean;
+  /** Show retired skills, which the list leaves out unless asked for. */
+  retired: boolean;
 }
 export const SORTS: Record<Sort, string> = {
   installs: "Installs",
@@ -66,6 +68,7 @@ export function parse(search: string): State {
     sort: sort && sort in SORTS ? sort : "installs",
     one: p.get("one") === "1",
     hide: p.get("hide") === "1",
+    retired: p.get("retired") === "1",
   };
 }
 /** The query string for a state, empty for the unfiltered list. */
@@ -79,6 +82,7 @@ export function query(s: State): string {
   if (s.sort !== "installs") p.set("sort", s.sort);
   if (s.one) p.set("one", "1");
   if (s.hide) p.set("hide", "1");
+  if (s.retired) p.set("retired", "1");
   const q = p.toString();
   return q ? `?${q}` : "";
 }
@@ -108,7 +112,9 @@ const searchText = new Map(
 
 /** Within a facet a skill needs any selected value; across facets it needs all of them. `skip` leaves one facet out, for its counts. */
 function passes(s: Skill, st: State, skip: string | null = null): boolean {
-  if (st.hide && s.tags.some((t) => CAUTION.includes(t))) return false;
+  // Asking for flag:deprecated asks for retired skills.
+  if (retired(s) && !st.retired && !st.tags.includes("flag:deprecated")) return false;
+  if (st.hide && s.tags.includes("flag:republished")) return false;
   if (st.repo && repoKey(s) !== st.repo) return false;
   if (skip !== "category" && st.cats.length && !s.categories.some((c) => st.cats.includes(c)))
     return false;
@@ -362,18 +368,20 @@ export function resultsHtml(st: State): string {
   const { list, hidden, total } = results(st);
   const filtered =
     st.q || st.cats.length || st.tags.length || st.registries.length || st.repo || st.hide;
+  const all = data.skills.filter((s) => passes(s, { ...FRESH, retired: st.retired })).length;
   const repoNote = st.repo ? repoById.get(st.repo) : undefined;
   return `
     <div class="toolbar">
       <p id="count" role="status"><strong>${plural(total, "skill")}</strong>${
         st.one && list.length !== total ? `, ${plural(list.length, "repo")}` : ""
-      }${filtered ? ` <span class="muted">of ${data.skills.length}</span>` : ""}</p>
+      }${filtered ? ` <span class="muted">of ${all}</span>` : ""}</p>
       <button type="button" class="filters-toggle" data-action="filters" aria-controls="filters">Filters</button>
       <label class="sort">Sort by <select id="sort">${(Object.keys(SORTS) as Sort[])
         .map((s) => `<option value="${s}"${s === st.sort ? " selected" : ""}>${SORTS[s]}</option>`)
         .join("")}</select></label>
       <label class="check"><input type="checkbox" id="one"${st.one ? " checked" : ""} /> One per repo</label>
-      <label class="check"><input type="checkbox" id="hide"${st.hide ? " checked" : ""} /> Hide copies and retired</label>
+      <label class="check"><input type="checkbox" id="hide"${st.hide ? " checked" : ""} /> Hide copies</label>
+      <label class="check" title="Skills whose SKILL.md says they're retired, or that are gone from their source"><input type="checkbox" id="retired"${st.retired ? " checked" : ""} /> Show retired</label>
     </div>
     ${activeFilters(st)}
     ${repoNote ? `<p class="repo-banner"><a href="${esc(repoNote.url)}">${esc(repoNote.id)}</a>${repoNote.description ? ` · ${esc(repoNote.description)}` : ""}</p>` : ""}

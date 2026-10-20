@@ -29,12 +29,14 @@ Once a day, the [Sync SKILL.md copies](.github/workflows/sync.yml) workflow runs
 - `removed`: when the SKILL.md disappeared from its source. The copy keeps its last version.
 - `skew`: how far the SKILL.md has moved from the one the skill's TLDR summarizes, in words added plus words removed. With no TLDR, it's the SKILL.md's whole word count.
 
+Retired skills are skipped: those tagged `flag:deprecated` and those gone from their source. They keep the copy they have. The site's skills list leaves them out too, unless you tick Show retired or filter on `flag:deprecated`; their pages stay.
+
 ## TLDRs
 
 A skill's `tldr` is a summary written from its SKILL.md, with a permalink to what it summarizes: the skill's directory on GitHub at a commit. For a skill that isn't on GitHub, the permalink points to its copy in this repo at a commit. To refresh the TLDRs that drifted most:
 
 ```bash
-pnpm run tldr 20                          # the 20 skills with the largest skew: skew, id, copy
+pnpm run tldr 20                          # the 20 skills with the largest skew, retired ones left out
 pnpm run tldr <id> "<summary>"            # set a skill's TLDR (or pipe the summary in)
 ```
 
