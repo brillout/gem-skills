@@ -4,10 +4,12 @@
  * Run: pnpm run check:data
  */
 
-import { readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { copyPath, REPO } from "./site/skill-md.ts";
 import { github, type Data, type Facet } from "./site/types.ts";
 
-const data: Data = JSON.parse(readFileSync(new URL("./skills.json", import.meta.url), "utf8"));
+const root = new URL("./", import.meta.url);
+const data: Data = JSON.parse(readFileSync(new URL("skills.json", root), "utf8"));
 const errors: string[] = [];
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`);
 
@@ -43,6 +45,23 @@ for (const skill of data.skills) {
   const weekly = skill["skills.sh"]?.weeklyInstalls;
   if (weekly && weekly.length !== 8) fail(at, "weeklyInstalls must have 8 weeks");
 
+  const copy = existsSync(new URL(copyPath(skill), root));
+  if (skill.skillMd && !copy) fail(at, `no copy at ${copyPath(skill)}; run pnpm run sync`);
+  if (!skill.skillMd && copy) fail(at, `${copyPath(skill)} has no skillMd; run pnpm run sync`);
+  const skew = skill.skillMd?.skew;
+  if (skew !== undefined && !(Number.isInteger(skew) && skew >= 0))
+    fail(at, "skew must be a whole number of words");
+  if (skill.tldr) {
+    if (!skill.tldr.text.trim()) fail(at, "empty TLDR");
+    const gh = github(skill);
+    const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const target = gh
+      ? `https://github.com/${escape(gh.repo)}/tree/[0-9a-f]{40}${gh.dir ? `/${escape(gh.dir)}` : ""}`
+      : `https://github.com/${REPO}/blob/[0-9a-f]{40}/${escape(copyPath(skill))}`;
+    if (!new RegExp(`^${target}$`).test(skill.tldr.permalink))
+      fail(at, "the TLDR permalink must point to the skill at a commit; set it with pnpm run tldr");
+  }
+
   const perFacet = new Map<string, string[]>();
   for (const tag of skill.tags) {
     const i = tag.indexOf(":");
@@ -72,6 +91,11 @@ for (const skill of data.skills) {
     fail(at, `type:${type} must be effect:none`);
   if (!skill.tags.every((t) => t.includes(":") || topics.has(t))) fail(at, "unknown topic");
 }
+
+const copies = new Set(data.skills.map(copyPath));
+for (const file of readdirSync(new URL("skill-md", root), { recursive: true, encoding: "utf8" }))
+  if (file.endsWith(".md") && !copies.has(`skill-md/${file}`))
+    fail(`skill-md/${file}`, "copy of a skill that isn't in skills.json");
 
 if (errors.length > 0) {
   console.error(

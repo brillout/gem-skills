@@ -3,13 +3,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite site --port 3000",
-    "build": "vite build site --base ./",
-    "preview": "vite preview site --base ./ --port 3000",
+    "dev": "vike dev --root site --port 3000",
+    "build": "vike build --root site",
+    "preview": "vike preview --root site --port 3000",
     "========= Checks": "",
     "check": "pnpm run check:data && pnpm run check:types",
     "check:data": "pnpm run node-ts check.ts",
     "check:types": "tsc --noEmit",
+    "========= SKILL.md copies": "",
+    "sync": "pnpm run node-ts sync.ts",
+    "tldr": "pnpm run node-ts tldr.ts",
     "========= Formatting": "",
     "format": "oxfmt",
     "===== Utils": "",
@@ -20,8 +23,11 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
+    "diff": "^9.0.0",
+    "markdown-it": "^15.0.3",
     "oxfmt": "^0.74.0",
     "typescript": "^7.0.2",
+    "vike": "^0.4.268",
     "vite": "^8.3.4"
   },
   "packageManager": "pnpm@10.33.0"

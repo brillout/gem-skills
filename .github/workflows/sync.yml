@@ -1,0 +1,53 @@
+# Check every skill's SKILL.md once a day. When one changed, update its copy in skill-md/ and its
+# skew in skills.json, commit to the default branch and redeploy the site.
+name: Sync SKILL.md copies
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  # To start the deploy workflow: a push made with the workflow's own token doesn't trigger it.
+  actions: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Sync the SKILL.md copies
+        id: sync
+        run: pnpm run sync
+      - name: Validate skills.json
+        id: validate
+        # Keep what synced even when some skills failed; their errors still fail the run.
+        if: ${{ !cancelled() && steps.sync.outcome != 'skipped' }}
+        run: pnpm run check:data
+      - name: Commit, push and redeploy
+        if: ${{ !cancelled() && steps.validate.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add skill-md skills.json
+          if git diff --cached --quiet; then
+            echo "No SKILL.md changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "Sync SKILL.md copies" -m "$(git diff --cached --name-only -- skill-md)"
+          git pull --rebase --quiet
+          git push
+          gh workflow run deploy.yml --ref "${{ github.ref_name }}"

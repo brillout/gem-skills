@@ -1806,6 +1806,11 @@
         "installs": 3495817,
         "weeklyInstalls": [101120, 96861, 93130, 100221, 103058, 102072, 101832, 105632],
         "firstSeen": "2026-01-26"
+      },
+      "skillMd": {
+        "version": "a80e4c9d12d607631249d4d7d059f835d4b2f13a",
+        "updated": "2026-10-20",
+        "skew": 846
       }
     },
     {
@@ -1827,6 +1832,11 @@
         "installs": 867591,
         "weeklyInstalls": [48211, 61714, 49250, 52155, 48879, 46685, 41541, 38605],
         "firstSeen": "2026-04-28"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1030
       }
     },
     {
@@ -1841,6 +1851,11 @@
         "installs": 590909,
         "weeklyInstalls": [42586, 55243, 44321, 47675, 45137, 44784, 39556, 36500],
         "firstSeen": "2026-06-17"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1958
       }
     },
     {
@@ -1863,6 +1878,11 @@
         "installs": 386784,
         "weeklyInstalls": [8627, 8460, 7468, 6875, 6880, 6908, 6006, 6341],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 5205
       }
     },
     {
@@ -1884,6 +1904,12 @@
         "installs": 323777,
         "weeklyInstalls": [45601, 23217, 3017, 1990, 1262, 1164, 865, 708],
         "firstSeen": "2026-06-17"
+      },
+      "skillMd": {
+        "version": "6bcbcb09e2f1ed5fa20b4e890c732ecbb58c6b64",
+        "updated": "2026-10-20",
+        "removed": "2026-07-31",
+        "skew": 1526
       }
     },
     {
@@ -1906,6 +1932,11 @@
         "installs": 293605,
         "weeklyInstalls": [40, 36269, 42587, 46171, 43846, 43735, 40334, 38178],
         "firstSeen": "2026-07-27"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1777
       }
     },
     {
@@ -1927,6 +1958,11 @@
         "installs": 248737,
         "weeklyInstalls": [7424, 6980, 6699, 6880, 6174, 6071, 5621, 5962],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 492
       }
     },
     {
@@ -1941,6 +1977,12 @@
         "installs": 230456,
         "weeklyInstalls": [698, 1085, 702, 583, 396, 350, 332, 269],
         "firstSeen": "2026-02-12"
+      },
+      "skillMd": {
+        "version": "ab7196a1584ac60688aeb63cf0b56a5114c4a6f3",
+        "updated": "2026-10-20",
+        "removed": "2026-06-17",
+        "skew": 452
       }
     },
     {
@@ -1962,6 +2004,11 @@
         "installs": 195192,
         "weeklyInstalls": [6248, 5982, 5921, 5992, 5362, 5584, 5515, 5892],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 3814
       }
     },
     {
@@ -1986,6 +2033,11 @@
         "installs": 85104,
         "weeklyInstalls": [58, 37, 34, 29, 36, 22, 13, 20],
         "firstSeen": "2026-05-14"
+      },
+      "skillMd": {
+        "version": "11c057b03f92101642cadc9f840564574120d184",
+        "updated": "2026-10-20",
+        "skew": 2744
       }
     },
     {
@@ -2008,10 +2060,15 @@
       },
       "skillhub.cn": {
         "downloads": 312819
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 585
       }
     },
     {
-      "id": "clawhub.ai/skillscan",
+      "id": "clawhub.ai/tokauthai/skillscan",
       "name": "skillscan",
       "description": "Acts as a security gate that every newly installed skill must pass.",
       "categories": ["skill-tools", "security"],
@@ -2024,9 +2081,14 @@
         "security"
       ],
       "clawhub.ai": {
-        "url": null,
-        "install": null,
+        "url": "https://clawhub.ai/tokauthai/skills/skillscan",
+        "install": "openclaw skills install @tokauthai/skillscan",
         "downloads": 181973
+      },
+      "skillMd": {
+        "version": "1.1.6",
+        "updated": "2026-10-20",
+        "skew": 411
       }
     },
     {
@@ -2049,6 +2111,11 @@
         "installs": 1189452,
         "weeklyInstalls": [64738, 75922, 65802, 71736, 66035, 63238, 57738, 54238],
         "firstSeen": "2026-03-13"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 22
       },
       "note": "Now a one-line alias that calls the grilling skill."
     },
@@ -2073,6 +2140,11 @@
         "weeklyInstalls": [55615, 66362, 55776, 62108, 56619, 54857, 49668, 46913],
         "firstSeen": "2026-04-28"
       },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 35
+      },
       "note": "Calls the grilling and domain-modeling skills."
     },
     {
@@ -2087,6 +2159,11 @@
         "installs": 841705,
         "weeklyInstalls": [48113, 58162, 48859, 53593, 49569, 48555, 44434, 42284],
         "firstSeen": "2026-05-06"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 144
       }
     },
     {
@@ -2101,6 +2178,11 @@
         "installs": 814884,
         "weeklyInstalls": [47077, 60846, 48412, 52775, 48115, 45883, 41091, 39061],
         "firstSeen": "2026-05-06"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 487
       }
     },
     {
@@ -2123,6 +2205,11 @@
         "installs": 744123,
         "weeklyInstalls": [53982, 69023, 57496, 64483, 59375, 57402, 53033, 50276],
         "firstSeen": "2026-06-04"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 328
       }
     },
     {
@@ -2137,6 +2224,11 @@
         "installs": 687409,
         "weeklyInstalls": [44668, 53989, 44680, 48910, 46413, 45222, 40766, 38155],
         "firstSeen": "2026-05-27"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1522
       }
     },
     {
@@ -2158,6 +2250,11 @@
         "installs": 672237,
         "weeklyInstalls": [49730, 60145, 52076, 57827, 52409, 50343, 46026, 43627],
         "firstSeen": "2026-06-04"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 493
       }
     },
     {
@@ -2172,6 +2269,11 @@
         "installs": 651254,
         "weeklyInstalls": [47700, 60375, 50766, 55338, 50419, 48646, 44300, 41900],
         "firstSeen": "2026-06-04"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 851
       }
     },
     {
@@ -2193,6 +2295,11 @@
         "installs": 543187,
         "weeklyInstalls": [47117, 60412, 48729, 52979, 47738, 45905, 40683, 37626],
         "firstSeen": "2026-07-01"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 2075
       }
     },
     {
@@ -2214,6 +2321,11 @@
         "installs": 538272,
         "weeklyInstalls": [47941, 61040, 49738, 52957, 49510, 47583, 42964, 40167],
         "firstSeen": "2026-07-02"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 493
       }
     },
     {
@@ -2235,6 +2347,11 @@
         "installs": 528635,
         "weeklyInstalls": [47726, 57752, 47951, 53136, 48625, 46658, 42170, 39283],
         "firstSeen": "2026-07-02"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 917
       }
     },
     {
@@ -2258,6 +2375,11 @@
         "installs": 370462,
         "weeklyInstalls": [10824, 10207, 9594, 9132, 8213, 8264, 8084, 8612],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 1724
       }
     },
     {
@@ -2279,6 +2401,12 @@
         "installs": 367921,
         "weeklyInstalls": [1347, 2031, 1235, 1040, 715, 631, 578, 512],
         "firstSeen": "2026-04-17"
+      },
+      "skillMd": {
+        "version": "c5a4a8c2e966e28628f56d1bfef07f401d399df0",
+        "updated": "2026-10-20",
+        "removed": "2026-07-08",
+        "skew": 493
       }
     },
     {
@@ -2300,6 +2428,12 @@
         "installs": 354853,
         "weeklyInstalls": [1287, 1968, 1205, 1007, 686, 614, 538, 486],
         "firstSeen": "2026-04-17"
+      },
+      "skillMd": {
+        "version": "c5a4a8c2e966e28628f56d1bfef07f401d399df0",
+        "updated": "2026-10-20",
+        "removed": "2026-07-08",
+        "skew": 741
       }
     },
     {
@@ -2314,6 +2448,11 @@
         "installs": 339881,
         "weeklyInstalls": [19562, 41844, 40766, 43485, 41660, 41136, 37599, 35977],
         "firstSeen": "2026-07-14"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 470
       }
     },
     {
@@ -2335,6 +2474,11 @@
         "installs": 321586,
         "weeklyInstalls": [20725, 23986, 20131, 29586, 32447, 31995, 29177, 27287],
         "firstSeen": "2026-06-24"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 415
       }
     },
     {
@@ -2356,6 +2500,11 @@
         "installs": 298145,
         "weeklyInstalls": [20517, 23625, 20366, 29918, 32460, 32375, 29286, 27180],
         "firstSeen": "2026-07-02"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 222
       }
     },
     {
@@ -2377,6 +2526,11 @@
         "installs": 254600,
         "weeklyInstalls": [7836, 7227, 7122, 6979, 6425, 6658, 6394, 6896],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 1639
       }
     },
     {
@@ -2398,6 +2552,12 @@
         "installs": 216688,
         "weeklyInstalls": [21464, 10632, 1181, 851, 560, 511, 358, 334],
         "firstSeen": "2026-02-13"
+      },
+      "skillMd": {
+        "version": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+        "updated": "2026-10-20",
+        "removed": "2026-08-05",
+        "skew": 493
       }
     },
     {
@@ -2421,6 +2581,12 @@
         "installs": 210011,
         "weeklyInstalls": [20704, 10190, 1139, 795, 535, 482, 319, 319],
         "firstSeen": "2026-02-13"
+      },
+      "skillMd": {
+        "version": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+        "updated": "2026-10-20",
+        "removed": "2026-08-05",
+        "skew": 441
       }
     },
     {
@@ -2442,6 +2608,12 @@
         "installs": 204571,
         "weeklyInstalls": [20340, 10004, 1102, 774, 533, 466, 307, 307],
         "firstSeen": "2026-03-16"
+      },
+      "skillMd": {
+        "version": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+        "updated": "2026-10-20",
+        "removed": "2026-08-05",
+        "skew": 703
       }
     },
     {
@@ -2463,6 +2635,11 @@
         "installs": 967088,
         "weeklyInstalls": [50835, 63780, 54240, 59606, 52645, 50293, 44253, 41316],
         "firstSeen": "2026-03-13"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 899
       }
     },
     {
@@ -2477,6 +2654,11 @@
         "installs": 939371,
         "weeklyInstalls": [49935, 63627, 52249, 57225, 51673, 49590, 44259, 41660],
         "firstSeen": "2026-02-10"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 574
       }
     },
     {
@@ -2491,6 +2673,11 @@
         "installs": 589967,
         "weeklyInstalls": [45430, 55168, 45552, 47229, 45948, 46038, 42131, 39487],
         "firstSeen": "2026-06-17"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 103
       }
     },
     {
@@ -2505,6 +2692,12 @@
         "installs": 516777,
         "weeklyInstalls": [41736, 50799, 42167, 46439, 44297, 43744, 39412, 37623],
         "firstSeen": "2026-06-04"
+      },
+      "skillMd": {
+        "version": "153fc1b93de6584562765cdce299324e1ff9e661",
+        "updated": "2026-10-20",
+        "removed": "2026-09-24",
+        "skew": 133
       }
     },
     {
@@ -2526,6 +2719,11 @@
         "installs": 390895,
         "weeklyInstalls": [19850, 42981, 41317, 44161, 41947, 41252, 37335, 34729],
         "firstSeen": "2026-06-29"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 673
       }
     },
     {
@@ -2549,6 +2747,11 @@
         "installs": 381578,
         "weeklyInstalls": [20379, 22344, 19342, 29318, 32222, 31805, 29007, 27253],
         "firstSeen": "2026-02-10"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 302
       }
     },
     {
@@ -2572,6 +2775,11 @@
         "installs": 373523,
         "weeklyInstalls": [20084, 22024, 19043, 28983, 32011, 31492, 28713, 26821],
         "firstSeen": "2026-02-13"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 332
       }
     },
     {
@@ -2594,6 +2802,11 @@
         "installs": 363321,
         "weeklyInstalls": [19743, 21591, 18622, 27898, 31108, 30773, 28164, 26337],
         "firstSeen": "2026-02-13"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 415
       }
     },
     {
@@ -2616,6 +2829,11 @@
         "installs": 253987,
         "weeklyInstalls": [19373, 20981, 18497, 28319, 31287, 30957, 28222, 26285],
         "firstSeen": "2026-07-10"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1110
       }
     },
     {
@@ -2638,6 +2856,11 @@
         "installs": 232256,
         "weeklyInstalls": [7263, 6699, 6400, 6748, 6286, 6481, 6441, 6754],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 1475
       }
     },
     {
@@ -2659,6 +2882,11 @@
         "installs": 217269,
         "weeklyInstalls": [6892, 6463, 6101, 6438, 5909, 6219, 6150, 6291],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 3267
       }
     },
     {
@@ -2681,6 +2909,11 @@
         "installs": 216670,
         "weeklyInstalls": [7401, 7587, 7030, 8295, 7178, 7254, 7274, 7096],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 580
       }
     },
     {
@@ -2703,6 +2936,11 @@
         "installs": 210247,
         "weeklyInstalls": [6841, 6305, 6380, 7614, 6025, 6237, 6203, 6306],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 4871
       }
     },
     {
@@ -2724,6 +2962,11 @@
         "installs": 195735,
         "weeklyInstalls": [6486, 6071, 5813, 7019, 5716, 5912, 5835, 5827],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 865
       }
     },
     {
@@ -2746,6 +2989,11 @@
         "installs": 195200,
         "weeklyInstalls": [6559, 6198, 5810, 6949, 5623, 5861, 5837, 5842],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 1069
       }
     },
     {
@@ -2768,6 +3016,11 @@
         "installs": 191782,
         "weeklyInstalls": [6430, 5957, 5874, 6274, 5647, 5843, 5804, 5788],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 1269
       }
     },
     {
@@ -2791,6 +3044,11 @@
         "installs": 129139,
         "weeklyInstalls": [0, 0, 0, 9806, 31293, 31210, 28426, 26596],
         "firstSeen": "2026-08-21"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 435
       }
     },
     {
@@ -2812,6 +3070,11 @@
         "installs": 77787,
         "weeklyInstalls": [1561, 1887, 1608, 3529, 4233, 2891, 3127, 2973],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
+        "updated": "2026-10-20",
+        "skew": 1159
       }
     },
     {
@@ -2834,6 +3097,11 @@
         "installs": 74420,
         "weeklyInstalls": [4147, 2189, 2009, 2423, 2262, 1842, 2629, 2825],
         "firstSeen": "2026-01-22"
+      },
+      "skillMd": {
+        "version": "af866e5114c328a25ead2690464607214245b3f8",
+        "updated": "2026-10-20",
+        "skew": 154
       }
     },
     {
@@ -2855,6 +3123,11 @@
         "installs": 62043,
         "weeklyInstalls": [4833, 5466, 5086, 6041, 5042, 4728, 4881, 4658],
         "firstSeen": "2026-06-12"
+      },
+      "skillMd": {
+        "version": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
+        "updated": "2026-10-20",
+        "skew": 592
       }
     },
     {
@@ -2876,6 +3149,11 @@
         "installs": 61972,
         "weeklyInstalls": [0, 0, 6282, 8912, 9036, 11177, 12591, 13200],
         "firstSeen": "2026-08-11"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 92
       }
     },
     {
@@ -2897,6 +3175,11 @@
         "installs": 61671,
         "weeklyInstalls": [0, 0, 6286, 8872, 8977, 11094, 12526, 13142],
         "firstSeen": "2026-08-11"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 93
       }
     },
     {
@@ -2918,6 +3201,11 @@
         "installs": 61411,
         "weeklyInstalls": [0, 0, 6249, 8836, 8946, 11043, 12451, 13111],
         "firstSeen": "2026-08-11"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 152
       }
     },
     {
@@ -2932,6 +3220,11 @@
         "installs": 61086,
         "weeklyInstalls": [0, 0, 6232, 8787, 8894, 10980, 12405, 13020],
         "firstSeen": "2026-08-11"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 104
       }
     },
     {
@@ -2953,6 +3246,11 @@
         "installs": 818146,
         "weeklyInstalls": [45268, 58240, 47409, 51899, 46422, 44334, 39158, 36483],
         "firstSeen": "2026-04-28"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 990
       }
     },
     {
@@ -2974,6 +3272,11 @@
         "installs": 638771,
         "weeklyInstalls": [46765, 59214, 49914, 54939, 49004, 47088, 42585, 40737],
         "firstSeen": "2026-06-04"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1427
       }
     },
     {
@@ -2988,6 +3291,11 @@
         "installs": 589528,
         "weeklyInstalls": [48107, 61595, 50927, 53156, 50671, 50175, 45993, 43036],
         "firstSeen": "2026-07-01"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1086
       }
     },
     {
@@ -3010,6 +3318,11 @@
         "installs": 365862,
         "weeklyInstalls": [15187, 15505, 10403, 9723, 9947, 12349, 13445, 14195],
         "firstSeen": "2026-04-08"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 412
       }
     },
     {
@@ -3031,6 +3344,11 @@
         "installs": 265958,
         "weeklyInstalls": [8547, 8663, 7721, 8000, 7653, 7675, 7739, 7926],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 1454
       }
     },
     {
@@ -3052,6 +3370,12 @@
         "installs": 239020,
         "weeklyInstalls": [757, 1152, 733, 600, 448, 374, 358, 312],
         "firstSeen": "2026-04-28"
+      },
+      "skillMd": {
+        "version": "694fa30311e02c2639942308513555e61ee84a6f",
+        "updated": "2026-10-20",
+        "removed": "2026-06-12",
+        "skew": 1172
       }
     },
     {
@@ -3074,6 +3398,11 @@
         "installs": 233838,
         "weeklyInstalls": [7311, 6787, 6711, 6840, 6184, 6650, 6141, 6414],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 425
       }
     },
     {
@@ -3095,6 +3424,12 @@
         "installs": 205919,
         "weeklyInstalls": [20906, 10207, 1100, 777, 535, 458, 320, 323],
         "firstSeen": "2026-03-26"
+      },
+      "skillMd": {
+        "version": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+        "updated": "2026-10-20",
+        "removed": "2026-08-05",
+        "skew": 803
       }
     },
     {
@@ -3109,6 +3444,11 @@
         "installs": 198239,
         "weeklyInstalls": [6502, 6062, 5689, 6830, 5627, 5823, 5810, 5819],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+        "updated": "2026-10-20",
+        "skew": 913
       }
     },
     {
@@ -3133,6 +3473,11 @@
         "installs": 160726,
         "weeklyInstalls": [3930, 3937, 3968, 5961, 6475, 5006, 4740, 4572],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 501
       }
     },
     {
@@ -3154,6 +3499,11 @@
         "installs": 115754,
         "weeklyInstalls": [0, 0, 0, 0, 27746, 30754, 28204, 27199],
         "firstSeen": "2026-08-24"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 679
       }
     },
     {
@@ -3175,6 +3525,11 @@
         "installs": 84590,
         "weeklyInstalls": [2272, 2444, 2522, 2561, 2550, 2380, 2268, 2433],
         "firstSeen": "2026-01-29"
+      },
+      "skillMd": {
+        "version": "283d5cbc5d11aac1abda058b16ad22c317d54dc0",
+        "updated": "2026-10-20",
+        "skew": 1750
       }
     },
     {
@@ -3197,6 +3552,11 @@
         "installs": 72774,
         "weeklyInstalls": [2949, 14478, 8246, 7673, 5688, 15526, 8671, 8997],
         "firstSeen": "2026-05-08"
+      },
+      "skillMd": {
+        "version": "0980fb7430997f7c8b26c694c9ff797ce7602378",
+        "updated": "2026-10-20",
+        "skew": 2018
       }
     },
     {
@@ -3211,6 +3571,11 @@
         "installs": 61966,
         "weeklyInstalls": [0, 0, 6309, 8930, 9022, 11129, 12577, 13222],
         "firstSeen": "2026-08-11"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 92
       }
     },
     {
@@ -3235,6 +3600,11 @@
         "installs": 52864,
         "weeklyInstalls": [1688, 2079, 2464, 2446, 1888, 1841, 2659, 1972],
         "firstSeen": "2026-04-08"
+      },
+      "skillMd": {
+        "version": "44c78ed54c4dd0595ee3f3566386c97c5d0c77a6",
+        "updated": "2026-10-20",
+        "skew": 2484
       }
     },
     {
@@ -3256,6 +3626,11 @@
         "installs": 526347,
         "weeklyInstalls": [19330, 19856, 14854, 15504, 14951, 17897, 19080, 19923],
         "firstSeen": "2026-04-04"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 744
       }
     },
     {
@@ -3279,6 +3654,11 @@
         "installs": 369532,
         "weeklyInstalls": [15213, 15525, 10645, 10197, 10229, 12612, 13741, 14357],
         "firstSeen": "2026-04-08"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 358
       }
     },
     {
@@ -3294,6 +3674,11 @@
         "weeklyInstalls": [15015, 15570, 10610, 10143, 10034, 12303, 13546, 14374],
         "firstSeen": "2026-04-06"
       },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 842
+      },
       "note": "Sends the file's full text to a model provider to compress it."
     },
     {
@@ -3308,6 +3693,11 @@
         "installs": 356673,
         "weeklyInstalls": [14879, 15551, 10444, 9602, 9705, 11969, 13112, 14128],
         "firstSeen": "2026-04-11"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 392
       }
     },
     {
@@ -3329,6 +3719,12 @@
         "installs": 323333,
         "weeklyInstalls": [12709, 15709, 13763, 16191, 19206, 16893, 15350, 15354],
         "firstSeen": "2026-03-01"
+      },
+      "skillMd": {
+        "version": "a206bbf75a9d80554c0de17c1198ee2fbbc555aa",
+        "updated": "2026-10-20",
+        "removed": "2026-10-19",
+        "skew": 412
       }
     },
     {
@@ -3350,6 +3746,11 @@
         "installs": 313658,
         "weeklyInstalls": [14891, 15199, 10221, 9838, 9829, 11870, 12939, 13540],
         "firstSeen": "2026-05-01"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 549
       }
     },
     {
@@ -3364,6 +3765,11 @@
         "installs": 313086,
         "weeklyInstalls": [14834, 15408, 10189, 9476, 9666, 11825, 13003, 13817],
         "firstSeen": "2026-04-30"
+      },
+      "skillMd": {
+        "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+        "updated": "2026-10-20",
+        "skew": 281
       }
     },
     {
@@ -3378,6 +3784,11 @@
         "installs": 281350,
         "weeklyInstalls": [0, 34647, 42010, 43703, 42724, 42115, 38270, 35506],
         "firstSeen": "2026-08-05"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 60
       }
     },
     {
@@ -3399,6 +3810,12 @@
         "installs": 229925,
         "weeklyInstalls": [693, 1117, 707, 565, 418, 355, 337, 301],
         "firstSeen": "2026-04-17"
+      },
+      "skillMd": {
+        "version": "801a01cc7d265e06dd9dbcef5a4c471add05a0b3",
+        "updated": "2026-10-20",
+        "removed": "2026-06-17",
+        "skew": 58
       }
     },
     {
@@ -3420,6 +3837,12 @@
         "installs": 224366,
         "weeklyInstalls": [645, 1004, 658, 514, 372, 327, 317, 261],
         "firstSeen": "2026-04-17"
+      },
+      "skillMd": {
+        "version": "0a4b76776dfd9979bfe013d99b5562a03b743839",
+        "updated": "2026-10-20",
+        "removed": "2026-06-12",
+        "skew": 259
       }
     },
     {
@@ -3442,6 +3865,11 @@
       },
       "skillhub.cn": {
         "downloads": 281178
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 2566
       },
       "note": "Forked into a dozen languages, such as op7418/Humanizer-zh."
     },
@@ -3466,6 +3894,11 @@
         "weeklyInstalls": null,
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "sha256:bec5094b3d68fcf35afe3ae9233ab6d82e3915cc8ab15d950e49ab3a26db3f40",
+        "updated": "2026-10-20",
+        "skew": 765
+      },
       "note": "Listed on the skills.sh trending chart on 2026-09-21."
     },
     {
@@ -3487,6 +3920,11 @@
         "installs": 537992,
         "weeklyInstalls": [44940, 54803, 45018, 49782, 47095, 46507, 41398, 38641],
         "firstSeen": "2026-07-02"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 131
       }
     },
     {
@@ -3501,6 +3939,11 @@
         "installs": 367136,
         "weeklyInstalls": [19890, 21833, 18862, 28819, 31891, 31496, 28524, 26764],
         "firstSeen": "2026-05-06"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 852
       }
     },
     {
@@ -3516,6 +3959,11 @@
         "weeklyInstalls": [19887, 21716, 18807, 28028, 31259, 30893, 28268, 26423],
         "firstSeen": "2026-03-13"
       },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 442
+      },
       "note": "Built for the author's course repos: it lints with ai-hero-cli and commits."
     },
     {
@@ -3530,6 +3978,11 @@
         "installs": 366645,
         "weeklyInstalls": [19904, 21835, 18923, 27980, 31872, 31459, 28487, 26782],
         "firstSeen": "2026-05-06"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 1026
       }
     },
     {
@@ -3551,6 +4004,11 @@
         "installs": 366468,
         "weeklyInstalls": [19882, 21793, 18856, 27984, 31901, 31483, 28501, 26734],
         "firstSeen": "2026-05-06"
+      },
+      "skillMd": {
+        "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+        "updated": "2026-10-20",
+        "skew": 595
       }
     },
     {
@@ -3565,6 +4023,12 @@
         "installs": 198640,
         "weeklyInstalls": [20372, 9950, 1050, 755, 506, 441, 308, 307],
         "firstSeen": "2026-02-11"
+      },
+      "skillMd": {
+        "version": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+        "updated": "2026-10-20",
+        "removed": "2026-08-05",
+        "skew": 114
       }
     },
     {
@@ -3586,6 +4050,11 @@
         "installs": 85409,
         "weeklyInstalls": [1823, 1826, 1762, 1679, 1876, 1960, 1570, 1612],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 2466
       }
     },
     {
@@ -3600,6 +4069,11 @@
         "installs": 73454,
         "weeklyInstalls": [1456, 1526, 1460, 1461, 1560, 1534, 1217, 1329],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 211
       }
     },
     {
@@ -3622,6 +4096,11 @@
         "installs": 71904,
         "weeklyInstalls": [3454, 3560, 3724, 4573, 5872, 4637, 4404, 6285],
         "firstSeen": "2026-06-01"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 177
       }
     },
     {
@@ -3645,6 +4124,11 @@
         "installs": 55280,
         "weeklyInstalls": [1095, 1261, 302, 75, 65, 41, 122, 80],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "b253a81f257d219f9842d864f9991be287bfc66f",
+        "updated": "2026-10-20",
+        "skew": 2647
       }
     },
     {
@@ -3663,6 +4147,11 @@
       ],
       "skillhub.cn": {
         "downloads": 619423
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 164
       }
     },
     {
@@ -3684,6 +4173,11 @@
         "installs": 906958,
         "weeklyInstalls": [26152, 25773, 24760, 26482, 26382, 24200, 22533, 22545],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 1516
       }
     },
     {
@@ -3706,6 +4200,11 @@
         "installs": 653191,
         "weeklyInstalls": [18456, 18715, 18063, 21343, 24063, 19837, 18338, 20832],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 176
       }
     },
     {
@@ -3727,6 +4226,11 @@
         "installs": 501369,
         "weeklyInstalls": [22212, 26808, 24487, 26734, 30689, 26844, 24606, 24885],
         "firstSeen": "2026-02-21"
+      },
+      "skillMd": {
+        "version": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+        "updated": "2026-10-20",
+        "skew": 6481
       }
     },
     {
@@ -3748,6 +4252,12 @@
         "installs": 368156,
         "weeklyInstalls": [14837, 18236, 16108, 18084, 21146, 18668, 17008, 16946],
         "firstSeen": "2026-03-15"
+      },
+      "skillMd": {
+        "version": "b9ca2fd8047f4c72d7da90ebc1c1203e57c72cd2",
+        "updated": "2026-10-20",
+        "removed": "2026-10-19",
+        "skew": 1443
       }
     },
     {
@@ -3770,6 +4280,12 @@
         "weeklyInstalls": [14693, 18212, 16098, 18108, 21188, 18652, 17132, 17181],
         "firstSeen": "2026-03-01"
       },
+      "skillMd": {
+        "version": "b9ca2fd8047f4c72d7da90ebc1c1203e57c72cd2",
+        "updated": "2026-10-20",
+        "removed": "2026-10-19",
+        "skew": 100
+      },
       "note": "Retired. Its SKILL.md now points to design-taste-frontend."
     },
     {
@@ -3791,6 +4307,11 @@
         "installs": 364739,
         "weeklyInstalls": [11152, 10991, 9936, 9497, 9532, 9854, 8692, 8476],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+        "updated": "2026-10-20",
+        "skew": 2118
       }
     },
     {
@@ -3805,6 +4326,12 @@
         "installs": 338896,
         "weeklyInstalls": [13471, 16729, 14661, 16886, 19912, 17493, 16045, 16007],
         "firstSeen": "2026-03-17"
+      },
+      "skillMd": {
+        "version": "b9ca2fd8047f4c72d7da90ebc1c1203e57c72cd2",
+        "updated": "2026-10-20",
+        "removed": "2026-10-19",
+        "skew": 1136
       }
     },
     {
@@ -3829,6 +4356,11 @@
         "weeklyInstalls": [0, 0, 0, 0, 0, 53048, 140177, 138479],
         "firstSeen": "2026-09-04"
       },
+      "skillMd": {
+        "version": "03c20aec6dcedb5fabfb03dc37982eb52ef19ed6",
+        "updated": "2026-10-20",
+        "skew": 1069
+      },
       "note": "Copy of Sleek's own skill, sleekdotdesign/agent-skills/sleek-design-mobile-apps. On 2026-10-19 the original had 13 installs and this copy had 909.2K."
     },
     {
@@ -3843,6 +4375,11 @@
         "installs": 285759,
         "weeklyInstalls": [9113, 9443, 9249, 9716, 9489, 10170, 10362, 10094],
         "firstSeen": "2026-04-08"
+      },
+      "skillMd": {
+        "version": "dad8dbb3aac21ad1fa236c110315ef4abece23e8",
+        "updated": "2026-10-20",
+        "skew": 1601
       }
     },
     {
@@ -3864,6 +4401,11 @@
         "installs": 285454,
         "weeklyInstalls": [16175, 16280, 14388, 13600, 14931, 14383, 13405, 17799],
         "firstSeen": "2026-03-16"
+      },
+      "skillMd": {
+        "version": "2d228630ba1446365f614a108cb8252f1feda202",
+        "updated": "2026-10-20",
+        "skew": 3865
       }
     },
     {
@@ -3885,6 +4427,11 @@
         "installs": 169283,
         "weeklyInstalls": [14907, 15207, 13304, 12582, 13822, 13274, 11971, 13818],
         "firstSeen": "2026-06-18"
+      },
+      "skillMd": {
+        "version": "2d228630ba1446365f614a108cb8252f1feda202",
+        "updated": "2026-10-20",
+        "skew": 1168
       }
     },
     {
@@ -3906,6 +4453,11 @@
         "installs": 156563,
         "weeklyInstalls": [14553, 14798, 13236, 12540, 13776, 13486, 11882, 13461],
         "firstSeen": "2026-06-29"
+      },
+      "skillMd": {
+        "version": "2d228630ba1446365f614a108cb8252f1feda202",
+        "updated": "2026-10-20",
+        "skew": 2208
       }
     },
     {
@@ -3927,6 +4479,11 @@
         "installs": 152835,
         "weeklyInstalls": [14802, 15481, 13980, 12994, 14365, 13997, 13126, 14738],
         "firstSeen": "2026-07-09"
+      },
+      "skillMd": {
+        "version": "2d228630ba1446365f614a108cb8252f1feda202",
+        "updated": "2026-10-20",
+        "skew": 3479
       }
     },
     {
@@ -3941,6 +4498,11 @@
         "installs": 129321,
         "weeklyInstalls": [455, 439, 407, 394, 404, 339, 356, 360],
         "firstSeen": "2026-03-22"
+      },
+      "skillMd": {
+        "version": "1873741ba8dea755e35e6e15134f7918cd58e036",
+        "updated": "2026-10-20",
+        "skew": 292
       }
     },
     {
@@ -3963,6 +4525,11 @@
         "installs": 127703,
         "weeklyInstalls": [4085, 4107, 4153, 4588, 5816, 5187, 4626, 7354],
         "firstSeen": "2026-03-31"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 1799
       }
     },
     {
@@ -3984,6 +4551,11 @@
         "installs": 109517,
         "weeklyInstalls": [2416, 2447, 2402, 2282, 2383, 2323, 1946, 2106],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 1749
       }
     },
     {
@@ -4008,6 +4580,11 @@
         "installs": 102559,
         "weeklyInstalls": [2590, 2423, 2239, 2069, 2134, 1987, 1714, 2207],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 446
       }
     },
     {
@@ -4022,6 +4599,12 @@
         "installs": 87324,
         "weeklyInstalls": [104, 124, 90, 87, 73, 74, 48, 58],
         "firstSeen": "2026-03-04"
+      },
+      "skillMd": {
+        "version": "f957fcad206b6534c9bf89064d015ae941c4b6cf",
+        "updated": "2026-10-20",
+        "removed": "2026-04-10",
+        "skew": 1409
       }
     },
     {
@@ -4036,6 +4619,12 @@
         "installs": 84717,
         "weeklyInstalls": [101, 120, 81, 84, 69, 70, 48, 57],
         "firstSeen": "2026-03-04"
+      },
+      "skillMd": {
+        "version": "f957fcad206b6534c9bf89064d015ae941c4b6cf",
+        "updated": "2026-10-20",
+        "removed": "2026-04-10",
+        "skew": 1954
       }
     },
     {
@@ -4058,6 +4647,12 @@
         "installs": 83935,
         "weeklyInstalls": [96, 121, 83, 86, 67, 73, 46, 57],
         "firstSeen": "2026-03-04"
+      },
+      "skillMd": {
+        "version": "f957fcad206b6534c9bf89064d015ae941c4b6cf",
+        "updated": "2026-10-20",
+        "removed": "2026-04-10",
+        "skew": 1028
       }
     },
     {
@@ -4079,6 +4674,12 @@
         "installs": 83788,
         "weeklyInstalls": [95, 114, 82, 86, 71, 70, 47, 53],
         "firstSeen": "2026-03-04"
+      },
+      "skillMd": {
+        "version": "f957fcad206b6534c9bf89064d015ae941c4b6cf",
+        "updated": "2026-10-20",
+        "removed": "2026-04-10",
+        "skew": 995
       }
     },
     {
@@ -4101,6 +4702,11 @@
         "installs": 86136,
         "weeklyInstalls": [1796, 1912, 1905, 1797, 1909, 1870, 1584, 1712],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 486
       }
     },
     {
@@ -4124,6 +4730,11 @@
         "installs": 62173,
         "weeklyInstalls": [1034, 1162, 824, 714, 644, 563, 610, 582],
         "firstSeen": "2026-01-22"
+      },
+      "skillMd": {
+        "version": "0337446dadde6f8c94210444e2aa9d546126480f",
+        "updated": "2026-10-20",
+        "skew": 1073
       }
     },
     {
@@ -4145,6 +4756,11 @@
         "installs": 57982,
         "weeklyInstalls": [2617, 2502, 2376, 2414, 2305, 2412, 2078, 2020],
         "firstSeen": "2026-03-20"
+      },
+      "skillMd": {
+        "version": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+        "updated": "2026-10-20",
+        "skew": 2015
       }
     },
     {
@@ -4166,6 +4782,11 @@
         "installs": 57629,
         "weeklyInstalls": [1850, 1836, 1627, 1002, 924, 1104, 1197, 1403],
         "firstSeen": "2026-03-13"
+      },
+      "skillMd": {
+        "version": "35545ea1512ad59fa463e6b1f95ca9c052981fe6",
+        "updated": "2026-10-20",
+        "skew": 1842
       }
     },
     {
@@ -4187,6 +4808,11 @@
         "installs": 55477,
         "weeklyInstalls": [4905, 4507, 4473, 3255, 2933, 2677, 2162, 2067],
         "firstSeen": "2026-05-19"
+      },
+      "skillMd": {
+        "version": "13ac0ec7e148655948100b6396439e481361d690",
+        "updated": "2026-10-20",
+        "skew": 9804
       }
     },
     {
@@ -4201,6 +4827,11 @@
         "installs": 54520,
         "weeklyInstalls": [1957, 1910, 1706, 1827, 2080, 1917, 1947, 1775],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+        "updated": "2026-10-20",
+        "skew": 1883
       }
     },
     {
@@ -4224,6 +4855,11 @@
         "installs": 730900,
         "weeklyInstalls": [18943, 18816, 17464, 19842, 20093, 16751, 16576, 19371],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 948
       }
     },
     {
@@ -4247,6 +4883,11 @@
         "installs": 410058,
         "weeklyInstalls": [14155, 15410, 13399, 14077, 13236, 10620, 10291, 10254],
         "firstSeen": "2026-01-21"
+      },
+      "skillMd": {
+        "version": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+        "updated": "2026-10-20",
+        "skew": 436
       }
     },
     {
@@ -4270,6 +4911,11 @@
         "installs": 348025,
         "weeklyInstalls": [9049, 9577, 8857, 10073, 11731, 10384, 10362, 12772],
         "firstSeen": "2026-01-26"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 383
       }
     },
     {
@@ -4292,6 +4938,11 @@
         "installs": 301346,
         "weeklyInstalls": [43398, 43800, 41540, 39826, 20958, 16714, 17614, 17354],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "ba3f9d73200bbb62e49733ab93a961fd138a2c18",
+        "updated": "2026-10-20",
+        "skew": 81
       },
       "note": "Deprecated. Its SKILL.md now points to prisma-orm-setup."
     },
@@ -4317,6 +4968,11 @@
         "installs": 284945,
         "weeklyInstalls": [11600, 12652, 12852, 13225, 13138, 12429, 12490, 11883],
         "firstSeen": "2026-04-05"
+      },
+      "skillMd": {
+        "version": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+        "updated": "2026-10-20",
+        "skew": 1981
       }
     },
     {
@@ -4341,6 +4997,11 @@
         "installs": 271676,
         "weeklyInstalls": [11347, 7947, 0, 1, 0, 0, 0, 1],
         "firstSeen": "2026-03-06"
+      },
+      "skillMd": {
+        "version": "ba1503c64472b82256d9de95e2e62c5901a38e8b",
+        "updated": "2026-10-20",
+        "skew": 2721
       }
     },
     {
@@ -4364,6 +5025,11 @@
         "installs": 217323,
         "weeklyInstalls": [4698, 4744, 4408, 4689, 5674, 5187, 4941, 7207],
         "firstSeen": "2026-01-26"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 575
       }
     },
     {
@@ -4386,6 +5052,11 @@
         "installs": 177589,
         "weeklyInstalls": [9604, 12726, 13006, 15239, 17326, 17137, 17466, 17041],
         "firstSeen": "2026-01-21"
+      },
+      "skillMd": {
+        "version": "d814689cbba1506b7a25a7a6df5346258ba8ccf8",
+        "updated": "2026-10-20",
+        "skew": 2220
       }
     },
     {
@@ -4410,6 +5081,11 @@
         "installs": 118632,
         "weeklyInstalls": [3382, 3822, 3356, 3156, 3632, 3495, 3238, 2623],
         "firstSeen": "2026-02-18"
+      },
+      "skillMd": {
+        "version": "191a5c33a7e7a22ec9d5ff13930f84748bbcf8f8",
+        "updated": "2026-10-20",
+        "skew": 601
       }
     },
     {
@@ -4431,6 +5107,11 @@
         "installs": 112209,
         "weeklyInstalls": [4658, 5258, 4441, 5072, 3618, 2686, 3350, 3458],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "20c9e88a5c007461a703f1c213572b073196113e",
+        "updated": "2026-10-20",
+        "skew": 1004
       }
     },
     {
@@ -4454,6 +5135,11 @@
         "installs": 71611,
         "weeklyInstalls": [4016, 4111, 2587, 2618, 409, 2559, 3194, 2774],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "33e2663540685ae699039907cae080b72f1c2681",
+        "updated": "2026-10-20",
+        "skew": 1891
       }
     },
     {
@@ -4476,6 +5162,11 @@
         "installs": 64899,
         "weeklyInstalls": [1275, 1193, 985, 1095, 1057, 1009, 1045, 1059],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
+        "updated": "2026-10-20",
+        "skew": 586
       }
     },
     {
@@ -4500,6 +5191,11 @@
         "installs": 60321,
         "weeklyInstalls": [1660, 1819, 1686, 1654, 2048, 1989, 2054, 2045],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "55ec65cd16499f20f14fb10fe99a2e62901b00a1",
+        "updated": "2026-10-20",
+        "skew": 769
       }
     },
     {
@@ -4522,6 +5218,11 @@
         "installs": 57795,
         "weeklyInstalls": [683, 594, 512, 517, 452, 482, 456, 517],
         "firstSeen": "2026-02-11"
+      },
+      "skillMd": {
+        "version": "d02d49da3a77687914715188d495999170bbf48b",
+        "updated": "2026-10-20",
+        "skew": 1529
       }
     },
     {
@@ -4544,6 +5245,11 @@
         "installs": 57479,
         "weeklyInstalls": [1399, 1724, 1645, 1493, 1719, 1637, 2087, 2300],
         "firstSeen": "2026-01-23"
+      },
+      "skillMd": {
+        "version": "e5b95d38516b32e2220929c4ab3cab4f66e3acf2",
+        "updated": "2026-10-20",
+        "skew": 860
       }
     },
     {
@@ -4566,6 +5272,11 @@
         "installs": 55525,
         "weeklyInstalls": [594, 789, 806, 139, 111, 95, 111, 99],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "0d61d6d89e3807528fd997c632c5745422e30cae",
+        "updated": "2026-10-20",
+        "skew": 1160
       }
     },
     {
@@ -4588,6 +5299,11 @@
         "installs": 53670,
         "weeklyInstalls": [2878, 1255, 2554, 2945, 2930, 3775, 3959, 4051],
         "firstSeen": "2026-01-31"
+      },
+      "skillMd": {
+        "version": "c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7",
+        "updated": "2026-10-20",
+        "skew": 431
       }
     },
     {
@@ -4609,6 +5325,11 @@
         "installs": 300949,
         "weeklyInstalls": [43439, 43897, 41584, 39910, 21003, 16786, 17657, 17389],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "ba3f9d73200bbb62e49733ab93a961fd138a2c18",
+        "updated": "2026-10-20",
+        "skew": 934
       }
     },
     {
@@ -4631,6 +5352,11 @@
         "installs": 298586,
         "weeklyInstalls": [43320, 43794, 41486, 39813, 20907, 16721, 17619, 17325],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "ba3f9d73200bbb62e49733ab93a961fd138a2c18",
+        "updated": "2026-10-20",
+        "skew": 1035
       }
     },
     {
@@ -4655,6 +5381,11 @@
         "weeklyInstalls": [43208, 43650, 41345, 39661, 20801, 16601, 17443, 17149],
         "firstSeen": "2026-02-06"
       },
+      "skillMd": {
+        "version": "ba3f9d73200bbb62e49733ab93a961fd138a2c18",
+        "updated": "2026-10-20",
+        "skew": 70
+      },
       "note": "Deprecated. Its SKILL.md now points to prisma-postgres-setup."
     },
     {
@@ -4678,6 +5409,11 @@
         "installs": 131277,
         "weeklyInstalls": [9324, 12379, 12569, 14808, 16990, 16851, 17217, 16779],
         "firstSeen": "2026-06-10"
+      },
+      "skillMd": {
+        "version": "d814689cbba1506b7a25a7a6df5346258ba8ccf8",
+        "updated": "2026-10-20",
+        "skew": 5156
       }
     },
     {
@@ -4701,6 +5437,11 @@
         "installs": 601147,
         "weeklyInstalls": [16759, 16823, 16117, 13880, 14506, 13000, 13502, 13218],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 3479
       }
     },
     {
@@ -4724,6 +5465,11 @@
         "installs": 592202,
         "weeklyInstalls": [16428, 16308, 15389, 13751, 13741, 12175, 12836, 12465],
         "firstSeen": "2026-01-29"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 945
       }
     },
     {
@@ -4746,6 +5492,11 @@
         "installs": 591770,
         "weeklyInstalls": [16404, 16114, 15245, 13731, 13726, 12152, 12960, 12513],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 1730
       }
     },
     {
@@ -4768,6 +5519,11 @@
         "installs": 591538,
         "weeklyInstalls": [16417, 16165, 15011, 13462, 13635, 12153, 12842, 12485],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 380
       }
     },
     {
@@ -4790,6 +5546,11 @@
         "installs": 591453,
         "weeklyInstalls": [16395, 16139, 15267, 13500, 13651, 12144, 12821, 12457],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 846
       }
     },
     {
@@ -4814,6 +5575,11 @@
         "installs": 289282,
         "weeklyInstalls": [6883, 8912, 8784, 10654, 13002, 42963, 57889, 73303],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 4042
       }
     },
     {
@@ -4836,6 +5602,11 @@
         "installs": 156210,
         "weeklyInstalls": [5040, 4991, 5262, 5222, 4964, 5081, 4775, 4226],
         "firstSeen": "2026-02-11"
+      },
+      "skillMd": {
+        "version": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "updated": "2026-10-20",
+        "skew": 816
       }
     },
     {
@@ -4859,6 +5630,11 @@
         "installs": 145559,
         "weeklyInstalls": [6446, 4195, 3594, 3156, 3728, 3544, 3223, 3461],
         "firstSeen": "2026-02-28"
+      },
+      "skillMd": {
+        "version": "3567c3c937b5cc06667d5b023bda0b2d3f472c54",
+        "updated": "2026-10-20",
+        "skew": 4544
       }
     },
     {
@@ -4881,6 +5657,11 @@
         "installs": 133350,
         "weeklyInstalls": [3462, 3600, 3405, 3831, 4662, 4325, 4201, 6619],
         "firstSeen": "2026-03-06"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 1760
       }
     },
     {
@@ -4903,6 +5684,11 @@
         "installs": 104158,
         "weeklyInstalls": [2884, 3054, 2799, 3330, 4126, 3824, 3517, 5925],
         "firstSeen": "2026-03-18"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 1540
       }
     },
     {
@@ -4924,6 +5710,11 @@
         "installs": 95299,
         "weeklyInstalls": [4545, 6323, 6404, 6583, 6860, 7541, 7483, 6887],
         "firstSeen": "2026-01-28"
+      },
+      "skillMd": {
+        "version": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
+        "updated": "2026-10-20",
+        "skew": 3331
       }
     },
     {
@@ -4945,6 +5736,11 @@
         "installs": 87197,
         "weeklyInstalls": [3099, 3467, 3234, 3345, 2843, 2688, 2485, 2406],
         "firstSeen": "2026-01-21"
+      },
+      "skillMd": {
+        "version": "579b067ffb461b82afc845c47b17fc8e8910488c",
+        "updated": "2026-10-20",
+        "skew": 827
       }
     },
     {
@@ -4968,6 +5764,11 @@
         "installs": 77067,
         "weeklyInstalls": [3362, 3489, 3586, 4461, 5609, 4348, 4231, 6072],
         "firstSeen": "2026-05-15"
+      },
+      "skillMd": {
+        "version": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "updated": "2026-10-20",
+        "skew": 2130
       }
     },
     {
@@ -4991,6 +5792,11 @@
         "weeklyInstalls": null,
         "firstSeen": "2026-01-22"
       },
+      "skillMd": {
+        "version": "955fe4c48653599294f9130008a996e2d9048ef5",
+        "updated": "2026-10-20",
+        "skew": 258
+      },
       "note": "Top of the skills.sh hot chart on 2026-09-21."
     },
     {
@@ -5013,6 +5819,11 @@
         "installs": 92555,
         "weeklyInstalls": [4562, 6174, 6441, 6747, 6974, 7132, 7503, 6723],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
+        "updated": "2026-10-20",
+        "skew": 1327
       }
     },
     {
@@ -5034,6 +5845,11 @@
         "installs": 85726,
         "weeklyInstalls": [4492, 6195, 6382, 6533, 6955, 7337, 7466, 6795],
         "firstSeen": "2026-02-12"
+      },
+      "skillMd": {
+        "version": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
+        "updated": "2026-10-20",
+        "skew": 676
       }
     },
     {
@@ -5055,6 +5871,11 @@
         "installs": 78254,
         "weeklyInstalls": [4143, 5843, 5989, 6193, 6629, 6929, 7061, 6403],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
+        "updated": "2026-10-20",
+        "skew": 727
       }
     },
     {
@@ -5069,6 +5890,11 @@
         "installs": 77943,
         "weeklyInstalls": [4176, 5911, 6057, 6083, 6442, 6529, 6726, 6323],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
+        "updated": "2026-10-20",
+        "skew": 1139
       }
     },
     {
@@ -5091,6 +5917,11 @@
         "installs": 67114,
         "weeklyInstalls": [2391, 2173, 1959, 2069, 1782, 1509, 1214, 1249],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "579b067ffb461b82afc845c47b17fc8e8910488c",
+        "updated": "2026-10-20",
+        "skew": 1226
       }
     },
     {
@@ -5113,6 +5944,11 @@
         "installs": 64537,
         "weeklyInstalls": [2450, 2229, 1999, 2143, 1796, 1605, 1283, 1225],
         "firstSeen": "2026-03-26"
+      },
+      "skillMd": {
+        "version": "579b067ffb461b82afc845c47b17fc8e8910488c",
+        "updated": "2026-10-20",
+        "skew": 1040
       }
     },
     {
@@ -5136,6 +5972,11 @@
         "installs": 896337,
         "weeklyInstalls": [33671, 33224, 36656, 32899, 38886, 42640, 45317, 49445],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "5ee8691339a5a002e4d7454eec95250253bc7419",
+        "updated": "2026-10-20",
+        "skew": 483
       }
     },
     {
@@ -5159,6 +6000,11 @@
         "installs": 244970,
         "weeklyInstalls": [11, 15, 17, 18, 10, 10, 6, 7],
         "firstSeen": "2026-02-13"
+      },
+      "skillMd": {
+        "version": "a3d179ffe2695c5bb7aacffec2c6018d3d9f056e",
+        "updated": "2026-10-20",
+        "skew": 1558
       }
     },
     {
@@ -5180,6 +6026,11 @@
         "installs": 164501,
         "weeklyInstalls": [18057, 10113, 9981, 9607, 9709, 28375, 18821, 14913],
         "firstSeen": "2026-05-12"
+      },
+      "skillMd": {
+        "version": "997d34b04389665795966ec4c0325b5cbfabf9ee",
+        "updated": "2026-10-20",
+        "skew": 338
       }
     },
     {
@@ -5203,6 +6054,11 @@
         "installs": 161080,
         "weeklyInstalls": [7534, 7680, 7313, 7464, 7709, 7636, 7930, 8215],
         "firstSeen": "2026-01-23"
+      },
+      "skillMd": {
+        "version": "b1a5903c5b633b8c9f843ad7b629c2a78437040c",
+        "updated": "2026-10-20",
+        "skew": 1834
       }
     },
     {
@@ -5226,6 +6082,11 @@
         "installs": 108070,
         "weeklyInstalls": [156, 134, 124, 81, 99, 84, 61, 76],
         "firstSeen": "2026-03-31"
+      },
+      "skillMd": {
+        "version": "11c057b03f92101642cadc9f840564574120d184",
+        "updated": "2026-10-20",
+        "skew": 475
       }
     },
     {
@@ -5250,6 +6111,11 @@
         "installs": 101444,
         "weeklyInstalls": [1251, 1313, 1198, 1160, 612, 486, 516, 495],
         "firstSeen": "2026-01-21"
+      },
+      "skillMd": {
+        "version": "5e7070cdce289f2f6cb3b8c02313d97d8d59511e",
+        "updated": "2026-10-20",
+        "skew": 1493
       }
     },
     {
@@ -5274,6 +6140,11 @@
         "installs": 95241,
         "weeklyInstalls": [1657, 1458, 1036, 815, 858, 849, 704, 680],
         "firstSeen": "2026-01-22"
+      },
+      "skillMd": {
+        "version": "aa093a843da5edbf323c0b4145c9b6a0db3ecde8",
+        "updated": "2026-10-20",
+        "skew": 2056
       }
     },
     {
@@ -5299,6 +6170,11 @@
         "installs": 93713,
         "weeklyInstalls": [963, 9022, 8956, 8886, 8950, 8541, 8884, 8940],
         "firstSeen": "2026-03-18"
+      },
+      "skillMd": {
+        "version": "b800e3a54d8d4f93ae5ee23c59d13b43df5d4462",
+        "updated": "2026-10-20",
+        "skew": 5778
       }
     },
     {
@@ -5320,6 +6196,11 @@
         "installs": 69204,
         "weeklyInstalls": [3492, 3876, 3646, 4249, 2839, 1238, 996, 1147],
         "firstSeen": "2026-02-11"
+      },
+      "skillMd": {
+        "version": "3ccff5338ea700537839b21900aa5358a0402c98",
+        "updated": "2026-10-20",
+        "skew": 135
       }
     },
     {
@@ -5344,6 +6225,11 @@
         "installs": 59684,
         "weeklyInstalls": [0, 6260, 8870, 8871, 8910, 8511, 8840, 8920],
         "firstSeen": "2026-08-05"
+      },
+      "skillMd": {
+        "version": "4068c79209753c74f895a4a5a6d117fcde8d94d1",
+        "updated": "2026-10-20",
+        "skew": 742
       }
     },
     {
@@ -5367,6 +6253,11 @@
         "installs": null,
         "weeklyInstalls": null,
         "firstSeen": "2026-08-31"
+      },
+      "skillMd": {
+        "version": "becc25649700d5457772a00e5143e28ccf9e5afa",
+        "updated": "2026-10-20",
+        "skew": 522
       },
       "note": "Copy of a skill from inference.sh's own repo, inference-sh/skills, republished under six org names that are all called superpowers. Listed on the skills.sh trending chart on 2026-09-21."
     },
@@ -5392,21 +6283,31 @@
       },
       "skillhub.cn": {
         "downloads": 163005
+      },
+      "skillMd": {
+        "version": "0.1.0",
+        "updated": "2026-10-20",
+        "skew": 710
       }
     },
     {
-      "id": "clawhub.ai/multi-search-engine",
+      "id": "clawhub.ai/gpyangyoujun/multi-search-engine",
       "name": "multi-search-engine",
       "description": "Searches across 16 engines, 7 Chinese and 9 global.",
       "categories": ["browser"],
       "tags": ["type:tool", "effect:none", "needs:none", "by:official", "web-search"],
       "clawhub.ai": {
-        "url": null,
-        "install": null,
+        "url": "https://clawhub.ai/gpyangyoujun/skills/multi-search-engine",
+        "install": "openclaw skills install @gpyangyoujun/multi-search-engine",
         "downloads": 161526
       },
       "skillhub.cn": {
         "downloads": 583225
+      },
+      "skillMd": {
+        "version": "2.1.3",
+        "updated": "2026-10-20",
+        "skew": 780
       }
     },
     {
@@ -5430,6 +6331,11 @@
       },
       "skillhub.cn": {
         "downloads": 116448
+      },
+      "skillMd": {
+        "version": "0.2.1",
+        "updated": "2026-10-20",
+        "skew": 418
       }
     },
     {
@@ -5452,6 +6358,11 @@
         "installs": 629361,
         "weeklyInstalls": [42582, 28363, 38236, 35297, 32646, 36197, 46253, 85193],
         "firstSeen": "2026-03-31"
+      },
+      "skillMd": {
+        "version": "434ad8c41c6fd86b4341c52cc6e751f40474f13f",
+        "updated": "2026-10-20",
+        "skew": 3653
       }
     },
     {
@@ -5476,6 +6387,11 @@
         "installs": 594055,
         "weeklyInstalls": [0, 0, 30348, 105081, 115940, 113373, 108975, 113312],
         "firstSeen": "2026-08-12"
+      },
+      "skillMd": {
+        "version": "c163a9fd3ab3c36193f634445592586df5b64f1e",
+        "updated": "2026-10-20",
+        "skew": 1576
       },
       "note": "Copy of RunComfy's skill from agentspace-so/runcomfy-skills, also republished as prime-skills/runcomfy-agent-skills. skills.sh had reset this copy's install count to 13 by 2026-10-19."
     },
@@ -5502,6 +6418,11 @@
         "weeklyInstalls": [0, 0, 30205, 104982, 115878, 113480, 108586, 113221],
         "firstSeen": "2026-08-12"
       },
+      "skillMd": {
+        "version": "c163a9fd3ab3c36193f634445592586df5b64f1e",
+        "updated": "2026-10-20",
+        "skew": 1851
+      },
       "note": "Copy of RunComfy's skill from agentspace-so/runcomfy-skills, also republished as prime-skills/runcomfy-agent-skills. skills.sh had reset this copy's install count to 13 by 2026-10-19."
     },
     {
@@ -5526,6 +6447,11 @@
         "installs": 593022,
         "weeklyInstalls": [0, 0, 30425, 105307, 116056, 112626, 108587, 113137],
         "firstSeen": "2026-08-12"
+      },
+      "skillMd": {
+        "version": "c163a9fd3ab3c36193f634445592586df5b64f1e",
+        "updated": "2026-10-20",
+        "skew": 2556
       },
       "note": "Copy of RunComfy's skill from agentspace-so/runcomfy-skills, also republished as prime-skills/runcomfy-agent-skills. skills.sh had reset this copy's install count to 13 by 2026-10-19."
     },
@@ -5552,6 +6478,11 @@
         "weeklyInstalls": [0, 0, 30420, 104976, 116166, 112407, 108844, 113084],
         "firstSeen": "2026-08-12"
       },
+      "skillMd": {
+        "version": "c163a9fd3ab3c36193f634445592586df5b64f1e",
+        "updated": "2026-10-20",
+        "skew": 1752
+      },
       "note": "Copy of RunComfy's skill from agentspace-so/runcomfy-skills, also republished as prime-skills/runcomfy-agent-skills. skills.sh had reset this copy's install count to 13 by 2026-10-19."
     },
     {
@@ -5577,6 +6508,11 @@
         "weeklyInstalls": [0, 0, 30291, 105180, 115944, 112485, 108359, 113065],
         "firstSeen": "2026-08-12"
       },
+      "skillMd": {
+        "version": "c163a9fd3ab3c36193f634445592586df5b64f1e",
+        "updated": "2026-10-20",
+        "skew": 3113
+      },
       "note": "Copy of RunComfy's skill from agentspace-so/runcomfy-skills, also republished as prime-skills/runcomfy-agent-skills. skills.sh had reset this copy's install count to 13 by 2026-10-19."
     },
     {
@@ -5600,6 +6536,11 @@
         "installs": 533975,
         "weeklyInstalls": [12943, 11512, 9965, 10367, 10505, 10488, 10236, 10452],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "039e8a2fc78b67efc228d5645367838b85818a1c",
+        "updated": "2026-10-20",
+        "skew": 595
       }
     },
     {
@@ -5624,6 +6565,11 @@
         "installs": 301174,
         "weeklyInstalls": [0, 0, 0, 0, 0, 13241, 64317, 213120],
         "firstSeen": "2026-08-31"
+      },
+      "skillMd": {
+        "version": "becc25649700d5457772a00e5143e28ccf9e5afa",
+        "updated": "2026-10-20",
+        "skew": 949
       },
       "note": "Copy of a skill from inference.sh's own repo, inference-sh/skills, republished under six org names that are all called superpowers. On 2026-10-19 the original had 14 installs and this copy had 810.0K."
     },
@@ -5650,6 +6596,11 @@
         "installs": 174825,
         "weeklyInstalls": [11299, 10028, 8295, 8237, 8551, 8200, 10980, 9476],
         "firstSeen": "2026-05-04"
+      },
+      "skillMd": {
+        "version": "f83af0bc1d937c8119099a11f8ebbf5e6fb99819",
+        "updated": "2026-10-20",
+        "skew": 3284
       }
     },
     {
@@ -5671,6 +6622,11 @@
         "installs": 81717,
         "weeklyInstalls": [1580, 1622, 1554, 1515, 1648, 1656, 1285, 1375],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 2761
       }
     },
     {
@@ -5697,6 +6653,11 @@
         "installs": 74605,
         "weeklyInstalls": [5187, 610, 0, 0, 0, 0, 0, 0],
         "firstSeen": "2026-04-03"
+      },
+      "skillMd": {
+        "version": "7afa71f4cb5aeaf8d083e155221167418a5aa43f",
+        "updated": "2026-10-20",
+        "skew": 33058
       }
     },
     {
@@ -5720,6 +6681,11 @@
         "installs": 69254,
         "weeklyInstalls": [1379, 1438, 1372, 1359, 1470, 1404, 1135, 1230],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 1103
       }
     },
     {
@@ -5743,6 +6709,11 @@
       },
       "skillhub.cn": {
         "downloads": 132765
+      },
+      "skillMd": {
+        "version": "1.0.1",
+        "updated": "2026-10-20",
+        "skew": 756
       }
     },
     {
@@ -5765,6 +6736,11 @@
         "installs": 600334,
         "weeklyInstalls": [39553, 27453, 34140, 31415, 32622, 29417, 44036, 79656],
         "firstSeen": "2026-04-06"
+      },
+      "skillMd": {
+        "version": "434ad8c41c6fd86b4341c52cc6e751f40474f13f",
+        "updated": "2026-10-20",
+        "skew": 2920
       }
     },
     {
@@ -5787,6 +6763,11 @@
         "installs": 543281,
         "weeklyInstalls": [27688, 21925, 37717, 30958, 25304, 28936, 42493, 68443],
         "firstSeen": "2026-04-15"
+      },
+      "skillMd": {
+        "version": "434ad8c41c6fd86b4341c52cc6e751f40474f13f",
+        "updated": "2026-10-20",
+        "skew": 1432
       }
     },
     {
@@ -5809,6 +6790,11 @@
         "installs": 507062,
         "weeklyInstalls": [39468, 26653, 27491, 36417, 33032, 29574, 47634, 81013],
         "firstSeen": "2026-06-14"
+      },
+      "skillMd": {
+        "version": "434ad8c41c6fd86b4341c52cc6e751f40474f13f",
+        "updated": "2026-10-20",
+        "skew": 1603
       }
     },
     {
@@ -5833,6 +6819,11 @@
         "installs": 500936,
         "weeklyInstalls": [40022, 33673, 36304, 30738, 31683, 31601, 47488, 81708],
         "firstSeen": "2026-06-25"
+      },
+      "skillMd": {
+        "version": "434ad8c41c6fd86b4341c52cc6e751f40474f13f",
+        "updated": "2026-10-20",
+        "skew": 1289
       }
     },
     {
@@ -5855,6 +6846,11 @@
         "installs": 90346,
         "weeklyInstalls": [9620, 8686, 7891, 8526, 8574, 8560, 8371, 8943],
         "firstSeen": "2026-07-11"
+      },
+      "skillMd": {
+        "version": "039e8a2fc78b67efc228d5645367838b85818a1c",
+        "updated": "2026-10-20",
+        "skew": 82
       }
     },
     {
@@ -5877,6 +6873,11 @@
         "installs": 90078,
         "weeklyInstalls": [9657, 8667, 7895, 8492, 8511, 8456, 8268, 8880],
         "firstSeen": "2026-07-11"
+      },
+      "skillMd": {
+        "version": "039e8a2fc78b67efc228d5645367838b85818a1c",
+        "updated": "2026-10-20",
+        "skew": 409
       }
     },
     {
@@ -5899,6 +6900,11 @@
         "installs": 87915,
         "weeklyInstalls": [9411, 8439, 7651, 8254, 8355, 8311, 8160, 8801],
         "firstSeen": "2026-07-11"
+      },
+      "skillMd": {
+        "version": "039e8a2fc78b67efc228d5645367838b85818a1c",
+        "updated": "2026-10-20",
+        "skew": 140
       }
     },
     {
@@ -5922,6 +6928,11 @@
         "installs": 85033,
         "weeklyInstalls": [9112, 8153, 7416, 7998, 8027, 8034, 7870, 8616],
         "firstSeen": "2026-07-11"
+      },
+      "skillMd": {
+        "version": "039e8a2fc78b67efc228d5645367838b85818a1c",
+        "updated": "2026-10-20",
+        "skew": 1464
       }
     },
     {
@@ -5946,6 +6957,11 @@
         "installs": 300761,
         "weeklyInstalls": [0, 0, 0, 0, 0, 13165, 63881, 213213],
         "firstSeen": "2026-08-31"
+      },
+      "skillMd": {
+        "version": "becc25649700d5457772a00e5143e28ccf9e5afa",
+        "updated": "2026-10-20",
+        "skew": 666
       },
       "note": "Copy of a skill from inference.sh's own repo, inference-sh/skills, republished under six org names that are all called superpowers."
     },
@@ -5972,6 +6988,11 @@
         "weeklyInstalls": [0, 0, 0, 0, 0, 13376, 63412, 213289],
         "firstSeen": "2026-08-31"
       },
+      "skillMd": {
+        "version": "becc25649700d5457772a00e5143e28ccf9e5afa",
+        "updated": "2026-10-20",
+        "skew": 1230
+      },
       "note": "Copy of a skill from inference.sh's own repo, inference-sh/skills, republished under six org names that are all called superpowers."
     },
     {
@@ -5995,6 +7016,11 @@
         "installs": 153598,
         "weeklyInstalls": [10904, 9529, 7943, 7967, 8296, 7982, 10667, 9177],
         "firstSeen": "2026-05-04"
+      },
+      "skillMd": {
+        "version": "f83af0bc1d937c8119099a11f8ebbf5e6fb99819",
+        "updated": "2026-10-20",
+        "skew": 502
       }
     },
     {
@@ -6020,6 +7046,11 @@
         "weeklyInstalls": [37271, 33810, 31236, 27535, 27775, 27303, 25498, 26023],
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 192
+      },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
     {
@@ -6041,6 +7072,11 @@
         "installs": 224487,
         "weeklyInstalls": [5963, 5495, 4872, 4397, 4345, 4410, 4058, 4310],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 3129
       }
     },
     {
@@ -6062,6 +7098,12 @@
         "installs": 202330,
         "weeklyInstalls": [20673, 10062, 1047, 728, 499, 436, 309, 308],
         "firstSeen": "2026-03-13"
+      },
+      "skillMd": {
+        "version": "f958fa17c1b62c3f7be38fc09512669acf6b64fc",
+        "updated": "2026-10-20",
+        "removed": "2026-08-05",
+        "skew": 227
       },
       "note": "Its SKILL.md hard-codes the author's own vault path."
     },
@@ -6085,6 +7127,11 @@
         "installs": 199049,
         "weeklyInstalls": [4908, 4761, 4206, 3750, 3965, 4047, 3710, 3563],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 1007
       }
     },
     {
@@ -6106,6 +7153,11 @@
         "installs": 191022,
         "weeklyInstalls": [4663, 4378, 4013, 3676, 3810, 3769, 3465, 3660],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 975
       }
     },
     {
@@ -6127,6 +7179,11 @@
         "installs": 171434,
         "weeklyInstalls": [4385, 4127, 3814, 3533, 3567, 3684, 3317, 3654],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 1312
       }
     },
     {
@@ -6148,6 +7205,11 @@
         "installs": 86557,
         "weeklyInstalls": [3838, 4211, 3998, 4450, 3120, 1507, 1286, 1199],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "3ccff5338ea700537839b21900aa5358a0402c98",
+        "updated": "2026-10-20",
+        "skew": 677
       }
     },
     {
@@ -6170,6 +7232,11 @@
         "installs": 77359,
         "weeklyInstalls": [2759, 1865, 2028, 1861, 2374, 2336, 2141, 1954],
         "firstSeen": "2026-01-28"
+      },
+      "skillMd": {
+        "version": "9b0e00ad1b941165e2506545bbfddafa34cf2cb8",
+        "updated": "2026-10-20",
+        "skew": 1868
       }
     },
     {
@@ -6192,6 +7259,11 @@
         "installs": 76532,
         "weeklyInstalls": [1079, 2124, 1399, 1754, 1109, 1000, 1096, 927],
         "firstSeen": "2026-03-04"
+      },
+      "skillMd": {
+        "version": "a3768d0e82ad83cca2da97724e46bea4ff0e6dbd",
+        "updated": "2026-10-20",
+        "skew": 272
       }
     },
     {
@@ -6218,6 +7290,11 @@
       },
       "skillhub.cn": {
         "downloads": 201503
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 215
       }
     },
     {
@@ -6241,6 +7318,11 @@
       },
       "skillhub.cn": {
         "downloads": 131279
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 94
       }
     },
     {
@@ -6256,6 +7338,11 @@
       },
       "skillhub.cn": {
         "downloads": 85608
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 280
       }
     },
     {
@@ -6276,6 +7363,11 @@
       ],
       "skillhub.cn": {
         "downloads": 1104965
+      },
+      "skillMd": {
+        "version": "1.0.41",
+        "updated": "2026-10-20",
+        "skew": 1294
       }
     },
     {
@@ -6302,6 +7394,11 @@
         "weeklyInstalls": [37239, 33798, 31249, 27532, 27802, 27271, 25493, 25934],
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 1450
+      },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
     {
@@ -6326,6 +7423,11 @@
         "installs": 716017,
         "weeklyInstalls": [37238, 33779, 31172, 27520, 27877, 27275, 25485, 25955],
         "firstSeen": null
+      },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 1390
       },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
@@ -6352,6 +7454,11 @@
         "weeklyInstalls": [37208, 33753, 31136, 27446, 27769, 27230, 25421, 25883],
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 2977
+      },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
     {
@@ -6376,6 +7483,11 @@
         "installs": 715255,
         "weeklyInstalls": [37203, 33729, 31126, 27423, 27723, 27209, 25393, 25820],
         "firstSeen": null
+      },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 860
       },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
@@ -6402,6 +7514,11 @@
         "weeklyInstalls": [37202, 33736, 31121, 27391, 27718, 27221, 25388, 25884],
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 1293
+      },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
     {
@@ -6426,6 +7543,11 @@
         "installs": 714265,
         "weeklyInstalls": [37131, 33671, 31034, 27322, 27643, 27063, 25338, 25815],
         "firstSeen": null
+      },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 1793
       },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
@@ -6454,6 +7576,11 @@
         "weeklyInstalls": [37154, 33708, 31100, 27483, 27754, 27006, 25258, 25603],
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 25
+      },
       "note": "Deprecated. Its SKILL.md now points to lark-meeting. skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
     {
@@ -6479,6 +7606,11 @@
         "weeklyInstalls": [37119, 33627, 31014, 27323, 27567, 27097, 25279, 25743],
         "firstSeen": null
       },
+      "skillMd": {
+        "version": "017b19a793ad71794a02887ede04757f3d82e10d",
+        "updated": "2026-10-20",
+        "skew": 645
+      },
       "note": "skills.sh lists this skill twice, from open.feishu.cn and from larksuite/cli, which splits its install count. The numbers here are open.feishu.cn's."
     },
     {
@@ -6493,6 +7625,11 @@
         "installs": 75762,
         "weeklyInstalls": [3606, 4011, 3777, 4238, 2891, 1344, 1117, 1053],
         "firstSeen": "2026-02-11"
+      },
+      "skillMd": {
+        "version": "3ccff5338ea700537839b21900aa5358a0402c98",
+        "updated": "2026-10-20",
+        "skew": 442
       }
     },
     {
@@ -6515,6 +7652,11 @@
         "installs": 74568,
         "weeklyInstalls": [3586, 3974, 3752, 4219, 2864, 1267, 1040, 1027],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "3ccff5338ea700537839b21900aa5358a0402c98",
+        "updated": "2026-10-20",
+        "skew": 1776
       }
     },
     {
@@ -6537,6 +7679,11 @@
         "installs": 69636,
         "weeklyInstalls": [3499, 3858, 3627, 4095, 2760, 1204, 1009, 948],
         "firstSeen": "2026-01-20"
+      },
+      "skillMd": {
+        "version": "3ccff5338ea700537839b21900aa5358a0402c98",
+        "updated": "2026-10-20",
+        "skew": 1229
       }
     },
     {
@@ -6560,6 +7707,11 @@
         "installs": 561759,
         "weeklyInstalls": [0, 0, 19531, 83327, 116184, 113492, 108855, 113374],
         "firstSeen": "2026-08-12"
+      },
+      "skillMd": {
+        "version": "0c9e2b63f504a296a86e45ed3a60a426dd979ca6",
+        "updated": "2026-10-20",
+        "skew": 1260
       },
       "note": "Copy of doany-skills/skills/reddit-automation. On 2026-10-19 the original had 12 installs and this copy had 1.0M."
     },
@@ -6587,6 +7739,11 @@
         "weeklyInstalls": [0, 0, 0, 0, 0, 13446, 63653, 213285],
         "firstSeen": "2026-08-31"
       },
+      "skillMd": {
+        "version": "becc25649700d5457772a00e5143e28ccf9e5afa",
+        "updated": "2026-10-20",
+        "skew": 555
+      },
       "note": "Copy of a skill from inference.sh's own repo, inference-sh/skills, republished under six org names that are all called superpowers."
     },
     {
@@ -6601,6 +7758,11 @@
         "installs": 211055,
         "weeklyInstalls": [5850, 5484, 4901, 4953, 4911, 4596, 4604, 4325],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+        "updated": "2026-10-20",
+        "skew": 2597
       }
     },
     {
@@ -6623,6 +7785,11 @@
         "installs": 204601,
         "weeklyInstalls": [6148, 5635, 5097, 4952, 5662, 5452, 5154, 4728],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+        "updated": "2026-10-20",
+        "skew": 2419
       }
     },
     {
@@ -6647,6 +7814,11 @@
         "installs": 154727,
         "weeklyInstalls": [10947, 9564, 7963, 7979, 8311, 8003, 10675, 9190],
         "firstSeen": "2026-05-04"
+      },
+      "skillMd": {
+        "version": "f83af0bc1d937c8119099a11f8ebbf5e6fb99819",
+        "updated": "2026-10-20",
+        "skew": 1366
       }
     },
     {
@@ -6668,6 +7840,11 @@
         "installs": 145727,
         "weeklyInstalls": [3923, 3588, 3495, 3524, 3370, 3246, 3386, 3185],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+        "updated": "2026-10-20",
+        "skew": 3044
       }
     },
     {
@@ -6690,6 +7867,11 @@
         "installs": 143006,
         "weeklyInstalls": [3925, 3646, 3442, 3679, 3939, 3874, 3714, 3356],
         "firstSeen": "2026-01-26"
+      },
+      "skillMd": {
+        "version": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+        "updated": "2026-10-20",
+        "skew": 2871
       }
     },
     {
@@ -6704,6 +7886,11 @@
         "installs": 134271,
         "weeklyInstalls": [3677, 3392, 3245, 3267, 3098, 2960, 3031, 2800],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+        "updated": "2026-10-20",
+        "skew": 1129
       }
     },
     {
@@ -6726,6 +7913,11 @@
         "installs": 77842,
         "weeklyInstalls": [104, 166, 83, 90, 77, 73, 75, 61],
         "firstSeen": "2026-03-24"
+      },
+      "skillMd": {
+        "version": "0f3b13fa0e5ed0a9f3d600dc18518bc76ddd813b",
+        "updated": "2026-10-20",
+        "skew": 1664
       }
     },
     {
@@ -6750,6 +7942,11 @@
         "installs": 71489,
         "weeklyInstalls": [1382, 1315, 861, 560, 637, 580, 494, 484],
         "firstSeen": "2026-01-22"
+      },
+      "skillMd": {
+        "version": "4595577541fd21c43ab8127ed0816ae98c75ba88",
+        "updated": "2026-10-20",
+        "skew": 885
       }
     },
     {
@@ -6771,6 +7968,11 @@
         "installs": 62558,
         "weeklyInstalls": [114, 160, 99, 81, 75, 70, 66, 68],
         "firstSeen": "2026-03-24"
+      },
+      "skillMd": {
+        "version": "ee0fb29433d02ccc22e3e6cea9ab4586d49fd42e",
+        "updated": "2026-10-20",
+        "skew": 5721
       }
     },
     {
@@ -6792,6 +7994,11 @@
         "installs": 60838,
         "weeklyInstalls": [0, 6301, 9078, 9039, 9091, 8704, 9029, 9073],
         "firstSeen": "2026-08-05"
+      },
+      "skillMd": {
+        "version": "a60468c527c2e3e62bb2d3069eef2a52fb8ddbeb",
+        "updated": "2026-10-20",
+        "skew": 1242
       }
     },
     {
@@ -6815,6 +8022,11 @@
       },
       "skillhub.cn": {
         "downloads": 313925
+      },
+      "skillMd": {
+        "version": "1.0.30",
+        "updated": "2026-10-20",
+        "skew": 1239
       }
     },
     {
@@ -6839,6 +8051,11 @@
         "installs": 151999,
         "weeklyInstalls": [10839, 9492, 7893, 7916, 8264, 7937, 10622, 9122],
         "firstSeen": "2026-05-04"
+      },
+      "skillMd": {
+        "version": "f83af0bc1d937c8119099a11f8ebbf5e6fb99819",
+        "updated": "2026-10-20",
+        "skew": 493
       }
     },
     {
@@ -6860,6 +8077,11 @@
         "installs": 450930,
         "weeklyInstalls": [11191, 32245, 50275, 41240, 72, 54, 58, 48],
         "firstSeen": "2026-03-30"
+      },
+      "skillMd": {
+        "version": "fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01",
+        "updated": "2026-10-20",
+        "skew": 297
       }
     },
     {
@@ -6885,6 +8107,11 @@
         "installs": 169005,
         "weeklyInstalls": [13651, 13301, 13350, 14060, 13696, 14286, 13539, 13416],
         "firstSeen": "2026-04-29"
+      },
+      "skillMd": {
+        "version": "54b548b2787a33ababffe9d5381e0979191aadd1",
+        "updated": "2026-10-20",
+        "skew": 416
       }
     },
     {
@@ -6906,6 +8133,11 @@
         "installs": 99708,
         "weeklyInstalls": [1708, 1913, 2330, 2998, 12367, 27425, 23565, 20784],
         "firstSeen": "2026-05-11"
+      },
+      "skillMd": {
+        "version": "25cf37080fc8b1dbe758a4efc3935b55f3327083",
+        "updated": "2026-10-20",
+        "skew": 2511
       }
     },
     {
@@ -6924,6 +8156,11 @@
       ],
       "skillhub.cn": {
         "downloads": 360740
+      },
+      "skillMd": {
+        "version": "8.4.0",
+        "updated": "2026-10-20",
+        "skew": 1884
       }
     },
     {
@@ -6946,6 +8183,11 @@
         "installs": 450138,
         "weeklyInstalls": [11173, 32230, 50247, 41219, 47, 40, 33, 32],
         "firstSeen": "2026-03-30"
+      },
+      "skillMd": {
+        "version": "fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01",
+        "updated": "2026-10-20",
+        "skew": 311
       }
     },
     {
@@ -6968,6 +8210,11 @@
         "installs": 450051,
         "weeklyInstalls": [11172, 32229, 50250, 41213, 41, 41, 32, 30],
         "firstSeen": "2026-03-30"
+      },
+      "skillMd": {
+        "version": "fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01",
+        "updated": "2026-10-20",
+        "skew": 375
       }
     },
     {
@@ -6989,6 +8236,11 @@
         "installs": 450018,
         "weeklyInstalls": [11166, 32229, 50245, 41208, 41, 29, 26, 30],
         "firstSeen": "2026-03-30"
+      },
+      "skillMd": {
+        "version": "fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01",
+        "updated": "2026-10-20",
+        "skew": 332
       }
     },
     {
@@ -7011,6 +8263,11 @@
         "installs": 311280,
         "weeklyInstalls": [11263, 32324, 50300, 41285, 77, 73, 64, 49],
         "firstSeen": "2026-05-26"
+      },
+      "skillMd": {
+        "version": "fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01",
+        "updated": "2026-10-20",
+        "skew": 778
       }
     },
     {
@@ -7032,6 +8289,11 @@
         "installs": 289755,
         "weeklyInstalls": [6911, 8929, 8800, 10669, 13023, 42985, 57896, 73341],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 581
       }
     },
     {
@@ -7054,6 +8316,11 @@
         "installs": 244397,
         "weeklyInstalls": [23518, 17899, 37267, 28863, 22681, 19989, 16728, 16997],
         "firstSeen": "2026-04-03"
+      },
+      "skillMd": {
+        "version": "997d34b04389665795966ec4c0325b5cbfabf9ee",
+        "updated": "2026-10-20",
+        "skew": 361
       }
     },
     {
@@ -7075,6 +8342,11 @@
         "installs": 227921,
         "weeklyInstalls": [23327, 14349, 14098, 13413, 14319, 39340, 26703, 21718],
         "firstSeen": "2026-04-28"
+      },
+      "skillMd": {
+        "version": "997d34b04389665795966ec4c0325b5cbfabf9ee",
+        "updated": "2026-10-20",
+        "skew": 536
       }
     },
     {
@@ -7096,6 +8368,11 @@
         "installs": 116814,
         "weeklyInstalls": [2525, 2678, 2943, 3374, 3053, 2869, 2364, 2658],
         "firstSeen": "2026-01-19"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 1143
       }
     },
     {
@@ -7117,6 +8394,11 @@
         "installs": 66030,
         "weeklyInstalls": [1788, 1855, 1687, 1639, 1682, 1717, 1423, 1426],
         "firstSeen": "2026-03-04"
+      },
+      "skillMd": {
+        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "updated": "2026-10-20",
+        "skew": 14600
       }
     },
     {
@@ -7138,6 +8420,11 @@
         "installs": 60631,
         "weeklyInstalls": [1666, 1664, 1666, 1647, 1655, 1517, 1660, 1648],
         "firstSeen": "2026-03-20"
+      },
+      "skillMd": {
+        "version": "9c768f4677a2907b36edce0e27073020ed9acf98",
+        "updated": "2026-10-20",
+        "skew": 1273
       }
     },
     {
@@ -7159,6 +8446,11 @@
         "installs": null,
         "weeklyInstalls": null,
         "firstSeen": "2026-09-12"
+      },
+      "skillMd": {
+        "version": "65a39f393687675ce170e6094757de20370365b9",
+        "updated": "2026-10-20",
+        "skew": 1288
       },
       "note": "Listed on the skills.sh trending chart on 2026-09-21."
     },
@@ -7183,6 +8475,11 @@
       "skillhub.cn": {
         "downloads": 1220832
       },
+      "skillMd": {
+        "version": "4.0.3",
+        "updated": "2026-10-20",
+        "skew": 3439
+      },
       "note": "This version is built for OpenClaw only. The multi-agent original lives in pskoett/pskoett-ai-skills."
     },
     {
@@ -7205,6 +8502,11 @@
       },
       "skillhub.cn": {
         "downloads": 409437
+      },
+      "skillMd": {
+        "version": "1.2.16",
+        "updated": "2026-10-20",
+        "skew": 1278
       }
     },
     {
@@ -7220,10 +8522,15 @@
       },
       "skillhub.cn": {
         "downloads": 275063
+      },
+      "skillMd": {
+        "version": "1.0.4",
+        "updated": "2026-10-20",
+        "skew": 847
       }
     },
     {
-      "id": "clawhub.ai/proactive-agent",
+      "id": "clawhub.ai/halthelobster/proactive-agent",
       "name": "proactive-agent",
       "description": "Turns the agent into a partner that anticipates needs.",
       "categories": ["agents"],
@@ -7236,24 +8543,34 @@
         "memory"
       ],
       "clawhub.ai": {
-        "url": null,
-        "install": null,
+        "url": "https://clawhub.ai/halthelobster/skills/proactive-agent",
+        "install": "openclaw skills install @halthelobster/proactive-agent",
         "downloads": 175865
       },
       "skillhub.cn": {
         "downloads": 250676
+      },
+      "skillMd": {
+        "version": "3.1.0",
+        "updated": "2026-10-20",
+        "skew": 3089
       }
     },
     {
-      "id": "clawhub.ai/evolver",
+      "id": "clawhub.ai/autogame-17/evolver",
       "name": "evolver",
       "description": "Mines runtime history for improvements to the agent.",
       "categories": ["agents"],
       "tags": ["type:tool", "effect:remote", "needs:account", "by:community", "self-improvement"],
       "clawhub.ai": {
-        "url": null,
-        "install": null,
+        "url": "https://clawhub.ai/autogame-17/skills/evolver",
+        "install": "openclaw skills install @autogame-17/evolver",
         "downloads": 89511
+      },
+      "skillMd": {
+        "version": "1.91.0",
+        "updated": "2026-10-20",
+        "skew": 1074
       }
     },
     {
@@ -7275,6 +8592,11 @@
         "installs": 289368,
         "weeklyInstalls": [6889, 8911, 8782, 10661, 13008, 42955, 57887, 73307],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 3192
       }
     },
     {
@@ -7298,6 +8620,11 @@
         "installs": 289339,
         "weeklyInstalls": [6887, 8914, 8782, 10658, 13009, 42966, 57873, 73316],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 3423
       }
     },
     {
@@ -7320,6 +8647,11 @@
         "installs": 289278,
         "weeklyInstalls": [6881, 8911, 8776, 10655, 13002, 42966, 57890, 73300],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 1864
       }
     },
     {
@@ -7344,6 +8676,11 @@
         "installs": 289254,
         "weeklyInstalls": [6880, 8916, 8774, 10652, 13003, 42960, 57876, 73306],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 1546
       }
     },
     {
@@ -7367,6 +8704,11 @@
         "installs": 289114,
         "weeklyInstalls": [6871, 8906, 8772, 10649, 12991, 42952, 57869, 73296],
         "firstSeen": "2026-04-21"
+      },
+      "skillMd": {
+        "version": "bea5875e38afd84c5513ff14a9bc739286efe533",
+        "updated": "2026-10-20",
+        "skew": 1500
       }
     },
     {
@@ -7389,6 +8731,11 @@
         "installs": 589918,
         "weeklyInstalls": [16376, 16120, 14978, 13444, 13617, 12121, 12955, 12509],
         "firstSeen": "2026-02-08"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 486
       }
     },
     {
@@ -7403,6 +8750,11 @@
         "installs": 58176,
         "weeklyInstalls": [3285, 14308, 40460, 20, 31, 19, 23, 30],
         "firstSeen": "2026-08-02"
+      },
+      "skillMd": {
+        "version": "06243a5620b0c9c97502edd4ee9e31995a3bdccd",
+        "updated": "2026-10-20",
+        "skew": 2372
       }
     },
     {
@@ -7425,6 +8777,11 @@
         "installs": 58097,
         "weeklyInstalls": [3277, 14060, 40633, 21, 35, 22, 18, 30],
         "firstSeen": "2026-08-02"
+      },
+      "skillMd": {
+        "version": "06243a5620b0c9c97502edd4ee9e31995a3bdccd",
+        "updated": "2026-10-20",
+        "skew": 2378
       }
     },
     {
@@ -7447,6 +8804,11 @@
         "installs": 57682,
         "weeklyInstalls": [3284, 14657, 39621, 14, 34, 20, 21, 30],
         "firstSeen": "2026-08-02"
+      },
+      "skillMd": {
+        "version": "06243a5620b0c9c97502edd4ee9e31995a3bdccd",
+        "updated": "2026-10-20",
+        "skew": 1839
       }
     },
     {
@@ -7469,6 +8831,11 @@
         "installs": 56446,
         "weeklyInstalls": [3297, 13562, 39451, 22, 30, 23, 26, 35],
         "firstSeen": "2026-08-02"
+      },
+      "skillMd": {
+        "version": "06243a5620b0c9c97502edd4ee9e31995a3bdccd",
+        "updated": "2026-10-20",
+        "skew": 1967
       }
     },
     {
@@ -7487,6 +8854,11 @@
       ],
       "skillhub.cn": {
         "downloads": 448554
+      },
+      "skillMd": {
+        "version": "1.0.11",
+        "updated": "2026-10-20",
+        "skew": 624
       }
     },
     {
@@ -7509,6 +8881,11 @@
         "installs": 590098,
         "weeklyInstalls": [16403, 16119, 14985, 13440, 13622, 12123, 12813, 12458],
         "firstSeen": "2026-02-04"
+      },
+      "skillMd": {
+        "version": "5be6708de8c5af9dd54b175b98ea00ed2d35deae",
+        "updated": "2026-10-20",
+        "skew": 994
       }
     },
     {
@@ -7532,6 +8909,12 @@
         "installs": 491549,
         "weeklyInstalls": [5611, 4296, 3111, 2600, 2149, 1807, 1554, 1426],
         "firstSeen": "2026-02-18"
+      },
+      "skillMd": {
+        "version": "1940385d872b16afb1965f4d62608ab088ee7da3",
+        "updated": "2026-10-20",
+        "removed": "2026-07-17",
+        "skew": 240
       }
     },
     {
@@ -7556,6 +8939,11 @@
         "installs": 63318,
         "weeklyInstalls": [748, 9030, 8923, 8894, 8916, 8527, 8868, 8896],
         "firstSeen": "2026-08-01"
+      },
+      "skillMd": {
+        "version": "b800e3a54d8d4f93ae5ee23c59d13b43df5d4462",
+        "updated": "2026-10-20",
+        "skew": 1774
       }
     },
     {
@@ -7581,6 +8969,11 @@
         "installs": 59656,
         "weeklyInstalls": [0, 6268, 8894, 8818, 8904, 8527, 8859, 8877],
         "firstSeen": "2026-08-05"
+      },
+      "skillMd": {
+        "version": "4068c79209753c74f895a4a5a6d117fcde8d94d1",
+        "updated": "2026-10-20",
+        "skew": 759
       }
     },
     {
@@ -7605,6 +8998,11 @@
         "installs": 59613,
         "weeklyInstalls": [0, 6256, 8897, 8861, 8892, 8497, 8821, 8873],
         "firstSeen": "2026-08-05"
+      },
+      "skillMd": {
+        "version": "4068c79209753c74f895a4a5a6d117fcde8d94d1",
+        "updated": "2026-10-20",
+        "skew": 622
       }
     },
     {
@@ -7628,6 +9026,11 @@
         "installs": 59553,
         "weeklyInstalls": [0, 6247, 8876, 8844, 8876, 8477, 8844, 8876],
         "firstSeen": "2026-08-05"
+      },
+      "skillMd": {
+        "version": "4068c79209753c74f895a4a5a6d117fcde8d94d1",
+        "updated": "2026-10-20",
+        "skew": 697
       }
     },
     {
@@ -7653,6 +9056,11 @@
       },
       "skillhub.cn": {
         "downloads": 373393
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 179
       }
     },
     {
@@ -7668,6 +9076,11 @@
       },
       "skillhub.cn": {
         "downloads": 254664
+      },
+      "skillMd": {
+        "version": "1.0.0",
+        "updated": "2026-10-20",
+        "skew": 143
       }
     },
     {
@@ -7688,6 +9101,11 @@
       ],
       "skillhub.cn": {
         "downloads": 1222402
+      },
+      "skillMd": {
+        "version": "2.2.0",
+        "updated": "2026-10-20",
+        "skew": 470
       }
     },
     {
@@ -7705,6 +9123,11 @@
       ],
       "skillhub.cn": {
         "downloads": 656199
+      },
+      "skillMd": {
+        "version": "1.11.4",
+        "updated": "2026-10-20",
+        "skew": 646
       }
     }
   ]

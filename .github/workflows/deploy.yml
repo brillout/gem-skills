@@ -1,5 +1,5 @@
-# Validate the data, build the site with Vite and publish it to GitHub Pages by
-# pushing the build to the `gh-pages` branch (which GitHub serves at
+# Validate the data, pre-render the site with Vike and publish it to GitHub Pages
+# by pushing the build to the `gh-pages` branch (which GitHub serves at
 # https://<owner>.github.io/<repo>). Publishing from a branch needs no Pages
 # settings, unlike the Actions-based deployment.
 name: Deploy site to GitHub Pages
@@ -30,8 +30,10 @@ jobs:
       - name: Validate skills.json and type-check
         run: pnpm run check
       - name: Build site
-        # A relative base keeps the build independent of the repository name,
-        # so it works wherever GitHub serves it (https://<owner>.github.io/<repo>).
+        # GitHub serves the site under the repository's name
+        # (https://<owner>.github.io/<repo>/). With a custom domain, set BASE to /.
+        env:
+          BASE: /${{ github.event.repository.name }}/
         run: pnpm run build
       - name: Publish to the gh-pages branch
         # Every branch gets checked; only the default branch, whatever its name, gets published.
@@ -39,5 +41,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site/dist
+          publish_dir: ./site/dist/client
           force_orphan: true
