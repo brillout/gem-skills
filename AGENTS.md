@@ -1,1 +1,2 @@
+- Project goal: allow humans to discover new skills
 - Always push directly to `main`, don't create PRs
