@@ -1,2 +1,2 @@
-- Project goal: allow humans to discover new skills
+- Project goal: enable humans to browser and discover new agent skills
 - Always push directly to `main`, don't create PRs
