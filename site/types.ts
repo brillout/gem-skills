@@ -100,6 +100,13 @@ export function github(skill: Skill): { repo: string; dir: string } | null {
   return owner.includes(".") ? null : { repo: `${owner}/${name}`, dir: dir.join("/") };
 }
 
+/**
+ * Whether a skill is retired: its SKILL.md says so (`flag:deprecated`), or it's gone from its
+ * source. The skills list and the daily sync leave retired skills out; their pages stay.
+ */
+export const retired = (skill: Skill) =>
+  skill.tags.includes("flag:deprecated") || Boolean(skill.skillMd?.removed);
+
 export interface SkillsSh {
   /** The skill's page on skills.sh. */
   url: string;

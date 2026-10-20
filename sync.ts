@@ -4,7 +4,8 @@
  * For each skill it fetches the SKILL.md from where the skill lives: its GitHub repo, ClawHub,
  * Tencent SkillHub or the website that publishes it. When the text differs from the copy, it
  * rewrites the copy, records the version in the skill's `skillMd` and recomputes `skew`, how far
- * the text has moved from the SKILL.md the skill's TLDR summarizes.
+ * the text has moved from the SKILL.md the skill's TLDR summarizes. Retired skills keep the copy
+ * they have.
  *
  * Run: pnpm run sync [id prefix...]
  */
@@ -24,7 +25,7 @@ import { dirname, join } from "node:path";
 import { promisify } from "node:util";
 import { readData, root, writeData } from "./data.ts";
 import { copyPath, rawUrl, skew } from "./site/skill-md.ts";
-import { github, type Skill, type SkillMd } from "./site/types.ts";
+import { github, retired, type Skill, type SkillMd } from "./site/types.ts";
 
 const today = new Date().toISOString().slice(0, 10);
 const scratch = mkdtempSync(join(tmpdir(), "gemskills-sync-"));
@@ -191,7 +192,6 @@ async function sync(skill: Skill) {
   const before = JSON.stringify(skill.skillMd);
   const found = await fetchSkillMd(skill);
   if (found) await save(skill, copy, found);
-  else if (skill.skillMd?.removed && copy !== null) return;
   else {
     // Gone from its source: keep the last version there was.
     const gh = github(skill);
@@ -222,7 +222,8 @@ async function pool<T>(items: T[], size: number, work: (item: T) => Promise<void
 
 const data = readData();
 const only = process.argv.slice(2);
-const skills = data.skills.filter((s) => !only.length || only.some((p) => s.id.startsWith(p)));
+const listed = data.skills.filter((s) => !only.length || only.some((p) => s.id.startsWith(p)));
+const skills = listed.filter((s) => !retired(s) || !existsSync(join(root, copyPath(s))));
 await pool(skills, 8, (skill) =>
   sync(skill).catch((error: Error) => {
     errors.push(`${skill.id}: ${error.message}`);
@@ -244,7 +245,7 @@ writeData(data);
 rmSync(scratch, { recursive: true, force: true });
 
 console.log(
-  `Checked ${skills.length} skills: ${changed.size} changed, ${removed.length} gone from their source, ${errors.length} failed.`,
+  `Checked ${skills.length} skills, skipped ${listed.length - skills.length} retired: ${changed.size} changed, ${removed.length} gone from their source, ${errors.length} failed.`,
 );
 for (const id of changed) console.log(`  changed ${id}`);
 for (const e of errors) console.error(`  failed ${e}`);
