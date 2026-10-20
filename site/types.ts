@@ -1,12 +1,13 @@
 /** The shape of ../skills.json, the single data file behind the site. */
 
-export type Registry = "skills.sh" | "ClawHub" | "Tencent SkillHub";
+/** A registry a skill can be listed on, by the domain that keys its listing on a skill. */
+export type Registry = "skills.sh" | "clawhub.ai" | "skillhub.cn";
 
 export interface Data {
   /** When the data was last edited (YYYY-MM-DD). */
   updated: string;
   /** When each kind of number was collected (YYYY-MM-DD). */
-  snapshots: Record<"installs" | "stars" | "downloads" | "tags" | "audits", string>;
+  snapshots: Record<"installs" | "stars" | "downloads" | "tags", string>;
   categories: Category[];
   facets: Facet[];
   repos: Repo[];
@@ -50,29 +51,50 @@ export interface Repo {
 }
 
 export interface Skill {
-  /** Unique: the skills.sh path, `clawhub/<owner>/<name>` or `skillhub/<name>`. */
+  /**
+   * Unique: where the skill's SKILL.md lives. On GitHub, the repo and the directory inside it,
+   * `owner/name/path/to/dir` (just `owner/name` for a SKILL.md at the root); the repo has an
+   * entry in `repos`. Otherwise a domain and the skill's name there, such as
+   * `clawhub.ai/steipete/weather`. GitHub owners can't contain a dot, so a dot in the first
+   * segment marks a skill that isn't on GitHub.
+   */
   id: string;
   name: string;
-  registry: Registry;
-  /** Who publishes it: a skills.sh source (GitHub `owner/name` or a domain) or a ClawHub handle. */
-  source: string | null;
-  /** The GitHub repo, when the source is one; it has an entry in `repos`. */
-  repo: string | null;
-  /** The skill's page on its registry. */
-  url: string | null;
-  install: string | null;
   description: string;
   categories: string[];
-  /** All-time installs on skills.sh. */
+  tags: string[];
+  "skills.sh"?: SkillsSh;
+  "clawhub.ai"?: ClawHub;
+  "skillhub.cn"?: SkillHub;
+  /** Something to know before installing. */
+  note?: string;
+}
+
+/** The GitHub repo (`owner/name`) a skill lives in, and the directory inside it, or null when it isn't on GitHub. */
+export function github(skill: Skill): { repo: string; dir: string } | null {
+  const [owner, name, ...dir] = skill.id.split("/");
+  return owner.includes(".") ? null : { repo: `${owner}/${name}`, dir: dir.join("/") };
+}
+
+export interface SkillsSh {
+  /** The skill's page on skills.sh. */
+  url: string;
+  install: string;
+  /** All-time installs, or null when the skill wasn't in the top 600. */
   installs: number | null;
   /** Installs per week for the 8 weeks up to the installs snapshot, oldest first. */
   weeklyInstalls: number[] | null;
-  downloads: Partial<Record<Registry, number>> | null;
   /** When skills.sh first saw the skill (YYYY-MM-DD). */
   firstSeen: string | null;
-  /** skills.sh security scanners and their verdicts. */
-  audits: Record<string, string> | null;
-  tags: string[];
-  /** Something to know before installing. */
-  note?: string;
+}
+
+export interface ClawHub {
+  /** The skill's page on ClawHub, or null when its publisher is unknown. */
+  url: string | null;
+  install: string | null;
+  downloads: number;
+}
+
+export interface SkillHub {
+  downloads: number;
 }

@@ -473,14 +473,12 @@ code {
 }
 
 .tag[data-tag="by:official"],
-.tag[data-tag="needs:none"],
-.tag[data-tag="audit:pass"] {
+.tag[data-tag="needs:none"] {
   background: var(--t-good);
   color: var(--t-good-ink);
 }
 
 .tag[data-tag="effect:local"],
-.tag[data-tag="audit:warn"],
 .tag[data-tag="flag:dual-use"],
 .tag[data-tag="flag:mirror"] {
   background: var(--t-warn);
@@ -488,7 +486,6 @@ code {
 }
 
 .tag[data-tag="effect:remote"],
-.tag[data-tag="audit:fail"],
 .tag[data-tag="flag:republished"],
 .tag[data-tag="flag:deprecated"] {
   background: var(--t-bad);
@@ -613,16 +610,6 @@ code {
   margin: 4px 0 0;
   color: var(--text-2);
   font-size: 13px;
-}
-
-.verdict[data-verdict="warn"] {
-  color: var(--t-warn-ink);
-  font-weight: 600;
-}
-
-.verdict[data-verdict="fail"] {
-  color: var(--t-bad-ink);
-  font-weight: 600;
 }
 
 /* ------------------------------------------------------------- stat tile */

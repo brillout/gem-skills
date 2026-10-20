@@ -8,11 +8,13 @@ The most popular agent skills, ranked by installs and tagged by what they do, ne
 
 Everything lives in one file, [`skills.json`](skills.json): 280 skills from skills.sh, ClawHub and Tencent SkillHub, their categories, the tag vocabulary and the GitHub repos behind them.
 
+A skill's `id` is where its SKILL.md lives: the GitHub repo and the directory inside it, such as `vercel-labs/skills/skills/find-skills`. A skill that isn't on GitHub starts with a domain instead, such as `clawhub.ai/steipete/weather`. What each registry reports about a skill sits under that registry's domain: `skills.sh`, `clawhub.ai` and `skillhub.cn`.
+
 | Numbers                                      | Collected  |
 | -------------------------------------------- | ---------- |
 | skills.sh installs and weekly installs       | 2026-09-21 |
 | GitHub stars, ClawHub and SkillHub downloads | 2026-09-21 |
-| Tags and skills.sh security audits           | 2026-10-19 |
+| Tags                                         | 2026-10-19 |
 
 Star, ClawHub and SkillHub numbers: data from [Best Skills](https://github.com/LinklyAI/best-skills) by [@BlueeonY](https://x.com/BlueeonY) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
@@ -26,7 +28,6 @@ Edit `skills.json`, then run `pnpm run check`, which rejects any tag outside the
 4. Add a `stack:` tag for each technology or service the skill is about.
 5. Add one to five topics, preferring existing ones.
 6. Add a `flag:` only with evidence, such as a matching original or a retirement notice.
-7. Record the `audit:` result from the skill's skills.sh page.
 
 ## Development
 

@@ -5,7 +5,7 @@
  */
 
 import { readFileSync } from "node:fs";
-import type { Data, Facet } from "./site/types.ts";
+import { github, type Data, type Facet } from "./site/types.ts";
 
 const data: Data = JSON.parse(readFileSync(new URL("./skills.json", import.meta.url), "utf8"));
 const errors: string[] = [];
@@ -36,9 +36,12 @@ for (const skill of data.skills) {
   if (!skill.description) fail(at, "missing description");
   if (skill.categories.length === 0) fail(at, "no category");
   for (const c of skill.categories) if (!categories.has(c)) fail(at, `unknown category "${c}"`);
-  if (skill.repo && !repos.has(skill.repo)) fail(at, `repo "${skill.repo}" has no entry in repos`);
-  if (skill.weeklyInstalls && skill.weeklyInstalls.length !== 8)
-    fail(at, "weeklyInstalls must have 8 weeks");
+  const repo = github(skill)?.repo;
+  if (repo && !repos.has(repo)) fail(at, `repo "${repo}" has no entry in repos`);
+  if (!skill["skills.sh"] && !skill["clawhub.ai"] && !skill["skillhub.cn"])
+    fail(at, "not listed on any registry");
+  const weekly = skill["skills.sh"]?.weeklyInstalls;
+  if (weekly && weekly.length !== 8) fail(at, "weeklyInstalls must have 8 weeks");
 
   const perFacet = new Map<string, string[]>();
   for (const tag of skill.tags) {

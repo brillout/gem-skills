@@ -5,7 +5,7 @@
 
 import raw from "../skills.json";
 import { mountSparklines, statTile } from "./sparkline.ts";
-import type { Data, Facet, Registry, Repo, Skill } from "./types.ts";
+import { github, type Data, type Facet, type Registry, type Repo, type Skill } from "./types.ts";
 
 const data = raw as unknown as Data;
 const GITHUB = "https://github.com/brillout/gemskills";
@@ -16,7 +16,12 @@ const facetById = new Map(data.facets.map((f) => [f.id, f]));
 const repoById = new Map(data.repos.map((r) => [r.id, r]));
 const categoryById = new Map(data.categories.map((c) => [c.id, c]));
 const skillIndex = new Map(data.skills.map((s, i) => [s.id, i]));
-const REGISTRIES: Registry[] = ["skills.sh", "ClawHub", "Tencent SkillHub"];
+const REGISTRIES: Record<Registry, string> = {
+  "skills.sh": "skills.sh",
+  "clawhub.ai": "ClawHub",
+  "skillhub.cn": "Tencent SkillHub",
+};
+const registriesOf = (s: Skill) => (Object.keys(REGISTRIES) as Registry[]).filter((r) => s[r]);
 
 /** Tags are `facet:value`, except topics, which are written without a prefix. */
 const tagOf = (facet: Facet, value: string) =>
@@ -27,23 +32,34 @@ for (const facet of data.facets)
   for (const v of facet.values) if (v.description) tagInfo.set(tagOf(facet, v.id), v.description);
 
 /** The order facets appear in, wherever they're listed. */
-const FACET_ORDER = ["type", "effect", "needs", "by", "topic", "stack", "flag", "audit", "lang"];
+const FACET_ORDER = ["type", "effect", "needs", "by", "topic", "stack", "flag", "lang"];
 /** Tags that hold for most skills; the list leaves them to the details panel. */
-const QUIET = new Set(["by:community", "audit:pass", "audit:none"]);
+const QUIET = new Set(["by:community"]);
 /** Tags that call for a look before installing. */
 const CAUTION = ["flag:republished", "flag:deprecated"];
 
-const repoKey = (s: Skill) => s.repo ?? s.source ?? s.registry;
-const starsOf = (s: Skill) => (s.repo ? (repoById.get(s.repo)?.stars ?? null) : null);
-const downloadsOf = (s: Skill) => (s.downloads ? Math.max(...Object.values(s.downloads)) : null);
+/** The GitHub repo a skill lives in, or else its publisher: the id without the skill's own name, such as `clawhub.ai/steipete`. */
+const repoKey = (s: Skill) => github(s)?.repo ?? s.id.slice(0, s.id.lastIndexOf("/"));
+const starsOf = (s: Skill) => {
+  const repo = github(s)?.repo;
+  return repo ? (repoById.get(repo)?.stars ?? null) : null;
+};
+const installsOf = (s: Skill) => s["skills.sh"]?.installs ?? null;
+const firstSeenOf = (s: Skill) => s["skills.sh"]?.firstSeen ?? null;
+/** The registries that count downloads rather than installs. */
+const DOWNLOADS = ["clawhub.ai", "skillhub.cn"] as const;
+const downloadsOf = (s: Skill) => {
+  const n = DOWNLOADS.flatMap((r) => s[r]?.downloads ?? []);
+  return n.length ? Math.max(...n) : null;
+};
 const searchText = new Map(
   data.skills.map((s) => [
     s.id,
     [
       s.name,
       s.description,
-      s.source,
-      s.registry,
+      repoKey(s),
+      ...registriesOf(s).map((r) => REGISTRIES[r]),
       s.note,
       ...s.tags,
       ...s.categories.map((c) => categoryById.get(c)?.label),
@@ -162,7 +178,11 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
   if (st.repo && repoKey(s) !== st.repo) return false;
   if (skip !== "category" && st.cats.length && !s.categories.some((c) => st.cats.includes(c)))
     return false;
-  if (skip !== "registry" && st.registries.length && !st.registries.includes(s.registry))
+  if (
+    skip !== "registry" &&
+    st.registries.length &&
+    !registriesOf(s).some((r) => st.registries.includes(r))
+  )
     return false;
   const selected = new Map<string, string[]>();
   for (const t of st.tags) selected.set(facetOf(t), [...(selected.get(facetOf(t)) ?? []), t]);
@@ -185,13 +205,14 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
 const desc = (a: number | null, b: number | null) => (b ?? -1) - (a ?? -1);
 const ORDER: Record<Sort, (a: Skill, b: Skill) => number> = {
   installs: (a, b) =>
-    desc(a.installs, b.installs) ||
+    desc(installsOf(a), installsOf(b)) ||
     desc(downloadsOf(a), downloadsOf(b)) ||
     a.name.localeCompare(b.name),
   downloads: (a, b) => desc(downloadsOf(a), downloadsOf(b)) || ORDER.installs(a, b),
   stars: (a, b) => desc(starsOf(a), starsOf(b)) || ORDER.installs(a, b),
   name: (a, b) => a.name.localeCompare(b.name) || ORDER.installs(a, b),
-  newest: (a, b) => (b.firstSeen ?? "").localeCompare(a.firstSeen ?? "") || ORDER.installs(a, b),
+  newest: (a, b) =>
+    (firstSeenOf(b) ?? "").localeCompare(firstSeenOf(a) ?? "") || ORDER.installs(a, b),
 };
 
 /** The filtered, sorted list, plus how many skills each bundle hides in one-per-repo mode. */
@@ -245,17 +266,23 @@ function metric(s: Skill): string {
     const stars = starsOf(s);
     return stars === null
       ? `<span class="metric muted" title="No GitHub repo star count">no stars</span>`
-      : `<span class="metric" title="GitHub stars of ${esc(s.repo ?? "")} on ${date(data.snapshots.stars)}"><strong>${compact(stars)}</strong> stars</span>`;
+      : `<span class="metric" title="GitHub stars of ${esc(repoKey(s))} on ${date(data.snapshots.stars)}"><strong>${compact(stars)}</strong> stars</span>`;
   }
-  if (state.sort === "newest" && s.firstSeen)
-    return `<span class="metric" title="First seen on skills.sh"><strong>${date(s.firstSeen)}</strong></span>`;
-  if (s.installs !== null && state.sort !== "downloads")
-    return `<span class="metric" title="All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(s.installs)}</strong> installs</span>`;
+  const firstSeen = firstSeenOf(s);
+  if (state.sort === "newest" && firstSeen)
+    return `<span class="metric" title="First seen on skills.sh"><strong>${date(firstSeen)}</strong></span>`;
+  const installs = installsOf(s);
+  if (installs !== null && state.sort !== "downloads")
+    return `<span class="metric" title="All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(installs)}</strong> installs</span>`;
   const downloads = downloadsOf(s);
   if (downloads !== null)
-    return `<span class="metric" title="Downloads on ${esc(Object.keys(s.downloads ?? {}).join(" and "))}, ${date(data.snapshots.downloads)}"><strong>${compact(downloads)}</strong> downloads</span>`;
-  if (s.installs !== null)
-    return `<span class="metric" title="All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(s.installs)}</strong> installs</span>`;
+    return `<span class="metric" title="Downloads on ${esc(
+      DOWNLOADS.filter((r) => s[r])
+        .map((r) => REGISTRIES[r])
+        .join(" and "),
+    )}, ${date(data.snapshots.downloads)}"><strong>${compact(downloads)}</strong> downloads</span>`;
+  if (installs !== null)
+    return `<span class="metric" title="All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(installs)}</strong> installs</span>`;
   return `<span class="metric muted" title="Not in the skills.sh all-time top 600 on ${date(data.snapshots.installs)}">new</span>`;
 }
 
@@ -271,7 +298,7 @@ function skillRow(s: Skill, more: number): string {
     <li class="skill${open ? " open" : ""}${caution ? " caution" : ""}" id="${domId(s)}">
       <div class="skill-head">
         <h3><button type="button" class="skill-toggle" data-open="${esc(s.id)}" aria-expanded="${open}" aria-controls="${domId(s)}-details">${esc(s.name)}</button></h3>
-        <span class="skill-source">${esc(s.source ?? s.registry)}</span>
+        <span class="skill-source">${esc(repoKey(s))}</span>
         ${metric(s)}
       </div>
       <p class="skill-desc">${esc(s.description)}</p>
@@ -286,7 +313,10 @@ function skillRow(s: Skill, more: number): string {
 }
 
 function details(s: Skill): string {
-  const repo = s.repo ? repoById.get(s.repo) : undefined;
+  const gh = github(s);
+  const repo = gh ? repoById.get(gh.repo) : undefined;
+  const sh = s["skills.sh"];
+  const claw = s["clawhub.ai"];
   const byFacet = new Map<string, string[]>();
   for (const t of s.tags) byFacet.set(facetOf(t), [...(byFacet.get(facetOf(t)) ?? []), t]);
   const tagRows = FACET_ORDER.filter((f) => byFacet.has(f))
@@ -300,36 +330,29 @@ function details(s: Skill): string {
           <td>
             <div class="tags">${tags.map((t) => tagChip(t, state.tags.includes(t))).join("")}</div>
             ${f === "topic" || f === "stack" ? "" : explained.map((t) => `<p class="tag-meaning">${esc(tagInfo.get(t) ?? "")}</p>`).join("")}
-            ${
-              f === "audit" && s.audits
-                ? `<p class="tag-meaning">${Object.entries(s.audits)
-                    .map(
-                      ([scanner, verdict]) =>
-                        `${esc(scanner)}: <span class="verdict" data-verdict="${esc(verdict.toLowerCase())}">${esc(verdict)}</span>`,
-                    )
-                    .join(" · ")} (${date(data.snapshots.audits)})</p>`
-                : ""
-            }
           </td>
         </tr>`;
     })
     .join("");
   const facts: string[] = [];
-  if (s.installs !== null)
+  if (sh?.installs != null)
     facts.push(
-      `<div><dt>Installs</dt><dd>${s.installs.toLocaleString("en")} <span class="muted">on skills.sh, ${date(data.snapshots.installs)}</span></dd></div>`,
+      `<div><dt>Installs</dt><dd>${sh.installs.toLocaleString("en")} <span class="muted">on skills.sh, ${date(data.snapshots.installs)}</span></dd></div>`,
     );
-  for (const [registry, n] of Object.entries(s.downloads ?? {}))
-    facts.push(
-      `<div><dt>Downloads</dt><dd>${n.toLocaleString("en")} <span class="muted">on ${esc(registry)}, ${date(data.snapshots.downloads)}</span></dd></div>`,
-    );
+  for (const r of DOWNLOADS) {
+    const n = s[r]?.downloads;
+    if (n !== undefined)
+      facts.push(
+        `<div><dt>Downloads</dt><dd>${n.toLocaleString("en")} <span class="muted">on ${esc(REGISTRIES[r])}, ${date(data.snapshots.downloads)}</span></dd></div>`,
+      );
+  }
   if (repo?.stars != null)
     facts.push(
       `<div><dt>Repo stars</dt><dd>${repo.stars.toLocaleString("en")} <span class="muted">${esc(repo.id)}</span></dd></div>`,
     );
-  if (s.firstSeen)
+  if (sh?.firstSeen)
     facts.push(
-      `<div><dt>First seen</dt><dd>${date(s.firstSeen)} <span class="muted">on skills.sh</span></dd></div>`,
+      `<div><dt>First seen</dt><dd>${date(sh.firstSeen)} <span class="muted">on skills.sh</span></dd></div>`,
     );
   facts.push(
     `<div><dt>Category</dt><dd>${s.categories
@@ -339,24 +362,33 @@ function details(s: Skill): string {
       .join(", ")}</dd></div>`,
   );
   const links = [
-    s.url ? `<a href="${esc(s.url)}">${esc(s.registry)} page</a>` : "",
-    repo ? `<a href="${esc(repo.url)}">GitHub repo</a>` : "",
+    sh ? `<a href="${esc(sh.url)}">skills.sh page</a>` : "",
+    claw?.url ? `<a href="${esc(claw.url)}">ClawHub page</a>` : "",
+    gh
+      ? `<a href="https://github.com/${esc(gh.repo)}${gh.dir ? `/tree/HEAD/${esc(encodeURI(gh.dir))}` : ""}">Source on GitHub</a>`
+      : "",
     `<a href="${skillsLink({ repo: repoKey(s) })}">All skills from ${esc(repoKey(s))}</a>`,
   ].filter(Boolean);
+  const installs = [sh?.install, claw?.install].filter((c): c is string => Boolean(c));
   return `
     <div class="details" id="${domId(s)}-details">
       ${s.note ? `<p class="note">${esc(s.note)}</p>` : ""}
       <div class="details-grid">
         <div>
           ${
-            s.install
-              ? `<div class="install"><code>${esc(s.install)}</code><button type="button" class="copy" data-copy="${esc(s.install)}">Copy</button></div>`
+            installs.length
+              ? installs
+                  .map(
+                    (c) =>
+                      `<div class="install"><code>${esc(c)}</code><button type="button" class="copy" data-copy="${esc(c)}">Copy</button></div>`,
+                  )
+                  .join("")
               : `<p class="muted">No install command known for this registry.</p>`
           }
           <p class="links">${links.join(" · ")}</p>
           <dl class="facts">${facts.join("")}</dl>
         </div>
-        ${s.weeklyInstalls ? statTile(s.weeklyInstalls, data.snapshots.installs, compact) : ""}
+        ${sh?.weeklyInstalls ? statTile(sh.weeklyInstalls, data.snapshots.installs, compact) : ""}
       </div>
       <table class="tag-detail">${tagRows}</table>
     </div>`;
@@ -406,15 +438,22 @@ function facetsHtml(): string {
         .join(""),
     ),
   );
-  for (const f of ["type", "effect", "needs", "by", "flag", "audit"]) sections.push(tagSection(f));
-  const regCounts = counts(state, "registry", (s) => [s.registry]);
+  for (const f of ["type", "effect", "needs", "by", "flag"]) sections.push(tagSection(f));
+  const regCounts = counts(state, "registry", registriesOf);
   sections.push(
     section(
       "Registry",
       "Where the skill is published.",
-      REGISTRIES.filter((r) => regCounts.get(r) || state.registries.includes(r))
+      (Object.keys(REGISTRIES) as Registry[])
+        .filter((r) => regCounts.get(r) || state.registries.includes(r))
         .map((r) =>
-          filterChip("data-registry", r, r, regCounts.get(r) ?? 0, state.registries.includes(r)),
+          filterChip(
+            "data-registry",
+            r,
+            REGISTRIES[r],
+            regCounts.get(r) ?? 0,
+            state.registries.includes(r),
+          ),
         )
         .join(""),
     ),
@@ -494,7 +533,8 @@ function activeFilters(): string {
   if (state.q) chips.push(remove("q", state.q, `“${state.q}”`));
   for (const c of state.cats) chips.push(remove("cat", c, categoryById.get(c)?.label ?? c));
   for (const t of state.tags) chips.push(remove("tag", t, t));
-  for (const r of state.registries) chips.push(remove("registry", r, r));
+  for (const r of state.registries)
+    chips.push(remove("registry", r, REGISTRIES[r as Registry] ?? r));
   if (state.repo) chips.push(remove("repo", state.repo, `from ${state.repo}`));
   return chips.length
     ? `<div class="active">${chips.join("")}<button type="button" class="link-button" data-action="clear">Clear all</button></div>`
@@ -593,7 +633,10 @@ const KINDS: Record<Repo["kind"], string> = {
 
 function reposView(): string {
   const listed = new Map<string, Skill[]>();
-  for (const s of data.skills) if (s.repo) listed.set(s.repo, [...(listed.get(s.repo) ?? []), s]);
+  for (const s of data.skills) {
+    const repo = github(s)?.repo;
+    if (repo) listed.set(repo, [...(listed.get(repo) ?? []), s]);
+  }
   const rows = [...data.repos]
     .sort((a, b) => desc(a.stars, b.stars) || a.id.localeCompare(b.id))
     .map((r) => {
@@ -643,10 +686,10 @@ function aboutView(): string {
         <li><strong>CI installs count too</strong>, so skills wired into pipelines are over-represented.</li>
       </ul>
       <h2>Tags</h2>
-      <p>Each skill has one type, one effect, one publisher and one audit result, plus what it needs, its stack, one to five topics and any flags. The <a href="#/tags">Tags</a> page explains every value. Tags were assigned from each skill's SKILL.md on ${date(data.snapshots.tags)}. Eleven ClawHub and Tencent SkillHub skills were tagged from their registry description because their SKILL.md couldn't be read. <code>by:official</code> is conservative: unverified vendor claims count as community.</p>
+      <p>Each skill has one type, one effect and one publisher, plus what it needs, its stack, one to five topics and any flags. The <a href="#/tags">Tags</a> page explains every value. Tags were assigned from each skill's SKILL.md on ${date(data.snapshots.tags)}. Eleven ClawHub and Tencent SkillHub skills were tagged from their registry description because their SKILL.md couldn't be read. <code>by:official</code> is conservative: unverified vendor claims count as community.</p>
       <h2>Data</h2>
       <p>Everything on this site comes from one file, <a href="${GITHUB}/blob/HEAD/skills.json">skills.json</a>. To add or correct a skill, edit it and open a pull request.</p>
-      <p>Sources: <a href="https://skills.sh">skills.sh</a> (installs, weekly trend, security audits), <a href="https://clawhub.ai">ClawHub</a> and <a href="https://skillhub.cn">Tencent SkillHub</a> (downloads), GitHub (stars), and <a href="https://dev.to/aws/the-most-popular-ai-coding-skills-right-now-4183">AWS's June 2026 survey</a> for two repos that aren't packaged as skills.</p>
+      <p>Sources: <a href="https://skills.sh">skills.sh</a> (installs, weekly trend), <a href="https://clawhub.ai">ClawHub</a> and <a href="https://skillhub.cn">Tencent SkillHub</a> (downloads), GitHub (stars), and <a href="https://dev.to/aws/the-most-popular-ai-coding-skills-right-now-4183">AWS's June 2026 survey</a> for two repos that aren't packaged as skills.</p>
       <p class="attribution">Star, ClawHub and SkillHub numbers: data from <a href="https://github.com/LinklyAI/best-skills">Best Skills</a> by <a href="https://x.com/BlueeonY">@BlueeonY</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
     </div>`;
 }
