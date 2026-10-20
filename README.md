@@ -2,7 +2,7 @@
 
 The most popular agent skills, ranked by installs and tagged by what they do, need and change.
 
-**Browse them: https://brillout.github.io/gem-skills**
+**Browse them: https://brillout.github.io/gemskills**
 
 ## Data
 
@@ -18,7 +18,7 @@ Star, ClawHub and SkillHub numbers: data from [Best Skills](https://github.com/L
 
 ## Adding or changing a skill
 
-Edit `skills.json`, then run `pnpm run check`, which rejects any tag outside the vocabulary. Tag values and their meanings are listed under `facets` in `skills.json` and on the site's [Tags](https://brillout.github.io/gem-skills/#/tags) page.
+Edit `skills.json`, then run `pnpm run check`, which rejects any tag outside the vocabulary. Tag values and their meanings are listed under `facets` in `skills.json` and on the site's [Tags](https://brillout.github.io/gemskills/#/tags) page.
 
 1. Read the skill's SKILL.md itself, not only its one-line description.
 2. Give it one `type:` and one `effect:`, judged by the skill's own steps.

@@ -8,7 +8,7 @@ import { mountSparklines, statTile } from "./sparkline.ts";
 import type { Data, Facet, Registry, Repo, Skill } from "./types.ts";
 
 const data = raw as unknown as Data;
-const GITHUB = "https://github.com/brillout/gem-skills";
+const GITHUB = "https://github.com/brillout/gemskills";
 
 // ------------------------------------------------------------------- lookups
 
