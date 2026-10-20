@@ -6,6 +6,7 @@
     "downloads": "2026-09-21",
     "tags": "2026-10-19"
   },
+  "skip": ["flag:deprecated", "flag:vendor", "lang:zh"],
   "categories": [
     {
       "id": "skill-tools",
@@ -252,6 +253,10 @@
         {
           "id": "dual-use",
           "description": "Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing."
+        },
+        {
+          "id": "vendor",
+          "description": "Only helps use one vendor's product: its framework, SDK, CLI, API, cloud or file format. A skill that merely uses a tool to get something more general done doesn't count."
         }
       ]
     },
@@ -2025,7 +2030,8 @@
         "stack:browser-act",
         "skill-authoring",
         "scraping",
-        "browser-automation"
+        "browser-automation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/browser-act/skills/browser-act-skill-forge",
@@ -2794,7 +2800,8 @@
         "by:community",
         "stack:typescript",
         "migration",
-        "testing"
+        "testing",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/migrate-to-shoehorn",
@@ -3089,7 +3096,8 @@
         "by:official",
         "stack:turborepo",
         "build-tools",
-        "ci"
+        "ci",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel/turborepo/turborepo",
@@ -3517,7 +3525,8 @@
         "needs:none",
         "by:community",
         "stack:playwright",
-        "testing"
+        "testing",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/currents-dev/playwright-best-practices-skill/playwright-best-practices",
@@ -3592,7 +3601,8 @@
         "by:official",
         "stack:momentic",
         "testing",
-        "browser-automation"
+        "browser-automation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/momentic-ai/skills/momentic-test",
@@ -3885,7 +3895,8 @@
         "by:official",
         "stack:proseify",
         "writing",
-        "anti-slop"
+        "anti-slop",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/site/proseify.xyz/anti-prose-slop",
@@ -4116,7 +4127,8 @@
         "by:official",
         "stack:nia",
         "research",
-        "documentation"
+        "documentation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/nozomio-labs/nia-skill/nia",
@@ -4347,7 +4359,8 @@
         "stack:sleek",
         "design",
         "mobile",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/designed-by-ai/skills/design-mobile-apps",
@@ -4517,7 +4530,8 @@
         "by:official",
         "stack:react",
         "stack:nextjs",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/vercel-react-view-transitions",
@@ -4572,7 +4586,8 @@
         "stack:tailwind",
         "stack:shadcn",
         "design",
-        "prototyping"
+        "prototyping",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/anthropics/skills/web-artifacts-builder",
@@ -4722,7 +4737,8 @@
         "by:official",
         "stack:stitch",
         "design-system",
-        "documentation"
+        "documentation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google-labs-code/stitch-skills/design-md",
@@ -4748,7 +4764,8 @@
         "needs:none",
         "by:official",
         "stack:gsap",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/greensock/gsap-skills/gsap-core",
@@ -4847,7 +4864,8 @@
         "stack:react",
         "stack:nextjs",
         "performance",
-        "code-quality"
+        "code-quality",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices",
@@ -4875,7 +4893,8 @@
         "stack:supabase",
         "stack:postgres",
         "databases",
-        "performance"
+        "performance",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices",
@@ -4903,7 +4922,8 @@
         "stack:react",
         "stack:nextjs",
         "code-quality",
-        "design-system"
+        "design-system",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/vercel-composition-patterns",
@@ -4930,7 +4950,8 @@
         "by:official",
         "stack:prisma",
         "databases",
-        "flag:deprecated"
+        "flag:deprecated",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/prisma/skills/prisma-database-setup",
@@ -4960,7 +4981,8 @@
         "stack:postgres",
         "databases",
         "auth",
-        "backend"
+        "backend",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/supabase/agent-skills/supabase",
@@ -4989,7 +5011,8 @@
         "stack:react",
         "stack:tailwind",
         "design-system",
-        "design"
+        "design",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/shadcn/ui/shadcn",
@@ -5017,7 +5040,8 @@
         "stack:react-native",
         "stack:expo",
         "mobile",
-        "performance"
+        "performance",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/vercel-react-native-skills",
@@ -5044,7 +5068,8 @@
         "by:official",
         "stack:neon",
         "stack:postgres",
-        "databases"
+        "databases",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/neondatabase/agent-skills/neon-postgres",
@@ -5073,7 +5098,8 @@
         "stack:nextjs",
         "backend",
         "databases",
-        "prototyping"
+        "prototyping",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/get-convex/agent-skills/convex-quickstart",
@@ -5099,7 +5125,8 @@
         "needs:none",
         "by:official",
         "stack:better-auth",
-        "auth"
+        "auth",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/better-auth/skills/better-auth-best-practices",
@@ -5127,7 +5154,8 @@
         "stack:solana",
         "stack:react",
         "stack:nextjs",
-        "web3"
+        "web3",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/solana-foundation/solana-dev-skill/solana-dev",
@@ -5154,7 +5182,8 @@
         "by:community",
         "stack:tailwind",
         "stack:react",
-        "design-system"
+        "design-system",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/wshobson/agents/tailwind-design-system",
@@ -5183,7 +5212,8 @@
         "stack:expo",
         "stack:react-native",
         "mobile",
-        "build-tools"
+        "build-tools",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/expo/skills/expo-dev-client",
@@ -5210,7 +5240,8 @@
         "by:official",
         "stack:genkit",
         "stack:typescript",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/genkit-ai/skills/developing-genkit-js",
@@ -5237,7 +5268,8 @@
         "by:official",
         "stack:ai-sdk",
         "stack:typescript",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel/ai/ai-sdk",
@@ -5264,7 +5296,8 @@
         "by:community",
         "stack:opentui",
         "stack:typescript",
-        "terminal-ui"
+        "terminal-ui",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/msmps/opentui-skill/opentui",
@@ -5291,7 +5324,8 @@
         "by:official",
         "stack:fastify",
         "stack:node",
-        "backend"
+        "backend",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mcollina/skills/fastify-best-practices",
@@ -5317,7 +5351,8 @@
         "needs:none",
         "by:official",
         "stack:prisma",
-        "databases"
+        "databases",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/prisma/skills/prisma-client-api",
@@ -5344,7 +5379,8 @@
         "by:official",
         "stack:prisma",
         "databases",
-        "migration"
+        "migration",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/prisma/skills/prisma-cli",
@@ -5372,7 +5408,8 @@
         "stack:prisma",
         "stack:postgres",
         "databases",
-        "flag:deprecated"
+        "flag:deprecated",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/prisma/skills/prisma-postgres",
@@ -5401,7 +5438,8 @@
         "stack:neon",
         "stack:postgres",
         "databases",
-        "backend"
+        "backend",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/neondatabase/agent-skills/neon",
@@ -5429,7 +5467,8 @@
         "by:official",
         "stack:azure",
         "agent-development",
-        "deployment"
+        "deployment",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/microsoft-foundry",
@@ -5457,7 +5496,8 @@
         "by:official",
         "stack:azure",
         "observability",
-        "debugging"
+        "debugging",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/azure-diagnostics",
@@ -5484,7 +5524,8 @@
         "by:official",
         "stack:azure",
         "deployment",
-        "infrastructure"
+        "infrastructure",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/azure-prepare",
@@ -5511,7 +5552,8 @@
         "needs:account",
         "by:official",
         "stack:azure",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/azure-ai",
@@ -5538,7 +5580,8 @@
         "needs:account",
         "by:official",
         "stack:azure",
-        "deployment"
+        "deployment",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/azure-deploy",
@@ -5567,7 +5610,8 @@
         "stack:google-adk",
         "stack:google-cloud",
         "deployment",
-        "ci"
+        "ci",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-deploy",
@@ -5594,7 +5638,8 @@
         "needs:account",
         "by:official",
         "stack:firebase",
-        "backend"
+        "backend",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/firebase/agent-skills/firebase-basics",
@@ -5622,7 +5667,8 @@
         "by:official",
         "stack:sentry",
         "observability",
-        "debugging"
+        "debugging",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/sentry/dev/sentry-cli",
@@ -5649,7 +5695,8 @@
         "needs:account",
         "by:official",
         "stack:vercel",
-        "deployment"
+        "deployment",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/deploy-to-vercel",
@@ -5676,7 +5723,8 @@
         "needs:account",
         "by:official",
         "stack:vercel",
-        "deployment"
+        "deployment",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/vercel-cli-with-tokens",
@@ -5702,7 +5750,8 @@
         "needs:none",
         "by:official",
         "stack:cloudflare",
-        "infrastructure"
+        "infrastructure",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/cloudflare/skills/cloudflare",
@@ -5728,7 +5777,8 @@
         "needs:none",
         "by:official",
         "stack:stripe",
-        "payments"
+        "payments",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stripe/ai/stripe-best-practices",
@@ -5756,7 +5806,8 @@
         "by:official",
         "stack:vercel",
         "performance",
-        "observability"
+        "observability",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-skills/vercel-optimize",
@@ -5783,7 +5834,8 @@
         "needs:issue-tracker",
         "by:official",
         "stack:github",
-        "issue-tracking"
+        "issue-tracking",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mitsuhiko/gh-issue-sync/gh-issue-sync",
@@ -5811,7 +5863,8 @@
         "needs:account",
         "by:official",
         "stack:cloudflare",
-        "deployment"
+        "deployment",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/cloudflare/skills/wrangler",
@@ -5837,7 +5890,8 @@
         "needs:none",
         "by:official",
         "stack:cloudflare",
-        "backend"
+        "backend",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/cloudflare/skills/workers-best-practices",
@@ -5863,7 +5917,8 @@
         "needs:none",
         "by:official",
         "stack:cloudflare",
-        "backend"
+        "backend",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/cloudflare/skills/durable-objects",
@@ -5909,7 +5964,8 @@
         "by:official",
         "stack:stripe",
         "migration",
-        "payments"
+        "payments",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stripe/ai/upgrade-stripe",
@@ -5936,7 +5992,8 @@
         "needs:account",
         "by:official",
         "stack:stripe",
-        "infrastructure"
+        "infrastructure",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stripe/ai/stripe-projects",
@@ -5964,7 +6021,8 @@
         "by:official",
         "stack:agent-browser",
         "browser-automation",
-        "agent-workflows"
+        "agent-workflows",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-browser/agent-browser",
@@ -5992,7 +6050,8 @@
         "by:official",
         "stack:scrapegraph",
         "scraping",
-        "web-search"
+        "web-search",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/scrapegraphai/just-scrape/just-scrape",
@@ -6018,7 +6077,8 @@
         "needs:cli",
         "by:official",
         "stack:orca",
-        "computer-use"
+        "computer-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stablyai/orca/computer-use",
@@ -6046,7 +6106,8 @@
         "by:official",
         "stack:playwright",
         "browser-automation",
-        "testing"
+        "testing",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/playwright-cli/playwright-cli",
@@ -6074,7 +6135,8 @@
         "by:official",
         "stack:browser-act",
         "browser-automation",
-        "scraping"
+        "scraping",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/browser-act/skills/browser-act",
@@ -6103,7 +6165,8 @@
         "stack:firecrawl",
         "scraping",
         "web-search",
-        "research"
+        "research",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/firecrawl/cli/firecrawl",
@@ -6132,7 +6195,8 @@
         "stack:browser-use",
         "browser-automation",
         "scraping",
-        "agent-workflows"
+        "agent-workflows",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/browser-use/browser-use/browser-use",
@@ -6162,7 +6226,8 @@
         "stack:playwright",
         "browser-automation",
         "fingerprinting",
-        "flag:dual-use"
+        "flag:dual-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/antibrow/anti-detect-browser-skills/anti-detect-browser",
@@ -6188,7 +6253,8 @@
         "needs:cli",
         "by:official",
         "stack:defuddle",
-        "scraping"
+        "scraping",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/kepano/obsidian-skills/defuddle",
@@ -6217,7 +6283,8 @@
         "stack:liarjs",
         "fingerprinting",
         "testing",
-        "flag:dual-use"
+        "flag:dual-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/browser-fingerprint-audit",
@@ -6245,7 +6312,8 @@
         "by:community",
         "stack:inference-sh",
         "web-search",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/101-skills/superpowers/web-search",
@@ -6274,7 +6342,8 @@
         "needs:openclaw",
         "by:community",
         "stack:agent-browser",
-        "browser-automation"
+        "browser-automation",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/matrixy/skills/agent-browser-clawdbot",
@@ -6322,7 +6391,8 @@
         "needs:openclaw",
         "by:community",
         "stack:tavily",
-        "web-search"
+        "web-search",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/jacky1n7/skills/openclaw-tavily-search",
@@ -6350,7 +6420,8 @@
         "by:official",
         "stack:hyperframes",
         "video",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/heygen-com/hyperframes/hyperframes-cli",
@@ -6379,7 +6450,8 @@
         "stack:runcomfy",
         "video",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/genmedia-labs/skills/video-edit",
@@ -6409,7 +6481,8 @@
         "stack:runcomfy",
         "audio",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/genmedia-labs/skills/ai-music",
@@ -6439,7 +6512,8 @@
         "stack:runcomfy",
         "video",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/genmedia-labs/skills/ai-video-generation",
@@ -6469,7 +6543,8 @@
         "stack:runcomfy",
         "video",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/genmedia-labs/skills/image-to-video",
@@ -6499,7 +6574,8 @@
         "stack:runcomfy",
         "image",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/genmedia-labs/skills/ai-image-generation",
@@ -6528,7 +6604,8 @@
         "stack:remotion",
         "stack:react",
         "video",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/remotion-dev/skills/remotion-best-practices",
@@ -6557,7 +6634,8 @@
         "stack:inference-sh",
         "video",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/101-skills/superpowers/ai-video-generation",
@@ -6588,7 +6666,8 @@
         "image",
         "video",
         "audio",
-        "ai-generation"
+        "ai-generation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/higgsfield-ai/skills/higgsfield-generate",
@@ -6645,7 +6724,8 @@
         "image",
         "audio",
         "ai-generation",
-        "social-media"
+        "social-media",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/degausai/wonda/wonda-cli",
@@ -6700,7 +6780,8 @@
         "by:official",
         "stack:gemini",
         "image",
-        "ai-generation"
+        "ai-generation",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/steipete/skills/nano-banana-pro",
@@ -6728,7 +6809,8 @@
         "by:official",
         "stack:hyperframes",
         "video",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/heygen-com/hyperframes/hyperframes",
@@ -6755,7 +6837,8 @@
         "by:official",
         "stack:hyperframes",
         "video",
-        "design-system"
+        "design-system",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/heygen-com/hyperframes/hyperframes-registry",
@@ -6782,7 +6865,8 @@
         "by:official",
         "stack:hyperframes",
         "video",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/heygen-com/hyperframes/hyperframes-core",
@@ -6811,7 +6895,8 @@
         "stack:hyperframes",
         "audio",
         "image",
-        "video"
+        "video",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/heygen-com/hyperframes/media-use",
@@ -6838,7 +6923,8 @@
         "by:official",
         "stack:remotion",
         "stack:react",
-        "video"
+        "video",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/remotion-dev/skills/remotion-render",
@@ -6865,7 +6951,8 @@
         "by:official",
         "stack:remotion",
         "stack:react",
-        "video"
+        "video",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/remotion-dev/skills/remotion-create",
@@ -6892,7 +6979,8 @@
         "by:official",
         "stack:remotion",
         "stack:react",
-        "video"
+        "video",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/remotion-dev/skills/remotion-captions",
@@ -6920,7 +7008,8 @@
         "stack:remotion",
         "stack:react",
         "video",
-        "animation"
+        "animation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/remotion-dev/skills/remotion-markup",
@@ -6949,7 +7038,8 @@
         "stack:inference-sh",
         "image",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/101-skills/superpowers/ai-image-generation",
@@ -6979,7 +7069,8 @@
         "stack:inference-sh",
         "video",
         "ai-generation",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/101-skills/superpowers/ai-avatar-video",
@@ -7008,7 +7099,8 @@
         "by:official",
         "stack:higgsfield",
         "image",
-        "ai-generation"
+        "ai-generation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/higgsfield-ai/skills/higgsfield-soul-id",
@@ -7037,6 +7129,7 @@
         "stack:lark",
         "documents",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7090,7 +7183,8 @@
         "needs:none",
         "by:community",
         "stack:obsidian",
-        "notes"
+        "notes",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/obsidian-vault",
@@ -7197,7 +7291,8 @@
         "needs:none",
         "by:official",
         "stack:obsidian",
-        "notes"
+        "notes",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/kepano/obsidian-skills/obsidian-markdown",
@@ -7224,7 +7319,8 @@
         "by:community",
         "stack:notion",
         "notes",
-        "documents"
+        "documents",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/intellectronica/agent-skills/notion-api",
@@ -7251,7 +7347,8 @@
         "needs:account",
         "by:official",
         "stack:google-workspace",
-        "email"
+        "email",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/googleworkspace/cli/gws-gmail",
@@ -7281,7 +7378,8 @@
         "email",
         "calendar",
         "documents",
-        "spreadsheets"
+        "spreadsheets",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/steipete/skills/gog",
@@ -7309,7 +7407,8 @@
         "needs:account",
         "by:official",
         "pdf",
-        "documents"
+        "documents",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/steipete/skills/nano-pdf",
@@ -7330,7 +7429,15 @@
       "name": "obsidian",
       "description": "Works with Obsidian vaults through obsidian-cli.",
       "categories": ["documents"],
-      "tags": ["type:tool", "effect:local", "needs:cli", "by:official", "stack:obsidian", "notes"],
+      "tags": [
+        "type:tool",
+        "effect:local",
+        "needs:cli",
+        "by:official",
+        "stack:obsidian",
+        "notes",
+        "flag:vendor"
+      ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/steipete/skills/obsidian",
         "install": "openclaw skills install @steipete/obsidian",
@@ -7359,6 +7466,7 @@
         "documents",
         "spreadsheets",
         "slides",
+        "flag:vendor",
         "lang:zh"
       ],
       "skillhub.cn": {
@@ -7385,6 +7493,7 @@
         "spreadsheets",
         "databases",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7415,6 +7524,7 @@
         "stack:lark",
         "documents",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7445,6 +7555,7 @@
         "stack:lark",
         "messaging",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7475,6 +7586,7 @@
         "stack:lark",
         "calendar",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7505,6 +7617,7 @@
         "stack:lark",
         "spreadsheets",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7535,6 +7648,7 @@
         "stack:lark",
         "email",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7567,6 +7681,7 @@
         "calendar",
         "flag:mirror",
         "flag:deprecated",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7597,6 +7712,7 @@
         "stack:lark",
         "planning",
         "flag:mirror",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -7618,7 +7734,15 @@
       "name": "obsidian-cli",
       "description": "Reads, creates and searches notes in a running Obsidian app through its CLI.",
       "categories": ["documents"],
-      "tags": ["type:tool", "effect:local", "needs:cli", "by:official", "stack:obsidian", "notes"],
+      "tags": [
+        "type:tool",
+        "effect:local",
+        "needs:cli",
+        "by:official",
+        "stack:obsidian",
+        "notes",
+        "flag:vendor"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/kepano/obsidian-skills/obsidian-cli",
         "install": "npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-cli",
@@ -7644,7 +7768,8 @@
         "by:official",
         "stack:obsidian",
         "notes",
-        "databases"
+        "databases",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/kepano/obsidian-skills/obsidian-bases",
@@ -7671,7 +7796,8 @@
         "by:official",
         "stack:obsidian",
         "diagrams",
-        "notes"
+        "notes",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/kepano/obsidian-skills/json-canvas",
@@ -7730,7 +7856,8 @@
         "stack:x-twitter",
         "social-media",
         "marketing",
-        "flag:republished"
+        "flag:republished",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/101-skills/superpowers/twitter-automation",
@@ -7806,7 +7933,8 @@
         "stack:higgsfield",
         "image",
         "ecommerce",
-        "ai-generation"
+        "ai-generation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/higgsfield-ai/skills/higgsfield-product-photoshoot",
@@ -7934,7 +8062,8 @@
         "seo",
         "performance",
         "accessibility",
-        "security"
+        "security",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/squirrelscan/skills/audit-website",
@@ -8013,7 +8142,8 @@
         "by:community",
         "stack:admapix",
         "marketing",
-        "research"
+        "research",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/fly0pants/skills/admapix",
@@ -8043,7 +8173,8 @@
         "stack:higgsfield",
         "image",
         "ecommerce",
-        "ai-generation"
+        "ai-generation",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/higgsfield-ai/skills/higgsfield-marketplace-cards",
@@ -8099,6 +8230,7 @@
         "stack:wind",
         "finance",
         "research",
+        "flag:vendor",
         "lang:zh"
       ],
       "skills.sh": {
@@ -8281,7 +8413,8 @@
         "needs:none",
         "by:official",
         "stack:google-adk",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-adk-code",
@@ -8308,7 +8441,8 @@
         "by:official",
         "stack:orca",
         "multi-agent",
-        "git"
+        "git",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stablyai/orca/orca-cli",
@@ -8334,7 +8468,8 @@
         "needs:cli",
         "by:official",
         "stack:orca",
-        "multi-agent"
+        "multi-agent",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stablyai/orca/orchestration",
@@ -8386,7 +8521,8 @@
         "needs:none",
         "by:official",
         "stack:claude",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/anthropics/skills/claude-api",
@@ -8412,7 +8548,8 @@
         "needs:account",
         "by:official",
         "stack:agentix",
-        "multi-agent"
+        "multi-agent",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/agentix-cloud/skills/agentix-ceo",
@@ -8438,7 +8575,8 @@
         "needs:account",
         "by:official",
         "stack:typesafe",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/typesafe-ai/skills/typesafe-ai",
@@ -8561,7 +8699,14 @@
       "name": "evolver",
       "description": "Mines runtime history for improvements to the agent.",
       "categories": ["agents"],
-      "tags": ["type:tool", "effect:remote", "needs:account", "by:community", "self-improvement"],
+      "tags": [
+        "type:tool",
+        "effect:remote",
+        "needs:account",
+        "by:community",
+        "self-improvement",
+        "flag:vendor"
+      ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/autogame-17/skills/evolver",
         "install": "openclaw skills install @autogame-17/evolver",
@@ -8584,7 +8729,8 @@
         "needs:cli",
         "by:official",
         "stack:google-adk",
-        "agent-development"
+        "agent-development",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-workflow",
@@ -8612,7 +8758,8 @@
         "by:official",
         "stack:google-adk",
         "agent-development",
-        "testing"
+        "testing",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-eval",
@@ -8639,7 +8786,8 @@
         "by:official",
         "stack:google-adk",
         "agent-development",
-        "ci"
+        "ci",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-scaffold",
@@ -8668,7 +8816,8 @@
         "stack:google-adk",
         "stack:google-cloud",
         "observability",
-        "infrastructure"
+        "infrastructure",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-observability",
@@ -8696,7 +8845,8 @@
         "by:official",
         "stack:google-adk",
         "stack:google-cloud",
-        "deployment"
+        "deployment",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/google/agents-cli/google-agents-cli-publish",
@@ -8723,7 +8873,8 @@
         "needs:account",
         "by:official",
         "stack:azure",
-        "security"
+        "security",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/azure-compliance",
@@ -8873,7 +9024,8 @@
         "needs:account",
         "by:official",
         "stack:azure",
-        "auth"
+        "auth",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/entra-app-registration",
@@ -8901,7 +9053,8 @@
         "by:official",
         "stack:azure",
         "auth",
-        "security"
+        "security",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/azure-skills/azure-rbac",
@@ -8931,7 +9084,8 @@
         "stack:playwright",
         "fingerprinting",
         "privacy",
-        "flag:dual-use"
+        "flag:dual-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/antibrow/anti-detect-browser-skills/multi-account-isolation",
@@ -8961,7 +9115,8 @@
         "stack:playwright",
         "fingerprinting",
         "testing",
-        "flag:dual-use"
+        "flag:dual-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/playwright-stealth-verify",
@@ -8990,7 +9145,8 @@
         "stack:liarjs",
         "fingerprinting",
         "ci",
-        "flag:dual-use"
+        "flag:dual-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/fingerprint-ci-gate",
@@ -9018,7 +9174,8 @@
         "stack:liarjs",
         "fingerprinting",
         "debugging",
-        "flag:dual-use"
+        "flag:dual-use",
+        "flag:vendor"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/fingerprint-failure-triage",
@@ -9047,7 +9204,8 @@
         "stack:github",
         "git",
         "issue-tracking",
-        "ci"
+        "ci",
+        "flag:vendor"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/steipete/skills/github",

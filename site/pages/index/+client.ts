@@ -63,7 +63,7 @@ app.addEventListener("click", (event) => {
     else if (d.remove === "registry") go({ registries: state.registries.filter((r) => r !== v) });
     else if (d.remove === "repo") go({ repo: null });
   } else if (d.action === "clear")
-    go({ q: "", cats: [], tags: [], registries: [], repo: null, hide: false, retired: false });
+    go({ q: "", cats: [], tags: [], registries: [], repo: null, hide: false, all: false });
   else if (d.action === "stack") {
     stackExpanded = !stackExpanded;
     render();
@@ -75,7 +75,7 @@ app.addEventListener("change", (event) => {
   if (el.id === "sort") go({ sort: el.value as Sort });
   else if (el.id === "one") go({ one: (el as HTMLInputElement).checked });
   else if (el.id === "hide") go({ hide: (el as HTMLInputElement).checked });
-  else if (el.id === "retired") go({ retired: (el as HTMLInputElement).checked });
+  else if (el.id === "all") go({ all: (el as HTMLInputElement).checked });
 });
 
 // The page was pre-rendered unfiltered.

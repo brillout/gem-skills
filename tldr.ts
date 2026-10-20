@@ -4,7 +4,7 @@
  * Run: pnpm run tldr [count]        the skills with the largest skew first: skew, id, copy
  *      pnpm run tldr <id> <text>    set a skill's TLDR (or pipe the text in)
  *
- * The list leaves retired skills out. Setting a TLDR resets the skill's skew to 0 and records a permalink to what the TLDR
+ * The list leaves skipped skills out (see `skip` in skills.json). Setting a TLDR resets the skill's skew to 0 and records a permalink to what the TLDR
  * summarizes: the skill's directory at the commit its copy in skill-md/ was taken from. For a
  * skill that isn't on GitHub, it's the copy itself, at the commit of this repo that last changed
  * it, so commit the copy before summarizing it.
@@ -14,7 +14,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { readData, root, writeData } from "./data.ts";
 import { copyPath, REPO } from "./site/skill-md.ts";
-import { github, retired, type Skill } from "./site/types.ts";
+import { github, skipped, type Skill } from "./site/types.ts";
 
 const git = (...args: string[]) =>
   execFileSync("git", ["-C", root, ...args], { encoding: "utf8" }).trim();
@@ -35,7 +35,7 @@ const [first, ...rest] = process.argv.slice(2);
 
 if (!first || /^\d+$/.test(first)) {
   const list = data.skills
-    .filter((s) => !retired(s))
+    .filter((s) => !skipped(data, s))
     .sort((a, b) => (b.skillMd?.skew ?? 0) - (a.skillMd?.skew ?? 0));
   for (const s of list.slice(0, first ? Number(first) : undefined))
     console.log(`${s.skillMd?.skew ?? "?"}\t${s.id}\t${copyPath(s)}${s.tldr ? "" : "\t(no TLDR)"}`);

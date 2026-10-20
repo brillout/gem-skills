@@ -8,6 +8,8 @@ export interface Data {
   updated: string;
   /** When each kind of number was collected (YYYY-MM-DD). */
   snapshots: Record<"installs" | "stars" | "downloads" | "tags", string>;
+  /** The tags whose skills the skills list and the daily sync leave out. */
+  skip: string[];
   categories: Category[];
   facets: Facet[];
   repos: Repo[];
@@ -101,11 +103,11 @@ export function github(skill: Skill): { repo: string; dir: string } | null {
 }
 
 /**
- * Whether a skill is retired: its SKILL.md says so (`flag:deprecated`), or it's gone from its
- * source. The skills list and the daily sync leave retired skills out; their pages stay.
+ * Whether the skills list and the daily sync leave a skill out: it carries one of the `skip` tags,
+ * or it's gone from its source. Its page stays.
  */
-export const retired = (skill: Skill) =>
-  skill.tags.includes("flag:deprecated") || Boolean(skill.skillMd?.removed);
+export const skipped = (data: Pick<Data, "skip">, skill: Skill) =>
+  skill.tags.some((t) => data.skip.includes(t)) || Boolean(skill.skillMd?.removed);
 
 export interface SkillsSh {
   /** The skill's page on skills.sh. */

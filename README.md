@@ -29,14 +29,14 @@ Once a day, the [Sync SKILL.md copies](.github/workflows/sync.yml) workflow runs
 - `removed`: when the SKILL.md disappeared from its source. The copy keeps its last version.
 - `skew`: how far the SKILL.md has moved from the one the skill's TLDR summarizes, in words added plus words removed. With no TLDR, it's the SKILL.md's whole word count.
 
-Retired skills are skipped: those tagged `flag:deprecated` and those gone from their source. They keep the copy they have. The site's skills list leaves them out too, unless you tick Show retired or filter on `flag:deprecated`; their pages stay.
+`skip` in `skills.json` lists the tags whose skills the sync leaves out: `flag:deprecated` (retired), `flag:vendor` (only helps use one vendor's product) and `lang:zh` (not in English). Skills gone from their source are skipped too. Skipped skills keep the copy they have. The site's skills list leaves them out as well, unless you tick Show all or filter on one of those tags; their pages stay.
 
 ## TLDRs
 
 A skill's `tldr` is a summary written from its SKILL.md, with a permalink to what it summarizes: the skill's directory on GitHub at a commit. For a skill that isn't on GitHub, the permalink points to its copy in this repo at a commit. To refresh the TLDRs that drifted most:
 
 ```bash
-pnpm run tldr 20                          # the 20 skills with the largest skew, retired ones left out
+pnpm run tldr 20                          # the 20 skills with the largest skew, skipped ones left out
 pnpm run tldr <id> "<summary>"            # set a skill's TLDR (or pipe the summary in)
 ```
 
@@ -51,7 +51,7 @@ Edit `skills.json`, run `pnpm run sync <id>` to save the skill's SKILL.md, then 
 3. List every `needs:` value that applies. Use `needs:none` only when nothing does.
 4. Add a `stack:` tag for each technology or service the skill is about.
 5. Add one to five topics, preferring existing ones.
-6. Add a `flag:` only with evidence, such as a matching original or a retirement notice.
+6. Add a `flag:` only with evidence, such as a matching original or a retirement notice. Add `flag:vendor` when the skill is about one vendor's product, such as its framework, SDK, CLI, API or cloud, rather than using a tool to get something more general done.
 
 ## Development
 

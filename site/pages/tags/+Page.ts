@@ -1,14 +1,14 @@
 import { date, esc } from "../../format.ts";
 import { skillsLink } from "../../list.ts";
 import { FACET_ORDER, data, facetById, tagChip, tagOf } from "../../skills.ts";
-import { retired, type Facet } from "../../types.ts";
+import { skipped, type Facet } from "../../types.ts";
 
 export default function Page(): string {
-  // As many skills as each tag's link lists: retired skills only count for flag:deprecated.
+  // As many skills as each tag's link lists: skipped skills only count for the skip tags.
   const n = new Map<string, number>();
   for (const s of data.skills)
     for (const t of s.tags)
-      if (!retired(s) || t === "flag:deprecated") n.set(t, (n.get(t) ?? 0) + 1);
+      if (!skipped(data, s) || data.skip.includes(t)) n.set(t, (n.get(t) ?? 0) + 1);
   const tagLink = (t: string) => tagChip(t, skillsLink({ tags: [t] }));
   const sections = FACET_ORDER.map((id) => facetById.get(id))
     .filter((f): f is Facet => Boolean(f))
