@@ -356,11 +356,6 @@ code {
   background: var(--surface);
 }
 
-.skill.open {
-  border-color: var(--border-strong);
-  box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
-}
-
 .skill-head {
   display: flex;
   flex-wrap: wrap;
@@ -373,34 +368,15 @@ code {
   font-size: 16px;
 }
 
-.skill-toggle {
-  padding: 0;
-  border: 0;
-  background: none;
+.skill-name {
+  color: var(--text);
   font-weight: 650;
-  text-align: left;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-.skill-toggle::after {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin: 0 0 3px 8px;
-  border-right: 2px solid var(--text-3);
-  border-bottom: 2px solid var(--text-3);
-  transform: rotate(45deg);
-  transition: transform 0.15s;
-}
-
-.skill-toggle[aria-expanded="true"]::after {
-  margin-bottom: 0;
-  transform: rotate(-135deg);
-}
-
-.skill-toggle:hover {
+.skill-name:hover {
   color: var(--accent-text);
+  text-decoration: underline;
 }
 
 .skill-source {
@@ -504,13 +480,7 @@ code {
   text-align: center;
 }
 
-/* ------------------------------------------------------------- details */
-
-.details {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-}
+/* ------------------------------------------------------------- skill details */
 
 .note {
   margin: 0 0 12px;
@@ -849,6 +819,131 @@ code {
   font-size: 13px;
 }
 
+/* ------------------------------------------------------------- skill page */
+
+.crumbs {
+  margin: 0 0 6px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
+.skill-page .details-grid {
+  margin-top: 20px;
+}
+
+.tldr {
+  margin: 20px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.page .tldr h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.tldr p {
+  margin: 0 0 8px;
+}
+
+.tldr p.muted {
+  margin: 0;
+  font-size: 13px;
+}
+
+.frontmatter {
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.frontmatter summary {
+  color: var(--text-2);
+  cursor: pointer;
+}
+
+.markdown {
+  margin-top: 12px;
+  padding: 4px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow-wrap: break-word;
+}
+
+.page .markdown h3,
+.page .markdown h4,
+.page .markdown h5,
+.page .markdown h6 {
+  margin: 22px 0 8px;
+  color: var(--text);
+}
+
+.page .markdown h3 {
+  font-size: 18px;
+}
+
+.page .markdown h4 {
+  font-size: 16px;
+}
+
+.page .markdown h5,
+.page .markdown h6 {
+  font-size: 14px;
+}
+
+.markdown pre,
+.frontmatter pre {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  overflow-x: auto;
+  font-size: 13px;
+}
+
+.markdown pre code {
+  font-size: inherit;
+}
+
+.markdown :not(pre) > code {
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.markdown table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.markdown th,
+.markdown td {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown blockquote {
+  margin: 12px 0;
+  padding: 0 14px;
+  border-left: 3px solid var(--border-strong);
+  color: var(--text-2);
+}
+
+.markdown img {
+  max-width: 100%;
+}
+
+.markdown hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
 /* ------------------------------------------------------------- narrow screens */
 
 @media (max-width: 900px) {
@@ -906,5 +1001,9 @@ code {
 
   .page {
     padding: 20px 16px 64px;
+  }
+
+  .markdown {
+    padding: 4px 14px;
   }
 }

@@ -12,5 +12,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["site", "check.ts"]
+  "include": ["site", "check.ts", "data.ts", "sync.ts", "tldr.ts"]
 }

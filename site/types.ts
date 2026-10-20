@@ -61,13 +61,37 @@ export interface Skill {
   id: string;
   name: string;
   description: string;
+  /** A summary of the skill, written from the SKILL.md its permalink points to. */
+  tldr?: Tldr;
   categories: string[];
   tags: string[];
   "skills.sh"?: SkillsSh;
   "clawhub.ai"?: ClawHub;
   "skillhub.cn"?: SkillHub;
+  /** The copy of the skill's SKILL.md at `skill-md/<id>.md`, which `sync.ts` keeps current. */
+  skillMd?: SkillMd;
   /** Something to know before installing. */
   note?: string;
+}
+
+export interface Tldr {
+  text: string;
+  /**
+   * GitHub permalink to what the TLDR summarizes: the skill's directory at a commit, or for a
+   * skill that isn't on GitHub, its copy in this repo at a commit.
+   */
+  permalink: string;
+}
+
+export interface SkillMd {
+  /** The version the copy was taken from: the GitHub commit, or the registry's version or digest. */
+  version: string;
+  /** When the copy last changed (YYYY-MM-DD). */
+  updated: string;
+  /** When the SKILL.md disappeared from its source (YYYY-MM-DD). The copy keeps its last version. */
+  removed?: string;
+  /** Words added plus words removed since the SKILL.md the TLDR summarizes, or all its words when there's no TLDR. */
+  skew: number;
 }
 
 /** The GitHub repo (`owner/name`) a skill lives in, and the directory inside it, or null when it isn't on GitHub. */
