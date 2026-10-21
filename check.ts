@@ -6,7 +6,7 @@
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { copyPath, REPO } from "./site/skill-md.ts";
-import { github, type Data, type Facet } from "./site/types.ts";
+import { github, tldrProblems, type Data, type Facet } from "./site/types.ts";
 
 const root = new URL("./", import.meta.url);
 const data: Data = JSON.parse(readFileSync(new URL("skills.json", root), "utf8"));
@@ -60,7 +60,7 @@ for (const skill of data.skills) {
   if (skew !== undefined && !(Number.isInteger(skew) && skew >= 0))
     fail(at, "skew must be a whole number of words");
   if (skill.tldr) {
-    if (!skill.tldr.text.trim()) fail(at, "empty TLDR");
+    for (const problem of tldrProblems(skill.tldr)) fail(at, problem);
     const gh = github(skill);
     const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const target = gh

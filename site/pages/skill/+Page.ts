@@ -10,6 +10,7 @@ import {
   data,
   facetById,
   facetOf,
+  glanceHtml,
   repoById,
   repoKey,
   tagChip,
@@ -128,7 +129,11 @@ export default function Page(pageContext: PageContextServer): string {
     <div class="page skill-page">
       <p class="crumbs"><a href="${href()}">Skills</a> <span aria-hidden="true">/</span> <a href="${skillsLink({ repo: repoKey(s) })}">${esc(repoKey(s))}</a></p>
       <h1>${esc(s.name)}</h1>
-      <p class="lede">${esc(s.description)}</p>
+      ${
+        s.tldr?.glance.length
+          ? `<section class="at-a-glance" aria-label="At a glance">${glanceHtml(s.tldr.glance)}</section>`
+          : `<p class="lede">${esc(s.description)}</p>`
+      }
       ${s.note ? `<p class="note">${esc(s.note)}</p>` : ""}
       ${removed ? `<p class="note">Gone from ${gh ? esc(gh.repo) : "its registry"} since ${date(removed)}, so installing it no longer works. The SKILL.md below is its last version.</p>` : ""}
       ${tldr(s)}

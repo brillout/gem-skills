@@ -1809,6 +1809,28 @@
       "id": "vercel-labs/skills/skills/find-skills",
       "name": "find-skills",
       "description": "Discovers and installs skills when you ask \"how do I do X\" or \"is there a skill for X\".",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you ask \"is there a skill for X?\" or \"how do I do X?\""
+          },
+          {
+            "label": "It does",
+            "text": "looks up the skills.sh leaderboard and searches with the npx skills CLI"
+          },
+          {
+            "label": "You get",
+            "text": "a few vetted skills, each with its install count, source and install command"
+          },
+          {
+            "label": "Needs",
+            "text": "Node.js, for npx skills"
+          }
+        ],
+        "text": "It turns the agent into a scout for the open skills ecosystem. When you ask how to do something, the agent first checks the skills.sh leaderboard for a well-known skill, then searches with npx skills find using specific keywords. Before recommending anything it vets it: the install count, whether the publisher is a known source, and the repo's GitHub stars, with caution under 100 installs or stars. It presents each option with what it does, its numbers, the install command and a link, and can install the one you pick. If nothing fits, it says so, offers to help directly, and suggests writing your own skill with npx skills init.",
+        "permalink": "https://github.com/vercel-labs/skills/tree/a80e4c9d12d607631249d4d7d059f835d4b2f13a/skills/find-skills"
+      },
       "categories": ["skill-tools"],
       "tags": [
         "type:tool",
@@ -1828,7 +1850,7 @@
       "skillMd": {
         "version": "a80e4c9d12d607631249d4d7d059f835d4b2f13a",
         "updated": "2026-10-20",
-        "skew": 846
+        "skew": 0
       }
     },
     {
@@ -1961,6 +1983,28 @@
       "id": "obra/superpowers/skills/using-superpowers",
       "name": "using-superpowers",
       "description": "Makes the agent look for and invoke a matching skill before every response.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you install the Superpowers bundle: it's the bundle's entry point"
+          },
+          {
+            "label": "It does",
+            "text": "makes the agent check for a matching skill before every reply, even before a clarifying question"
+          },
+          {
+            "label": "Priority",
+            "text": "process skills such as brainstorming and systematic-debugging come before implementation skills"
+          },
+          {
+            "label": "Needs",
+            "text": "the rest of Superpowers to be useful"
+          }
+        ],
+        "text": "It's the rule that makes the other Superpowers skills fire. Loaded at the start of a session, it tells the agent that if there's even a 1% chance a skill applies, it must load it before responding, including before asking a question or exploring the code, and announce which skill it's using. When several apply, process skills come first: brainstorming before building, systematic-debugging before fixing. It lists the excuses agents use to skip skills and answers each one, adapts to harnesses such as Claude Code and Codex, and gives way to your own instructions in CLAUDE.md or AGENTS.md. Subagents ignore it.",
+        "permalink": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/using-superpowers"
+      },
       "categories": ["skill-tools"],
       "tags": [
         "type:router",
@@ -1980,7 +2024,7 @@
       "skillMd": {
         "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
         "updated": "2026-10-20",
-        "skew": 492
+        "skew": 0
       }
     },
     {
@@ -2113,6 +2157,28 @@
       "id": "mattpocock/skills/skills/productivity/grill-me",
       "name": "grill-me",
       "description": "Interviews you relentlessly to sharpen a plan or design.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you have a plan or design you haven't fully thought through"
+          },
+          {
+            "label": "It does",
+            "text": "starts the grilling skill: rounds of numbered questions, each with a recommended answer"
+          },
+          {
+            "label": "Needs",
+            "text": "the grilling skill, from the same bundle"
+          },
+          {
+            "label": "Runs",
+            "text": "only when you call it"
+          }
+        ],
+        "text": "A shortcut: its whole SKILL.md tells the agent to load the grilling skill, so once started the two behave the same. The difference is how they start. grill-me only runs when you call it by name, while the agent can pick up grilling by itself when you say you want your thinking stress-tested. During the session, the agent maps your plan as a tree of decisions and questions you round by round until nothing is left assumed.",
+        "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/grill-me"
+      },
       "categories": ["planning"],
       "tags": [
         "type:workflow",
@@ -2133,7 +2199,7 @@
       "skillMd": {
         "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
         "updated": "2026-10-20",
-        "skew": 22
+        "skew": 0
       },
       "note": "Now a one-line alias that calls the grilling skill."
     },
@@ -2207,6 +2273,28 @@
       "id": "mattpocock/skills/skills/productivity/grilling",
       "name": "grilling",
       "description": "Stress-tests a plan, decision or idea, one round of questions at a time.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you have a plan, design or decision you haven't fully thought through"
+          },
+          {
+            "label": "It does",
+            "text": "asks every question it can in numbered rounds, each with its recommended answer"
+          },
+          {
+            "label": "You get",
+            "text": "a shared understanding, with nothing left assumed, before any work starts"
+          },
+          {
+            "label": "Also called",
+            "text": "grill-me, a shortcut you call by name"
+          }
+        ],
+        "text": "The agent treats your plan as a tree of decisions, where each decision opens further ones. Each round, it asks every question whose prerequisites are already settled: numbered, each with the answer it recommends, and worded so that \"yes\" accepts it. Your answers settle those branches and unlock the next round. Facts it can find in your files or tools, it looks up itself, with a subagent if needed, instead of asking you; the decisions stay yours. It ends when every branch has been visited, and doesn't act on the plan until you confirm you're aligned.",
+        "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/grilling"
+      },
       "categories": ["planning"],
       "tags": [
         "type:workflow",
@@ -2227,7 +2315,7 @@
       "skillMd": {
         "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
         "updated": "2026-10-20",
-        "skew": 328
+        "skew": 0
       }
     },
     {
@@ -3349,6 +3437,32 @@
       "id": "obra/superpowers/skills/systematic-debugging",
       "name": "systematic-debugging",
       "description": "Finds the root cause before proposing any fix.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "a bug, failing test or odd behavior shows up, especially when a quick fix is tempting"
+          },
+          {
+            "label": "It does",
+            "text": "forbids any fix until the root cause is found, through four phases in order"
+          },
+          {
+            "label": "You get",
+            "text": "a fix for the cause, backed by a failing test that now passes"
+          },
+          {
+            "label": "Stops",
+            "text": "guess-and-retry loops: after three failed fixes, it questions the design with you"
+          },
+          {
+            "label": "Part of",
+            "text": "Superpowers, next to test-driven-development and verification-before-completion"
+          }
+        ],
+        "text": "Its rule is \"no fixes without root cause investigation first\". The agent works through four phases in order. First it investigates: it reads the error in full, reproduces it, checks recent changes and, in a system with several parts, logs what enters and leaves each one to find where it breaks. Then it compares the broken code with similar code that works, forms one hypothesis and tests it with the smallest possible change. Only then does it fix: it writes a failing test, makes one change and verifies it. If three fixes have failed, it stops and discusses the architecture with you instead of trying a fourth.",
+        "permalink": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging"
+      },
       "categories": ["debugging"],
       "tags": [
         "type:workflow",
@@ -3368,7 +3482,7 @@
       "skillMd": {
         "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
         "updated": "2026-10-20",
-        "skew": 1454
+        "skew": 0
       }
     },
     {
@@ -3631,6 +3745,32 @@
       "id": "juliusbrussee/caveman/skills/caveman",
       "name": "caveman",
       "description": "Switches to ultra-compressed answers that keep technical accuracy.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "replies feel padded, or you pay per token"
+          },
+          {
+            "label": "It does",
+            "text": "makes the agent answer first, in short plain sentences, with no greetings, hedging or recaps"
+          },
+          {
+            "label": "Keeps",
+            "text": "code, commands, numbers, errors and every \"not\" exact"
+          },
+          {
+            "label": "Runs",
+            "text": "for the whole session, until you say \"stop caveman\""
+          },
+          {
+            "label": "Part of",
+            "text": "the caveman bundle: terse commits and reviews, compressed memory files, stronger modes"
+          }
+        ],
+        "text": "Despite the name, it's a writing discipline more than a joke voice: each reply leads with the answer, then the reason, then the next step. It cuts ceremony (\"Sure!\", \"Let me…\", \"Hope this helps\"), filler words and invented abbreviations, and may drop articles where a sentence still reads in one pass, but never a negation or a number. It only changes chat replies: code, commits and docs are written normally, and it switches back to full sentences for security warnings, irreversible actions and questions to you. Once on, it stays on until you turn it off.",
+        "permalink": "https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman"
+      },
       "categories": ["output-style"],
       "tags": [
         "type:mode",
@@ -3650,7 +3790,7 @@
       "skillMd": {
         "version": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
         "updated": "2026-10-20",
-        "skew": 744
+        "skew": 0
       }
     },
     {
@@ -3951,6 +4091,36 @@
       "id": "mattpocock/skills/skills/in-progress/writing-beats",
       "name": "writing-beats",
       "description": "Assembles raw material into an article as a journey of beats.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you have a pile of notes and want a first draft"
+          },
+          {
+            "label": "It does",
+            "text": "writes the article one section at a time, offering two or three next sections to pick from"
+          },
+          {
+            "label": "You get",
+            "text": "an article in its own file, steered by your choices"
+          },
+          {
+            "label": "Unlike writing-shape",
+            "text": "you choose the direction at every step, choose-your-own-adventure style"
+          },
+          {
+            "label": "Part of",
+            "text": "Matt Pocock's writing workflow, after writing-fragments"
+          },
+          {
+            "label": "Runs",
+            "text": "only when you call it"
+          }
+        ],
+        "text": "Hand it your notes and it first settles with you what readers already know. It then drafts two or three possible openings from the notes; you pick one, and it writes just that section into the article file. After each section it rereads the article and offers the next possible sections, saying which new ideas each would introduce, so you steer the piece one choice at a time until it ends. Its one hard rule is that no section may lean on an idea the reader hasn't met: either an earlier section explains it, or it's settled up front as something readers bring.",
+        "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/writing-beats"
+      },
       "categories": ["writing"],
       "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "writing"],
       "skills.sh": {
@@ -3963,7 +4133,7 @@
       "skillMd": {
         "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
         "updated": "2026-10-20",
-        "skew": 852
+        "skew": 0
       }
     },
     {
@@ -3990,6 +4160,36 @@
       "id": "mattpocock/skills/skills/in-progress/writing-shape",
       "name": "writing-shape",
       "description": "Shapes raw material into an article, paragraph by paragraph.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you have a pile of notes and want a first draft"
+          },
+          {
+            "label": "It does",
+            "text": "settles an opening with you, then builds the article one paragraph at a time"
+          },
+          {
+            "label": "You get",
+            "text": "an article in its own file; your notes file is never edited"
+          },
+          {
+            "label": "Unlike writing-beats",
+            "text": "you commit to an angle up front, then debate each block's form: prose, list, table or quote"
+          },
+          {
+            "label": "Part of",
+            "text": "Matt Pocock's writing workflow, after writing-fragments"
+          },
+          {
+            "label": "Runs",
+            "text": "only when you call it"
+          }
+        ],
+        "text": "It reads your whole notes file first, whatever form it takes: a list of fragments, a wall of prose, a transcript. After agreeing with you on what readers already know, it drafts two or three openings that each imply a different angle, and makes you pick one or a mix. From then on it keeps asking what the reader needs to hear next, pulls the answer from your notes, and argues with you whether that block should be a paragraph, a list, a table, a callout or a quote. Each agreed block is appended right away, so you watch the article grow, and like writing-beats it never lets a block rely on an idea that hasn't been explained yet.",
+        "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/writing-shape"
+      },
       "categories": ["writing"],
       "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "writing"],
       "skills.sh": {
@@ -4002,13 +4202,39 @@
       "skillMd": {
         "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
         "updated": "2026-10-20",
-        "skew": 1026
+        "skew": 0
       }
     },
     {
       "id": "mattpocock/skills/skills/in-progress/writing-fragments",
       "name": "writing-fragments",
       "description": "Interviews you to mine raw fragments before any structure exists.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you want to write an essay or article but don't know its shape yet"
+          },
+          {
+            "label": "It does",
+            "text": "interviews you and saves every usable line, anecdote and idea to one Markdown file"
+          },
+          {
+            "label": "You get",
+            "text": "a file of raw notes, with no outline"
+          },
+          {
+            "label": "Part of",
+            "text": "Matt Pocock's writing workflow, before writing-beats or writing-shape"
+          },
+          {
+            "label": "Runs",
+            "text": "only when you call it"
+          }
+        ],
+        "text": "This is the exploring half of Matt Pocock's writing workflow. You say what you'd like to write about, and the agent keeps asking: what you noticed, what happened, what you meant by a phrase you used. Anything that might survive into the final piece goes into one Markdown file: a sharp sentence, a claim with its reason, an anecdote, a quote, a half-formed thought. It pushes hardest for one coined phrase that names your idea, since the whole piece can later hang on it. It appends without asking, rereads the file before every write so your own edits survive, and never imposes headings, an outline or an order. Structure is left to writing-beats or writing-shape.",
+        "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/writing-fragments"
+      },
       "categories": ["writing"],
       "tags": [
         "type:workflow",
@@ -4028,7 +4254,7 @@
       "skillMd": {
         "version": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
         "updated": "2026-10-20",
-        "skew": 595
+        "skew": 0
       }
     },
     {
@@ -6017,6 +6243,28 @@
       "id": "vercel-labs/agent-browser/skills/agent-browser",
       "name": "agent-browser",
       "description": "Automates a browser: navigate, fill forms, click and take accessibility snapshots.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "a task needs a website: testing your app, filling a form, scraping a page"
+          },
+          {
+            "label": "It does",
+            "text": "drives Chrome from the terminal, reading pages as compact accessibility snapshots"
+          },
+          {
+            "label": "Needs",
+            "text": "the agent-browser CLI, from npm"
+          },
+          {
+            "label": "Works with",
+            "text": "Electron apps such as VS Code or Slack, and cloud browsers"
+          }
+        ],
+        "text": "The agent controls a real Chrome or Chromium through the agent-browser CLI: it opens pages, clicks, fills forms and takes screenshots. Rather than raw HTML, it reads each page as an accessibility snapshot with short element references, which keeps pages cheap in tokens. The skill itself is only a stub that tells the agent to load the full guide from the installed CLI, so the instructions always match the version you have. Extra guides cover Electron desktop apps such as VS Code, Slack or Figma, exploratory QA, and cloud browsers in Vercel Sandbox or AWS.",
+        "permalink": "https://github.com/vercel-labs/agent-browser/tree/5ee8691339a5a002e4d7454eec95250253bc7419/skills/agent-browser"
+      },
       "categories": ["browser"],
       "tags": [
         "type:tool",
@@ -6038,7 +6286,7 @@
       "skillMd": {
         "version": "5ee8691339a5a002e4d7454eec95250253bc7419",
         "updated": "2026-10-20",
-        "skew": 483
+        "skew": 0
       }
     },
     {

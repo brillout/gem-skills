@@ -33,11 +33,38 @@ Once a day, the [Sync SKILL.md copies](.github/workflows/sync.yml) workflow runs
 
 ## TLDRs
 
-A skill's `tldr` is a summary written from its SKILL.md, with a permalink to what it summarizes: the skill's directory on GitHub at a commit. For a skill that isn't on GitHub, the permalink points to its copy in this repo at a commit. To refresh the TLDRs that drifted most:
+A skill's `tldr` explains it to a human browsing the site, in two parts written from its SKILL.md:
+
+- **`glance`**: short labelled facts that place the skill at a glance. The skills list shows the first two, the skill's page shows them all, so put the most telling first. Suggested labels, none required, and invent your own when none fits: **Use it when**, **It does**, **You get**, **Unlike**, **Part of**, **Also called**, **Needs**, **Keeps**, **Runs**, **Works with**.
+- **`text`**: prose that explains what the skill does, for a full picture of it. No fixed structure.
+
+There are no minimums, only limits, which `pnpm run check` enforces: at most 8 glance items, 4 words per label, 30 words per glance item and 200 words of text.
+
+How to write them:
+
+1. Write from the SKILL.md's body. Its frontmatter `description` is a trigger for agents, not a summary for people.
+2. Use plain words. Explain any term the skill coins, such as "fragments", "beats" or "grounding", and don't just restate the skill's name.
+3. Say what you end up with: a file, a plan, a draft, a reply style.
+4. Say where it fits when it's part of a bundle or workflow, and how it differs from a close neighbour.
+5. Mention practical facts that change the decision: it only runs when called, it stays on until stopped, it needs a CLI.
+6. Check it cold: someone who has never heard of the skill should understand it from the TLDR alone.
+
+For example, writing-fragments' frontmatter says "Writing, explore: mine raw fragments, no structure yet." Its TLDR says:
+
+- **Use it when:** you want to write an essay or article but don't know its shape yet
+- **It does:** interviews you and saves every usable line, anecdote and idea to one Markdown file
+- **You get:** a file of raw notes, with no outline
+- **Part of:** Matt Pocock's writing workflow, before writing-beats or writing-shape
+- **Runs:** only when you call it
+
+> This is the exploring half of Matt Pocock's writing workflow. You say what you'd like to write about, and the agent keeps asking: what you noticed, what happened, what you meant by a phrase you used. Anything that might survive into the final piece goes into one Markdown file […]
+
+A TLDR records a permalink to what it summarizes: the skill's directory on GitHub at a commit. For a skill that isn't on GitHub, the permalink points to its copy in this repo at a commit. Until a skill has a TLDR, the site shows its one-line `description` instead. To write or refresh the TLDRs that drifted most:
 
 ```bash
 pnpm run tldr 20                          # the 20 skills with the largest skew, skipped ones left out
-pnpm run tldr <id> "<summary>"            # set a skill's TLDR (or pipe the summary in)
+pnpm run tldr <id> '{"glance": [{"label": "Use it when", "text": "…"}], "text": "…"}'
+                                          # set a skill's TLDR (or pipe the JSON in)
 ```
 
 Setting a TLDR records the permalink and resets the skill's `skew` to 0. Run it on an up-to-date checkout of the default branch, and commit the result. For a skill that isn't on GitHub, the copy must be committed first, because its permalink points to the commit that last changed it.

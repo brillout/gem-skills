@@ -16,6 +16,7 @@ import {
   facetById,
   facetOf,
   firstSeenOf,
+  glanceHtml,
   installsOf,
   registriesOf,
   repoById,
@@ -98,6 +99,8 @@ const searchText = new Map(
     [
       s.name,
       s.description,
+      ...(s.tldr?.glance.map((g) => g.text) ?? []),
+      s.tldr?.text,
       repoKey(s),
       ...registriesOf(s).map((r) => REGISTRIES[r]),
       s.note,
@@ -235,7 +238,7 @@ function skillRow(s: Skill, more: number, st: State): string {
         <span class="skill-source">${esc(repoKey(s))}</span>
         ${metric(s, st)}
       </div>
-      <p class="skill-desc">${esc(s.description)}</p>
+      ${s.tldr?.glance.length ? glanceHtml(s.tldr.glance, 2) : `<p class="skill-desc">${esc(s.description)}</p>`}
       <div class="tags">${tags.map((t) => tagChip(t, null, st.tags.includes(t))).join("")}</div>
       ${
         more

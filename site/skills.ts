@@ -2,7 +2,7 @@
 
 import raw from "../skills.json";
 import { esc, href } from "./format.ts";
-import { github, type Data, type Facet, type Registry, type Skill } from "./types.ts";
+import { github, type Data, type Facet, type Registry, type Skill, type Tldr } from "./types.ts";
 
 export const data = raw as unknown as Data;
 export const GITHUB = "https://github.com/brillout/gemskills";
@@ -54,6 +54,14 @@ export const desc = (a: number | null, b: number | null) => (b ?? -1) - (a ?? -1
 /** The skill's own page. */
 export const skillHref = (id: string) =>
   href(`skill/${id.split("/").map(encodeURIComponent).join("/")}/`);
+
+/** A TLDR's glance as a list of labelled facts, or its first `max` items. */
+export function glanceHtml(glance: Tldr["glance"], max = glance.length): string {
+  const items = glance
+    .slice(0, max)
+    .map(({ label, text }) => `<div><dt>${esc(label)}</dt><dd>${esc(text)}</dd></div>`);
+  return `<dl class="glance">${items.join("")}</dl>`;
+}
 
 /** A tag, as a link to `link`, or with no link as a toggle for the skills list's filters. */
 export function tagChip(tag: string, link: string | null, pressed = false): string {
