@@ -1,4 +1,5 @@
 - Project goal: enable humans to browser and discover new agent skills
 - Always push directly to `main`, don't create PRs
 - Zero documentation for humans for now (there is only one maintainer for now, no need to write docs for humans for now)
+  - That said, documentation that is useful for agents is good (e.g. a comment that explains non-obvious code)
 - This is a PoC with zero users
