@@ -611,7 +611,7 @@
           "name": "Writing and research",
           "values": [
             "writing",
-            "documentation",
+            "docs-writing",
             "research",
             "diagrams",
             "charts",
@@ -843,7 +843,7 @@
           "id": "writing"
         },
         {
-          "id": "documentation"
+          "id": "docs-writing"
         },
         {
           "id": "research"
@@ -1842,7 +1842,7 @@
         "needs:none",
         "by:community",
         "issue-tracking",
-        "documentation"
+        "docs-writing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/setup-matt-pocock-skills",
@@ -1941,7 +1941,7 @@
         "needs:none",
         "by:community",
         "skill-authoring",
-        "documentation",
+        "docs-writing",
         "writing"
       ],
       "skills.sh": {
@@ -2149,7 +2149,7 @@
         "by:community",
         "interview",
         "domain-modeling",
-        "documentation"
+        "docs-writing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/grill-with-docs",
@@ -2260,7 +2260,7 @@
         "needs:none",
         "by:community",
         "domain-modeling",
-        "documentation"
+        "docs-writing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/domain-modeling",
@@ -2618,7 +2618,7 @@
         "needs:none",
         "by:community",
         "domain-modeling",
-        "documentation"
+        "docs-writing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/ubiquitous-language",
@@ -3932,7 +3932,7 @@
         "needs:subagents",
         "by:community",
         "research",
-        "documentation"
+        "docs-writing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/research",
@@ -4061,7 +4061,7 @@
         "effect:local",
         "needs:none",
         "by:official",
-        "documentation",
+        "docs-writing",
         "writing"
       ],
       "skills.sh": {
@@ -4107,7 +4107,7 @@
         "needs:none",
         "by:official",
         "writing",
-        "documentation",
+        "docs-writing",
         "code-review"
       ],
       "skills.sh": {
@@ -4136,7 +4136,7 @@
         "by:official",
         "stack:nia",
         "research",
-        "documentation"
+        "docs-writing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/nozomio-labs/nia-skill/nia",
@@ -4743,7 +4743,7 @@
         "by:official",
         "stack:stitch",
         "design-system",
-        "documentation",
+        "docs-writing",
         "flag:tool-docs"
       ],
       "skills.sh": {
