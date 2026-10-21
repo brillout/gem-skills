@@ -2066,6 +2066,194 @@
         }
       ],
       "skew": 0
+    },
+    {
+      "id": "mattpocock/skills@engineering",
+      "name": "Engineering workflow",
+      "description": "Grills an idea into a spec and tickets on your issue tracker, builds them test-first, reviews the result and tunes the agent's setup.",
+      "skills": [
+        {
+          "id": "mattpocock/skills/skills/engineering/setup-matt-pocock-skills",
+          "standalone": false,
+          "note": "Writes the tracker, label and domain-doc settings under docs/agents/ that the other skills read; on its own, nothing uses them."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/ask-matt",
+          "standalone": false,
+          "note": "A map of the other skills that reads each one's SKILL.md before recommending it, so it only helps once they're installed."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/grill-with-docs",
+          "standalone": false,
+          "note": "Its whole SKILL.md loads grilling and domain-modeling."
+        },
+        {
+          "id": "mattpocock/skills/skills/productivity/grill-me",
+          "standalone": false,
+          "note": "Its whole SKILL.md loads grilling."
+        },
+        {
+          "id": "mattpocock/skills/skills/productivity/grilling",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/domain-modeling",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/research",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/productivity/handoff",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/prototype",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/wayfinder",
+          "standalone": false,
+          "note": "Resolves its decision tickets by loading grilling, domain-modeling, research and prototype, on the tracker that setup-matt-pocock-skills configures (local Markdown files without it)."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/to-spec",
+          "standalone": false,
+          "note": "Publishes to the issue tracker, with the ready-for-agent label, that setup-matt-pocock-skills configures."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/to-tickets",
+          "standalone": false,
+          "note": "Publishes to the issue tracker, with the ready-for-agent label, that setup-matt-pocock-skills configures."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/triage",
+          "standalone": false,
+          "note": "Needs the tracker and label mapping from setup-matt-pocock-skills, and loads grilling and domain-modeling to flesh out a request."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/implement",
+          "standalone": false,
+          "note": "Builds through tdd and closes with code-review, loading both as steps."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/implement-spec",
+          "standalone": false,
+          "note": "Works a spec and its tickets from to-spec and to-tickets on the configured tracker, has each subagent load tdd, and ends with code-review."
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/tdd",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/codebase-design",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/code-review",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/diagnosing-bugs",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/retro",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/productivity/writing-for-agents",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/engineering/improve-codebase-architecture",
+          "standalone": false,
+          "note": "Loads codebase-design for its vocabulary, then grilling and domain-modeling to work through the refactor you pick."
+        }
+      ],
+      "install": [
+        {
+          "label": "Any agent, with the skills CLI",
+          "command": "npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills --skill ask-matt --skill grill-with-docs --skill grill-me --skill grilling --skill domain-modeling --skill research --skill handoff --skill prototype --skill wayfinder --skill to-spec --skill to-tickets --skill triage --skill implement --skill implement-spec --skill tdd --skill codebase-design --skill code-review --skill diagnosing-bugs --skill retro --skill writing-for-agents --skill improve-codebase-architecture"
+        },
+        {
+          "label": "Claude Code plugin, with 5 more of the repo's skills",
+          "command": "claude plugin install mattpocock-skills@claude-plugins-official"
+        },
+        {
+          "label": "Codex plugin, with 5 more of the repo's skills",
+          "command": "codex plugin marketplace add mattpocock/skills && codex plugin add mattpocock-skills@mattpocock"
+        },
+        {
+          "label": "GitHub Copilot CLI plugin, with 5 more of the repo's skills",
+          "command": "copilot plugin marketplace add mattpocock/skills && copilot plugin install mattpocock-skills@mattpocock"
+        },
+        {
+          "label": "Gemini CLI, with 5 more of the repo's skills",
+          "command": "gemini skills install https://github.com/mattpocock/skills.git --path skills/engineering && gemini skills install https://github.com/mattpocock/skills.git --path skills/productivity"
+        }
+      ],
+      "skew": 16934
+    },
+    {
+      "id": "lllllllama/rigorpilot-skills",
+      "name": "RigorPilot",
+      "description": "Reproduces a deep learning research repo from its README in small audited steps, with a separate lane for trying new ideas.",
+      "skills": [
+        {
+          "id": "lllllllama/rigorpilot-skills/skills/repo-intake-and-plan",
+          "standalone": true
+        },
+        {
+          "id": "lllllllama/rigorpilot-skills/skills/paper-context-resolver",
+          "standalone": true
+        },
+        {
+          "id": "lllllllama/rigorpilot-skills/skills/env-and-assets-bootstrap",
+          "standalone": true
+        },
+        {
+          "id": "lllllllama/rigorpilot-skills/skills/minimal-run-and-audit",
+          "standalone": false,
+          "note": "Its run and report scripts load a shared runtime that ships inside ai-research-reproduction, the repo's main skill, and stop with an error without it."
+        },
+        {
+          "id": "lllllllama/rigorpilot-skills/skills/ai-research-explore",
+          "standalone": false,
+          "note": "Loads its required research loop and shared runtime from ai-research-reproduction, the repo's main skill, and hands code changes and trial runs to the repo's explore-code and explore-run skills."
+        }
+      ],
+      "install": [
+        {
+          "label": "Any agent, with the skills CLI",
+          "command": "npx skills add https://github.com/lllllllama/rigorpilot-skills --skill '*'"
+        }
+      ],
+      "skew": 2093
+    },
+    {
+      "id": "browser-act/skills",
+      "name": "BrowserAct",
+      "description": "Real-browser automation for agents, plus Skill Forge, which turns a site you scrape often into a reusable skill.",
+      "skills": [
+        {
+          "id": "browser-act/skills/browser-act",
+          "standalone": true
+        },
+        {
+          "id": "browser-act/skills/browser-act-skill-forge",
+          "standalone": false,
+          "note": "Loads the browser-act skill in its first step and explores every site through it, so it needs that skill and its CLI installed."
+        }
+      ],
+      "install": [
+        {
+          "label": "Any agent, with the skills CLI",
+          "command": "npx skills add https://github.com/browser-act/skills --skill browser-act --skill browser-act-skill-forge"
+        }
+      ],
+      "skew": 3219
     }
   ],
   "skills": [
