@@ -20,111 +20,123 @@
       "note": "Not in English, so most visitors can't read it."
     }
   ],
-  "categories": [
-    {
-      "id": "skill-tools",
-      "label": "Skill tools",
-      "name": "Skill discovery, authoring and management",
-      "description": "Find, write, vet and route to other skills."
-    },
-    {
-      "id": "planning",
-      "label": "Planning",
-      "name": "Planning, specs and requirements",
-      "description": "Make the agent question you and write the plan down before it writes code."
-    },
-    {
-      "id": "engineering",
-      "label": "Engineering",
-      "name": "Engineering workflow and coding discipline",
-      "description": "Test-first work, implementation from specs, git hygiene and scope control."
-    },
-    {
-      "id": "debugging",
-      "label": "Debugging & QA",
-      "name": "Debugging, code review and QA",
-      "description": "Find root causes, review code and test what you built."
-    },
-    {
-      "id": "output-style",
-      "label": "Output style",
-      "name": "Output style, context and token economy",
-      "description": "Change how the agent writes: shorter, complete, less generic."
-    },
-    {
-      "id": "writing",
-      "label": "Writing",
-      "name": "Writing, documentation and research",
-      "description": "Articles, docs, internal comms and research write-ups."
-    },
-    {
-      "id": "design",
-      "label": "Design",
-      "name": "Frontend design and UI taste",
-      "description": "Taste for interfaces that don't look generated: direction, motion and accessibility."
-    },
-    {
-      "id": "frameworks",
-      "label": "Frameworks",
-      "name": "Frameworks, libraries and databases",
-      "description": "Guides for frameworks, databases and SDKs, mostly from their vendors."
-    },
-    {
-      "id": "cloud",
-      "label": "Cloud",
-      "name": "Cloud, deployment and DevOps",
-      "description": "Deploy, provision, observe and debug cloud apps."
-    },
-    {
-      "id": "browser",
-      "label": "Browser",
-      "name": "Browser automation, scraping and web search",
-      "description": "Drive browsers, scrape pages and search the web."
-    },
-    {
-      "id": "media",
-      "label": "Media",
-      "name": "Video, image, audio and media generation",
-      "description": "Generate and edit video, images and audio."
-    },
-    {
-      "id": "documents",
-      "label": "Documents",
-      "name": "Documents, office suites and knowledge tools",
-      "description": "Office files, notes and suites like Lark and Google Workspace."
-    },
-    {
-      "id": "marketing",
-      "label": "Marketing",
-      "name": "Marketing, SEO, sales and social",
-      "description": "SEO, copy, conversion, social media and e-commerce."
-    },
-    {
-      "id": "science",
-      "label": "Science & data",
-      "name": "Science, data and diagrams",
-      "description": "Research reproduction, financial data, charts and diagrams."
-    },
-    {
-      "id": "agents",
-      "label": "Agents",
-      "name": "Agents, orchestration, memory and self-improvement",
-      "description": "Build agents, orchestrate workers and give agents memory."
-    },
-    {
-      "id": "security",
-      "label": "Security",
-      "name": "Security, privacy and OSINT",
-      "description": "Compliance, guardrails, OSINT and browser fingerprinting."
-    },
-    {
-      "id": "personal",
-      "label": "Personal",
-      "name": "Personal and everyday",
-      "description": "Everyday help outside work."
-    }
-  ],
   "facets": [
+    {
+      "id": "category",
+      "name": "Category",
+      "question": "What area is it for?",
+      "count": "one or more",
+      "values": [
+        {
+          "id": "software-engineering",
+          "label": "Software engineering",
+          "description": "Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.",
+          "includes": [
+            "planning",
+            "engineering",
+            "debugging",
+            "frameworks",
+            "cloud",
+            "agents",
+            "skill-tools",
+            "design",
+            "browser",
+            "security",
+            "output-style"
+          ]
+        },
+        {
+          "id": "skill-tools",
+          "label": "Skill tools",
+          "description": "Find, write, vet and route to other skills."
+        },
+        {
+          "id": "planning",
+          "label": "Planning",
+          "description": "Make the agent question you and write the plan down before it writes code."
+        },
+        {
+          "id": "engineering",
+          "label": "Engineering",
+          "description": "Test-first work, implementation from specs, git hygiene and scope control."
+        },
+        {
+          "id": "debugging",
+          "label": "Debugging & QA",
+          "description": "Find root causes, review code and test what you built."
+        },
+        {
+          "id": "output-style",
+          "label": "Output style",
+          "description": "Change how the agent replies: shorter, clearer, fewer tokens."
+        },
+        {
+          "id": "writing",
+          "label": "Writing",
+          "description": "Articles, docs, internal comms, research write-ups and prose that doesn't read as generated."
+        },
+        {
+          "id": "design",
+          "label": "Design",
+          "description": "Taste for interfaces that don't look generated: direction, motion and accessibility."
+        },
+        {
+          "id": "frameworks",
+          "label": "Frameworks",
+          "description": "Guides for frameworks, databases and SDKs, mostly from their vendors."
+        },
+        {
+          "id": "cloud",
+          "label": "Cloud",
+          "description": "Deploy, provision, observe and debug cloud apps."
+        },
+        {
+          "id": "browser",
+          "label": "Browser",
+          "description": "Drive browsers, scrape pages and search the web."
+        },
+        {
+          "id": "media",
+          "label": "Media",
+          "description": "Generate and edit video, images and audio."
+        },
+        {
+          "id": "documents",
+          "label": "Documents",
+          "description": "Office files, notes and suites like Lark and Google Workspace."
+        },
+        {
+          "id": "marketing",
+          "label": "Marketing",
+          "description": "SEO, copy, conversion, social media and e-commerce."
+        },
+        {
+          "id": "science",
+          "label": "Science & data",
+          "description": "Research reproduction, financial data, charts and diagrams."
+        },
+        {
+          "id": "agents",
+          "label": "Agents",
+          "description": "Build agents, orchestrate workers and give agents memory."
+        },
+        {
+          "id": "security",
+          "label": "Security",
+          "description": "Compliance, guardrails, skill vetting and browser fingerprinting."
+        },
+        {
+          "id": "osint",
+          "label": "OSINT",
+          "description": "Investigate people, images and leaks from public sources."
+        },
+        {
+          "id": "personal",
+          "label": "Personal",
+          "description": "Everyday help outside work."
+        }
+      ]
+    },
     {
       "id": "type",
       "name": "Type",
@@ -2083,8 +2095,8 @@
         "text": "It turns the agent into a scout for the open skills ecosystem. When you ask how to do something, the agent first checks the skills.sh leaderboard for a well-known skill, then searches with npx skills find using specific keywords. Before recommending anything it vets it: the install count, whether the publisher is a known source, and the repo's GitHub stars, with caution under 100 installs or stars. It presents each option with what it does, its numbers, the install command and a link, and can install the one you pick. If nothing fits, it says so, offers to help directly, and suggests writing your own skill with npx skills init.",
         "permalink": "https://github.com/vercel-labs/skills/tree/a80e4c9d12d607631249d4d7d059f835d4b2f13a/skills/find-skills"
       },
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -2109,8 +2121,8 @@
       "id": "mattpocock/skills/skills/engineering/setup-matt-pocock-skills",
       "name": "setup-matt-pocock-skills",
       "description": "Sets up a repo for the Matt Pocock skills: issue tracker, triage labels and domain docs.",
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:setup",
         "effect:local",
         "needs:none",
@@ -2135,8 +2147,14 @@
       "id": "mattpocock/skills/skills/engineering/ask-matt",
       "name": "ask-matt",
       "description": "Picks the right skill or flow from the Matt Pocock bundle for your situation.",
-      "categories": ["skill-tools"],
-      "tags": ["type:router", "effect:none", "needs:none", "by:community", "skill-discovery"],
+      "tags": [
+        "category:skill-tools",
+        "type:router",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "skill-discovery"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/ask-matt",
         "install": "npx skills add https://github.com/mattpocock/skills --skill ask-matt",
@@ -2154,8 +2172,8 @@
       "id": "anthropics/skills/skills/skill-creator",
       "name": "skill-creator",
       "description": "Creates, improves and eval-tests skills.",
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -2181,8 +2199,8 @@
       "id": "mattpocock/skills/skills/productivity/writing-great-skills",
       "name": "writing-great-skills",
       "description": "Teaches the vocabulary and principles that make a skill predictable.",
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -2208,8 +2226,8 @@
       "id": "mattpocock/skills/skills/productivity/writing-for-agents",
       "name": "writing-for-agents",
       "description": "Guides writing documents for agents: skills, AGENTS.md and CLAUDE.md.",
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -2257,8 +2275,8 @@
         "text": "It's the rule that makes the other Superpowers skills fire. Loaded at the start of a session, it tells the agent that if there's even a 1% chance a skill applies, it must load it before responding, including before asking a question or exploring the code, and announce which skill it's using. When several apply, process skills come first: brainstorming before building, systematic-debugging before fixing. It lists the excuses agents use to skip skills and answers each one, adapts to harnesses such as Claude Code and Codex, and gives way to your own instructions in CLAUDE.md or AGENTS.md. Subagents ignore it.",
         "permalink": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/using-superpowers"
       },
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:router",
         "effect:none",
         "needs:none",
@@ -2283,8 +2301,14 @@
       "id": "mattpocock/skills/skills/productivity/write-a-skill",
       "name": "write-a-skill",
       "description": "Scaffolds a new skill with progressive disclosure and bundled resources.",
-      "categories": ["skill-tools"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "skill-authoring"],
+      "tags": [
+        "category:skill-tools",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "skill-authoring"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/write-a-skill",
         "install": "npx skills add https://github.com/mattpocock/skills --skill write-a-skill",
@@ -2303,8 +2327,8 @@
       "id": "obra/superpowers/skills/writing-skills",
       "name": "writing-skills",
       "description": "Writes skills test-first: pressure-test with subagents, then document.",
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:workflow",
         "effect:local",
         "needs:subagents",
@@ -2329,8 +2353,8 @@
       "id": "browser-act/skills/browser-act-skill-forge",
       "name": "browser-act-skill-forge",
       "description": "Turns a browser exploration of a website into a reusable skill.",
-      "categories": ["skill-tools"],
       "tags": [
+        "category:skill-tools",
         "type:workflow",
         "effect:local",
         "needs:cli",
@@ -2358,8 +2382,9 @@
       "id": "clawhub.ai/spclaudehome/skill-vetter",
       "name": "skill-vetter",
       "description": "Vets a skill for red flags and permission scope before you install it.",
-      "categories": ["skill-tools", "security"],
       "tags": [
+        "category:skill-tools",
+        "category:security",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -2385,8 +2410,9 @@
       "id": "clawhub.ai/tokauthai/skillscan",
       "name": "skillscan",
       "description": "Acts as a security gate that every newly installed skill must pass.",
-      "categories": ["skill-tools", "security"],
       "tags": [
+        "category:skill-tools",
+        "category:security",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -2431,8 +2457,8 @@
         "text": "A shortcut: its whole SKILL.md tells the agent to load the grilling skill, so once started the two behave the same. The difference is how they start. grill-me only runs when you call it by name, while the agent can pick up grilling by itself when you say you want your thinking stress-tested. During the session, the agent maps your plan as a tree of decisions and questions you round by round until nothing is left assumed.",
         "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/grill-me"
       },
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -2459,8 +2485,8 @@
       "id": "mattpocock/skills/skills/engineering/grill-with-docs",
       "name": "grill-with-docs",
       "description": "Runs the same interview and writes ADRs and a glossary as it goes.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -2487,8 +2513,14 @@
       "id": "mattpocock/skills/skills/productivity/handoff",
       "name": "handoff",
       "description": "Compacts the conversation into a handoff document for another agent.",
-      "categories": ["planning"],
-      "tags": ["type:command", "effect:local", "needs:none", "by:community", "handoff"],
+      "tags": [
+        "category:planning",
+        "type:command",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "handoff"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/handoff",
         "install": "npx skills add https://github.com/mattpocock/skills --skill handoff",
@@ -2506,8 +2538,14 @@
       "id": "mattpocock/skills/skills/engineering/prototype",
       "name": "prototype",
       "description": "Builds a throwaway prototype to answer a design question.",
-      "categories": ["planning"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "prototyping"],
+      "tags": [
+        "category:planning",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "prototyping"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/prototype",
         "install": "npx skills add https://github.com/mattpocock/skills --skill prototype",
@@ -2547,8 +2585,8 @@
         "text": "The agent treats your plan as a tree of decisions, where each decision opens further ones. Each round, it asks every question whose prerequisites are already settled: numbered, each with the answer it recommends, and worded so that \"yes\" accepts it. Your answers settle those branches and unlock the next round. Facts it can find in your files or tools, it looks up itself, with a subagent if needed, instead of asking you; the decisions stay yours. It ends when every branch has been visited, and doesn't act on the plan until you confirm you're aligned.",
         "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/grilling"
       },
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -2574,8 +2612,14 @@
       "id": "mattpocock/skills/skills/productivity/teach",
       "name": "teach",
       "description": "Teaches you a skill or concept across sessions, inside the workspace.",
-      "categories": ["planning"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "learning"],
+      "tags": [
+        "category:planning",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "learning"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/teach",
         "install": "npx skills add https://github.com/mattpocock/skills --skill teach",
@@ -2593,8 +2637,8 @@
       "id": "mattpocock/skills/skills/engineering/domain-modeling",
       "name": "domain-modeling",
       "description": "Builds and sharpens the project's domain model, CONTEXT.md and ADRs.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -2619,8 +2663,14 @@
       "id": "mattpocock/skills/skills/engineering/codebase-design",
       "name": "codebase-design",
       "description": "Gives a shared vocabulary and principles for designing deep modules.",
-      "categories": ["planning"],
-      "tags": ["type:guidelines", "effect:none", "needs:none", "by:community", "architecture"],
+      "tags": [
+        "category:planning",
+        "type:guidelines",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "architecture"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/codebase-design",
         "install": "npx skills add https://github.com/mattpocock/skills --skill codebase-design",
@@ -2638,8 +2688,8 @@
       "id": "mattpocock/skills/skills/engineering/wayfinder",
       "name": "wayfinder",
       "description": "Plans work too big for one session as a map of decision tickets.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:remote",
         "needs:issue-tracker",
@@ -2664,8 +2714,8 @@
       "id": "mattpocock/skills/skills/engineering/to-spec",
       "name": "to-spec",
       "description": "Turns the conversation into a spec on the issue tracker.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:command",
         "effect:remote",
         "needs:issue-tracker",
@@ -2690,8 +2740,8 @@
       "id": "mattpocock/skills/skills/engineering/to-tickets",
       "name": "to-tickets",
       "description": "Breaks a plan into tracer-bullet tickets with blocking edges.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:command",
         "effect:remote",
         "needs:issue-tracker",
@@ -2716,8 +2766,8 @@
       "id": "obra/superpowers/skills/brainstorming",
       "name": "brainstorming",
       "description": "Explores what you actually want before any creative work starts.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -2744,8 +2794,8 @@
       "id": "mattpocock/skills/skills/engineering/to-prd",
       "name": "to-prd",
       "description": "Turns the conversation into a PRD on the issue tracker.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:command",
         "effect:remote",
         "needs:issue-tracker",
@@ -2771,8 +2821,8 @@
       "id": "mattpocock/skills/skills/engineering/to-issues",
       "name": "to-issues",
       "description": "Breaks a plan into independently grabbable issues.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:command",
         "effect:remote",
         "needs:issue-tracker",
@@ -2798,8 +2848,14 @@
       "id": "mattpocock/skills/skills/productivity/to-questionnaire",
       "name": "to-questionnaire",
       "description": "Turns a decision you can't answer alone into a questionnaire for someone else.",
-      "categories": ["planning"],
-      "tags": ["type:command", "effect:local", "needs:none", "by:community", "requirements"],
+      "tags": [
+        "category:planning",
+        "type:command",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "requirements"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/to-questionnaire",
         "install": "npx skills add https://github.com/mattpocock/skills --skill to-questionnaire",
@@ -2817,8 +2873,8 @@
       "id": "mattpocock/skills/skills/in-progress/loop-me",
       "name": "loop-me",
       "description": "Grills you about the specs of workflows you want to build.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -2843,8 +2899,8 @@
       "id": "mattpocock/skills/skills/in-progress/claude-handoff",
       "name": "claude-handoff",
       "description": "Hands the conversation to a fresh Claude Code background agent.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:command",
         "effect:local",
         "needs:claude-code",
@@ -2869,8 +2925,8 @@
       "id": "obra/superpowers/skills/writing-plans",
       "name": "writing-plans",
       "description": "Writes an implementation plan from a spec before touching code.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -2895,8 +2951,8 @@
       "id": "mattpocock/skills/skills/deprecated/design-an-interface",
       "name": "design-an-interface",
       "description": "Generates radically different interface designs for a module with parallel subagents.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:none",
         "needs:subagents",
@@ -2922,8 +2978,8 @@
       "id": "mattpocock/skills/skills/deprecated/request-refactor-plan",
       "name": "request-refactor-plan",
       "description": "Interviews you into a tiny-commit refactor plan and files it as an issue.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:workflow",
         "effect:remote",
         "needs:issue-tracker",
@@ -2951,8 +3007,8 @@
       "id": "mattpocock/skills/skills/deprecated/ubiquitous-language",
       "name": "ubiquitous-language",
       "description": "Extracts a DDD-style glossary from the conversation.",
-      "categories": ["planning"],
       "tags": [
+        "category:planning",
         "type:command",
         "effect:local",
         "needs:none",
@@ -2978,8 +3034,8 @@
       "id": "mattpocock/skills/skills/engineering/improve-codebase-architecture",
       "name": "improve-codebase-architecture",
       "description": "Scans a codebase for deepening opportunities, renders an HTML report, then grills through the one you pick.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3004,8 +3060,15 @@
       "id": "mattpocock/skills/skills/engineering/tdd",
       "name": "tdd",
       "description": "Guides test-first feature and bug work with a red-green-refactor loop.",
-      "categories": ["engineering"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "tdd", "testing"],
+      "tags": [
+        "category:engineering",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "tdd",
+        "testing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/tdd",
         "install": "npx skills add https://github.com/mattpocock/skills --skill tdd",
@@ -3023,8 +3086,14 @@
       "id": "mattpocock/skills/skills/engineering/implement",
       "name": "implement",
       "description": "Implements a piece of work from a spec or tickets.",
-      "categories": ["engineering"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "implementation"],
+      "tags": [
+        "category:engineering",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "implementation"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/implement",
         "install": "npx skills add https://github.com/mattpocock/skills --skill implement",
@@ -3042,8 +3111,14 @@
       "id": "mattpocock/skills/skills/engineering/resolving-merge-conflicts",
       "name": "resolving-merge-conflicts",
       "description": "Resolves an in-progress merge or rebase conflict.",
-      "categories": ["engineering"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "git"],
+      "tags": [
+        "category:engineering",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "git"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/resolving-merge-conflicts",
         "install": "npx skills add https://github.com/mattpocock/skills --skill resolving-merge-conflicts",
@@ -3062,8 +3137,8 @@
       "id": "mattpocock/skills/skills/engineering/wizard",
       "name": "wizard",
       "description": "Generates an interactive bash wizard for steps only a human can do, such as credentials or CI setup.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:command",
         "effect:local",
         "needs:none",
@@ -3088,8 +3163,9 @@
       "id": "mattpocock/skills/skills/misc/git-guardrails-claude-code",
       "name": "git-guardrails-claude-code",
       "description": "Blocks destructive git commands with Claude Code hooks.",
-      "categories": ["engineering", "security"],
       "tags": [
+        "category:engineering",
+        "category:security",
         "type:setup",
         "effect:local",
         "needs:claude-code",
@@ -3116,8 +3192,8 @@
       "id": "mattpocock/skills/skills/misc/setup-pre-commit",
       "name": "setup-pre-commit",
       "description": "Sets up Husky pre-commit hooks with lint-staged, type checks and tests.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:setup",
         "effect:local",
         "needs:none",
@@ -3144,8 +3220,8 @@
       "id": "mattpocock/skills/skills/misc/migrate-to-shoehorn",
       "name": "migrate-to-shoehorn",
       "description": "Replaces type assertions in tests with shoehorn's type-safe helpers.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3172,8 +3248,8 @@
       "id": "mattpocock/skills/skills/in-progress/setup-ts-deep-modules",
       "name": "setup-ts-deep-modules",
       "description": "Enforces deep-module boundaries with dependency-cruiser.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:setup",
         "effect:local",
         "needs:none",
@@ -3199,8 +3275,8 @@
       "id": "obra/superpowers/skills/test-driven-development",
       "name": "test-driven-development",
       "description": "Writes the failing test first, then the code.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3226,8 +3302,8 @@
       "id": "obra/superpowers/skills/executing-plans",
       "name": "executing-plans",
       "description": "Executes an implementation plan inline in the current session.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3252,8 +3328,8 @@
       "id": "obra/superpowers/skills/verification-before-completion",
       "name": "verification-before-completion",
       "description": "Requires running verification commands before claiming work is done.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -3279,8 +3355,9 @@
       "id": "obra/superpowers/skills/subagent-driven-development",
       "name": "subagent-driven-development",
       "description": "Executes a plan with one fresh subagent per task and a review after each.",
-      "categories": ["engineering", "agents"],
       "tags": [
+        "category:engineering",
+        "category:agents",
         "type:workflow",
         "effect:local",
         "needs:subagents",
@@ -3306,8 +3383,9 @@
       "id": "obra/superpowers/skills/dispatching-parallel-agents",
       "name": "dispatching-parallel-agents",
       "description": "Splits independent tasks across parallel agents.",
-      "categories": ["engineering", "agents"],
       "tags": [
+        "category:engineering",
+        "category:agents",
         "type:workflow",
         "effect:none",
         "needs:subagents",
@@ -3332,8 +3410,8 @@
       "id": "obra/superpowers/skills/using-git-worktrees",
       "name": "using-git-worktrees",
       "description": "Isolates feature work in a git worktree.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3359,8 +3437,8 @@
       "id": "obra/superpowers/skills/finishing-a-development-branch",
       "name": "finishing-a-development-branch",
       "description": "Verifies tests, then merges, opens a PR or cleans up a finished branch.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:remote",
         "needs:none",
@@ -3386,8 +3464,8 @@
       "id": "mattpocock/skills/skills/engineering/implement-spec",
       "name": "implement-spec",
       "description": "Implements a spec through its tickets, with subagents.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:issue-tracker",
@@ -3414,8 +3492,8 @@
       "id": "wshobson/agents/plugins/javascript-typescript/skills/typescript-advanced-types",
       "name": "typescript-advanced-types",
       "description": "Teaches TypeScript generics, conditional, mapped and template-literal types.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -3440,8 +3518,8 @@
       "id": "vercel/turborepo/skills/turborepo",
       "name": "turborepo",
       "description": "Guides Turborepo pipelines, caching and filters.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -3468,8 +3546,8 @@
       "id": "dietrichgebert/ponytail/skills/ponytail",
       "name": "ponytail",
       "description": "Forces the laziest solution that works: the best code is the code you never write.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:mode",
         "effect:none",
         "needs:none",
@@ -3494,8 +3572,8 @@
       "id": "juliusbrussee/caveman/skills/safe-refactor",
       "name": "safe-refactor",
       "description": "Restructures code while preserving behavior, with verification around each edit.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3520,8 +3598,8 @@
       "id": "juliusbrussee/caveman/skills/surgical-patch",
       "name": "surgical-patch",
       "description": "Fixes bugs at the narrowest layer that owns the wrong behavior.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3546,8 +3624,8 @@
       "id": "juliusbrussee/caveman/skills/lean-build",
       "name": "lean-build",
       "description": "Builds features with strict scope to avoid overbuilding.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3572,8 +3650,14 @@
       "id": "juliusbrussee/caveman/skills/migration",
       "name": "migration",
       "description": "Implements reversible migrations of schemas, data, APIs and dependencies.",
-      "categories": ["engineering"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "migration"],
+      "tags": [
+        "category:engineering",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "migration"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/juliusbrussee/caveman/migration",
         "install": "npx skills add https://github.com/juliusbrussee/caveman --skill migration",
@@ -3591,8 +3675,8 @@
       "id": "mattpocock/skills/skills/engineering/triage",
       "name": "triage",
       "description": "Moves issues and external PRs through a triage state machine and writes agent-ready briefs.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:remote",
         "needs:issue-tracker",
@@ -3617,8 +3701,8 @@
       "id": "mattpocock/skills/skills/engineering/diagnosing-bugs",
       "name": "diagnosing-bugs",
       "description": "Runs a diagnosis loop for hard bugs and performance regressions.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3643,8 +3727,14 @@
       "id": "mattpocock/skills/skills/engineering/code-review",
       "name": "code-review",
       "description": "Reviews changes since a fixed point against the repo's standards and the spec.",
-      "categories": ["debugging"],
-      "tags": ["type:workflow", "effect:none", "needs:subagents", "by:community", "code-review"],
+      "tags": [
+        "category:debugging",
+        "type:workflow",
+        "effect:none",
+        "needs:subagents",
+        "by:community",
+        "code-review"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/code-review",
         "install": "npx skills add https://github.com/mattpocock/skills --skill code-review",
@@ -3662,8 +3752,8 @@
       "id": "juliusbrussee/caveman/skills/caveman-review",
       "name": "caveman-review",
       "description": "Writes terse code review comments, one line per finding.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -3711,8 +3801,8 @@
         "text": "Its rule is \"no fixes without root cause investigation first\". The agent works through four phases in order. First it investigates: it reads the error in full, reproduces it, checks recent changes and, in a system with several parts, logs what enters and leaves each one to find where it breaks. Then it compares the broken code with similar code that works, forms one hypothesis and tests it with the smallest possible change. Only then does it fix: it writes a failing test, makes one change and verifies it. If three fixes have failed, it stops and discusses the architecture with you instead of trying a fourth.",
         "permalink": "https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging"
       },
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3737,8 +3827,8 @@
       "id": "mattpocock/skills/skills/engineering/diagnose",
       "name": "diagnose",
       "description": "Reproduces, minimises, hypothesises, instruments, fixes and regression-tests a bug.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3764,8 +3854,8 @@
       "id": "obra/superpowers/skills/requesting-code-review",
       "name": "requesting-code-review",
       "description": "Sends finished work to a reviewer subagent before merging.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:none",
         "needs:subagents",
@@ -3791,8 +3881,8 @@
       "id": "mattpocock/skills/skills/deprecated/qa",
       "name": "qa",
       "description": "Runs a conversational QA session and files GitHub issues.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:remote",
         "needs:issue-tracker",
@@ -3818,8 +3908,14 @@
       "id": "obra/superpowers/skills/receiving-code-review",
       "name": "receiving-code-review",
       "description": "Evaluates review feedback technically before implementing it.",
-      "categories": ["debugging"],
-      "tags": ["type:guidelines", "effect:none", "needs:none", "by:community", "code-review"],
+      "tags": [
+        "category:debugging",
+        "type:guidelines",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "code-review"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/obra/superpowers/receiving-code-review",
         "install": "npx skills add https://github.com/obra/superpowers --skill receiving-code-review",
@@ -3837,8 +3933,8 @@
       "id": "anthropics/skills/skills/webapp-testing",
       "name": "webapp-testing",
       "description": "Tests local web apps with Playwright scripts.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -3866,8 +3962,8 @@
       "id": "mattpocock/skills/skills/engineering/retro",
       "name": "retro",
       "description": "Runs a retrospective on a coding session and improves the agent's setup.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -3892,8 +3988,8 @@
       "id": "currents-dev/playwright-best-practices-skill/playwright-best-practices",
       "name": "playwright-best-practices",
       "description": "Guides writing Playwright tests, fixing flaky ones and running them in CI.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -3918,8 +4014,8 @@
       "id": "2dmurali/review-loop-skill/review-loop",
       "name": "review-loop",
       "description": "Revises work until a critic subagent scores it above a quality gate.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:workflow",
         "effect:local",
         "needs:subagents",
@@ -3945,8 +4041,14 @@
       "id": "juliusbrussee/caveman/skills/investigate-first",
       "name": "investigate-first",
       "description": "Diagnoses ambiguous failures before editing.",
-      "categories": ["debugging"],
-      "tags": ["type:workflow", "effect:none", "needs:none", "by:community", "debugging"],
+      "tags": [
+        "category:debugging",
+        "type:workflow",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "debugging"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/juliusbrussee/caveman/investigate-first",
         "install": "npx skills add https://github.com/juliusbrussee/caveman --skill investigate-first",
@@ -3964,8 +4066,8 @@
       "id": "momentic-ai/skills/skills/momentic-test",
       "name": "momentic-test",
       "description": "Creates and maintains Momentic browser end-to-end tests.",
-      "categories": ["debugging"],
       "tags": [
+        "category:debugging",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -4015,8 +4117,8 @@
         "text": "Despite the name, it's a writing discipline more than a joke voice: each reply leads with the answer, then the reason, then the next step. It cuts ceremony (\"Sure!\", \"Let me…\", \"Hope this helps\"), filler words and invented abbreviations, and may drop articles where a sentence still reads in one pass, but never a negation or a number. It only changes chat replies: code, commits and docs are written normally, and it switches back to full sentences for security warnings, irreversible actions and questions to you. Once on, it stays on until you turn it off.",
         "permalink": "https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman"
       },
-      "categories": ["output-style"],
       "tags": [
+        "category:output-style",
         "type:mode",
         "effect:none",
         "needs:none",
@@ -4041,8 +4143,8 @@
       "id": "juliusbrussee/caveman/skills/caveman-commit",
       "name": "caveman-commit",
       "description": "Writes Conventional Commits messages compressed to intent only.",
-      "categories": ["output-style"],
       "tags": [
+        "category:output-style",
         "type:command",
         "effect:none",
         "needs:none",
@@ -4069,8 +4171,14 @@
       "id": "juliusbrussee/caveman/skills/caveman-compress",
       "name": "caveman-compress",
       "description": "Compresses CLAUDE.md or todo files into caveman format to save input tokens.",
-      "categories": ["output-style"],
-      "tags": ["type:command", "effect:local", "needs:account", "by:community", "token-saving"],
+      "tags": [
+        "category:output-style",
+        "type:command",
+        "effect:local",
+        "needs:account",
+        "by:community",
+        "token-saving"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/juliusbrussee/caveman/caveman-compress",
         "install": "npx skills add https://github.com/juliusbrussee/caveman --skill caveman-compress",
@@ -4089,8 +4197,14 @@
       "id": "juliusbrussee/caveman/skills/caveman-help",
       "name": "caveman-help",
       "description": "Shows a quick-reference card for caveman modes.",
-      "categories": ["output-style"],
-      "tags": ["type:command", "effect:none", "needs:none", "by:community", "output-style"],
+      "tags": [
+        "category:output-style",
+        "type:command",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "output-style"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/juliusbrussee/caveman/caveman-help",
         "install": "npx skills add https://github.com/juliusbrussee/caveman --skill caveman-help",
@@ -4108,8 +4222,8 @@
       "id": "leonxlnx/taste-skill/skills/output-skill",
       "name": "full-output-enforcement",
       "description": "Bans placeholders and truncated output.",
-      "categories": ["output-style"],
       "tags": [
+        "category:output-style",
         "type:mode",
         "effect:none",
         "needs:none",
@@ -4135,8 +4249,9 @@
       "id": "juliusbrussee/caveman/skills/cavecrew",
       "name": "cavecrew",
       "description": "Delegates work to terse investigator, builder and reviewer subagents.",
-      "categories": ["output-style", "agents"],
       "tags": [
+        "category:output-style",
+        "category:agents",
         "type:workflow",
         "effect:none",
         "needs:subagents",
@@ -4161,8 +4276,14 @@
       "id": "juliusbrussee/caveman/skills/caveman-stats",
       "name": "caveman-stats",
       "description": "Shows token usage and mode attribution for the Claude Code session.",
-      "categories": ["output-style"],
-      "tags": ["type:command", "effect:none", "needs:claude-code", "by:community", "token-saving"],
+      "tags": [
+        "category:output-style",
+        "type:command",
+        "effect:none",
+        "needs:claude-code",
+        "by:community",
+        "token-saving"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/juliusbrussee/caveman/caveman-stats",
         "install": "npx skills add https://github.com/juliusbrussee/caveman --skill caveman-stats",
@@ -4180,8 +4301,14 @@
       "id": "mattpocock/skills/skills/productivity/wait-what",
       "name": "wait-what",
       "description": "Re-pitches the last message when it did not land.",
-      "categories": ["output-style"],
-      "tags": ["type:command", "effect:none", "needs:none", "by:community", "output-style"],
+      "tags": [
+        "category:output-style",
+        "type:command",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "output-style"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/wait-what",
         "install": "npx skills add https://github.com/mattpocock/skills --skill wait-what",
@@ -4199,8 +4326,8 @@
       "id": "mattpocock/skills/skills/engineering/zoom-out",
       "name": "zoom-out",
       "description": "Gives a higher-level map of the code you are looking at.",
-      "categories": ["output-style"],
       "tags": [
+        "category:output-style",
         "type:command",
         "effect:none",
         "needs:none",
@@ -4226,8 +4353,8 @@
       "id": "mattpocock/skills/skills/productivity/caveman",
       "name": "caveman",
       "description": "Matt Pocock's version of the caveman mode: terse answers that cut most tokens.",
-      "categories": ["output-style"],
       "tags": [
+        "category:output-style",
         "type:mode",
         "effect:none",
         "needs:none",
@@ -4253,8 +4380,8 @@
       "id": "clawhub.ai/biostartechnology/humanizer",
       "name": "humanizer",
       "description": "Removes signs of AI-generated writing from text.",
-      "categories": ["output-style"],
       "tags": [
+        "category:writing",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4281,8 +4408,8 @@
       "id": "proseify.xyz/anti-prose-slop",
       "name": "anti-prose-slop",
       "description": "Drafts distinctive longform prose with the Proseify MCP instead of generic AI text.",
-      "categories": ["output-style"],
       "tags": [
+        "category:writing",
         "type:workflow",
         "effect:none",
         "needs:mcp",
@@ -4309,8 +4436,8 @@
       "id": "mattpocock/skills/skills/engineering/research",
       "name": "research",
       "description": "Investigates a question against primary sources and saves the findings as Markdown.",
-      "categories": ["writing"],
       "tags": [
+        "category:writing",
         "type:workflow",
         "effect:local",
         "needs:subagents",
@@ -4361,8 +4488,14 @@
         "text": "Hand it your notes and it first settles with you what readers already know. It then drafts two or three possible openings from the notes; you pick one, and it writes just that section into the article file. After each section it rereads the article and offers the next possible sections, saying which new ideas each would introduce, so you steer the piece one choice at a time until it ends. Its one hard rule is that no section may lean on an idea the reader hasn't met: either an earlier section explains it, or it's settled up front as something readers bring.",
         "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/writing-beats"
       },
-      "categories": ["writing"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "writing"],
+      "tags": [
+        "category:writing",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "writing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/writing-beats",
         "install": "npx skills add https://github.com/mattpocock/skills --skill writing-beats",
@@ -4380,8 +4513,14 @@
       "id": "mattpocock/skills/skills/misc/scaffold-exercises",
       "name": "scaffold-exercises",
       "description": "Scaffolds course exercise folders with problems, solutions and explainers.",
-      "categories": ["writing"],
-      "tags": ["type:workflow", "effect:local", "needs:cli", "by:community", "learning"],
+      "tags": [
+        "category:writing",
+        "type:workflow",
+        "effect:local",
+        "needs:cli",
+        "by:community",
+        "learning"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/scaffold-exercises",
         "install": "npx skills add https://github.com/mattpocock/skills --skill scaffold-exercises",
@@ -4426,8 +4565,14 @@
         "text": "It reads your whole notes file first, whatever form it takes: a list of fragments, a wall of prose, a transcript. After agreeing with you on what readers already know, it drafts two or three openings that each imply a different angle, and makes you pick one or a mix. From then on it keeps asking what the reader needs to hear next, pulls the answer from your notes, and argues with you whether that block should be a paragraph, a list, a table, a callout or a quote. Each agreed block is appended right away, so you watch the article grow, and like writing-beats it never lets a block rely on an idea that hasn't been explained yet.",
         "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/writing-shape"
       },
-      "categories": ["writing"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "writing"],
+      "tags": [
+        "category:writing",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "writing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/writing-shape",
         "install": "npx skills add https://github.com/mattpocock/skills --skill writing-shape",
@@ -4467,8 +4612,8 @@
         "text": "This is the exploring half of Matt Pocock's writing workflow. You say what you'd like to write about, and the agent keeps asking: what you noticed, what happened, what you meant by a phrase you used. Anything that might survive into the final piece goes into one Markdown file: a sharp sentence, a claim with its reason, an anecdote, a quote, a half-formed thought. It pushes hardest for one coined phrase that names your idea, since the whole piece can later hang on it. It appends without asking, rereads the file before every write so your own edits survive, and never imposes headings, an outline or an order. Structure is left to writing-beats or writing-shape.",
         "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/writing-fragments"
       },
-      "categories": ["writing"],
       "tags": [
+        "category:writing",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -4493,8 +4638,14 @@
       "id": "mattpocock/skills/skills/personal/edit-article",
       "name": "edit-article",
       "description": "Restructures and tightens an article draft.",
-      "categories": ["writing"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "writing"],
+      "tags": [
+        "category:writing",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "writing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/mattpocock/skills/edit-article",
         "install": "npx skills add https://github.com/mattpocock/skills --skill edit-article",
@@ -4513,8 +4664,8 @@
       "id": "anthropics/skills/skills/doc-coauthoring",
       "name": "doc-coauthoring",
       "description": "Walks you through co-authoring docs, proposals and specs.",
-      "categories": ["writing"],
       "tags": [
+        "category:writing",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -4539,8 +4690,14 @@
       "id": "anthropics/skills/skills/internal-comms",
       "name": "internal-comms",
       "description": "Writes internal communications in your company's formats.",
-      "categories": ["writing"],
-      "tags": ["type:guidelines", "effect:none", "needs:none", "by:official", "writing"],
+      "tags": [
+        "category:writing",
+        "type:guidelines",
+        "effect:none",
+        "needs:none",
+        "by:official",
+        "writing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/anthropics/skills/internal-comms",
         "install": "npx skills add https://github.com/anthropics/skills --skill internal-comms",
@@ -4558,8 +4715,8 @@
       "id": "vercel-labs/agent-skills/skills/writing-guidelines",
       "name": "writing-guidelines",
       "description": "Reviews docs and prose against Vercel's writing guidelines.",
-      "categories": ["writing"],
       "tags": [
+        "category:writing",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -4585,8 +4742,8 @@
       "id": "nozomio-labs/nia-skill",
       "name": "nia",
       "description": "Indexes and searches repos, docs, papers, datasets, Slack and Drive through Nia.",
-      "categories": ["writing"],
       "tags": [
+        "category:writing",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -4613,8 +4770,8 @@
       "id": "skillhub.cn/summarize",
       "name": "summarize",
       "description": "Summarizes long text, documents and web pages into key points.",
-      "categories": ["writing"],
       "tags": [
+        "category:writing",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4636,8 +4793,8 @@
       "id": "anthropics/skills/skills/frontend-design",
       "name": "frontend-design",
       "description": "Gives UI a distinctive aesthetic direction, typography and layout.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4662,8 +4819,8 @@
       "id": "vercel-labs/agent-skills/skills/web-design-guidelines",
       "name": "web-design-guidelines",
       "description": "Reviews UI code against Vercel's Web Interface Guidelines and accessibility rules.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -4689,8 +4846,8 @@
       "id": "leonxlnx/taste-skill/skills/taste-skill",
       "name": "design-taste-frontend",
       "description": "Reads the brief, picks a design direction and ships non-generic interfaces.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4715,8 +4872,8 @@
       "id": "leonxlnx/taste-skill/skills/soft-skill",
       "name": "high-end-visual-design",
       "description": "Designs with the fonts, spacing, shadows and motion of a high-end agency.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4742,8 +4899,8 @@
       "id": "leonxlnx/taste-skill/skills/redesign-skill",
       "name": "redesign-existing-projects",
       "description": "Audits and upgrades an existing site to premium quality.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:router",
         "effect:none",
         "needs:none",
@@ -4770,8 +4927,8 @@
       "id": "nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/ui-ux-pro-max",
       "name": "ui-ux-pro-max",
       "description": "Searchable styles, palettes, font pairings and UX rules for web, mobile and desktop.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4796,8 +4953,14 @@
       "id": "leonxlnx/taste-skill/skills/minimalist-skill",
       "name": "minimalist-ui",
       "description": "Designs editorial-style interfaces with warm monochrome and flat bento grids.",
-      "categories": ["design"],
-      "tags": ["type:guidelines", "effect:none", "needs:none", "by:community", "design"],
+      "tags": [
+        "category:design",
+        "type:guidelines",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "design"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/leonxlnx/taste-skill/minimalist-ui",
         "install": "npx skills add https://github.com/leonxlnx/taste-skill --skill minimalist-ui",
@@ -4816,8 +4979,8 @@
       "id": "designed-by-ai/skills/skills/design-mobile-apps",
       "name": "design-mobile-apps",
       "description": "Designs mobile app screens through Sleek's API.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:tool",
         "effect:remote",
         "needs:account",
@@ -4845,8 +5008,15 @@
       "id": "pbakaus/impeccable/plugin/skills/impeccable",
       "name": "impeccable",
       "description": "Designs, critiques, audits, polishes, hardens and animates interfaces.",
-      "categories": ["design"],
-      "tags": ["type:router", "effect:none", "needs:none", "by:community", "design", "anti-slop"],
+      "tags": [
+        "category:design",
+        "type:router",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "design",
+        "anti-slop"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/pbakaus/impeccable/impeccable",
         "install": "npx skills add https://github.com/pbakaus/impeccable --skill impeccable",
@@ -4864,8 +5034,8 @@
       "id": "emilkowalski/skills/skills/emil-design-eng",
       "name": "emil-design-eng",
       "description": "Applies Emil Kowalski's approach to UI polish, components and animation.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4890,8 +5060,8 @@
       "id": "emilkowalski/skills/skills/review-animations",
       "name": "review-animations",
       "description": "Reviews motion code against a high craft bar.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -4916,8 +5086,8 @@
       "id": "emilkowalski/skills/skills/animation-vocabulary",
       "name": "animation-vocabulary",
       "description": "Turns \"the bouncy thing when a popover opens\" into its exact term.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4942,8 +5112,8 @@
       "id": "emilkowalski/skills/skills/apple-design",
       "name": "apple-design",
       "description": "Brings Apple's interface and physical-motion approach to the web.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -4968,8 +5138,14 @@
       "id": "arvindrk/extract-design-system/skills/extract-design-system",
       "name": "extract-design-system",
       "description": "Extracts design tokens from a public website into starter files.",
-      "categories": ["design"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "design-system"],
+      "tags": [
+        "category:design",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "design-system"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/arvindrk/extract-design-system/extract-design-system",
         "install": "npx skills add https://github.com/arvindrk/extract-design-system --skill extract-design-system",
@@ -4987,8 +5163,8 @@
       "id": "vercel-labs/agent-skills/skills/react-view-transitions",
       "name": "vercel-react-view-transitions",
       "description": "Animates UI states with React's View Transition API.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5015,8 +5191,8 @@
       "id": "anthropics/skills/skills/canvas-design",
       "name": "canvas-design",
       "description": "Creates posters and visual art as PNG or PDF from a design philosophy.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -5041,8 +5217,8 @@
       "id": "anthropics/skills/skills/web-artifacts-builder",
       "name": "web-artifacts-builder",
       "description": "Builds multi-component claude.ai HTML artifacts with React, Tailwind and shadcn/ui.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:tool",
         "effect:local",
         "needs:claude-ai",
@@ -5070,8 +5246,14 @@
       "id": "pbakaus/impeccable/source/skills/polish",
       "name": "polish",
       "description": "Fixes alignment, spacing and consistency details before shipping.",
-      "categories": ["design"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "design"],
+      "tags": [
+        "category:design",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "design"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/pbakaus/impeccable/polish",
         "install": "npx skills add https://github.com/pbakaus/impeccable --skill polish",
@@ -5090,8 +5272,14 @@
       "id": "pbakaus/impeccable/source/skills/critique",
       "name": "critique",
       "description": "Critiques a design's hierarchy, information architecture and cognitive load.",
-      "categories": ["design"],
-      "tags": ["type:workflow", "effect:none", "needs:subagents", "by:community", "design"],
+      "tags": [
+        "category:design",
+        "type:workflow",
+        "effect:none",
+        "needs:subagents",
+        "by:community",
+        "design"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/pbakaus/impeccable/critique",
         "install": "npx skills add https://github.com/pbakaus/impeccable --skill critique",
@@ -5110,8 +5298,8 @@
       "id": "pbakaus/impeccable/source/skills/audit",
       "name": "audit",
       "description": "Scores accessibility, performance, theming and responsive design.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -5138,8 +5326,8 @@
       "id": "pbakaus/impeccable/source/skills/animate",
       "name": "animate",
       "description": "Adds purposeful animations and micro-interactions to a feature.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -5165,8 +5353,8 @@
       "id": "anthropics/skills/skills/theme-factory",
       "name": "theme-factory",
       "description": "Applies one of ten preset themes to slides, docs and landing pages.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:tool",
         "effect:local",
         "needs:none",
@@ -5192,8 +5380,8 @@
       "id": "google-labs-code/stitch-skills/plugins/stitch-utilities/skills/design-md",
       "name": "design-md",
       "description": "Synthesizes a semantic design system into DESIGN.md from Stitch projects.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:workflow",
         "effect:local",
         "needs:mcp",
@@ -5221,8 +5409,8 @@
       "id": "greensock/gsap-skills/skills/gsap-core",
       "name": "gsap-core",
       "description": "Guides GSAP's core API: tweens, easing, staggers and timelines.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5248,8 +5436,8 @@
       "id": "jakubkrehel/make-interfaces-feel-better/skills/make-interfaces-feel-better",
       "name": "make-interfaces-feel-better",
       "description": "Applies design-engineering details that make interfaces feel polished.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5274,8 +5462,8 @@
       "id": "nutlope/hallmark/skills/hallmark",
       "name": "hallmark",
       "description": "Designs pages that look made, not generated.",
-      "categories": ["design"],
       "tags": [
+        "category:design",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5300,8 +5488,14 @@
       "id": "addyosmani/web-quality-skills/skills/accessibility",
       "name": "accessibility",
       "description": "Audits and fixes accessibility against WCAG 2.2.",
-      "categories": ["design"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "accessibility"],
+      "tags": [
+        "category:design",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "accessibility"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/addyosmani/web-quality-skills/accessibility",
         "install": "npx skills add https://github.com/addyosmani/web-quality-skills --skill accessibility",
@@ -5319,8 +5513,8 @@
       "id": "vercel-labs/agent-skills/skills/react-best-practices",
       "name": "vercel-react-best-practices",
       "description": "Applies Vercel's React and Next.js performance rules.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5348,8 +5542,8 @@
       "id": "supabase/agent-skills/skills/supabase-postgres-best-practices",
       "name": "supabase-postgres-best-practices",
       "description": "Applies Supabase's Postgres rules for queries and schemas.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5377,8 +5571,8 @@
       "id": "vercel-labs/agent-skills/skills/composition-patterns",
       "name": "vercel-composition-patterns",
       "description": "Applies React composition patterns for flexible component libraries.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5406,8 +5600,8 @@
       "id": "prisma/skills/prisma-database-setup",
       "name": "prisma-database-setup",
       "description": "Configures Prisma for PostgreSQL, MySQL, SQLite or MongoDB.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:router",
         "effect:none",
         "needs:none",
@@ -5435,8 +5629,8 @@
       "id": "supabase/agent-skills/skills/supabase",
       "name": "supabase",
       "description": "Covers any task involving Supabase: database, auth, functions and storage.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5465,8 +5659,8 @@
       "id": "shadcn/ui/skills/shadcn",
       "name": "shadcn",
       "description": "Adds, fixes and composes shadcn components.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -5495,8 +5689,8 @@
       "id": "vercel-labs/agent-skills/skills/react-native-skills",
       "name": "vercel-react-native-skills",
       "description": "Applies React Native and Expo performance rules.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5524,8 +5718,8 @@
       "id": "neondatabase/agent-skills/skills/neon-postgres",
       "name": "neon-postgres",
       "description": "Covers Neon Postgres connections, migrations and branching.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5552,8 +5746,8 @@
       "id": "get-convex/agent-skills/skills/convex-quickstart",
       "name": "convex-quickstart",
       "description": "Stands up a Convex and Next.js app from a one-sentence idea.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:setup",
         "effect:local",
         "needs:cli",
@@ -5582,8 +5776,8 @@
       "id": "better-auth/skills/better-auth/best-practices",
       "name": "better-auth-best-practices",
       "description": "Configures Better Auth servers, clients, adapters and plugins.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5609,8 +5803,8 @@
       "id": "solana-foundation/solana-dev-skill/skills/solana-dev",
       "name": "solana-dev",
       "description": "Builds Solana dapps, Anchor programs, tokens and wallet flows.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5638,8 +5832,8 @@
       "id": "wshobson/agents/plugins/frontend-mobile-development/skills/tailwind-design-system",
       "name": "tailwind-design-system",
       "description": "Builds design systems and tokens with Tailwind CSS v4.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5666,8 +5860,8 @@
       "id": "expo/skills/plugins/expo/skills/expo-dev-client",
       "name": "expo-dev-client",
       "description": "Builds and distributes Expo development clients.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -5696,8 +5890,8 @@
       "id": "genkit-ai/skills/skills/developing-genkit-js",
       "name": "developing-genkit-js",
       "description": "Builds AI apps with Genkit in TypeScript.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:cli",
@@ -5724,8 +5918,8 @@
       "id": "vercel/ai/skills/use-ai-sdk",
       "name": "ai-sdk",
       "description": "Builds AI features with the Vercel AI SDK.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5752,8 +5946,8 @@
       "id": "msmps/opentui-skill/skill/opentui",
       "name": "opentui",
       "description": "Builds terminal user interfaces with OpenTUI.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5780,8 +5974,8 @@
       "id": "mcollina/skills/skills/fastify",
       "name": "fastify-best-practices",
       "description": "Builds Fastify servers and REST APIs, from Fastify's lead maintainer.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5808,8 +6002,8 @@
       "id": "prisma/skills/prisma-client-api",
       "name": "prisma-client-api",
       "description": "References Prisma Client queries, filters and relations.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5835,8 +6029,8 @@
       "id": "prisma/skills/prisma-cli",
       "name": "prisma-cli",
       "description": "References the Prisma ORM 7 CLI commands.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5863,8 +6057,8 @@
       "id": "prisma/skills/prisma-postgres",
       "name": "prisma-postgres",
       "description": "Old name for the Prisma Postgres setup skill.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:router",
         "effect:none",
         "needs:none",
@@ -5893,8 +6087,8 @@
       "id": "neondatabase/agent-skills/skills/neon",
       "name": "neon",
       "description": "Introduces Neon's backend primitives and routes to the other Neon skills.",
-      "categories": ["frameworks"],
       "tags": [
+        "category:frameworks",
         "type:router",
         "effect:none",
         "needs:none",
@@ -5922,8 +6116,8 @@
       "id": "microsoft/azure-skills/skills/microsoft-foundry",
       "name": "microsoft-foundry",
       "description": "Builds, deploys, evaluates and fine-tunes Microsoft Foundry agents.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -5951,8 +6145,8 @@
       "id": "microsoft/azure-skills/skills/azure-diagnostics",
       "name": "azure-diagnostics",
       "description": "Debugs Azure production issues with AppLens, Azure Monitor and resource health.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:workflow",
         "effect:none",
         "needs:cli",
@@ -5980,8 +6174,8 @@
       "id": "microsoft/azure-skills/skills/azure-prepare",
       "name": "azure-prepare",
       "description": "Generates azure.yaml, Bicep or Terraform and Dockerfiles for azd.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:setup",
         "effect:local",
         "needs:cli",
@@ -6008,8 +6202,8 @@
       "id": "microsoft/azure-skills/skills/azure-ai",
       "name": "azure-ai",
       "description": "Uses Azure AI Search, Speech, OpenAI and Document Intelligence.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:none",
         "needs:mcp",
@@ -6036,8 +6230,8 @@
       "id": "microsoft/azure-skills/skills/azure-deploy",
       "name": "azure-deploy",
       "description": "Deploys already-prepared apps to Azure.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6064,8 +6258,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-deploy",
       "name": "google-agents-cli-deploy",
       "description": "Deploys ADK agents and sets up CI/CD and secrets.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6094,8 +6288,8 @@
       "id": "firebase/agent-skills/skills/firebase-basics",
       "name": "firebase-basics",
       "description": "Sets up the Firebase CLI, login and project basics.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:setup",
         "effect:local",
         "needs:cli",
@@ -6122,8 +6316,8 @@
       "id": "getsentry/cli/packages/cli/plugins/sentry-cli/skills/sentry-cli",
       "name": "sentry-cli",
       "description": "Views and manages Sentry issues and events from the command line.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -6151,8 +6345,8 @@
       "id": "vercel-labs/agent-skills/skills/deploy-to-vercel",
       "name": "deploy-to-vercel",
       "description": "Deploys a project to Vercel as a preview and returns the link.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6179,8 +6373,8 @@
       "id": "vercel-labs/agent-skills/skills/vercel-cli-with-tokens",
       "name": "vercel-cli-with-tokens",
       "description": "Deploys to Vercel with an access token instead of an interactive login.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6207,8 +6401,8 @@
       "id": "cloudflare/skills/skills/cloudflare",
       "name": "cloudflare",
       "description": "Picks the Cloudflare products for an app and loads their skills.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:router",
         "effect:none",
         "needs:none",
@@ -6234,8 +6428,8 @@
       "id": "stripe/ai/skills/stripe-best-practices",
       "name": "stripe-best-practices",
       "description": "Guides Stripe integration choices, sandboxes and API selection.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -6261,8 +6455,8 @@
       "id": "vercel-labs/agent-skills/skills/vercel-optimize",
       "name": "vercel-optimize",
       "description": "Audits a deployed Vercel project's cost and performance from its metrics.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:workflow",
         "effect:none",
         "needs:cli",
@@ -6290,8 +6484,8 @@
       "id": "mitsuhiko/gh-issue-sync/skill",
       "name": "gh-issue-sync",
       "description": "Syncs GitHub issues to local Markdown files and back.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6318,8 +6512,8 @@
       "id": "cloudflare/skills/skills/wrangler",
       "name": "wrangler",
       "description": "Runs and troubleshoots Wrangler CLI commands for Workers projects.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6346,8 +6540,8 @@
       "id": "cloudflare/skills/skills/workers-best-practices",
       "name": "workers-best-practices",
       "description": "Applies Cloudflare Workers best practices.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -6373,8 +6567,8 @@
       "id": "cloudflare/skills/skills/durable-objects",
       "name": "durable-objects",
       "description": "Builds, debugs and reviews Cloudflare Durable Objects.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -6400,8 +6594,14 @@
       "id": "cloudflare/skills/skills/web-perf",
       "name": "web-perf",
       "description": "Audits Core Web Vitals and loading performance.",
-      "categories": ["cloud"],
-      "tags": ["type:workflow", "effect:none", "needs:browser", "by:official", "performance"],
+      "tags": [
+        "category:cloud",
+        "type:workflow",
+        "effect:none",
+        "needs:browser",
+        "by:official",
+        "performance"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/cloudflare/skills/web-perf",
         "install": "npx skills add https://github.com/cloudflare/skills --skill web-perf",
@@ -6419,8 +6619,8 @@
       "id": "stripe/ai/skills/upgrade-stripe",
       "name": "upgrade-stripe",
       "description": "Upgrades Stripe API versions and SDKs.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -6447,8 +6647,8 @@
       "id": "stripe/ai/skills/stripe-projects",
       "name": "stripe-projects",
       "description": "Provisions databases, auth and other services through Stripe Projects.",
-      "categories": ["cloud"],
       "tags": [
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6497,8 +6697,8 @@
         "text": "The agent controls a real Chrome or Chromium through the agent-browser CLI: it opens pages, clicks, fills forms and takes screenshots. Rather than raw HTML, it reads each page as an accessibility snapshot with short element references, which keeps pages cheap in tokens. The skill itself is only a stub that tells the agent to load the full guide from the installed CLI, so the instructions always match the version you have. Extra guides cover Electron desktop apps such as VS Code, Slack or Figma, exploratory QA, and cloud browsers in Vercel Sandbox or AWS.",
         "permalink": "https://github.com/vercel-labs/agent-browser/tree/5ee8691339a5a002e4d7454eec95250253bc7419/skills/agent-browser"
       },
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6525,8 +6725,8 @@
       "id": "scrapegraphai/just-scrape/skills/just-scrape",
       "name": "just-scrape",
       "description": "Searches, scrapes, crawls and monitors pages with ScrapeGraph AI.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -6553,8 +6753,8 @@
       "id": "stablyai/orca/skills/computer-use",
       "name": "computer-use",
       "description": "Drives a local app's GUI through its accessibility tree.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -6580,8 +6780,8 @@
       "id": "microsoft/playwright-cli/skills/playwright-cli",
       "name": "playwright-cli",
       "description": "Automates browsers and records Playwright code.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -6608,8 +6808,8 @@
       "id": "browser-act/skills/browser-act",
       "name": "browser-act",
       "description": "Automates a full browser for agents: navigation, extraction and forms.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6636,8 +6836,8 @@
       "id": "firecrawl/cli/skills/firecrawl",
       "name": "firecrawl",
       "description": "Searches, scrapes, crawls and maps the web through Firecrawl.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -6665,8 +6865,8 @@
       "id": "browser-use/browser-use/skills/browser-use",
       "name": "browser-use",
       "description": "Controls a browser over CDP for automation, scraping and testing.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6694,8 +6894,9 @@
       "id": "antibrow/anti-detect-browser-skills/anti-detect-browser",
       "name": "anti-detect-browser",
       "description": "Runs Playwright with real-device fingerprints and isolated profiles.",
-      "categories": ["browser", "security"],
       "tags": [
+        "category:browser",
+        "category:security",
         "type:tool",
         "effect:remote",
         "needs:account",
@@ -6724,8 +6925,8 @@
       "id": "kepano/obsidian-skills/skills/defuddle",
       "name": "defuddle",
       "description": "Extracts clean Markdown from any HTML page.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -6750,8 +6951,9 @@
       "id": "liarjsdev/liarjs-skills/skills/browser-fingerprint-audit",
       "name": "browser-fingerprint-audit",
       "description": "Checks a browser fingerprint for contradictions across canvas, WebGL, audio and fonts.",
-      "categories": ["browser", "security"],
       "tags": [
+        "category:browser",
+        "category:security",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -6779,8 +6981,8 @@
       "id": "101-skills/superpowers/tools/llm/web-search",
       "name": "web-search",
       "description": "Searches the web and extracts pages through the inference.sh CLI.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -6808,8 +7010,8 @@
       "id": "clawhub.ai/matrixy/agent-browser-clawdbot",
       "name": "agent-browser-clawdbot",
       "description": "Automates a headless browser from OpenClaw.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6837,8 +7039,14 @@
       "id": "clawhub.ai/gpyangyoujun/multi-search-engine",
       "name": "multi-search-engine",
       "description": "Searches across 16 engines, 7 Chinese and 9 global.",
-      "categories": ["browser"],
-      "tags": ["type:tool", "effect:none", "needs:none", "by:official", "web-search"],
+      "tags": [
+        "category:browser",
+        "type:tool",
+        "effect:none",
+        "needs:none",
+        "by:official",
+        "web-search"
+      ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/gpyangyoujun/skills/multi-search-engine",
         "install": "openclaw skills install @gpyangyoujun/multi-search-engine",
@@ -6857,8 +7065,8 @@
       "id": "clawhub.ai/jacky1n7/openclaw-tavily-search",
       "name": "openclaw-tavily-search",
       "description": "Searches the web through Tavily from OpenClaw.",
-      "categories": ["browser"],
       "tags": [
+        "category:browser",
         "type:tool",
         "effect:none",
         "needs:account",
@@ -6885,8 +7093,8 @@
       "id": "heygen-com/hyperframes/skills/hyperframes-cli",
       "name": "hyperframes-cli",
       "description": "Runs HeyGen's HTML-to-video toolkit: init, capture, lint, snapshot and render.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -6913,8 +7121,8 @@
       "id": "genmedia-labs/skills/video-edit",
       "name": "video-edit",
       "description": "Routes a video edit to the right model in RunComfy's catalog.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -6943,8 +7151,8 @@
       "id": "genmedia-labs/skills/ai-music",
       "name": "ai-music",
       "description": "Generates music through the RunComfy CLI.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -6973,8 +7181,8 @@
       "id": "genmedia-labs/skills/ai-video-generation",
       "name": "ai-video-generation",
       "description": "Generates video across RunComfy's model catalog.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7003,8 +7211,8 @@
       "id": "genmedia-labs/skills/image-to-video",
       "name": "image-to-video",
       "description": "Animates a still image through RunComfy.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7033,8 +7241,8 @@
       "id": "genmedia-labs/skills/ai-image-generation",
       "name": "ai-image-generation",
       "description": "Generates and edits images with FLUX, GPT Image and more on RunComfy.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7063,8 +7271,8 @@
       "id": "remotion-dev/skills/skills/remotion-best-practices",
       "name": "remotion-best-practices",
       "description": "Routes to the Remotion skills for creating, rendering and captioning videos in React.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:router",
         "effect:none",
         "needs:none",
@@ -7092,8 +7300,8 @@
       "id": "101-skills/superpowers/tools/video/ai-video-generation",
       "name": "ai-video-generation",
       "description": "Generates video with Veo, Seedance, Wan and 40+ other models through inference.sh.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7122,8 +7330,8 @@
       "id": "higgsfield-ai/skills/higgsfield-generate",
       "name": "higgsfield-generate",
       "description": "Generates images, video, 3D and audio through Higgsfield.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7152,8 +7360,8 @@
       "id": "anthropics/skills/skills/algorithmic-art",
       "name": "algorithmic-art",
       "description": "Creates p5.js generative art with seeded randomness.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -7178,8 +7386,8 @@
       "id": "degausai/wonda/skills/wonda-cli",
       "name": "wonda-cli",
       "description": "Generates images, video, music and audio, and posts to social platforms, from the terminal.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -7209,8 +7417,8 @@
       "id": "anthropics/skills/skills/slack-gif-creator",
       "name": "slack-gif-creator",
       "description": "Creates animated GIFs optimized for Slack.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:none",
@@ -7237,8 +7445,8 @@
       "id": "clawhub.ai/steipete/nano-banana-pro",
       "name": "nano-banana-pro",
       "description": "Generates and edits images with Gemini 3 Pro Image.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:account",
@@ -7265,8 +7473,8 @@
       "id": "heygen-com/hyperframes/skills/hyperframes",
       "name": "hyperframes",
       "description": "Entry point for making or editing any HyperFrames video.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:router",
         "effect:none",
         "needs:cli",
@@ -7293,8 +7501,8 @@
       "id": "heygen-com/hyperframes/skills/hyperframes-registry",
       "name": "hyperframes-registry",
       "description": "Finds and wires registry blocks into HyperFrames compositions.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7321,8 +7529,8 @@
       "id": "heygen-com/hyperframes/skills/hyperframes-core",
       "name": "hyperframes-core",
       "description": "Defines how to build one renderable HyperFrames composition.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -7349,8 +7557,8 @@
       "id": "heygen-com/hyperframes/skills/media-use",
       "name": "media-use",
       "description": "Resolves music, sound, images, logos and voice for a HyperFrames project.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7379,8 +7587,8 @@
       "id": "remotion-dev/skills/skills/remotion-render",
       "name": "remotion-render",
       "description": "Renders a Remotion video or still.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:none",
@@ -7407,8 +7615,8 @@
       "id": "remotion-dev/skills/skills/remotion-create",
       "name": "remotion-create",
       "description": "Scaffolds a new Remotion project and composition.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:setup",
         "effect:local",
         "needs:none",
@@ -7435,8 +7643,8 @@
       "id": "remotion-dev/skills/skills/remotion-captions",
       "name": "remotion-captions",
       "description": "Transcribes, displays and animates captions in Remotion.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -7463,8 +7671,8 @@
       "id": "remotion-dev/skills/skills/remotion-markup",
       "name": "remotion-markup",
       "description": "Guides Remotion content, animation and effects.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -7492,8 +7700,8 @@
       "id": "101-skills/superpowers/tools/image/ai-image-generation",
       "name": "ai-image-generation",
       "description": "Generates images with GPT Image, FLUX, Gemini and 50+ other models through inference.sh.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7522,8 +7730,8 @@
       "id": "101-skills/superpowers/tools/video/ai-avatar-video",
       "name": "ai-avatar-video",
       "description": "Creates avatar and talking-head videos through inference.sh.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7552,8 +7760,8 @@
       "id": "higgsfield-ai/skills/higgsfield-soul-id",
       "name": "higgsfield-soul-id",
       "description": "Trains a face-faithful identity model for Higgsfield image and video generation.",
-      "categories": ["media"],
       "tags": [
+        "category:media",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -7580,8 +7788,8 @@
       "id": "larksuite/cli/skills/lark-doc",
       "name": "lark-doc",
       "description": "Reads, creates and edits Lark (Feishu) documents and wikis.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -7611,8 +7819,8 @@
       "id": "anthropics/skills/skills/pptx",
       "name": "pptx",
       "description": "Creates, reads and edits PowerPoint decks.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7637,8 +7845,8 @@
       "id": "mattpocock/skills/skills/personal/obsidian-vault",
       "name": "obsidian-vault",
       "description": "Searches, creates and organizes notes in an Obsidian vault.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -7666,8 +7874,8 @@
       "id": "anthropics/skills/skills/pdf",
       "name": "pdf",
       "description": "Reads, merges, splits, fills and OCRs PDFs.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7693,8 +7901,8 @@
       "id": "anthropics/skills/skills/docx",
       "name": "docx",
       "description": "Creates and edits Word documents, including tracked changes and comments.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7719,8 +7927,8 @@
       "id": "anthropics/skills/skills/xlsx",
       "name": "xlsx",
       "description": "Creates and edits spreadsheets with formulas and formatting.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7745,8 +7953,8 @@
       "id": "kepano/obsidian-skills/skills/obsidian-markdown",
       "name": "obsidian-markdown",
       "description": "Writes Obsidian-flavored Markdown: wikilinks, embeds, callouts and properties.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -7772,8 +7980,8 @@
       "id": "intellectronica/agent-skills/skills/notion-api",
       "name": "notion-api",
       "description": "Manages Notion pages, databases and blocks over the REST API.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:account",
@@ -7800,8 +8008,8 @@
       "id": "googleworkspace/cli/skills/gws-gmail",
       "name": "gws-gmail",
       "description": "Sends, reads and manages Gmail with Google's official Workspace CLI.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -7828,8 +8036,8 @@
       "id": "clawhub.ai/steipete/gog",
       "name": "gog",
       "description": "Uses Gmail, Calendar, Drive, Contacts, Sheets and Docs through the gog CLI.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -7860,8 +8068,8 @@
       "id": "clawhub.ai/steipete/nano-pdf",
       "name": "nano-pdf",
       "description": "Edits PDF pages with natural-language instructions.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7888,8 +8096,8 @@
       "id": "clawhub.ai/steipete/obsidian",
       "name": "obsidian",
       "description": "Works with Obsidian vaults through obsidian-cli.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -7916,8 +8124,8 @@
       "id": "skillhub.cn/tencent-docs",
       "name": "tencent-docs",
       "description": "Creates, edits and searches documents, sheets and slides in Tencent Docs.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:account",
@@ -7942,8 +8150,8 @@
       "id": "larksuite/cli/skills/lark-base",
       "name": "lark-base",
       "description": "Builds Lark Base tables, fields, views, dashboards and forms.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -7974,8 +8182,8 @@
       "id": "larksuite/cli/skills/lark-drive",
       "name": "lark-drive",
       "description": "Uploads, downloads and organizes files in Lark Drive.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8005,8 +8213,8 @@
       "id": "larksuite/cli/skills/lark-im",
       "name": "lark-im",
       "description": "Sends and searches Lark messages and manages group chats.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8036,8 +8244,8 @@
       "id": "larksuite/cli/skills/lark-calendar",
       "name": "lark-calendar",
       "description": "Schedules Lark meetings and rooms and manages events.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8067,8 +8275,8 @@
       "id": "larksuite/cli/skills/lark-sheets",
       "name": "lark-sheets",
       "description": "Reads and edits Lark spreadsheets.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8098,8 +8306,8 @@
       "id": "larksuite/cli/skills/lark-mail",
       "name": "lark-mail",
       "description": "Reads, drafts and sends Lark mail.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8129,8 +8337,8 @@
       "id": "larksuite/cli/skills/lark-minutes",
       "name": "lark-minutes",
       "description": "Old name that now redirects to the lark-meeting skill.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:router",
         "effect:none",
         "needs:cli",
@@ -8162,8 +8370,8 @@
       "id": "larksuite/cli/skills/lark-okr",
       "name": "lark-okr",
       "description": "Reads and manages OKRs in Lark.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8193,8 +8401,8 @@
       "id": "kepano/obsidian-skills/skills/obsidian-cli",
       "name": "obsidian-cli",
       "description": "Reads, creates and searches notes in a running Obsidian app through its CLI.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -8220,8 +8428,8 @@
       "id": "kepano/obsidian-skills/skills/obsidian-bases",
       "name": "obsidian-bases",
       "description": "Creates Obsidian Bases with views, filters and formulas.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8248,8 +8456,8 @@
       "id": "kepano/obsidian-skills/skills/json-canvas",
       "name": "json-canvas",
       "description": "Creates JSON Canvas files with nodes, edges and groups.",
-      "categories": ["documents"],
       "tags": [
+        "category:documents",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8276,8 +8484,8 @@
       "id": "flowkit-labs/skills/reddit-automation",
       "name": "reddit-automation",
       "description": "Finds Reddit threads asking for what you offer and drafts disclosed replies.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8305,8 +8513,8 @@
       "id": "101-skills/superpowers/tools/social/twitter-automation",
       "name": "twitter-automation",
       "description": "Posts, likes and manages accounts on X through inference.sh.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -8337,8 +8545,15 @@
       "id": "coreyhaines31/marketingskills/skills/seo-audit",
       "name": "seo-audit",
       "description": "Diagnoses technical SEO issues on a site.",
-      "categories": ["marketing"],
-      "tags": ["type:workflow", "effect:none", "needs:none", "by:community", "seo", "marketing"],
+      "tags": [
+        "category:marketing",
+        "type:workflow",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "seo",
+        "marketing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/coreyhaines31/marketingskills/seo-audit",
         "install": "npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit",
@@ -8356,8 +8571,8 @@
       "id": "coreyhaines31/marketingskills/skills/copywriting",
       "name": "copywriting",
       "description": "Writes homepage, landing, pricing and feature-page copy.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8383,8 +8598,8 @@
       "id": "higgsfield-ai/skills/higgsfield-product-photoshoot",
       "name": "higgsfield-product-photoshoot",
       "description": "Generates brand-quality product photos through Higgsfield.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -8412,8 +8627,8 @@
       "id": "coreyhaines31/marketingskills/skills/marketing-psychology",
       "name": "marketing-psychology",
       "description": "Applies behavioral science to marketing.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8438,8 +8653,8 @@
       "id": "coreyhaines31/marketingskills/skills/content-strategy",
       "name": "content-strategy",
       "description": "Plans what content to create and why.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8465,8 +8680,15 @@
       "id": "coreyhaines31/marketingskills/skills/programmatic-seo",
       "name": "programmatic-seo",
       "description": "Plans template-driven SEO pages at scale.",
-      "categories": ["marketing"],
-      "tags": ["type:workflow", "effect:local", "needs:none", "by:community", "seo", "marketing"],
+      "tags": [
+        "category:marketing",
+        "type:workflow",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "seo",
+        "marketing"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/coreyhaines31/marketingskills/programmatic-seo",
         "install": "npx skills add https://github.com/coreyhaines31/marketingskills --skill programmatic-seo",
@@ -8484,8 +8706,8 @@
       "id": "nexscope-ai/amazon-skills/amazon-product-research",
       "name": "amazon-product-research",
       "description": "Analyzes demand, competition and profit for Amazon sellers.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8511,8 +8733,8 @@
       "id": "squirrelscan/skills/skills/audit-website",
       "name": "audit-website",
       "description": "Audits a site's SEO, performance, security and accessibility, then fixes the code.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -8540,8 +8762,8 @@
       "id": "nexscope-ai/ecommerce-skills/cross-border-ecommerce",
       "name": "cross-border-ecommerce",
       "description": "Scores target markets for cross-border e-commerce.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8566,8 +8788,8 @@
       "id": "autonnel/autonnel-skills/landing-page-conversion-audit",
       "name": "landing-page-conversion-audit",
       "description": "Audits a landing, sales or checkout page and ranks its conversion leaks by revenue impact.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8592,8 +8814,8 @@
       "id": "clawhub.ai/fly0pants/admapix",
       "name": "admapix",
       "description": "Fetches ad creatives, app rankings and market data from AdMapix.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:tool",
         "effect:none",
         "needs:account",
@@ -8620,8 +8842,8 @@
       "id": "higgsfield-ai/skills/higgsfield-marketplace-cards",
       "name": "higgsfield-marketplace-cards",
       "description": "Generates marketplace product image cards through Higgsfield.",
-      "categories": ["marketing"],
       "tags": [
+        "category:marketing",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -8649,8 +8871,8 @@
       "id": "lllllllama/rigorpilot-skills/skills/paper-context-resolver",
       "name": "paper-context-resolver",
       "description": "Fills the gaps a README leaves when reproducing a deep-learning paper's repo.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8675,8 +8897,8 @@
       "id": "wind-alice/alicemarket/skills/wind-mcp-skill",
       "name": "wind-mcp-skill",
       "description": "Answers financial market questions with verified data from Wind.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -8705,8 +8927,8 @@
       "id": "tt-a1i/archify/archify",
       "name": "archify",
       "description": "Creates validated architecture, sequence and data-flow diagrams as interactive HTML.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -8731,8 +8953,8 @@
       "id": "skillhub.cn/smart-charts",
       "name": "smart-charts",
       "description": "Turns CSV, Excel or JSON data into interactive ECharts HTML charts.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:tool",
         "effect:local",
         "needs:none",
@@ -8754,8 +8976,8 @@
       "id": "lllllllama/rigorpilot-skills/skills/repo-intake-and-plan",
       "name": "repo-intake-and-plan",
       "description": "Maps a deep-learning repo and plans a README-first reproduction.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -8781,8 +9003,8 @@
       "id": "lllllllama/rigorpilot-skills/skills/minimal-run-and-audit",
       "name": "minimal-run-and-audit",
       "description": "Runs a minimal reproduction and records the evidence.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -8808,8 +9030,8 @@
       "id": "lllllllama/rigorpilot-skills/skills/env-and-assets-bootstrap",
       "name": "env-and-assets-bootstrap",
       "description": "Prepares a conda environment, datasets and checkpoints for a reproduction.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:setup",
         "effect:local",
         "needs:cli",
@@ -8834,8 +9056,8 @@
       "id": "lllllllama/rigorpilot-skills/skills/ai-research-explore",
       "name": "ai-research-explore",
       "description": "Explores novel research candidates on top of a reproduced baseline.",
-      "categories": ["science"],
       "tags": [
+        "category:science",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -8861,8 +9083,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-adk-code",
       "name": "google-agents-cli-adk-code",
       "description": "References agent code, tools and callbacks for Google ADK.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8888,8 +9110,8 @@
       "id": "stablyai/orca/skills/orca-cli",
       "name": "orca-cli",
       "description": "Operates Orca worktrees, terminals and automations for a fleet of agents.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -8916,8 +9138,8 @@
       "id": "stablyai/orca/skills/orchestration",
       "name": "orchestration",
       "description": "Coordinates supervised Orca workers with task DAGs and decision gates.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:workflow",
         "effect:none",
         "needs:cli",
@@ -8943,8 +9165,8 @@
       "id": "anthropics/skills/skills/mcp-builder",
       "name": "mcp-builder",
       "description": "Builds high-quality MCP servers.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -8969,8 +9191,8 @@
       "id": "anthropics/skills/skills/claude-api",
       "name": "claude-api",
       "description": "References the Claude API and SDKs: models, streaming, tools and caching.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8996,8 +9218,8 @@
       "id": "agentix-cloud/skills/skills/agentix-ceo",
       "name": "agentix-ceo",
       "description": "Runs a team of cloud AI workers on Agentix: roles, tasks and progress.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:tool",
         "effect:remote",
         "needs:account",
@@ -9023,8 +9245,8 @@
       "id": "typesafe-ai/skills/skills/typesafe-ai",
       "name": "typesafe-ai",
       "description": "Builds software with TypeSafe's small AI models that return typed answers instead of text.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:guidelines",
         "effect:none",
         "needs:account",
@@ -9051,8 +9273,8 @@
       "id": "clawhub.ai/pskoett/self-improving-agent",
       "name": "self-improving-agent",
       "description": "Logs learnings, errors and corrections so the agent improves over time.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:workflow",
         "effect:local",
         "needs:openclaw",
@@ -9079,8 +9301,8 @@
       "id": "clawhub.ai/ivangdavila/self-improving",
       "name": "self-improving",
       "description": "Makes the agent review its own work and keep a self-organizing memory.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -9106,8 +9328,14 @@
       "id": "clawhub.ai/oswalpalash/ontology",
       "name": "ontology",
       "description": "Keeps agent memory as a typed knowledge graph.",
-      "categories": ["agents"],
-      "tags": ["type:tool", "effect:local", "needs:none", "by:community", "memory"],
+      "tags": [
+        "category:agents",
+        "type:tool",
+        "effect:local",
+        "needs:none",
+        "by:community",
+        "memory"
+      ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/oswalpalash/skills/ontology",
         "install": "openclaw skills install @oswalpalash/ontology",
@@ -9126,8 +9354,8 @@
       "id": "clawhub.ai/halthelobster/proactive-agent",
       "name": "proactive-agent",
       "description": "Turns the agent into a partner that anticipates needs.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:mode",
         "effect:local",
         "needs:openclaw",
@@ -9153,8 +9381,14 @@
       "id": "clawhub.ai/autogame-17/evolver",
       "name": "evolver",
       "description": "Mines runtime history for improvements to the agent.",
-      "categories": ["agents"],
-      "tags": ["type:tool", "effect:remote", "needs:account", "by:community", "self-improvement"],
+      "tags": [
+        "category:agents",
+        "type:tool",
+        "effect:remote",
+        "needs:account",
+        "by:community",
+        "self-improvement"
+      ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/autogame-17/skills/evolver",
         "install": "openclaw skills install @autogame-17/evolver",
@@ -9170,8 +9404,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-workflow",
       "name": "google-agents-cli-workflow",
       "description": "Runs the ADK agent development workflow: build, run, debug and test.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:workflow",
         "effect:local",
         "needs:cli",
@@ -9197,8 +9431,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-eval",
       "name": "google-agents-cli-eval",
       "description": "Evaluates ADK agents with datasets and metrics.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:workflow",
         "effect:local",
         "needs:cli",
@@ -9226,8 +9460,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-scaffold",
       "name": "google-agents-cli-scaffold",
       "description": "Scaffolds a new ADK agent project with CI/CD.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:setup",
         "effect:local",
         "needs:cli",
@@ -9254,8 +9488,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-observability",
       "name": "google-agents-cli-observability",
       "description": "Sets up tracing, logging and analytics for ADK agents.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -9284,8 +9518,8 @@
       "id": "google/agents-cli/skills/google-agents-cli-publish",
       "name": "google-agents-cli-publish",
       "description": "Registers a deployed ADK agent with Gemini.",
-      "categories": ["agents"],
       "tags": [
+        "category:agents",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -9313,8 +9547,8 @@
       "id": "microsoft/azure-skills/skills/azure-compliance",
       "name": "azure-compliance",
       "description": "Scans Azure resources for compliance and security issues.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:workflow",
         "effect:none",
         "needs:mcp",
@@ -9341,8 +9575,15 @@
       "id": "useosint/skills/skills/is-this-photo-real",
       "name": "is-this-photo-real",
       "description": "Checks whether an image or video is authentic and correctly captioned.",
-      "categories": ["security"],
-      "tags": ["type:workflow", "effect:none", "needs:none", "by:community", "osint", "image"],
+      "tags": [
+        "category:osint",
+        "type:workflow",
+        "effect:none",
+        "needs:none",
+        "by:community",
+        "osint",
+        "image"
+      ],
       "skills.sh": {
         "url": "https://skills.sh/useosint/skills/is-this-photo-real",
         "install": "npx skills add https://github.com/useosint/skills --skill is-this-photo-real",
@@ -9360,8 +9601,8 @@
       "id": "useosint/skills/skills/investigate-without-getting-made",
       "name": "investigate-without-getting-made",
       "description": "Keeps an investigator's IP, browser and TLS fingerprints from giving them away.",
-      "categories": ["security"],
       "tags": [
+        "category:osint",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -9387,8 +9628,8 @@
       "id": "useosint/skills/skills/what-leaked-about-you",
       "name": "what-leaked-about-you",
       "description": "Checks data-breach exposure for an email, username, phone or name.",
-      "categories": ["security"],
       "tags": [
+        "category:osint",
         "type:workflow",
         "effect:none",
         "needs:account",
@@ -9414,8 +9655,8 @@
       "id": "useosint/skills/skills/find-the-original-image",
       "name": "find-the-original-image",
       "description": "Finds where a picture first appeared with reverse image search.",
-      "categories": ["security"],
       "tags": [
+        "category:osint",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -9441,8 +9682,8 @@
       "id": "skillhub.cn/anti-fraud",
       "name": "anti-fraud",
       "description": "Spots scams in messages, links and calls.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -9464,8 +9705,8 @@
       "id": "microsoft/azure-skills/skills/entra-app-registration",
       "name": "entra-app-registration",
       "description": "Registers Microsoft Entra ID apps and sets up OAuth and MSAL.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -9492,8 +9733,8 @@
       "id": "microsoft/azure-skills/skills/azure-rbac",
       "name": "azure-rbac",
       "description": "Finds the least-privilege Azure role for an identity and assigns it.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:tool",
         "effect:remote",
         "needs:mcp",
@@ -9522,8 +9763,8 @@
       "id": "antibrow/anti-detect-browser-skills/multi-account-isolation",
       "name": "multi-account-isolation",
       "description": "Verifies that browser profiles are actually isolated from each other.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:workflow",
         "effect:none",
         "needs:browser",
@@ -9551,8 +9792,8 @@
       "id": "liarjsdev/liarjs-skills/skills/playwright-stealth-verify",
       "name": "playwright-stealth-verify",
       "description": "Checks whether an automated browser presents a coherent fingerprint.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:tool",
         "effect:none",
         "needs:cli",
@@ -9581,8 +9822,8 @@
       "id": "liarjsdev/liarjs-skills/skills/fingerprint-ci-gate",
       "name": "fingerprint-ci-gate",
       "description": "Fails a build when a browser fingerprint regresses.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -9610,8 +9851,8 @@
       "id": "liarjsdev/liarjs-skills/skills/fingerprint-failure-triage",
       "name": "fingerprint-failure-triage",
       "description": "Attributes each failing fingerprint check to the component behind it.",
-      "categories": ["security"],
       "tags": [
+        "category:security",
         "type:workflow",
         "effect:none",
         "needs:none",
@@ -9638,8 +9879,8 @@
       "id": "clawhub.ai/steipete/github",
       "name": "github",
       "description": "Works with GitHub issues, PRs and CI runs through the gh CLI.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -9669,8 +9910,14 @@
       "id": "clawhub.ai/steipete/weather",
       "name": "weather",
       "description": "Gets current weather and forecasts without an API key.",
-      "categories": ["personal"],
-      "tags": ["type:tool", "effect:none", "needs:none", "by:official", "personal"],
+      "tags": [
+        "category:personal",
+        "type:tool",
+        "effect:none",
+        "needs:none",
+        "by:official",
+        "personal"
+      ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/steipete/skills/weather",
         "install": "openclaw skills install @steipete/weather",
@@ -9689,8 +9936,8 @@
       "id": "skillhub.cn/dev-expert",
       "name": "dev-expert",
       "description": "Acts as a full-stack programming expert for Java, PHP, frontend and MySQL work.",
-      "categories": ["engineering"],
       "tags": [
+        "category:engineering",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -9714,8 +9961,8 @@
       "id": "skillhub.cn/parenting-expert",
       "name": "parenting-expert",
       "description": "Answers parenting questions about children up to 18.",
-      "categories": ["personal"],
       "tags": [
+        "category:personal",
         "type:guidelines",
         "effect:none",
         "needs:none",

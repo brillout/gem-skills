@@ -8,7 +8,6 @@ import {
   REGISTRIES,
   bundleHref,
   bundleOf,
-  categoryById,
   data,
   facetById,
   facetOf,
@@ -20,6 +19,7 @@ import {
   skillHref,
   tagChip,
   tagInfo,
+  tagsOf,
   tldrHtml,
 } from "../../skills.ts";
 import { github, type Skill, type SkillMd } from "../../types.ts";
@@ -62,19 +62,12 @@ function facts(s: Skill): string {
     list.push(
       `<div><dt>First seen</dt><dd>${date(sh.firstSeen)} <span class="muted">on skills.sh</span></dd></div>`,
     );
-  list.push(
-    `<div><dt>Category</dt><dd>${s.categories
-      .map(
-        (c) => `<a href="${skillsLink({ cats: [c] })}">${esc(categoryById.get(c)?.name ?? c)}</a>`,
-      )
-      .join(", ")}</dd></div>`,
-  );
   return `<dl class="facts">${list.join("")}</dl>`;
 }
 
 function tagTable(s: Skill): string {
   const byFacet = new Map<string, string[]>();
-  for (const t of s.tags) byFacet.set(facetOf(t), [...(byFacet.get(facetOf(t)) ?? []), t]);
+  for (const t of tagsOf(s)) byFacet.set(facetOf(t), [...(byFacet.get(facetOf(t)) ?? []), t]);
   const rows = FACET_ORDER.filter((f) => byFacet.has(f)).map((f) => {
     const tags = byFacet.get(f) ?? [];
     const explained = f === "topic" || f === "stack" ? [] : tags.filter((t) => tagInfo.has(t));

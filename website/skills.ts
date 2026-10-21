@@ -19,7 +19,6 @@ export const GITHUB = "https://github.com/brillout/gemskills";
 
 export const facetById = new Map(data.facets.map((f) => [f.id, f]));
 export const repoById = new Map(data.repos.map((r) => [r.id, r]));
-export const categoryById = new Map(data.categories.map((c) => [c.id, c]));
 export const skillById = new Map(data.skills.map((s) => [s.id, s]));
 export const bundleById = new Map(data.bundles.map((b) => [b.id, b]));
 /** The bundle a skill is in, and its place there. */
@@ -44,11 +43,43 @@ export const tagOf = (facet: Facet, value: string) =>
 export const facetOf = (tag: string) =>
   tag.includes(":") ? tag.slice(0, tag.indexOf(":")) : "topic";
 export const tagInfo = new Map<string, string>();
+const labels = new Map<string, string>();
+/** The parents each tag has through `includes`, such as category:software-engineering for category:debugging. */
+const parents = new Map<string, string[]>();
 for (const facet of data.facets)
-  for (const v of facet.values) if (v.description) tagInfo.set(tagOf(facet, v.id), v.description);
+  for (const v of facet.values) {
+    const tag = tagOf(facet, v.id);
+    if (v.description) tagInfo.set(tag, v.description);
+    if (v.label) labels.set(tag, v.label);
+    for (const child of v.includes ?? [])
+      parents.set(tagOf(facet, child), [...(parents.get(tagOf(facet, child)) ?? []), tag]);
+  }
+/** A tag's name for chips, when it has one besides the tag itself. */
+export const tagLabel = (tag: string) => labels.get(tag);
+/** The values a parent tag includes, as tags. */
+export const includedBy = (tag: string) =>
+  [...parents].filter(([, of]) => of.includes(tag)).map(([child]) => child);
+const withParents = new Map(
+  data.skills.map((s) => [
+    s.id,
+    [...s.tags, ...new Set(s.tags.flatMap((t) => parents.get(t) ?? []))],
+  ]),
+);
+/** A skill's tags, plus the parents it has through them. */
+export const tagsOf = (s: Skill) => withParents.get(s.id) ?? s.tags;
 
 /** The order facets appear in, wherever they're listed. */
-export const FACET_ORDER = ["type", "effect", "needs", "by", "topic", "stack", "flag", "lang"];
+export const FACET_ORDER = [
+  "category",
+  "type",
+  "effect",
+  "needs",
+  "by",
+  "topic",
+  "stack",
+  "flag",
+  "lang",
+];
 /** Tags that call for a look before installing. */
 export const CAUTION = ["flag:republished", "flag:deprecated"];
 

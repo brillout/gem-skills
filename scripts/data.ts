@@ -10,13 +10,12 @@ const path = `${root}data/skills.json`;
 
 export const readData = (): Data => JSON.parse(readFileSync(path, "utf8"));
 
-const TOP = ["updated", "asOf", "skip", "categories", "facets", "repos", "bundles", "skills"];
+const TOP = ["updated", "asOf", "skip", "facets", "repos", "bundles", "skills"];
 const ORDER = [
   "id",
   "name",
   "description",
   "tldr",
-  "categories",
   "tags",
   "skills.sh",
   "clawhub.ai",

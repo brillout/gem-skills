@@ -15,7 +15,6 @@ const fail = (where: string, message: string) => errors.push(`${where}: ${messag
 
 const facets = new Map<string, Facet>(data.facets.map((f) => [f.id, f]));
 const topics = new Set(facets.get("topic")?.values.map((v) => v.id));
-const categories = new Set(data.categories.map((c) => c.id));
 const repos = new Set<string>();
 for (const repo of data.repos) {
   if (repos.has(repo.id)) fail(repo.id, "duplicate repo");
@@ -25,6 +24,18 @@ for (const repo of data.repos) {
 const vocabulary = new Set(
   data.facets.flatMap((f) => f.values.map((v) => (f.prefix === false ? v.id : `${f.id}:${v.id}`))),
 );
+// A parent includes plain values of its own facet: parents don't nest, and skills don't carry them.
+const parents = new Set<string>();
+for (const f of data.facets)
+  for (const v of f.values) {
+    if (!v.includes) continue;
+    parents.add(f.prefix === false ? v.id : `${f.id}:${v.id}`);
+    for (const id of v.includes) {
+      const child = f.values.find((c) => c.id === id);
+      if (!child) fail(`facet ${f.id}`, `${v.id} includes unknown value "${id}"`);
+      else if (child.includes) fail(`facet ${f.id}`, `${v.id} includes ${id}, another parent`);
+    }
+  }
 for (const { tag, note } of data.skip) {
   if (!vocabulary.has(tag)) fail("skip", `unknown tag "${tag}"`);
   if (!note) fail("skip", `"${tag}" needs a note saying why its skills are skipped`);
@@ -46,8 +57,8 @@ for (const skill of data.skills) {
   if (ids.has(at)) fail(at, "duplicate skill id");
   ids.add(at);
   if (!skill.description) fail(at, "missing description");
-  if (skill.categories.length === 0) fail(at, "no category");
-  for (const c of skill.categories) if (!categories.has(c)) fail(at, `unknown category "${c}"`);
+  for (const t of skill.tags)
+    if (parents.has(t)) fail(at, `${t} comes with the tags it includes; don't tag it directly`);
   const repo = github(skill)?.repo;
   if (repo && !repos.has(repo)) fail(at, `repo "${repo}" has no entry in repos`);
   if (!skill["skills.sh"] && !skill["clawhub.ai"] && !skill["skillhub.cn"])

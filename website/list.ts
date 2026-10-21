@@ -11,7 +11,6 @@ import {
   REGISTRIES,
   bundleHref,
   bundleOf,
-  categoryById,
   data,
   desc,
   downloadsOf,
@@ -31,22 +30,23 @@ import {
   starsOf,
   tagChip,
   tagInfo,
+  tagLabel,
   tagOf,
+  tagsOf,
 } from "./skills.ts";
 import { skipped, type Bundle, type Registry, type Skill } from "./types.ts";
 
 /** A row of the skills list: a skill, or a bundle with its skills inside. */
 type Entry = Skill | Bundle;
 
-/** Tags that hold for most skills; the list leaves them to the skill's page. */
-const QUIET = new Set(["by:community"]);
+/** Tags the list's rows leave to the skill's page: ones that hold for most skills, and categories, which the filters already show. */
+const quiet = (tag: string) => tag === "by:community" || facetOf(tag) === "category";
 
 // ------------------------------------------------------------------- state
 
 export type Sort = "installs" | "downloads" | "stars" | "name" | "newest";
 export interface State {
   q: string;
-  cats: string[];
   tags: string[];
   registries: string[];
   repo: string | null;
@@ -71,7 +71,6 @@ export function parse(search: string): State {
   const sort = p.get("sort") as Sort | null;
   return {
     q: p.get("q") ?? "",
-    cats: p.getAll("cat"),
     tags: p.getAll("tag"),
     registries: p.getAll("registry"),
     repo: p.get("repo"),
@@ -85,7 +84,6 @@ export function parse(search: string): State {
 export function query(s: State): string {
   const p = new URLSearchParams();
   if (s.q) p.set("q", s.q);
-  for (const c of s.cats) p.append("cat", c);
   for (const t of s.tags) p.append("tag", t);
   for (const r of s.registries) p.append("registry", r);
   if (s.repo) p.set("repo", s.repo);
@@ -113,8 +111,8 @@ const searchText = new Map(
       repoKey(s),
       ...registriesOf(s).map((r) => REGISTRIES[r]),
       s.note,
-      ...s.tags,
-      ...s.categories.map((c) => categoryById.get(c)?.label),
+      ...tagsOf(s),
+      ...tagsOf(s).map(tagLabel),
     ]
       .filter(Boolean)
       .join(" ")
@@ -148,8 +146,6 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
     return false;
   if (st.hide && s.tags.includes("flag:republished")) return false;
   if (st.repo && repoKey(s) !== st.repo) return false;
-  if (skip !== "category" && st.cats.length && !s.categories.some((c) => st.cats.includes(c)))
-    return false;
   if (
     skip !== "registry" &&
     st.registries.length &&
@@ -159,7 +155,7 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
   const selected = new Map<string, string[]>();
   for (const t of st.tags) selected.set(facetOf(t), [...(selected.get(facetOf(t)) ?? []), t]);
   for (const [facet, tags] of selected)
-    if (facet !== skip && !tags.some((t) => s.tags.includes(t))) return false;
+    if (facet !== skip && !tags.some((t) => tagsOf(s).includes(t))) return false;
   return !st.q || matches(searchText.get(s.id) ?? "", st.q);
 }
 
@@ -175,7 +171,7 @@ function bundlePasses(b: Bundle, st: State): boolean {
 }
 
 const isFiltered = (st: State) =>
-  Boolean(st.q || st.cats.length || st.tags.length || st.registries.length || st.repo || st.hide);
+  Boolean(st.q || st.tags.length || st.registries.length || st.repo || st.hide);
 
 /** On a tie, such as a bundle and its most installed skill, the bundle goes first. */
 const bundleFirst = (a: Entry, b: Entry) => Number(isBundle(b)) - Number(isBundle(a));
@@ -274,7 +270,7 @@ const moreLink = (e: Entry, more: number, st: State) =>
 
 function skillRow(s: Skill, more: number, st: State): string {
   const tags = s.tags
-    .filter((t) => !QUIET.has(t))
+    .filter((t) => !quiet(t))
     .sort((a, b) => FACET_ORDER.indexOf(facetOf(a)) - FACET_ORDER.indexOf(facetOf(b)));
   const caution = s.tags.some((t) => CAUTION.includes(t));
   const bundle = bundleOf.get(s.id)?.bundle;
@@ -321,7 +317,7 @@ function section(title: string, question: string | null, chips: string): string 
 function tagSection(st: State, facetId: string): string {
   const facet = facetById.get(facetId);
   if (!facet) return "";
-  const n = counts(st, facetId, (s) => s.tags.filter((t) => facetOf(t) === facetId));
+  const n = counts(st, facetId, (s) => tagsOf(s).filter((t) => facetOf(t) === facetId));
   return section(
     facet.name,
     facet.question,
@@ -332,7 +328,7 @@ function tagSection(st: State, facetId: string): string {
         filterChip(
           "data-tag",
           t,
-          t.slice(facetId.length + 1),
+          tagLabel(t) ?? t.slice(facetId.length + 1),
           n.get(t) ?? 0,
           st.tags.includes(t),
           tagInfo.get(t),
@@ -344,27 +340,8 @@ function tagSection(st: State, facetId: string): string {
 
 export function facetsHtml(st: State, stackExpanded: boolean): string {
   const sections: string[] = [];
-  const catCounts = counts(st, "category", (s) => s.categories);
-  sections.push(
-    section(
-      "Category",
-      null,
-      data.categories
-        .filter((c) => catCounts.get(c.id) || st.cats.includes(c.id))
-        .map((c) =>
-          filterChip(
-            "data-cat",
-            c.id,
-            c.label,
-            catCounts.get(c.id) ?? 0,
-            st.cats.includes(c.id),
-            c.description,
-          ),
-        )
-        .join(""),
-    ),
-  );
-  for (const f of ["type", "effect", "needs", "by", "flag"]) sections.push(tagSection(st, f));
+  for (const f of ["category", "type", "effect", "needs", "by", "flag"])
+    sections.push(tagSection(st, f));
   const regCounts = counts(st, "registry", registriesOf);
   sections.push(
     section(
@@ -429,7 +406,6 @@ function activeFilters(st: State): string {
   const remove = (kind: string, value: string, label: string) =>
     `<button type="button" class="active-chip" data-remove="${kind}" data-value="${esc(value)}" aria-label="Remove filter ${esc(label)}">${esc(label)} <span aria-hidden="true">×</span></button>`;
   if (st.q) chips.push(remove("q", st.q, `“${st.q}”`));
-  for (const c of st.cats) chips.push(remove("cat", c, categoryById.get(c)?.label ?? c));
   for (const t of st.tags) chips.push(remove("tag", t, t));
   for (const r of st.registries) chips.push(remove("registry", r, REGISTRIES[r as Registry] ?? r));
   if (st.repo) chips.push(remove("repo", st.repo, `from ${st.repo}`));

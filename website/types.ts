@@ -10,19 +10,10 @@ export interface Data {
   asOf: Record<"installs" | "stars" | "downloads" | "tags", string>;
   /** The tags whose skills the skills list and the daily sync leave out, each with why. */
   skip: { tag: string; note: string }[];
-  categories: Category[];
   facets: Facet[];
   repos: Repo[];
   bundles: Bundle[];
   skills: Skill[];
-}
-
-export interface Category {
-  id: string;
-  /** Short name for chips. */
-  label: string;
-  name: string;
-  description: string;
 }
 
 /** A tag dimension. Tags are written `facet:value`, except topics, which have no prefix. */
@@ -32,7 +23,17 @@ export interface Facet {
   question: string;
   /** How many values of this facet a skill carries. */
   count: "one" | "one or more" | "at most one" | "one to five" | "any";
-  values: { id: string; description?: string }[];
+  values: {
+    id: string;
+    /** A name for chips, when the id alone isn't one. */
+    label?: string;
+    description?: string;
+    /**
+     * Makes the value a parent of these values of the same facet: skills don't carry it, they
+     * have it through any of them, and filtering on it lists them all.
+     */
+    includes?: string[];
+  }[];
   /** `false` for topics, which are written without a `topic:` prefix. */
   prefix?: false;
   /** Display groups (topics only). */
@@ -66,7 +67,6 @@ export interface Skill {
   description: string;
   /** What the skill is and does, written from the SKILL.md its permalink points to. */
   tldr?: Tldr;
-  categories: string[];
   tags: string[];
   "skills.sh"?: SkillsSh;
   "clawhub.ai"?: ClawHub;

@@ -8,11 +8,12 @@ description: Add a skill to Gem Skills' skills.json, or retag one, including whe
 1. Add its entry to `skills` in `data/skills.json`. Its `id` is where its SKILL.md lives, as `Skill` in `website/types.ts` describes; a GitHub repo it comes from needs an entry in `repos`.
 2. Run `pnpm run sync <id>` to save a copy of its SKILL.md in `data/skill-snapshots/`.
 3. Read that copy, not only the skill's one-line description, and tag it. Tag values and their meanings are under `facets` in `data/skills.json`.
-   1. Give it one `type:` and one `effect:`, judged by the skill's own steps.
-   2. List every `needs:` value that applies. Use `needs:none` only when nothing does.
-   3. Add a `stack:` tag for each technology or service the skill is about.
-   4. Add one to five topics, preferring existing ones.
-   5. Add a `flag:` only with evidence, such as a matching original or a retirement notice. Add `flag:tool-docs` when the skill is documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, such as a framework's best practices or a cloud's CLI. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn't carry it: there, the tool is how, not what.
+   1. Give it every `category:` that fits. Don't add a parent such as `category:software-engineering`: it comes with the categories it `includes`.
+   2. Give it one `type:` and one `effect:`, judged by the skill's own steps.
+   3. List every `needs:` value that applies. Use `needs:none` only when nothing does.
+   4. Add a `stack:` tag for each technology or service the skill is about.
+   5. Add one to five topics, preferring existing ones.
+   6. Add a `flag:` only with evidence, such as a matching original or a retirement notice. Add `flag:tool-docs` when the skill is documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, such as a framework's best practices or a cloud's CLI. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn't carry it: there, the tool is how, not what.
 4. Check whether it belongs to a bundle (below).
 5. Run `pnpm run check`, which rejects tags outside the vocabulary, then commit and push to `main`.
 6. Write its TLDR with the write-tldr skill.
