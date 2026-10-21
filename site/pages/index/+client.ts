@@ -1,15 +1,6 @@
 /** The skills list's filters: re-render the list whenever they change, and keep them in the URL. */
 
-import { href } from "../../format.ts";
 import { facetsHtml, parse, query, resultsHtml, type Sort, type State } from "../../list.ts";
-import { skillHref } from "../../skills.ts";
-
-// The site used to keep its views in the hash: #/tags, #/?tag=x, #/?skill=<id>.
-if (location.hash.startsWith("#/")) {
-  const [path, search = ""] = location.hash.slice(2).split("?");
-  const skill = new URLSearchParams(search).get("skill");
-  location.replace(skill ? skillHref(skill) : path ? href(`${path}/`) : href() + `?${search}`);
-}
 
 const app = document.getElementById("app") as HTMLElement;
 const q = document.getElementById("q") as HTMLInputElement;
