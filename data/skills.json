@@ -337,6 +337,9 @@
           "id": "dependency-cruiser"
         },
         {
+          "id": "exa"
+        },
+        {
           "id": "expo"
         },
         {
@@ -389,6 +392,9 @@
         },
         {
           "id": "liarjs"
+        },
+        {
+          "id": "linkedin"
         },
         {
           "id": "mcp"
@@ -464,6 +470,9 @@
         },
         {
           "id": "shadcn"
+        },
+        {
+          "id": "shoehorn"
         },
         {
           "id": "slack"
@@ -2532,7 +2541,7 @@
         "category:skill-tools",
         "type:workflow",
         "effect:local",
-        "needs:none",
+        "needs:subagents",
         "by:official",
         "skill-authoring",
         "testing",
@@ -2785,10 +2794,13 @@
       },
       "tags": [
         "category:skill-tools",
+        "category:browser",
         "type:workflow",
-        "effect:local",
+        "effect:remote",
         "needs:cli",
         "needs:browser",
+        "needs:account",
+        "needs:subagents",
         "by:official",
         "stack:browser-act",
         "skill-authoring",
@@ -2903,8 +2915,8 @@
       "tags": [
         "category:skill-tools",
         "category:security",
-        "type:workflow",
-        "effect:none",
+        "type:tool",
+        "effect:remote",
         "needs:none",
         "by:community",
         "skill-security",
@@ -3357,6 +3369,7 @@
         "type:workflow",
         "effect:remote",
         "needs:issue-tracker",
+        "needs:subagents",
         "by:community",
         "planning",
         "issue-tracking"
@@ -3918,7 +3931,7 @@
         "category:engineering",
         "type:workflow",
         "effect:local",
-        "needs:none",
+        "needs:subagents",
         "by:community",
         "architecture",
         "refactoring"
@@ -4049,6 +4062,7 @@
         "effect:local",
         "needs:none",
         "by:community",
+        "stack:git",
         "git"
       ],
       "skills.sh": {
@@ -4229,6 +4243,7 @@
         "needs:none",
         "by:community",
         "stack:typescript",
+        "stack:shoehorn",
         "migration",
         "testing",
         "flag:tool-docs"
@@ -4541,7 +4556,7 @@
         "category:engineering",
         "category:agents",
         "type:workflow",
-        "effect:none",
+        "effect:local",
         "needs:subagents",
         "by:community",
         "multi-agent",
@@ -4699,7 +4714,7 @@
       "tags": [
         "category:engineering",
         "type:workflow",
-        "effect:local",
+        "effect:remote",
         "needs:issue-tracker",
         "needs:subagents",
         "by:community",
@@ -5194,6 +5209,7 @@
         "type:workflow",
         "effect:none",
         "needs:subagents",
+        "needs:issue-tracker",
         "by:community",
         "code-review"
       ],
@@ -5242,6 +5258,7 @@
       },
       "tags": [
         "category:debugging",
+        "category:output-style",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -5400,6 +5417,8 @@
         "type:workflow",
         "effect:remote",
         "needs:issue-tracker",
+        "needs:cli",
+        "needs:subagents",
         "by:community",
         "testing",
         "issue-tracking"
@@ -5553,7 +5572,7 @@
       "tags": [
         "category:debugging",
         "type:workflow",
-        "effect:local",
+        "effect:none",
         "needs:none",
         "by:community",
         "self-improvement",
@@ -5609,7 +5628,8 @@
         "needs:none",
         "by:community",
         "stack:playwright",
-        "testing"
+        "testing",
+        "flag:tool-docs"
       ],
       "skills.sh": {
         "url": "https://skills.sh/currents-dev/playwright-best-practices-skill/playwright-best-practices",
@@ -5769,6 +5789,7 @@
         "needs:cli",
         "needs:account",
         "needs:browser",
+        "needs:mcp",
         "by:official",
         "stack:momentic",
         "testing",
@@ -5867,6 +5888,7 @@
       },
       "tags": [
         "category:output-style",
+        "category:engineering",
         "type:command",
         "effect:none",
         "needs:none",
@@ -6303,8 +6325,9 @@
       "tags": [
         "category:writing",
         "type:workflow",
-        "effect:none",
+        "effect:local",
         "needs:mcp",
+        "needs:account",
         "by:official",
         "stack:proseify",
         "writing",
@@ -6779,7 +6802,7 @@
         "permalink": "https://github.com/nozomio-labs/nia-skill/tree/b253a81f257d219f9842d864f9991be287bfc66f"
       },
       "tags": [
-        "category:writing",
+        "category:browser",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -6787,7 +6810,7 @@
         "by:official",
         "stack:nia",
         "research",
-        "docs-writing"
+        "web-search"
       ],
       "skills.sh": {
         "url": "https://skills.sh/nozomio-labs/nia-skill/nia",
@@ -6966,9 +6989,9 @@
       },
       "tags": [
         "category:design",
-        "type:guidelines",
-        "effect:none",
-        "needs:none",
+        "type:workflow",
+        "effect:local",
+        "needs:browser",
         "by:community",
         "design",
         "anti-slop"
@@ -7210,8 +7233,8 @@
       },
       "tags": [
         "category:design",
-        "type:router",
-        "effect:none",
+        "type:workflow",
+        "effect:local",
         "needs:none",
         "by:community",
         "design",
@@ -7460,7 +7483,7 @@
         "category:design",
         "type:workflow",
         "effect:local",
-        "needs:none",
+        "needs:browser",
         "by:community",
         "design-system"
       ],
@@ -7916,8 +7939,8 @@
       },
       "tags": [
         "category:design",
-        "type:guidelines",
-        "effect:none",
+        "type:workflow",
+        "effect:local",
         "needs:none",
         "by:community",
         "design",
@@ -8056,7 +8079,6 @@
         "needs:none",
         "by:official",
         "stack:react",
-        "stack:nextjs",
         "code-quality",
         "design-system",
         "flag:tool-docs"
@@ -8285,7 +8307,7 @@
         "category:frameworks",
         "type:guidelines",
         "effect:none",
-        "needs:none",
+        "needs:cli",
         "by:official",
         "stack:solana",
         "stack:react",
@@ -8600,6 +8622,7 @@
         "effect:remote",
         "needs:cli",
         "needs:account",
+        "needs:mcp",
         "by:official",
         "stack:azure",
         "agent-development",
@@ -8657,6 +8680,7 @@
         "type:setup",
         "effect:local",
         "needs:cli",
+        "needs:account",
         "by:official",
         "stack:azure",
         "deployment",
@@ -8769,7 +8793,7 @@
       "tags": [
         "category:cloud",
         "type:setup",
-        "effect:local",
+        "effect:remote",
         "needs:cli",
         "needs:account",
         "by:official",
@@ -8797,7 +8821,7 @@
       "tags": [
         "category:cloud",
         "type:tool",
-        "effect:none",
+        "effect:remote",
         "needs:cli",
         "needs:account",
         "by:official",
@@ -8907,7 +8931,7 @@
       "name": "stripe-best-practices",
       "description": "Guides Stripe integration choices, sandboxes and API selection.",
       "tags": [
-        "category:cloud",
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
         "needs:none",
@@ -8985,7 +9009,7 @@
         "permalink": "https://github.com/mitsuhiko/gh-issue-sync/tree/955fe4c48653599294f9130008a996e2d9048ef5/skill"
       },
       "tags": [
-        "category:cloud",
+        "category:engineering",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -9121,10 +9145,11 @@
         "permalink": "https://github.com/cloudflare/skills/tree/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/web-perf"
       },
       "tags": [
-        "category:cloud",
+        "category:debugging",
         "type:workflow",
         "effect:none",
         "needs:browser",
+        "needs:mcp",
         "by:official",
         "performance"
       ],
@@ -9146,7 +9171,7 @@
       "name": "upgrade-stripe",
       "description": "Upgrades Stripe API versions and SDKs.",
       "tags": [
-        "category:cloud",
+        "category:frameworks",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -9280,7 +9305,7 @@
       "tags": [
         "category:browser",
         "type:tool",
-        "effect:none",
+        "effect:remote",
         "needs:cli",
         "needs:account",
         "by:official",
@@ -9305,6 +9330,28 @@
       "id": "stablyai/orca/skills/computer-use",
       "name": "computer-use",
       "description": "Drives a local app's GUI through its accessibility tree.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "a task needs a desktop app's or browser window's interface, and no command, file or API can do it"
+          },
+          {
+            "label": "It does",
+            "text": "clicks, types, opens menus, answers dialogs and takes screenshots in native apps and outside browser windows such as Chrome, Edge or Safari"
+          },
+          {
+            "label": "Needs",
+            "text": "Orca, Stably's desktop app for working with many coding agents in parallel, installed; it starts Orca if it isn't running"
+          },
+          {
+            "label": "Unlike orca-cli",
+            "text": "which drives the browser built into Orca, this works on other windows on your screen"
+          }
+        ],
+        "text": "It gives an agent a way to work with apps that only have a graphical interface. Through the orca computer command, the agent reads a visible window as its accessibility tree, the structured list of buttons, fields and menus that screen readers use, then clicks, types, picks menu items, answers dialogs and takes screenshots. The SKILL.md itself is a short stub: it has the agent load the guide that matches the installed Orca version, so the instructions follow the app. It tells the agent to prefer the shell, files, git, HTTP or an existing CLI whenever one of those can do the job, and to reach for the interface only when nothing else can. It also guards against a Linux pitfall: outside Orca's own terminals, a bare orca command usually starts the GNOME screen reader of the same name.",
+        "permalink": "https://github.com/stablyai/orca/tree/997d34b04389665795966ec4c0325b5cbfabf9ee/skills/computer-use"
+      },
       "tags": [
         "category:browser",
         "type:tool",
@@ -9312,8 +9359,7 @@
         "needs:cli",
         "by:official",
         "stack:orca",
-        "computer-use",
-        "flag:tool-docs"
+        "computer-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/stablyai/orca/computer-use",
@@ -9325,7 +9371,7 @@
       "skillMd": {
         "version": "997d34b04389665795966ec4c0325b5cbfabf9ee",
         "updated": "2026-10-20",
-        "skew": 338
+        "skew": 0
       }
     },
     {
@@ -9365,7 +9411,7 @@
       "tags": [
         "category:browser",
         "type:tool",
-        "effect:local",
+        "effect:remote",
         "needs:cli",
         "needs:browser",
         "by:official",
@@ -9473,7 +9519,7 @@
       "tags": [
         "category:browser",
         "type:tool",
-        "effect:none",
+        "effect:remote",
         "needs:cli",
         "needs:account",
         "by:official",
@@ -9753,6 +9799,8 @@
         "needs:account",
         "by:community",
         "stack:inference-sh",
+        "stack:tavily",
+        "stack:exa",
         "web-search",
         "flag:republished"
       ],
@@ -9860,7 +9908,7 @@
         "type:tool",
         "effect:none",
         "needs:none",
-        "by:official",
+        "by:community",
         "web-search"
       ],
       "clawhub.ai": {
@@ -9938,7 +9986,7 @@
       "tags": [
         "category:media",
         "type:tool",
-        "effect:local",
+        "effect:remote",
         "needs:cli",
         "by:official",
         "stack:hyperframes",
@@ -10460,17 +10508,23 @@
       },
       "tags": [
         "category:media",
+        "category:marketing",
         "type:tool",
         "effect:remote",
         "needs:cli",
         "needs:account",
+        "needs:browser",
         "by:official",
         "stack:wonda",
+        "stack:x-twitter",
+        "stack:reddit",
+        "stack:linkedin",
         "video",
         "image",
         "audio",
         "ai-generation",
-        "social-media"
+        "social-media",
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/degausai/wonda/wonda-cli",
@@ -11457,6 +11511,8 @@
         "type:tool",
         "effect:remote",
         "needs:account",
+        "needs:cli",
+        "needs:mcp",
         "by:official",
         "stack:tencent-docs",
         "documents",
@@ -12032,6 +12088,7 @@
       },
       "tags": [
         "category:marketing",
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -12193,7 +12250,7 @@
       "tags": [
         "category:marketing",
         "type:workflow",
-        "effect:local",
+        "effect:none",
         "needs:none",
         "by:community",
         "seo",
@@ -12514,6 +12571,7 @@
       },
       "tags": [
         "category:marketing",
+        "category:media",
         "type:tool",
         "effect:local",
         "needs:cli",
@@ -12573,7 +12631,6 @@
         "effect:none",
         "needs:none",
         "by:community",
-        "stack:python",
         "ml-research"
       ],
       "skills.sh": {
@@ -12599,7 +12656,6 @@
         "effect:none",
         "needs:cli",
         "needs:account",
-        "needs:mcp",
         "by:official",
         "stack:wind",
         "finance",
@@ -12658,6 +12714,7 @@
         "type:tool",
         "effect:local",
         "needs:cli",
+        "needs:browser",
         "by:community",
         "diagrams",
         "architecture"
@@ -12911,9 +12968,10 @@
       "description": "References agent code, tools and callbacks for Google ADK.",
       "tags": [
         "category:agents",
+        "category:frameworks",
         "type:guidelines",
         "effect:none",
-        "needs:none",
+        "needs:cli",
         "by:official",
         "stack:google-adk",
         "agent-development",
@@ -12967,7 +13025,7 @@
       "tags": [
         "category:agents",
         "type:workflow",
-        "effect:none",
+        "effect:local",
         "needs:cli",
         "by:official",
         "stack:orca",
@@ -13397,10 +13455,12 @@
       "tags": [
         "category:agents",
         "type:workflow",
-        "effect:local",
+        "effect:remote",
         "needs:cli",
+        "needs:account",
         "by:official",
         "stack:google-adk",
+        "stack:google-cloud",
         "agent-development",
         "flag:tool-docs"
       ],
@@ -13480,6 +13540,7 @@
       "description": "Sets up tracing, logging and analytics for ADK agents.",
       "tags": [
         "category:agents",
+        "category:cloud",
         "type:tool",
         "effect:remote",
         "needs:cli",
@@ -13543,6 +13604,7 @@
         "effect:none",
         "needs:mcp",
         "needs:account",
+        "needs:cli",
         "by:official",
         "stack:azure",
         "security",
@@ -13651,6 +13713,7 @@
         "by:community",
         "osint",
         "privacy",
+        "fingerprinting",
         "flag:dual-use"
       ],
       "skills.sh": {
@@ -13830,7 +13893,7 @@
       "tags": [
         "category:security",
         "type:tool",
-        "effect:remote",
+        "effect:none",
         "needs:mcp",
         "needs:account",
         "by:official",
@@ -13888,6 +13951,7 @@
         "type:workflow",
         "effect:none",
         "needs:browser",
+        "needs:account",
         "by:official",
         "stack:antibrow",
         "stack:playwright",
@@ -13945,7 +14009,7 @@
       "tags": [
         "category:security",
         "type:tool",
-        "effect:none",
+        "effect:local",
         "needs:cli",
         "needs:browser",
         "by:official",
@@ -14061,7 +14125,8 @@
         "category:security",
         "type:workflow",
         "effect:none",
-        "needs:none",
+        "needs:cli",
+        "needs:browser",
         "by:official",
         "stack:liarjs",
         "fingerprinting",
@@ -14088,9 +14153,10 @@
       "tags": [
         "category:engineering",
         "type:tool",
-        "effect:remote",
+        "effect:none",
         "needs:cli",
         "needs:account",
+        "needs:issue-tracker",
         "by:official",
         "stack:github",
         "git",
@@ -14166,8 +14232,8 @@
       "description": "Acts as a full-stack programming expert for Java, PHP, frontend and MySQL work.",
       "tags": [
         "category:engineering",
-        "type:guidelines",
-        "effect:none",
+        "type:workflow",
+        "effect:local",
         "needs:none",
         "by:community",
         "code-quality",
