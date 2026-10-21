@@ -5,7 +5,7 @@
  * Tencent SkillHub or the website that publishes it. When the text differs from the copy, it
  * rewrites the copy, records the version in the skill's `skillMd` and recomputes `skew`, how far
  * the text has moved from the SKILL.md the skill's TLDR summarizes. Skipped skills keep the copy
- * they have.
+ * they have. When a bundle's skill changes, it recomputes the bundle's skew too.
  *
  * Run: pnpm run sync [id prefix...]
  */
@@ -25,7 +25,7 @@ import { dirname, join } from "node:path";
 import { promisify } from "node:util";
 import { readData, root, writeData } from "./data.ts";
 import { copyPath, rawUrl, skew } from "./site/skill-md.ts";
-import { github, skipped, type Skill, type SkillMd } from "./site/types.ts";
+import { github, skipped, type Bundle, type Skill, type SkillMd } from "./site/types.ts";
 
 const today = new Date().toISOString().slice(0, 10);
 const scratch = mkdtempSync(join(tmpdir(), "gemskills-sync-"));
@@ -210,6 +210,22 @@ async function sync(skill: Skill) {
   if (JSON.stringify(skill.skillMd) !== before) changed.add(skill.id);
 }
 
+/** How far a bundle's skills are from the SKILL.md files at the commit its TLDR summarizes. */
+async function bundleSkew(bundle: Bundle, skills: Map<string, Skill>): Promise<number> {
+  const commit = bundle.tldr && /\/tree\/([0-9a-f]{40})$/.exec(bundle.tldr.permalink)?.[1];
+  let words = 0;
+  for (const { id } of bundle.skills) {
+    const skill = skills.get(id);
+    const gh = skill && github(skill);
+    if (!gh) continue;
+    const text = readFileSync(join(root, copyPath(skill)), "utf8");
+    // A skill that's new since that commit counts all its words.
+    const summarized = commit ? ((await get(raw(gh.repo, commit, skillMdIn(gh.dir)))) ?? "") : "";
+    words += skew(summarized, text);
+  }
+  return words;
+}
+
 /** Run `work` on every item, `size` at a time. */
 async function pool<T>(items: T[], size: number, work: (item: T) => Promise<void>) {
   const queue = [...items];
@@ -229,6 +245,17 @@ await pool(skills, 8, (skill) =>
     errors.push(`${skill.id}: ${error.message}`);
   }),
 );
+
+const byId = new Map(data.skills.map((s) => [s.id, s]));
+for (const bundle of data.bundles)
+  if (bundle.skills.some(({ id }) => changed.has(id))) {
+    const before = bundle.skew;
+    bundle.skew = await bundleSkew(bundle, byId).catch((error: Error) => {
+      errors.push(`bundle ${bundle.id}: ${error.message}`);
+      return before;
+    });
+    if (bundle.skew !== before) changed.add(`bundle ${bundle.id}`);
+  }
 
 // Drop the copies of skills that left the list.
 if (!only.length) {

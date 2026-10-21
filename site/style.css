@@ -1034,3 +1034,99 @@ code {
     padding: 4px 14px;
   }
 }
+
+/* ------------------------------------------------------------- bundles */
+
+.kind {
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+h1 .kind {
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.skill.bundle {
+  border-left: 3px solid var(--accent);
+}
+
+.members {
+  margin: 0;
+  color: var(--text-3);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.members a {
+  color: var(--text-2);
+}
+
+.members a.dim {
+  color: var(--text-3);
+  opacity: 0.6;
+}
+
+.in-bundle {
+  margin: 12px 0;
+  color: var(--text-2);
+  font-size: 14px;
+}
+
+.install-label {
+  margin: 12px 0 4px;
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.install-label:first-child {
+  margin-top: 0;
+}
+
+.bundle-skills {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.page .bundle-skills li {
+  position: relative;
+  margin: 0;
+  padding: 12px 0 12px 36px;
+  border-top: 1px solid var(--border);
+  counter-increment: step;
+}
+
+.bundle-skills li::before {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 24px;
+  color: var(--text-3);
+  content: counter(step);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.page .bundle-skills h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.bundle-skills .skill-desc {
+  margin: 2px 0 0;
+}
+
+.member-note {
+  margin: 4px 0 0;
+  color: var(--text-3);
+  font-size: 14px;
+}

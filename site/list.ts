@@ -9,6 +9,8 @@ import {
   DOWNLOADS,
   FACET_ORDER,
   REGISTRIES,
+  bundleHref,
+  bundleOf,
   categoryById,
   data,
   desc,
@@ -18,16 +20,23 @@ import {
   firstSeenOf,
   glanceHtml,
   installsOf,
+  isBundle,
+  ownEntry,
   registriesOf,
   repoById,
   repoKey,
+  skillById,
   skillHref,
+  skillsOf,
   starsOf,
   tagChip,
   tagInfo,
   tagOf,
 } from "./skills.ts";
-import { skipped, type Registry, type Skill } from "./types.ts";
+import { skipped, type Bundle, type Registry, type Skill } from "./types.ts";
+
+/** A row of the skills list: a skill, or a bundle with its skills inside. */
+type Entry = Skill | Bundle;
 
 /** Tags that hold for most skills; the list leaves them to the skill's page. */
 const QUIET = new Set(["by:community"]);
@@ -42,7 +51,7 @@ export interface State {
   registries: string[];
   repo: string | null;
   sort: Sort;
-  /** One skill per repo: the most popular one stands for its bundle. */
+  /** One entry per repo: the most popular one stands for the rest. */
   one: boolean;
   /** Hide republished copies. */
   hide: boolean;
@@ -112,6 +121,21 @@ const searchText = new Map(
       .toLowerCase(),
   ]),
 );
+const bundleText = new Map(
+  data.bundles.map((b) => [
+    b.id,
+    [b.name, b.description, ...(b.tldr?.glance.map((g) => g.text) ?? []), b.tldr?.text]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase(),
+  ]),
+);
+const matches = (text: string, q: string) =>
+  q
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .every((word) => text.includes(word));
 
 /** Within a facet a skill needs any selected value; across facets it needs all of them. `skip` leaves one facet out, for its counts. */
 function passes(s: Skill, st: State, skip: string | null = null): boolean {
@@ -136,24 +160,30 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
   for (const t of st.tags) selected.set(facetOf(t), [...(selected.get(facetOf(t)) ?? []), t]);
   for (const [facet, tags] of selected)
     if (facet !== skip && !tags.some((t) => s.tags.includes(t))) return false;
-  if (st.q) {
-    const text = searchText.get(s.id) ?? "";
-    if (
-      !st.q
-        .toLowerCase()
-        .split(/\s+/)
-        .filter(Boolean)
-        .every((word) => text.includes(word))
-    )
-      return false;
-  }
-  return true;
+  return !st.q || matches(searchText.get(s.id) ?? "", st.q);
 }
 
-const ORDER: Record<Sort, (a: Skill, b: Skill) => number> = {
+/** A bundle shows when one of its skills does, or when the search matches the bundle itself and one of its skills matches the other filters. */
+function bundlePasses(b: Bundle, st: State): boolean {
+  const skills = skillsOf(b);
+  return (
+    skills.some((s) => passes(s, st)) ||
+    (Boolean(st.q) &&
+      matches(bundleText.get(b.id) ?? "", st.q) &&
+      skills.some((s) => passes(s, { ...st, q: "" })))
+  );
+}
+
+const isFiltered = (st: State) =>
+  Boolean(st.q || st.cats.length || st.tags.length || st.registries.length || st.repo || st.hide);
+
+/** On a tie, such as a bundle and its most installed skill, the bundle goes first. */
+const bundleFirst = (a: Entry, b: Entry) => Number(isBundle(b)) - Number(isBundle(a));
+const ORDER: Record<Sort, (a: Entry, b: Entry) => number> = {
   installs: (a, b) =>
     desc(installsOf(a), installsOf(b)) ||
     desc(downloadsOf(a), downloadsOf(b)) ||
+    bundleFirst(a, b) ||
     a.name.localeCompare(b.name),
   downloads: (a, b) => desc(downloadsOf(a), downloadsOf(b)) || ORDER.installs(a, b),
   stars: (a, b) => desc(starsOf(a), starsOf(b)) || ORDER.installs(a, b),
@@ -162,11 +192,20 @@ const ORDER: Record<Sort, (a: Skill, b: Skill) => number> = {
     (firstSeenOf(b) ?? "").localeCompare(firstSeenOf(a) ?? "") || ORDER.installs(a, b),
 };
 
-/** The filtered, sorted list, plus how many skills each bundle hides in one-per-repo mode. */
-function results(st: State): { list: Skill[]; hidden: Map<string, number>; total: number } {
-  const matching = data.skills.filter((s) => passes(s, st)).sort(ORDER[st.sort]);
+/** The filtered, sorted list, plus how many entries each repo hides in one-per-repo mode. Skills that only work inside their bundle are listed in it. */
+function results(st: State): {
+  list: Entry[];
+  hidden: Map<string, number>;
+  total: number;
+  bundles: number;
+} {
+  const matching = [
+    ...data.bundles.filter((b) => bundlePasses(b, st)),
+    ...data.skills.filter((s) => ownEntry(s) && passes(s, st)),
+  ].sort(ORDER[st.sort]);
   const hidden = new Map<string, number>();
-  if (!st.one) return { list: matching, hidden, total: matching.length };
+  const counted = { total: matching.length, bundles: matching.filter(isBundle).length };
+  if (!st.one) return { list: matching, hidden, ...counted };
   const list = matching.filter((s) => {
     const key = repoKey(s);
     if (hidden.has(key)) {
@@ -176,7 +215,7 @@ function results(st: State): { list: Skill[]; hidden: Map<string, number>; total
     hidden.set(key, 0);
     return true;
   });
-  return { list, hidden, total: matching.length };
+  return { list, hidden, ...counted };
 }
 
 function counts(st: State, facet: string, valuesOf: (s: Skill) => string[]): Map<string, number> {
@@ -201,7 +240,9 @@ function filterChip(
   }><span>${esc(label)}</span><span class="n">${n}</span></button>`;
 }
 
-function metric(s: Skill, st: State): string {
+function metric(s: Entry, st: State): string {
+  // A bundle's numbers are its most popular skill's.
+  const of = isBundle(s) ? "The most of any of its skills: " : "";
   if (st.sort === "stars") {
     const stars = starsOf(s);
     return stars === null
@@ -212,39 +253,64 @@ function metric(s: Skill, st: State): string {
   if (st.sort === "newest" && firstSeen)
     return `<span class="metric" title="First seen on skills.sh"><strong>${date(firstSeen)}</strong></span>`;
   const installs = installsOf(s);
-  if (installs !== null && st.sort !== "downloads")
-    return `<span class="metric" title="All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(installs)}</strong> installs</span>`;
+  const installed = (n: number) =>
+    `<span class="metric" title="${of}All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(n)}</strong> installs</span>`;
+  if (installs !== null && st.sort !== "downloads") return installed(installs);
   const downloads = downloadsOf(s);
   if (downloads !== null)
-    return `<span class="metric" title="Downloads on ${esc(
-      DOWNLOADS.filter((r) => s[r])
+    return `<span class="metric" title="${of}Downloads on ${esc(
+      DOWNLOADS.filter((r) => (isBundle(s) ? skillsOf(s) : [s]).some((x) => x[r]))
         .map((r) => REGISTRIES[r])
         .join(" and "),
     )}, ${date(data.snapshots.downloads)}"><strong>${compact(downloads)}</strong> downloads</span>`;
-  if (installs !== null)
-    return `<span class="metric" title="All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(installs)}</strong> installs</span>`;
+  if (installs !== null) return installed(installs);
   return `<span class="metric muted" title="Not in the skills.sh all-time top 600 on ${date(data.snapshots.installs)}">new</span>`;
 }
+
+const moreLink = (e: Entry, more: number, st: State) =>
+  more
+    ? `<a class="more" href="${skillsLink({ repo: repoKey(e), sort: st.sort })}">+${more} more from ${esc(repoKey(e))}</a>`
+    : "";
 
 function skillRow(s: Skill, more: number, st: State): string {
   const tags = s.tags
     .filter((t) => !QUIET.has(t))
     .sort((a, b) => FACET_ORDER.indexOf(facetOf(a)) - FACET_ORDER.indexOf(facetOf(b)));
   const caution = s.tags.some((t) => CAUTION.includes(t));
+  const bundle = bundleOf.get(s.id)?.bundle;
   return `
     <li class="skill${caution ? " caution" : ""}">
       <div class="skill-head">
         <h3><a class="skill-name" href="${skillHref(s.id)}">${esc(s.name)}</a></h3>
-        <span class="skill-source">${esc(repoKey(s))}</span>
+        <span class="skill-source">${esc(repoKey(s))}${
+          bundle ? ` · part of <a href="${bundleHref(bundle.id)}">${esc(bundle.name)}</a>` : ""
+        }</span>
         ${metric(s, st)}
       </div>
       ${s.tldr?.glance.length ? glanceHtml(s.tldr.glance, 2) : `<p class="skill-desc">${esc(s.description)}</p>`}
       <div class="tags">${tags.map((t) => tagChip(t, null, st.tags.includes(t))).join("")}</div>
-      ${
-        more
-          ? `<a class="more" href="${skillsLink({ repo: repoKey(s), sort: st.sort })}">+${plural(more, "more skill")} from ${esc(repoKey(s))}</a>`
-          : ""
-      }
+      ${moreLink(s, more, st)}
+    </li>`;
+}
+
+function bundleRow(b: Bundle, more: number, st: State): string {
+  // When filtering, the skills that don't match are dimmed.
+  const hits = isFiltered(st) ? skillsOf(b).filter((s) => passes(s, st)) : [];
+  const members = b.skills.map(({ id }) => {
+    const dim = hits.length && !hits.some((s) => s.id === id);
+    return `<a href="${skillHref(id)}"${dim ? ` class="dim"` : ""}>${esc(skillById.get(id)?.name ?? id)}</a>`;
+  });
+  return `
+    <li class="skill bundle">
+      <div class="skill-head">
+        <h3><a class="skill-name" href="${bundleHref(b.id)}">${esc(b.name)}</a></h3>
+        <span class="kind">Bundle · ${plural(b.skills.length, "skill")}</span>
+        <span class="skill-source">${esc(repoKey(b))}</span>
+        ${metric(b, st)}
+      </div>
+      ${b.tldr?.glance.length ? glanceHtml(b.tldr.glance, 2) : `<p class="skill-desc">${esc(b.description)}</p>`}
+      <p class="members">${members.join('<span aria-hidden="true"> · </span>')}</p>
+      ${moreLink(b, more, st)}
     </li>`;
 }
 
@@ -373,20 +439,23 @@ function activeFilters(st: State): string {
 }
 
 export function resultsHtml(st: State): string {
-  const { list, hidden, total } = results(st);
-  const filtered =
-    st.q || st.cats.length || st.tags.length || st.registries.length || st.repo || st.hide;
-  // Out of every skill once skipped ones show, else out of the listed ones.
-  const all =
-    st.all || list.some((s) => skipped(data, s))
-      ? data.skills.length
-      : data.skills.filter((s) => !skipped(data, s)).length;
+  const { list, hidden, total, bundles } = results(st);
+  // Out of every entry once skipped skills show, else out of the listed ones.
+  const all = results({
+    ...FRESH,
+    all: st.all || list.some((e) => !isBundle(e) && skipped(data, e)),
+  }).total;
   const repoNote = st.repo ? repoById.get(st.repo) : undefined;
   return `
     <div class="toolbar">
-      <p id="count" role="status"><strong>${plural(total, "skill")}</strong>${
+      <p id="count" role="status"><strong>${[
+        total - bundles || !bundles ? plural(total - bundles, "skill") : "",
+        bundles ? plural(bundles, "bundle") : "",
+      ]
+        .filter(Boolean)
+        .join(", ")}</strong>${
         st.one && list.length !== total ? `, ${plural(list.length, "repo")}` : ""
-      }${filtered ? ` <span class="muted">of ${all}</span>` : ""}</p>
+      }${isFiltered(st) ? ` <span class="muted">of ${all}</span>` : ""}</p>
       <button type="button" class="filters-toggle" data-action="filters" aria-controls="filters">Filters</button>
       <label class="sort">Sort by <select id="sort">${(Object.keys(SORTS) as Sort[])
         .map((s) => `<option value="${s}"${s === st.sort ? " selected" : ""}>${SORTS[s]}</option>`)
@@ -399,7 +468,12 @@ export function resultsHtml(st: State): string {
     ${repoNote ? `<p class="repo-banner"><a href="${esc(repoNote.url)}">${esc(repoNote.id)}</a>${repoNote.description ? ` · ${esc(repoNote.description)}` : ""}</p>` : ""}
     ${
       list.length
-        ? `<ol class="skill-list">${list.map((s) => skillRow(s, hidden.get(repoKey(s)) ?? 0, st)).join("")}</ol>`
+        ? `<ol class="skill-list">${list
+            .map((e) => {
+              const more = hidden.get(repoKey(e)) ?? 0;
+              return isBundle(e) ? bundleRow(e, more, st) : skillRow(e, more, st);
+            })
+            .join("")}</ol>`
         : `<p class="empty">No skill matches these filters.</p>`
     }`;
 }

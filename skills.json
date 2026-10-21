@@ -1804,6 +1804,258 @@
       "leaderboardSkills": null
     }
   ],
+  "bundles": [
+    {
+      "id": "obra/superpowers",
+      "name": "Superpowers",
+      "description": "A software development workflow: brainstorm, plan, build test-first, review, then merge.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you want the agent to follow a full development process instead of jumping straight to code"
+          },
+          {
+            "label": "It does",
+            "text": "chains its skills into one workflow: brainstorm, plan, build test-first on its own branch, review, then merge"
+          },
+          {
+            "label": "You get",
+            "text": "an approved design, a written plan, tested commits and a review before anything merges"
+          },
+          {
+            "label": "Runs",
+            "text": "by itself: before every reply, the agent checks which of its skills applies"
+          },
+          {
+            "label": "Works with",
+            "text": "Claude Code, Codex, Cursor, Gemini CLI, OpenCode and more, each installed separately"
+          }
+        ],
+        "text": "Superpowers makes its skills fire on their own: using-superpowers, loaded at the start of each session, has the agent check for a matching skill before every reply. Building something then follows one path. brainstorming asks what you actually want and ends with a design you approve, in chat for small changes or as a document for projects. using-git-worktrees sets up an isolated branch with a clean test baseline, and writing-plans breaks the design into small tasks, each with exact files, code and checks. The plan runs either through subagent-driven-development, a fresh subagent per task with a review after each, or through executing-plans, inline with one review at the end. Throughout, test-driven-development makes every change start from a failing test, and finishing-a-development-branch verifies the tests, then merges, opens a PR, keeps or discards the branch. Other skills step in when needed: systematic-debugging for bugs, verification-before-completion before claiming anything works, requesting-code-review and receiving-code-review around reviews, dispatching-parallel-agents for independent tasks, and writing-skills for writing new skills test-first.",
+        "permalink": "https://github.com/obra/superpowers/tree/b739a8af570e10a95898f2bdf6cec97467fa6c12"
+      },
+      "skills": [
+        {
+          "id": "obra/superpowers/skills/using-superpowers",
+          "standalone": false,
+          "note": "Makes the agent load the other Superpowers skills before it replies; alone, it has nothing to load."
+        },
+        {
+          "id": "obra/superpowers/skills/brainstorming",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/using-git-worktrees",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/writing-plans",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/subagent-driven-development",
+          "standalone": false,
+          "note": "Executes a plan such as writing-plans writes, and has its final reviewer use the prompt that ships with requesting-code-review."
+        },
+        {
+          "id": "obra/superpowers/skills/executing-plans",
+          "standalone": false,
+          "note": "Runs scripts that ship with subagent-driven-development, and loads test-driven-development and verification-before-completion."
+        },
+        {
+          "id": "obra/superpowers/skills/test-driven-development",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/requesting-code-review",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/receiving-code-review",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/finishing-a-development-branch",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/systematic-debugging",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/verification-before-completion",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/dispatching-parallel-agents",
+          "standalone": true
+        },
+        {
+          "id": "obra/superpowers/skills/writing-skills",
+          "standalone": true
+        }
+      ],
+      "install": [
+        {
+          "label": "Any agent, with the skills CLI",
+          "command": "npx skills add https://github.com/obra/superpowers --skill '*'"
+        },
+        {
+          "label": "Claude Code plugin",
+          "command": "/plugin install superpowers@claude-plugins-official"
+        }
+      ],
+      "skew": 0
+    },
+    {
+      "id": "juliusbrussee/caveman",
+      "name": "Caveman",
+      "description": "Terse agent replies, plus compressed commits, reviews and memory files, and lean work patterns.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you want shorter agent replies and fewer tokens spent, beyond chat too"
+          },
+          {
+            "label": "It does",
+            "text": "makes the agent answer tersely, and adds terse commits, one-line reviews and compressed memory files"
+          },
+          {
+            "label": "Keeps",
+            "text": "code, commands, errors and numbers exact, and full sentences for warnings and irreversible actions"
+          },
+          {
+            "label": "Also has",
+            "text": "five short work patterns, such as investigate-first and lean-build, that keep code changes small"
+          },
+          {
+            "label": "Needs",
+            "text": "the Caveman plugin for caveman-stats and for cavecrew's subagents"
+          }
+        ],
+        "text": "Its core is caveman, a mode that makes the agent lead with the answer in short plain sentences, with no greetings, hedging or recaps, until you say \"stop caveman\"; ultracave and megacave, two more skills in the repo, cut further. The other skills carry the idea beyond chat. caveman-commit writes Conventional Commits messages with a subject of 50 characters when possible, caveman-review writes one line per review finding, and caveman-compress rewrites a memory file such as CLAUDE.md in caveman style to save input tokens, backing up the original. cavecrew delegates searches, small edits and reviews to three subagents whose reports come back compressed, so the main context lasts longer. caveman-stats shows the session's recorded token usage, and caveman-help lists every mode and command. Five short skills are work patterns the agent picks up when a task fits: investigate-first diagnoses before editing, lean-build builds only what's asked, surgical-patch fixes at the narrowest layer, safe-refactor keeps behavior unchanged and migration keeps changes reversible. The repo also ships a CLI and a proxy that shrink what the agent reads; this bundle covers its skills.",
+        "permalink": "https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76"
+      },
+      "skills": [
+        {
+          "id": "juliusbrussee/caveman/skills/caveman",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/caveman-commit",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/caveman-review",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/caveman-compress",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/caveman-stats",
+          "standalone": false,
+          "note": "Prints the token report of hooks that only the Caveman plugin installs, in Claude Code."
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/caveman-help",
+          "standalone": false,
+          "note": "A reference card for the bundle's modes and skills, so it only helps once they're installed."
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/cavecrew",
+          "standalone": false,
+          "note": "Delegates to three subagents that come with the Caveman plugin, not with the skill."
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/investigate-first",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/lean-build",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/surgical-patch",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/safe-refactor",
+          "standalone": true
+        },
+        {
+          "id": "juliusbrussee/caveman/skills/migration",
+          "standalone": true
+        }
+      ],
+      "install": [
+        {
+          "label": "Any agent, with the skills CLI",
+          "command": "npx skills add https://github.com/juliusbrussee/caveman --skill '*'"
+        },
+        {
+          "label": "Claude Code plugin",
+          "command": "claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman"
+        }
+      ],
+      "skew": 0
+    },
+    {
+      "id": "mattpocock/skills@writing",
+      "name": "Writing workflow",
+      "description": "Turns an interview into a file of raw notes, then the notes into an article.",
+      "tldr": {
+        "glance": [
+          {
+            "label": "Use it when",
+            "text": "you want to write an essay or article from your own ideas, with the agent as interviewer and editor"
+          },
+          {
+            "label": "It does",
+            "text": "first interviews you into a file of raw notes, then turns the notes into an article with you"
+          },
+          {
+            "label": "You get",
+            "text": "a notes file and, in a separate file, an article built one section at a time"
+          },
+          {
+            "label": "Then pick",
+            "text": "writing-beats to choose each next section, or writing-shape to commit to an angle first"
+          },
+          {
+            "label": "Runs",
+            "text": "only when you call each skill"
+          }
+        ],
+        "text": "Matt Pocock's writing skills split writing into exploring and committing. writing-fragments is the exploring step: the agent interviews you and saves every usable line, anecdote and idea to one Markdown file, with no outline. The committing step takes that file, or any pile of notes, and turns it into an article in a separate file, in one of two ways. writing-beats drafts two or three possible openings, then after each section offers the next possible ones, so you steer the piece one choice at a time. writing-shape has you pick an angle up front, then builds the article block by block, debating with you whether each should be prose, a list, a table or a quote. Both refuse to let a section lean on an idea the reader hasn't met yet. The skills sit in the repo's in-progress folder, so expect them to change.",
+        "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2"
+      },
+      "skills": [
+        {
+          "id": "mattpocock/skills/skills/in-progress/writing-fragments",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/in-progress/writing-beats",
+          "standalone": true
+        },
+        {
+          "id": "mattpocock/skills/skills/in-progress/writing-shape",
+          "standalone": true
+        }
+      ],
+      "install": [
+        {
+          "label": "Any agent, with the skills CLI",
+          "command": "npx skills add https://github.com/mattpocock/skills --skill writing-fragments --skill writing-beats --skill writing-shape"
+        }
+      ],
+      "skew": 0
+    }
+  ],
   "skills": [
     {
       "id": "vercel-labs/skills/skills/find-skills",
@@ -3454,10 +3706,6 @@
           {
             "label": "Stops",
             "text": "guess-and-retry loops: after three failed fixes, it questions the design with you"
-          },
-          {
-            "label": "Part of",
-            "text": "Superpowers, next to test-driven-development and verification-before-completion"
           }
         ],
         "text": "Its rule is \"no fixes without root cause investigation first\". The agent works through four phases in order. First it investigates: it reads the error in full, reproduces it, checks recent changes and, in a system with several parts, logs what enters and leaves each one to find where it breaks. Then it compares the broken code with similar code that works, forms one hypothesis and tests it with the smallest possible change. Only then does it fix: it writes a failing test, makes one change and verifies it. If three fixes have failed, it stops and discusses the architecture with you instead of trying a fourth.",
@@ -3762,10 +4010,6 @@
           {
             "label": "Runs",
             "text": "for the whole session, until you say \"stop caveman\""
-          },
-          {
-            "label": "Part of",
-            "text": "the caveman bundle: terse commits and reviews, compressed memory files, stronger modes"
           }
         ],
         "text": "Despite the name, it's a writing discipline more than a joke voice: each reply leads with the answer, then the reason, then the next step. It cuts ceremony (\"Sure!\", \"Let me…\", \"Hope this helps\"), filler words and invented abbreviations, and may drop articles where a sentence still reads in one pass, but never a negation or a number. It only changes chat replies: code, commits and docs are written normally, and it switches back to full sentences for security warnings, irreversible actions and questions to you. Once on, it stays on until you turn it off.",
@@ -4110,10 +4354,6 @@
             "text": "you choose the direction at every step, choose-your-own-adventure style"
           },
           {
-            "label": "Part of",
-            "text": "Matt Pocock's writing workflow, after writing-fragments"
-          },
-          {
             "label": "Runs",
             "text": "only when you call it"
           }
@@ -4179,10 +4419,6 @@
             "text": "you commit to an angle up front, then debate each block's form: prose, list, table or quote"
           },
           {
-            "label": "Part of",
-            "text": "Matt Pocock's writing workflow, after writing-fragments"
-          },
-          {
             "label": "Runs",
             "text": "only when you call it"
           }
@@ -4222,10 +4458,6 @@
           {
             "label": "You get",
             "text": "a file of raw notes, with no outline"
-          },
-          {
-            "label": "Part of",
-            "text": "Matt Pocock's writing workflow, before writing-beats or writing-shape"
           },
           {
             "label": "Runs",

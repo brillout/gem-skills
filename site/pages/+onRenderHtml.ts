@@ -17,8 +17,8 @@ const VIEWS = [
 export function onRenderHtml(pageContext: PageContextServer) {
   const { title, description } = pageContext.config;
   const value = (v: typeof title) => (typeof v === "function" ? v(pageContext) : (v ?? ""));
-  // Skill pages belong to the skills list.
-  const path = pageContext.urlPathname.replace(/^\/(skill\/.*)?/, "");
+  // Skill and bundle pages belong to the skills list.
+  const path = pageContext.urlPathname.replace(/^\/((skill|bundle)\/.*)?/, "");
   const nav = VIEWS.map(
     ([to, label]) =>
       `<a href="${href(to)}"${to === path ? ` aria-current="page"` : ""}>${label}</a>`,

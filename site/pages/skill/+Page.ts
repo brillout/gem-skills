@@ -1,11 +1,13 @@
 import type { PageContextServer } from "vike/types";
-import { compact, date, esc, href, plural } from "../../format.ts";
+import { compact, date, esc, href } from "../../format.ts";
 import { skillsLink } from "../../list.ts";
 import { statTile } from "../../sparkline.ts";
 import {
   DOWNLOADS,
   FACET_ORDER,
   REGISTRIES,
+  bundleHref,
+  bundleOf,
   categoryById,
   data,
   facetById,
@@ -13,17 +15,15 @@ import {
   glanceHtml,
   repoById,
   repoKey,
+  short,
+  skillById,
+  skillHref,
   tagChip,
   tagInfo,
+  tldrHtml,
 } from "../../skills.ts";
 import { github, type Skill, type SkillMd } from "../../types.ts";
 import type { Data } from "./+data.ts";
-
-/** A commit as its first 7 characters, a digest as its first 12. */
-const short = (version: string) =>
-  /^[0-9a-f]{40}$/.test(version)
-    ? version.slice(0, 7)
-    : version.replace(/^(\w+:\w{12})\w+$/, "$1…");
 
 /** Where the copy of the SKILL.md came from. */
 function source(s: Skill, { version }: SkillMd): string {
@@ -36,23 +36,6 @@ function source(s: Skill, { version }: SkillMd): string {
     return `${claw?.url ? `<a href="${esc(claw.url)}">ClawHub</a>` : "ClawHub"}, version ${esc(version)}`;
   if (host === "skillhub.cn") return `Tencent SkillHub, version ${esc(version)}`;
   return `<a href="https://${esc(host)}/.well-known/skills/index.json">${esc(host)}</a>, ${esc(short(version))}`;
-}
-
-function tldr(s: Skill): string {
-  if (!s.tldr) return "";
-  const commit = /\/(?:tree|blob)\/([0-9a-f]{40})/.exec(s.tldr.permalink)?.[1] ?? "";
-  const skew = s.skillMd?.skew ?? 0;
-  return `
-    <section class="tldr" aria-labelledby="tldr">
-      <h2 id="tldr">TLDR</h2>
-      ${s.tldr.text
-        .split(/\n\s*\n/)
-        .map((p) => `<p>${esc(p)}</p>`)
-        .join("")}
-      <p class="muted">Summarizes <a href="${esc(s.tldr.permalink)}">the skill at ${short(commit)}</a>.${
-        skew ? ` Its SKILL.md has changed by ${plural(skew, "word")} since.` : ""
-      }</p>
-    </section>`;
 }
 
 function facts(s: Skill): string {
@@ -107,6 +90,22 @@ function tagTable(s: Skill): string {
   return `<table class="tag-detail">${rows.join("")}</table>`;
 }
 
+/** Where the skill sits in its bundle, with the skills before and after it. */
+function inBundle(s: Skill): string {
+  const place = bundleOf.get(s.id);
+  if (!place) return "";
+  const { bundle, index, standalone, note } = place;
+  const near = (i: number, label: string) => {
+    const id = bundle.skills[i]?.id;
+    return id
+      ? ` · ${label}: <a href="${skillHref(id)}">${esc(skillById.get(id)?.name ?? id)}</a>`
+      : "";
+  };
+  return `
+    <p class="in-bundle">Skill ${index + 1} of ${bundle.skills.length} in the <a href="${bundleHref(bundle.id)}">${esc(bundle.name)}</a> bundle${near(index - 1, "Before it")}${near(index + 1, "After it")}</p>
+    ${standalone ? "" : `<p class="note">Only works inside its bundle: ${esc(note ?? "")} Install <a href="${bundleHref(bundle.id)}">${esc(bundle.name)}</a> instead.</p>`}`;
+}
+
 export default function Page(pageContext: PageContextServer): string {
   const { skill: s, copy } = pageContext.data as Data;
   const gh = github(s);
@@ -125,18 +124,24 @@ export default function Page(pageContext: PageContextServer): string {
     `<a href="${skillsLink({ repo: repoKey(s) })}">All skills from ${esc(repoKey(s))}</a>`,
   ].filter(Boolean);
   const installs = [sh?.install, claw?.install].filter((c): c is string => Boolean(c));
+  const bundle = bundleOf.get(s.id)?.bundle;
   return `
     <div class="page skill-page">
-      <p class="crumbs"><a href="${href()}">Skills</a> <span aria-hidden="true">/</span> <a href="${skillsLink({ repo: repoKey(s) })}">${esc(repoKey(s))}</a></p>
+      <p class="crumbs"><a href="${href()}">Skills</a> <span aria-hidden="true">/</span> <a href="${skillsLink({ repo: repoKey(s) })}">${esc(repoKey(s))}</a>${
+        bundle
+          ? ` <span aria-hidden="true">/</span> <a href="${bundleHref(bundle.id)}">${esc(bundle.name)}</a>`
+          : ""
+      }</p>
       <h1>${esc(s.name)}</h1>
       ${
         s.tldr?.glance.length
           ? `<section class="at-a-glance" aria-label="At a glance">${glanceHtml(s.tldr.glance)}</section>`
           : `<p class="lede">${esc(s.description)}</p>`
       }
+      ${inBundle(s)}
       ${s.note ? `<p class="note">${esc(s.note)}</p>` : ""}
       ${removed ? `<p class="note">Gone from ${gh ? esc(gh.repo) : "its registry"} since ${date(removed)}, so installing it no longer works. The SKILL.md below is its last version.</p>` : ""}
-      ${tldr(s)}
+      ${s.tldr ? tldrHtml(s.tldr, "the skill", s.skillMd?.skew ?? 0) : ""}
       <div class="details-grid">
         <div>
           ${

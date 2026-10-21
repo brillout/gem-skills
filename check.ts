@@ -6,7 +6,7 @@
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { copyPath, REPO } from "./site/skill-md.ts";
-import { github, tldrProblems, type Data, type Facet } from "./site/types.ts";
+import { bundleRepo, github, tldrProblems, type Data, type Facet } from "./site/types.ts";
 
 const root = new URL("./", import.meta.url);
 const data: Data = JSON.parse(readFileSync(new URL("skills.json", root), "utf8"));
@@ -29,6 +29,8 @@ for (const { tag, note } of data.skip) {
   if (!vocabulary.has(tag)) fail("skip", `unknown tag "${tag}"`);
   if (!note) fail("skip", `"${tag}" needs a note saying why its skills are skipped`);
 }
+
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const COUNTS: Record<Facet["count"], (n: number) => boolean> = {
   one: (n) => n === 1,
@@ -62,7 +64,6 @@ for (const skill of data.skills) {
   if (skill.tldr) {
     for (const problem of tldrProblems(skill.tldr)) fail(at, problem);
     const gh = github(skill);
-    const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const target = gh
       ? `https://github.com/${escape(gh.repo)}/tree/[0-9a-f]{40}${gh.dir ? `/${escape(gh.dir)}` : ""}`
       : `https://github.com/${REPO}/blob/[0-9a-f]{40}/${escape(copyPath(skill))}`;
@@ -100,6 +101,39 @@ for (const skill of data.skills) {
   if (!skill.tags.every((t) => t.includes(":") || topics.has(t))) fail(at, "unknown topic");
 }
 
+const bundled = new Map<string, string>();
+const bundleIds = new Set<string>();
+for (const bundle of data.bundles) {
+  const at = `bundle ${bundle.id}`;
+  if (bundleIds.has(bundle.id)) fail(at, "duplicate bundle id");
+  bundleIds.add(bundle.id);
+  const repo = bundleRepo(bundle);
+  if (!repos.has(repo)) fail(at, `repo "${repo}" has no entry in repos`);
+  if (!bundle.name || !bundle.description) fail(at, "needs a name and a description");
+  if (bundle.skills.length < 2) fail(at, "a bundle needs two skills or more");
+  for (const { id, standalone, note } of bundle.skills) {
+    if (!ids.has(id)) fail(at, `no skill ${id}`);
+    if (!id.startsWith(`${repo}/`)) fail(at, `${id} isn't in ${repo}`);
+    if (bundled.has(id)) fail(at, `${id} is in ${bundled.get(id)} too`);
+    bundled.set(id, bundle.id);
+    if (!standalone && !note) fail(at, `${id} isn't standalone, so it needs a note saying why`);
+    if (standalone && note) fail(at, `${id} is standalone, so it takes no note`);
+  }
+  if (!bundle.install.length || bundle.install.some((i) => !i.label || !i.command))
+    fail(at, "needs install commands, each with a label");
+  if (!(Number.isInteger(bundle.skew) && bundle.skew >= 0))
+    fail(at, "skew must be a whole number of words");
+  if (bundle.tldr) {
+    for (const problem of tldrProblems(bundle.tldr)) fail(at, problem);
+    if (
+      !new RegExp(`^https://github.com/${escape(repo)}/tree/[0-9a-f]{40}$`).test(
+        bundle.tldr.permalink,
+      )
+    )
+      fail(at, "the TLDR permalink must point to the repo at a commit; set it with pnpm run tldr");
+  }
+}
+
 const copies = new Set(data.skills.map(copyPath));
 for (const file of readdirSync(new URL("skill-md", root), { recursive: true, encoding: "utf8" }))
   if (file.endsWith(".md") && !copies.has(`skill-md/${file}`))
@@ -111,4 +145,6 @@ if (errors.length > 0) {
   );
   process.exit(1);
 }
-console.log(`skills.json is valid: ${data.skills.length} skills, ${data.repos.length} repos.`);
+console.log(
+  `skills.json is valid: ${data.skills.length} skills, ${data.bundles.length} bundles, ${data.repos.length} repos.`,
+);

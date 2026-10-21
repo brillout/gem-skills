@@ -13,6 +13,7 @@ export interface Data {
   categories: Category[];
   facets: Facet[];
   repos: Repo[];
+  bundles: Bundle[];
   skills: Skill[];
 }
 
@@ -76,6 +77,40 @@ export interface Skill {
   note?: string;
 }
 
+/**
+ * Skills of one repo meant to be installed together, such as the steps of a workflow. Its skills
+ * are listed inside its entry; those worth installing alone also get an entry of their own.
+ */
+export interface Bundle {
+  /** The GitHub repo, `owner/name`, or `owner/name@part` for one of several bundles in a repo. */
+  id: string;
+  name: string;
+  /** One sentence, shown until it has a TLDR. */
+  description: string;
+  /** What the bundle is and how its skills work together, written from the repo at its permalink's commit. */
+  tldr?: Tldr;
+  /** Its skills, in the order they're used. */
+  skills: BundleSkill[];
+  install: { label: string; command: string }[];
+  /** Words added plus words removed across its skills' SKILL.md since the commit the TLDR summarizes, or all their words when there's no TLDR. */
+  skew: number;
+}
+
+export interface BundleSkill {
+  id: string;
+  /**
+   * Whether it's worth installing alone, with no other skill of the bundle: then it also gets an
+   * entry of its own in the skills list. A skill that loads another one of the bundle, or only
+   * works on another's output, isn't.
+   */
+  standalone: boolean;
+  /** For a skill that isn't standalone: what it needs from the rest of the bundle. */
+  note?: string;
+}
+
+/** The repo a bundle is in. */
+export const bundleRepo = (bundle: Bundle) => bundle.id.split("@")[0];
+
 export interface Tldr {
   /** Short labelled facts to place the skill quickly, most telling first, such as "Use it when". */
   glance: { label: string; text: string }[];
@@ -83,7 +118,8 @@ export interface Tldr {
   text: string;
   /**
    * GitHub permalink to what the TLDR summarizes: the skill's directory at a commit, or for a
-   * skill that isn't on GitHub, its copy in this repo at a commit.
+   * skill that isn't on GitHub, its copy in this repo at a commit. For a bundle, its repo at a
+   * commit.
    */
   permalink: string;
 }

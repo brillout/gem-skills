@@ -1,5 +1,4 @@
-import { data } from "../../skills.ts";
+import { data, idPath } from "../../skills.ts";
 
 /** One page per skill. */
-export const onBeforePrerenderStart = () =>
-  data.skills.map((s) => `/skill/${s.id.split("/").map(encodeURIComponent).join("/")}/`);
+export const onBeforePrerenderStart = () => data.skills.map((s) => `/skill/${idPath(s.id)}/`);
