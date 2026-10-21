@@ -16,7 +16,7 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { readData, root, writeData } from "./data.ts";
-import { copyPath, rawUrl, REPO } from "./site/skill-md.ts";
+import { copyPath, rawUrl, REPO } from "./website/skill-md.ts";
 import {
   bundleRepo,
   github,
@@ -25,7 +25,7 @@ import {
   type Bundle,
   type Skill,
   type Tldr,
-} from "./site/types.ts";
+} from "./website/types.ts";
 
 const git = (...args: string[]) =>
   execFileSync("git", ["-C", root, ...args], { encoding: "utf8" }).trim();

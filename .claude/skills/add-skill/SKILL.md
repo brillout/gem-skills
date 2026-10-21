@@ -5,7 +5,7 @@ description: Add a skill to Gem Skills' skills.json, or retag one, including whe
 
 # Add or retag a skill
 
-1. Add its entry to `skills` in `skills.json`. Its `id` is where its SKILL.md lives, as `Skill` in `site/types.ts` describes; a GitHub repo it comes from needs an entry in `repos`.
+1. Add its entry to `skills` in `skills.json`. Its `id` is where its SKILL.md lives, as `Skill` in `website/types.ts` describes; a GitHub repo it comes from needs an entry in `repos`.
 2. Run `pnpm run sync <id>` to save a copy of its SKILL.md in `skill-md/`.
 3. Read that copy, not only the skill's one-line description, and tag it. Tag values and their meanings are under `facets` in `skills.json`.
    1. Give it one `type:` and one `effect:`, judged by the skill's own steps.
@@ -21,7 +21,7 @@ A skill tagged with one of the `skip` tags is left out of the skills list and of
 
 ## Bundles
 
-A bundle is skills of one repo meant to be installed and used together, such as the steps of a workflow. A collection of unrelated skills, such as `anthropics/skills`, isn't one. Record a bundle in `bundles` in `skills.json`, as `Bundle` in `site/types.ts` describes:
+A bundle is skills of one repo meant to be installed and used together, such as the steps of a workflow. A collection of unrelated skills, such as `anthropics/skills`, isn't one. Record a bundle in `bundles` in `skills.json`, as `Bundle` in `website/types.ts` describes:
 
 - Its `id` is the repo, or `<repo>@<name>` when the repo holds more than one bundle, or skills outside the bundle.
 - Its `skills` come in the order they're used. A skill is in one bundle at most.

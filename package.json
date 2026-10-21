@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vike dev --root site --port 3000",
-    "build": "vike build --root site",
-    "preview": "vike preview --root site --port 3000",
+    "dev": "vike dev --root website --port 3000",
+    "build": "vike build --root website",
+    "preview": "vike preview --root website --port 3000",
     "========= Checks": "",
     "check": "pnpm run check:data && pnpm run check:types",
     "check:data": "pnpm run node-ts check.ts",

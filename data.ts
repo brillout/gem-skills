@@ -3,7 +3,7 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import type { Data } from "./site/types.ts";
+import type { Data } from "./website/types.ts";
 
 export const root = fileURLToPath(new URL(".", import.meta.url));
 const path = `${root}skills.json`;
