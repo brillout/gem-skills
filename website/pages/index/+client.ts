@@ -1,6 +1,14 @@
 /** The skills list's filters: re-render the list whenever they change, and keep them in the URL. */
 
-import { facetsHtml, parse, query, resultsHtml, type Sort, type State } from "../../list.ts";
+import {
+  facetsHtml,
+  parse,
+  query,
+  resultsHtml,
+  toggleTag,
+  type Sort,
+  type State,
+} from "../../list.ts";
 
 const app = document.getElementById("app") as HTMLElement;
 const q = document.getElementById("q") as HTMLInputElement;
@@ -43,7 +51,7 @@ app.addEventListener("click", (event) => {
   );
   if (!el || el.tagName === "A") return;
   const d = el.dataset;
-  if (d.tag) go({ tags: toggled(state.tags, d.tag) });
+  if (d.tag) go({ tags: toggleTag(state.tags, d.tag) });
   else if (d.registry) go({ registries: toggled(state.registries, d.registry) });
   else if (d.remove) {
     const v = d.value ?? "";

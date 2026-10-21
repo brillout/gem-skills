@@ -17,10 +17,12 @@ import {
   facetById,
   facetOf,
   firstSeenOf,
+  includedBy,
   glanceHtml,
   installsOf,
   isBundle,
   ownEntry,
+  parentsOf,
   registriesOf,
   repoById,
   repoKey,
@@ -95,6 +97,17 @@ export function query(s: State): string {
   return q ? `?${q}` : "";
 }
 export const FRESH: State = parse("");
+/**
+ * Select or unselect a tag. Selecting one unselects its parents and the tags it includes, since
+ * either would only repeat or widen it: picking Design under Software engineering narrows the list
+ * to design, and picking Software engineering again widens it back.
+ */
+export function toggleTag(tags: string[], tag: string): string[] {
+  if (tags.includes(tag)) return tags.filter((t) => t !== tag);
+  const related = [...parentsOf(tag), ...includedBy(tag)];
+  return [...tags.filter((t) => !related.includes(t)), tag];
+}
+
 /** A link to the skills list filtered to the given state changes. */
 export const skillsLink = (patch: Partial<State>) => href() + query({ ...FRESH, ...patch });
 
@@ -318,22 +331,26 @@ function tagSection(st: State, facetId: string): string {
   const facet = facetById.get(facetId);
   if (!facet) return "";
   const n = counts(st, facetId, (s) => tagsOf(s).filter((t) => facetOf(t) === facetId));
+  const shown = (t: string) => Boolean(n.get(t) || st.tags.includes(t));
+  const chip = (t: string) =>
+    filterChip(
+      "data-tag",
+      t,
+      tagLabel(t) ?? t.slice(facetId.length + 1),
+      n.get(t) ?? 0,
+      st.tags.includes(t),
+      tagInfo.get(t),
+    );
+  // A parent's values sit indented under it; a value with two parents shows under both.
+  const top = facet.values.map((v) => tagOf(facet, v.id)).filter((t) => !parentsOf(t).length);
   return section(
     facet.name,
     facet.question,
-    facet.values
-      .map((v) => tagOf(facet, v.id))
-      .filter((t) => n.get(t) || st.tags.includes(t))
-      .map((t) =>
-        filterChip(
-          "data-tag",
-          t,
-          tagLabel(t) ?? t.slice(facetId.length + 1),
-          n.get(t) ?? 0,
-          st.tags.includes(t),
-          tagInfo.get(t),
-        ),
-      )
+    top
+      .map((t) => {
+        const children = includedBy(t).filter(shown);
+        return `${shown(t) ? chip(t) : ""}${children.length ? `<div class="chips sub">${children.map(chip).join("")}</div>` : ""}`;
+      })
       .join(""),
   );
 }

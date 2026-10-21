@@ -59,6 +59,8 @@ export const tagLabel = (tag: string) => labels.get(tag);
 /** The values a parent tag includes, as tags. */
 export const includedBy = (tag: string) =>
   [...parents].filter(([, of]) => of.includes(tag)).map(([child]) => child);
+/** The parents a tag has through `includes`. */
+export const parentsOf = (tag: string) => parents.get(tag) ?? [];
 const withParents = new Map(
   data.skills.map((s) => [
     s.id,

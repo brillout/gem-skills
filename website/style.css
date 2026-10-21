@@ -230,6 +230,14 @@ code {
   gap: 6px;
 }
 
+/* The values a parent includes, under it. */
+.chips.sub {
+  flex-basis: 100%;
+  margin-left: 6px;
+  padding-left: 10px;
+  border-left: 2px solid var(--border);
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
