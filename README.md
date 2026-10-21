@@ -29,7 +29,7 @@ Once a day, the [Sync SKILL.md copies](.github/workflows/sync.yml) workflow runs
 - `removed`: when the SKILL.md disappeared from its source. The copy keeps its last version.
 - `skew`: how far the SKILL.md has moved from the one the skill's TLDR summarizes, in words added plus words removed. With no TLDR, it's the SKILL.md's whole word count.
 
-`skip` in `skills.json` lists the tags whose skills the sync leaves out: `flag:deprecated` (retired), `flag:vendor` (only helps use one vendor's product) and `lang:zh` (not in English). Skills gone from their source are skipped too. Skipped skills keep the copy they have. The site's skills list leaves them out as well, unless you tick Show all or filter on one of those tags; their pages stay.
+`skip` in `skills.json` lists the tags whose skills the sync leaves out: `flag:deprecated` (retired), `flag:tool-docs` (docs for agents of one product) and `lang:zh` (not in English). Skills gone from their source are skipped too. Skipped skills keep the copy they have. The site's skills list leaves them out as well, unless you tick Show all or filter on one of those tags; their pages stay.
 
 ## TLDRs
 
@@ -51,7 +51,7 @@ Edit `skills.json`, run `pnpm run sync <id>` to save the skill's SKILL.md, then 
 3. List every `needs:` value that applies. Use `needs:none` only when nothing does.
 4. Add a `stack:` tag for each technology or service the skill is about.
 5. Add one to five topics, preferring existing ones.
-6. Add a `flag:` only with evidence, such as a matching original or a retirement notice. Add `flag:vendor` when the skill is about one vendor's product, such as its framework, SDK, CLI, API or cloud, rather than using a tool to get something more general done. A skill that drives a browser, to test an app or to crawl the web, isn't a vendor skill, whatever tool it uses.
+6. Add a `flag:` only with evidence, such as a matching original or a retirement notice. Add `flag:tool-docs` when the skill is documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, such as a framework's best practices or a cloud's CLI. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn't carry it: there, the tool is how, not what.
 
 ## Development
 

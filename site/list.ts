@@ -112,7 +112,7 @@ const searchText = new Map(
 
 /** Within a facet a skill needs any selected value; across facets it needs all of them. `skip` leaves one facet out, for its counts. */
 function passes(s: Skill, st: State, skip: string | null = null): boolean {
-  // Filtering on a skip tag, such as flag:vendor, asks for the skills it skips.
+  // Filtering on a skip tag, such as flag:tool-docs, asks for the skills it skips.
   if (
     skipped(data, s) &&
     !st.all &&
