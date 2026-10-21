@@ -133,7 +133,7 @@
         {
           "id": "personal",
           "label": "Personal",
-          "description": "Everyday help outside work."
+          "description": "Learning and everyday help outside work."
         }
       ]
     },
@@ -3199,7 +3199,7 @@
         "permalink": "https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/teach"
       },
       "tags": [
-        "category:planning",
+        "category:personal",
         "type:workflow",
         "effect:local",
         "needs:none",
@@ -7536,7 +7536,7 @@
         "permalink": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/canvas-design"
       },
       "tags": [
-        "category:design",
+        "category:media",
         "type:workflow",
         "effect:local",
         "needs:none",
