@@ -6,8 +6,8 @@ export type Registry = "skills.sh" | "clawhub.ai" | "skillhub.cn";
 export interface Data {
   /** When the data was last edited (YYYY-MM-DD). */
   updated: string;
-  /** When each kind of number was collected (YYYY-MM-DD). */
-  snapshots: Record<"installs" | "stars" | "downloads" | "tags", string>;
+  /** When each kind of number was collected, and when the tags were assigned (YYYY-MM-DD). */
+  asOf: Record<"installs" | "stars" | "downloads" | "tags", string>;
   /** The tags whose skills the skills list and the daily sync leave out, each with why. */
   skip: { tag: string; note: string }[];
   categories: Category[];
@@ -71,7 +71,7 @@ export interface Skill {
   "skills.sh"?: SkillsSh;
   "clawhub.ai"?: ClawHub;
   "skillhub.cn"?: SkillHub;
-  /** The copy of the skill's SKILL.md at `skill-md/<id>.md`, which `sync.ts` keeps current. */
+  /** The copy of the skill's SKILL.md at `skill-snapshots/<id>.md`, which `sync.ts` keeps current. */
   skillMd?: SkillMd;
   /** Something to know before installing. */
   note?: string;

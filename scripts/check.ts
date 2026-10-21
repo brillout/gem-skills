@@ -135,9 +135,12 @@ for (const bundle of data.bundles) {
 }
 
 const copies = new Set(data.skills.map(copyPath));
-for (const file of readdirSync(new URL("skill-md", root), { recursive: true, encoding: "utf8" }))
-  if (file.endsWith(".md") && !copies.has(`skill-md/${file}`))
-    fail(`skill-md/${file}`, "copy of a skill that isn't in skills.json");
+for (const file of readdirSync(new URL("skill-snapshots", root), {
+  recursive: true,
+  encoding: "utf8",
+}))
+  if (file.endsWith(".md") && !copies.has(`skill-snapshots/${file}`))
+    fail(`skill-snapshots/${file}`, "copy of a skill that isn't in skills.json");
 
 if (errors.length > 0) {
   console.error(

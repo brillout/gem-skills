@@ -6,7 +6,7 @@ description: Add a skill to Gem Skills' skills.json, or retag one, including whe
 # Add or retag a skill
 
 1. Add its entry to `skills` in `skills.json`. Its `id` is where its SKILL.md lives, as `Skill` in `website/types.ts` describes; a GitHub repo it comes from needs an entry in `repos`.
-2. Run `pnpm run sync <id>` to save a copy of its SKILL.md in `skill-md/`.
+2. Run `pnpm run sync <id>` to save a copy of its SKILL.md in `skill-snapshots/`.
 3. Read that copy, not only the skill's one-line description, and tag it. Tag values and their meanings are under `facets` in `skills.json`.
    1. Give it one `type:` and one `effect:`, judged by the skill's own steps.
    2. List every `needs:` value that applies. Use `needs:none` only when nothing does.

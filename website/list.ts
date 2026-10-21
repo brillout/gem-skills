@@ -247,14 +247,14 @@ function metric(s: Entry, st: State): string {
     const stars = starsOf(s);
     return stars === null
       ? `<span class="metric muted" title="No GitHub repo star count">no stars</span>`
-      : `<span class="metric" title="GitHub stars of ${esc(repoKey(s))} on ${date(data.snapshots.stars)}"><strong>${compact(stars)}</strong> stars</span>`;
+      : `<span class="metric" title="GitHub stars of ${esc(repoKey(s))} on ${date(data.asOf.stars)}"><strong>${compact(stars)}</strong> stars</span>`;
   }
   const firstSeen = firstSeenOf(s);
   if (st.sort === "newest" && firstSeen)
     return `<span class="metric" title="First seen on skills.sh"><strong>${date(firstSeen)}</strong></span>`;
   const installs = installsOf(s);
   const installed = (n: number) =>
-    `<span class="metric" title="${of}All-time installs on skills.sh, ${date(data.snapshots.installs)}"><strong>${compact(n)}</strong> installs</span>`;
+    `<span class="metric" title="${of}All-time installs on skills.sh, ${date(data.asOf.installs)}"><strong>${compact(n)}</strong> installs</span>`;
   if (installs !== null && st.sort !== "downloads") return installed(installs);
   const downloads = downloadsOf(s);
   if (downloads !== null)
@@ -262,9 +262,9 @@ function metric(s: Entry, st: State): string {
       DOWNLOADS.filter((r) => (isBundle(s) ? skillsOf(s) : [s]).some((x) => x[r]))
         .map((r) => REGISTRIES[r])
         .join(" and "),
-    )}, ${date(data.snapshots.downloads)}"><strong>${compact(downloads)}</strong> downloads</span>`;
+    )}, ${date(data.asOf.downloads)}"><strong>${compact(downloads)}</strong> downloads</span>`;
   if (installs !== null) return installed(installs);
-  return `<span class="metric muted" title="Not in the skills.sh all-time top 600 on ${date(data.snapshots.installs)}">new</span>`;
+  return `<span class="metric muted" title="Not in the skills.sh all-time top 600 on ${date(data.asOf.installs)}">new</span>`;
 }
 
 const moreLink = (e: Entry, more: number, st: State) =>

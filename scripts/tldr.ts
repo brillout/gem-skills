@@ -8,7 +8,7 @@
  *
  * The list leaves skipped skills out (see `skip` in skills.json). Setting a TLDR resets the
  * skew to 0 and records a permalink to what the TLDR summarizes: the skill's directory at the
- * commit its copy in skill-md/ was taken from. For a skill that isn't on GitHub, it's the copy
+ * commit its copy in skill-snapshots/ was taken from. For a skill that isn't on GitHub, it's the copy
  * itself, at the commit of this repo that last changed it, so commit the copy before summarizing
  * it. For a bundle, it's the repo at its current commit, which its skills' copies must match.
  */

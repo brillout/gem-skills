@@ -41,7 +41,7 @@ export default function Page(): string {
   return `
     <div class="page">
       <h1>Tags</h1>
-      <p class="lede">Categories put each skill in one place. Tags cut across them: how a skill works, what it needs, what it can change on its own, who publishes it and what it's about. Faceted tags carry a prefix, such as <code>needs:cli</code>; topics don't. Tags were assigned from each skill's SKILL.md on ${date(data.snapshots.tags)}. Pick a tag to list its skills.</p>
+      <p class="lede">Categories put each skill in one place. Tags cut across them: how a skill works, what it needs, what it can change on its own, who publishes it and what it's about. Faceted tags carry a prefix, such as <code>needs:cli</code>; topics don't. Tags were assigned from each skill's SKILL.md on ${date(data.asOf.tags)}. Pick a tag to list its skills.</p>
       <nav class="toc" aria-label="Facets">${FACET_ORDER.map((id) => `<a href="#facet-${id}">${esc(facetById.get(id)?.name ?? id)}</a>`).join("")}</nav>
       ${sections}
     </div>`;

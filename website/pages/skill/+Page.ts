@@ -45,13 +45,13 @@ function facts(s: Skill): string {
   const list: string[] = [];
   if (sh?.installs != null)
     list.push(
-      `<div><dt>Installs</dt><dd>${sh.installs.toLocaleString("en")} <span class="muted">on skills.sh, ${date(data.snapshots.installs)}</span></dd></div>`,
+      `<div><dt>Installs</dt><dd>${sh.installs.toLocaleString("en")} <span class="muted">on skills.sh, ${date(data.asOf.installs)}</span></dd></div>`,
     );
   for (const r of DOWNLOADS) {
     const n = s[r]?.downloads;
     if (n !== undefined)
       list.push(
-        `<div><dt>Downloads</dt><dd>${n.toLocaleString("en")} <span class="muted">on ${esc(REGISTRIES[r])}, ${date(data.snapshots.downloads)}</span></dd></div>`,
+        `<div><dt>Downloads</dt><dd>${n.toLocaleString("en")} <span class="muted">on ${esc(REGISTRIES[r])}, ${date(data.asOf.downloads)}</span></dd></div>`,
       );
   }
   if (repo?.stars != null)
@@ -157,7 +157,7 @@ export default function Page(pageContext: PageContextServer): string {
           <p class="links">${links.join(" · ")}</p>
           ${facts(s)}
         </div>
-        ${sh?.weeklyInstalls ? statTile(sh.weeklyInstalls, data.snapshots.installs, compact) : ""}
+        ${sh?.weeklyInstalls ? statTile(sh.weeklyInstalls, data.asOf.installs, compact) : ""}
       </div>
       ${tagTable(s)}
       <section class="skill-md" aria-labelledby="skill-md">

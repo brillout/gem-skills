@@ -10,7 +10,7 @@ const path = `${root}skills.json`;
 
 export const readData = (): Data => JSON.parse(readFileSync(path, "utf8"));
 
-const TOP = ["updated", "snapshots", "skip", "categories", "facets", "repos", "bundles", "skills"];
+const TOP = ["updated", "asOf", "skip", "categories", "facets", "repos", "bundles", "skills"];
 const ORDER = [
   "id",
   "name",
