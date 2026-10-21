@@ -8,8 +8,8 @@ export interface Data {
   updated: string;
   /** When each kind of number was collected (YYYY-MM-DD). */
   snapshots: Record<"installs" | "stars" | "downloads" | "tags", string>;
-  /** The tags whose skills the skills list and the daily sync leave out. */
-  skip: string[];
+  /** The tags whose skills the skills list and the daily sync leave out, each with why. */
+  skip: { tag: string; note: string }[];
   categories: Category[];
   facets: Facet[];
   repos: Repo[];
@@ -107,7 +107,7 @@ export function github(skill: Skill): { repo: string; dir: string } | null {
  * or it's gone from its source. Its page stays.
  */
 export const skipped = (data: Pick<Data, "skip">, skill: Skill) =>
-  skill.tags.some((t) => data.skip.includes(t)) || Boolean(skill.skillMd?.removed);
+  data.skip.some(({ tag }) => skill.tags.includes(tag)) || Boolean(skill.skillMd?.removed);
 
 export interface SkillsSh {
   /** The skill's page on skills.sh. */

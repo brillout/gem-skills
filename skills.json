@@ -6,7 +6,20 @@
     "downloads": "2026-09-21",
     "tags": "2026-10-19"
   },
-  "skip": ["flag:deprecated", "flag:tool-docs", "lang:zh"],
+  "skip": [
+    {
+      "tag": "flag:deprecated",
+      "note": "Retired: its SKILL.md points to a replacement, which is the skill to discover."
+    },
+    {
+      "tag": "flag:tool-docs",
+      "note": "A skill that's an agent's manual for a product (how to build with it, configure it, deploy to it or operate it) only matters once you've already chosen that product, so nobody discovers anything by browsing it. A skill that gets a job done through some tool gives a new capability, which is what the site is for."
+    },
+    {
+      "tag": "lang:zh",
+      "note": "Not in English, so most visitors can't read it."
+    }
+  ],
   "categories": [
     {
       "id": "skill-tools",

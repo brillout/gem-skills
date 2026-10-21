@@ -1,4 +1,4 @@
-import { date, href } from "../../format.ts";
+import { date, esc, href } from "../../format.ts";
 import { skillsLink } from "../../list.ts";
 import { GITHUB, data, tagChip } from "../../skills.ts";
 import { skipped } from "../../types.ts";
@@ -6,11 +6,9 @@ import { skipped } from "../../types.ts";
 export default function Page(): string {
   const n = data.skills.filter((s) => !skipped(data, s)).length;
   const tagged = (t: string) => data.skills.filter((s) => s.tags.includes(t)).length;
-  const skips = data.skip.map((t) => tagChip(t, skillsLink({ tags: [t] })));
-  const or = (items: string[]) =>
-    items.length > 1
-      ? `${items.slice(0, -1).join(", ")} or ${items[items.length - 1]}`
-      : items.join("");
+  const skips = data.skip
+    .map(({ tag, note }) => `<li>${tagChip(tag, skillsLink({ tags: [tag] }))} ${esc(note)}</li>`)
+    .join("");
   return `
     <div class="page">
       <h1>About</h1>
@@ -25,7 +23,9 @@ export default function Page(): string {
       <ul>
         <li><strong>Bundles share counts.</strong> skills.sh counts an install of a repo once per skill in it, so skills from one repo sit close together. Turn on <a href="${skillsLink({ one: true })}">One per repo</a> to see one skill per bundle.</li>
         <li><strong>Some skills are copies.</strong> ${tagged("flag:republished")} skills here are republished copies of another publisher's skill, with install counts far above their originals'. They carry <a href="${skillsLink({ tags: ["flag:republished"] })}"><code>flag:republished</code></a>.</li>
-        <li><strong>Some skills are left out.</strong> The list skips ${data.skills.length - n} skills: those tagged ${or(skips)}, such as retired skills and docs for agents of one product, and those gone from their source, which can no longer be installed. <a href="${skillsLink({ all: true })}">Show all</a> brings them back, and their pages stay.</li>
+        <li><strong>Some skills are left out.</strong> The list skips ${data.skills.length - n} skills; <a href="${skillsLink({ all: true })}">Show all</a> brings them back, and their pages stay.
+          <ul>${skips}<li>Skills gone from their source can no longer be installed.</li></ul>
+        </li>
         <li><strong>CI installs count too</strong>, so skills wired into pipelines are over-represented.</li>
       </ul>
       <h2>Tags</h2>

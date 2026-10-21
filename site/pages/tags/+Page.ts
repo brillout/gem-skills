@@ -8,7 +8,8 @@ export default function Page(): string {
   const n = new Map<string, number>();
   for (const s of data.skills)
     for (const t of s.tags)
-      if (!skipped(data, s) || data.skip.includes(t)) n.set(t, (n.get(t) ?? 0) + 1);
+      if (!skipped(data, s) || data.skip.some(({ tag }) => tag === t))
+        n.set(t, (n.get(t) ?? 0) + 1);
   const tagLink = (t: string) => tagChip(t, skillsLink({ tags: [t] }));
   const sections = FACET_ORDER.map((id) => facetById.get(id))
     .filter((f): f is Facet => Boolean(f))

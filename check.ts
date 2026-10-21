@@ -25,7 +25,10 @@ for (const repo of data.repos) {
 const vocabulary = new Set(
   data.facets.flatMap((f) => f.values.map((v) => (f.prefix === false ? v.id : `${f.id}:${v.id}`))),
 );
-for (const tag of data.skip) if (!vocabulary.has(tag)) fail("skip", `unknown tag "${tag}"`);
+for (const { tag, note } of data.skip) {
+  if (!vocabulary.has(tag)) fail("skip", `unknown tag "${tag}"`);
+  if (!note) fail("skip", `"${tag}" needs a note saying why its skills are skipped`);
+}
 
 const COUNTS: Record<Facet["count"], (n: number) => boolean> = {
   one: (n) => n === 1,

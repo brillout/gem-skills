@@ -116,7 +116,7 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
   if (
     skipped(data, s) &&
     !st.all &&
-    !s.tags.some((t) => data.skip.includes(t) && st.tags.includes(t))
+    !data.skip.some(({ tag }) => s.tags.includes(tag) && st.tags.includes(tag))
   )
     return false;
   if (st.hide && s.tags.includes("flag:republished")) return false;
@@ -390,7 +390,7 @@ export function resultsHtml(st: State): string {
         .join("")}</select></label>
       <label class="check"><input type="checkbox" id="one"${st.one ? " checked" : ""} /> One per repo</label>
       <label class="check"><input type="checkbox" id="hide"${st.hide ? " checked" : ""} /> Hide copies</label>
-      <label class="check" title="Also show the skills tagged ${esc(data.skip.join(", "))}, and those gone from their source"><input type="checkbox" id="all"${st.all ? " checked" : ""} /> Show all</label>
+      <label class="check" title="Also show the skills tagged ${esc(data.skip.map((s) => s.tag).join(", "))}, and those gone from their source"><input type="checkbox" id="all"${st.all ? " checked" : ""} /> Show all</label>
     </div>
     ${activeFilters(st)}
     ${repoNote ? `<p class="repo-banner"><a href="${esc(repoNote.url)}">${esc(repoNote.id)}</a>${repoNote.description ? ` · ${esc(repoNote.description)}` : ""}</p>` : ""}

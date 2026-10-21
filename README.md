@@ -29,7 +29,7 @@ Once a day, the [Sync SKILL.md copies](.github/workflows/sync.yml) workflow runs
 - `removed`: when the SKILL.md disappeared from its source. The copy keeps its last version.
 - `skew`: how far the SKILL.md has moved from the one the skill's TLDR summarizes, in words added plus words removed. With no TLDR, it's the SKILL.md's whole word count.
 
-`skip` in `skills.json` lists the tags whose skills the sync leaves out: `flag:deprecated` (retired), `flag:tool-docs` (docs for agents of one product) and `lang:zh` (not in English). Skills gone from their source are skipped too. Skipped skills keep the copy they have. The site's skills list leaves them out as well, unless you tick Show all or filter on one of those tags; their pages stay.
+`skip` in `skills.json` lists the tags whose skills the sync leaves out, each with a note saying why: `flag:deprecated` (retired), `flag:tool-docs` (docs for agents of one product) and `lang:zh` (not in English). Skills gone from their source are skipped too. Skipped skills keep the copy they have. The site's skills list leaves them out as well, unless you tick Show all or filter on one of those tags; their pages stay.
 
 ## TLDRs
 
