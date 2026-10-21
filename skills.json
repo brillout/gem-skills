@@ -256,7 +256,7 @@
         },
         {
           "id": "vendor",
-          "description": "Only helps use one vendor's product: its framework, SDK, CLI, API, cloud or file format. A skill that merely uses a tool to get something more general done doesn't count."
+          "description": "Only helps use one vendor's product: its framework, SDK, CLI, API, cloud or file format. A skill that merely uses a tool to get something more general done doesn't count, and neither does one that drives a browser, to test an app or to crawl the web, whatever tool it uses."
         }
       ]
     },
@@ -2030,8 +2030,7 @@
         "stack:browser-act",
         "skill-authoring",
         "scraping",
-        "browser-automation",
-        "flag:vendor"
+        "browser-automation"
       ],
       "skills.sh": {
         "url": "https://skills.sh/browser-act/skills/browser-act-skill-forge",
@@ -3525,8 +3524,7 @@
         "needs:none",
         "by:community",
         "stack:playwright",
-        "testing",
-        "flag:vendor"
+        "testing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/currents-dev/playwright-best-practices-skill/playwright-best-practices",
@@ -3601,8 +3599,7 @@
         "by:official",
         "stack:momentic",
         "testing",
-        "browser-automation",
-        "flag:vendor"
+        "browser-automation"
       ],
       "skills.sh": {
         "url": "https://skills.sh/momentic-ai/skills/momentic-test",
@@ -6021,8 +6018,7 @@
         "by:official",
         "stack:agent-browser",
         "browser-automation",
-        "agent-workflows",
-        "flag:vendor"
+        "agent-workflows"
       ],
       "skills.sh": {
         "url": "https://skills.sh/vercel-labs/agent-browser/agent-browser",
@@ -6050,8 +6046,7 @@
         "by:official",
         "stack:scrapegraph",
         "scraping",
-        "web-search",
-        "flag:vendor"
+        "web-search"
       ],
       "skills.sh": {
         "url": "https://skills.sh/scrapegraphai/just-scrape/just-scrape",
@@ -6106,8 +6101,7 @@
         "by:official",
         "stack:playwright",
         "browser-automation",
-        "testing",
-        "flag:vendor"
+        "testing"
       ],
       "skills.sh": {
         "url": "https://skills.sh/microsoft/playwright-cli/playwright-cli",
@@ -6135,8 +6129,7 @@
         "by:official",
         "stack:browser-act",
         "browser-automation",
-        "scraping",
-        "flag:vendor"
+        "scraping"
       ],
       "skills.sh": {
         "url": "https://skills.sh/browser-act/skills/browser-act",
@@ -6165,8 +6158,7 @@
         "stack:firecrawl",
         "scraping",
         "web-search",
-        "research",
-        "flag:vendor"
+        "research"
       ],
       "skills.sh": {
         "url": "https://skills.sh/firecrawl/cli/firecrawl",
@@ -6195,8 +6187,7 @@
         "stack:browser-use",
         "browser-automation",
         "scraping",
-        "agent-workflows",
-        "flag:vendor"
+        "agent-workflows"
       ],
       "skills.sh": {
         "url": "https://skills.sh/browser-use/browser-use/browser-use",
@@ -6226,8 +6217,7 @@
         "stack:playwright",
         "browser-automation",
         "fingerprinting",
-        "flag:dual-use",
-        "flag:vendor"
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/antibrow/anti-detect-browser-skills/anti-detect-browser",
@@ -6253,8 +6243,7 @@
         "needs:cli",
         "by:official",
         "stack:defuddle",
-        "scraping",
-        "flag:vendor"
+        "scraping"
       ],
       "skills.sh": {
         "url": "https://skills.sh/kepano/obsidian-skills/defuddle",
@@ -6283,8 +6272,7 @@
         "stack:liarjs",
         "fingerprinting",
         "testing",
-        "flag:dual-use",
-        "flag:vendor"
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/browser-fingerprint-audit",
@@ -6342,8 +6330,7 @@
         "needs:openclaw",
         "by:community",
         "stack:agent-browser",
-        "browser-automation",
-        "flag:vendor"
+        "browser-automation"
       ],
       "clawhub.ai": {
         "url": "https://clawhub.ai/matrixy/skills/agent-browser-clawdbot",
@@ -8062,8 +8049,7 @@
         "seo",
         "performance",
         "accessibility",
-        "security",
-        "flag:vendor"
+        "security"
       ],
       "skills.sh": {
         "url": "https://skills.sh/squirrelscan/skills/audit-website",
@@ -9084,8 +9070,7 @@
         "stack:playwright",
         "fingerprinting",
         "privacy",
-        "flag:dual-use",
-        "flag:vendor"
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/antibrow/anti-detect-browser-skills/multi-account-isolation",
@@ -9115,8 +9100,7 @@
         "stack:playwright",
         "fingerprinting",
         "testing",
-        "flag:dual-use",
-        "flag:vendor"
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/playwright-stealth-verify",
@@ -9145,8 +9129,7 @@
         "stack:liarjs",
         "fingerprinting",
         "ci",
-        "flag:dual-use",
-        "flag:vendor"
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/fingerprint-ci-gate",
@@ -9174,8 +9157,7 @@
         "stack:liarjs",
         "fingerprinting",
         "debugging",
-        "flag:dual-use",
-        "flag:vendor"
+        "flag:dual-use"
       ],
       "skills.sh": {
         "url": "https://skills.sh/liarjsdev/liarjs-skills/fingerprint-failure-triage",
