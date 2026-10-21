@@ -13,7 +13,7 @@
     },
     {
       "tag": "flag:tool-docs",
-      "note": "A skill that's an agent's manual for a product (how to build with it, configure it, deploy to it or operate it) only matters once you've already chosen that product, so nobody discovers anything by browsing it. A skill that gets a job done through some tool gives a new capability, which is what the site is for."
+      "note": "A skill that's an agent's manual for a product (how to build with it, configure it, deploy to it or operate it) only matters once you've already chosen that product, so nobody discovers anything by browsing it. That said, a skill that gives a new capability through some tool does get listed — that's what GemSkills is for."
     },
     {
       "tag": "lang:zh",
