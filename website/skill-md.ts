@@ -1,4 +1,4 @@
-/** The copies of every skill's SKILL.md, which ../scripts/sync.ts keeps in ../skill-snapshots/. */
+/** The copies of every skill's SKILL.md, which ../scripts/sync.ts keeps in ../data/skill-snapshots/. */
 
 import { diffArrays } from "diff";
 import type { Skill } from "./types.ts";
@@ -6,7 +6,7 @@ import type { Skill } from "./types.ts";
 export const REPO = "brillout/gemskills";
 
 /** Where the copy of a skill's SKILL.md lives, from the repo root. Not `<id>/SKILL.md`, so that `npx skills` doesn't take this repo for a skill bundle. */
-export const copyPath = (skill: Skill) => `skill-snapshots/${skill.id}.md`;
+export const copyPath = (skill: Skill) => `data/skill-snapshots/${skill.id}.md`;
 
 /** How far apart two versions of a SKILL.md are: words added plus words removed. */
 export function skew(before: string, after: string): number {

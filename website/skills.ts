@@ -1,6 +1,6 @@
-/** The data behind every page, ../skills.json, and what the pages derive from it. */
+/** The data behind every page, ../data/skills.json, and what the pages derive from it. */
 
-import raw from "../skills.json";
+import raw from "../data/skills.json";
 import { esc, href, plural } from "./format.ts";
 import {
   bundleRepo,

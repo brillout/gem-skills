@@ -9,7 +9,7 @@ import { copyPath, REPO } from "../website/skill-md.ts";
 import { bundleRepo, github, tldrProblems, type Data, type Facet } from "../website/types.ts";
 
 const root = new URL("../", import.meta.url);
-const data: Data = JSON.parse(readFileSync(new URL("skills.json", root), "utf8"));
+const data: Data = JSON.parse(readFileSync(new URL("data/skills.json", root), "utf8"));
 const errors: string[] = [];
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`);
 
@@ -135,12 +135,12 @@ for (const bundle of data.bundles) {
 }
 
 const copies = new Set(data.skills.map(copyPath));
-for (const file of readdirSync(new URL("skill-snapshots", root), {
+for (const file of readdirSync(new URL("data/skill-snapshots", root), {
   recursive: true,
   encoding: "utf8",
 }))
-  if (file.endsWith(".md") && !copies.has(`skill-snapshots/${file}`))
-    fail(`skill-snapshots/${file}`, "copy of a skill that isn't in skills.json");
+  if (file.endsWith(".md") && !copies.has(`data/skill-snapshots/${file}`))
+    fail(`data/skill-snapshots/${file}`, "copy of a skill that isn't in skills.json");
 
 if (errors.length > 0) {
   console.error(

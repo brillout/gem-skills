@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import type { Data } from "../website/types.ts";
 
 export const root = fileURLToPath(new URL("..", import.meta.url));
-const path = `${root}skills.json`;
+const path = `${root}data/skills.json`;
 
 export const readData = (): Data => JSON.parse(readFileSync(path, "utf8"));
 

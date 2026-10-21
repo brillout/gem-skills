@@ -1,5 +1,5 @@
 /**
- * sync.ts — keep the copy of every skill's SKILL.md in skill-snapshots/ current.
+ * sync.ts — keep the copy of every skill's SKILL.md in data/skill-snapshots/ current.
  *
  * For each skill it fetches the SKILL.md from where the skill lives: its GitHub repo, ClawHub,
  * Tencent SkillHub or the website that publishes it. When the text differs from the copy, it
@@ -260,9 +260,9 @@ for (const bundle of data.bundles)
 // Drop the copies of skills that left the list.
 if (!only.length) {
   const kept = new Set(data.skills.map(copyPath));
-  const dir = join(root, "skill-snapshots");
+  const dir = join(root, "data/skill-snapshots");
   for (const file of existsSync(dir) ? readdirSync(dir, { recursive: true, encoding: "utf8" }) : [])
-    if (file.endsWith(".md") && !kept.has(`skill-snapshots/${file}`)) {
+    if (file.endsWith(".md") && !kept.has(`data/skill-snapshots/${file}`)) {
       rmSync(join(dir, file));
       changed.add(`removed copy ${file}`);
     }

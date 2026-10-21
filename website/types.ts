@@ -1,4 +1,4 @@
-/** The shape of ../skills.json, the single data file behind the site. */
+/** The shape of ../data/skills.json, the single data file behind the site. */
 
 /** A registry a skill can be listed on, by the domain that keys its listing on a skill. */
 export type Registry = "skills.sh" | "clawhub.ai" | "skillhub.cn";
@@ -71,7 +71,7 @@ export interface Skill {
   "skills.sh"?: SkillsSh;
   "clawhub.ai"?: ClawHub;
   "skillhub.cn"?: SkillHub;
-  /** The copy of the skill's SKILL.md at `skill-snapshots/<id>.md`, which `sync.ts` keeps current. */
+  /** The copy of the skill's SKILL.md at `data/skill-snapshots/<id>.md`, which `sync.ts` keeps current. */
   skillMd?: SkillMd;
   /** Something to know before installing. */
   note?: string;

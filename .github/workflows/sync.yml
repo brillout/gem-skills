@@ -1,4 +1,4 @@
-# Check every skill's SKILL.md once a day. When one changed, update its copy in skill-snapshots/ and its
+# Check every skill's SKILL.md once a day. When one changed, update its copy in data/skill-snapshots/ and its
 # skew in skills.json, commit to the default branch and redeploy the site.
 name: Sync SKILL.md copies
 
@@ -40,14 +40,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add skill-snapshots skills.json
+          git add data
           if git diff --cached --quiet; then
             echo "No SKILL.md changed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit --quiet -m "Sync SKILL.md copies" -m "$(git diff --cached --name-only -- skill-snapshots)"
+          git commit --quiet -m "Sync SKILL.md copies" -m "$(git diff --cached --name-only -- data/skill-snapshots)"
           git pull --rebase --quiet
           git push
           gh workflow run deploy.yml --ref "${{ github.ref_name }}"

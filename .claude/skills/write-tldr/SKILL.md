@@ -15,11 +15,11 @@ Start from an up-to-date checkout of `main`. Then list the skills and bundles wh
 pnpm run tldr 20    # the 20 with the largest skew: skew, id, the copies to read
 ```
 
-The skew is how many words the SKILL.md gained or lost since its TLDR was written, or its whole word count when there's no TLDR yet. Skipped skills (see `skip` in `skills.json`) are left out.
+The skew is how many words the SKILL.md gained or lost since its TLDR was written, or its whole word count when there's no TLDR yet. Skipped skills (see `skip` in `data/skills.json`) are left out.
 
 ## 2. Read
 
-- **A skill:** its copy, `skill-snapshots/<id>.md`. Write from the body. The frontmatter `description` is a trigger for agents, not a summary for people. When the body sends the agent to other files of the skill for the substance, read them on GitHub at the commit in the skill's `skillMd.version`.
+- **A skill:** its copy, `data/skill-snapshots/<id>.md`. Write from the body. The frontmatter `description` is a trigger for agents, not a summary for people. When the body sends the agent to other files of the skill for the substance, read them on GitHub at the commit in the skill's `skillMd.version`.
 - **A bundle:** the copies of all its skills, in the order its entry in `bundles` lists them, and the repo's README for how they fit together.
 - **Its neighbours:** the other skills of its repo, and skills with the same topic tags, so you can say how it differs.
 

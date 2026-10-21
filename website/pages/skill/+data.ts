@@ -5,7 +5,7 @@ import { skillById } from "../../skills.ts";
 import { github } from "../../types.ts";
 
 // The copy of every SKILL.md, read at build time.
-const copies = import.meta.glob<string>("../../../skill-snapshots/**/*.md", {
+const copies = import.meta.glob<string>("../../../data/skill-snapshots/**/*.md", {
   query: "?raw",
   import: "default",
 });
@@ -16,7 +16,7 @@ export async function data(pageContext: PageContextServer) {
   const id = decodeURIComponent(pageContext.routeParams["*"]).replace(/\/$/, "");
   const skill = skillById.get(id);
   if (!skill) throw render(404);
-  const load = copies[`../../../skill-snapshots/${id}.md`];
+  const load = copies[`../../../data/skill-snapshots/${id}.md`];
   const gh = github(skill);
   const commit = skill.skillMd?.version;
   // Relative links and images point into the skill's directory, at the commit the copy is from.
