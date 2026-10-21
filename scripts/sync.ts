@@ -24,8 +24,8 @@ import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { promisify } from "node:util";
 import { readData, root, writeData } from "./data.ts";
-import { copyPath, rawUrl, skew } from "./website/skill-md.ts";
-import { github, skipped, type Bundle, type Skill, type SkillMd } from "./website/types.ts";
+import { copyPath, rawUrl, skew } from "../website/skill-md.ts";
+import { github, skipped, type Bundle, type Skill, type SkillMd } from "../website/types.ts";
 
 const today = new Date().toISOString().slice(0, 10);
 const scratch = mkdtempSync(join(tmpdir(), "gemskills-sync-"));

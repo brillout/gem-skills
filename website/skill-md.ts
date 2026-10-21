@@ -1,4 +1,4 @@
-/** The copies of every skill's SKILL.md, which ../sync.ts keeps in ../skill-md/. */
+/** The copies of every skill's SKILL.md, which ../scripts/sync.ts keeps in ../skill-md/. */
 
 import { diffArrays } from "diff";
 import type { Skill } from "./types.ts";

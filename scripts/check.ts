@@ -5,10 +5,10 @@
  */
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { copyPath, REPO } from "./website/skill-md.ts";
-import { bundleRepo, github, tldrProblems, type Data, type Facet } from "./website/types.ts";
+import { copyPath, REPO } from "../website/skill-md.ts";
+import { bundleRepo, github, tldrProblems, type Data, type Facet } from "../website/types.ts";
 
-const root = new URL("./", import.meta.url);
+const root = new URL("../", import.meta.url);
 const data: Data = JSON.parse(readFileSync(new URL("skills.json", root), "utf8"));
 const errors: string[] = [];
 const fail = (where: string, message: string) => errors.push(`${where}: ${message}`);
