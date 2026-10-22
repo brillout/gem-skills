@@ -1927,7 +1927,7 @@
           "command": "/plugin install superpowers@claude-plugins-official"
         }
       ],
-      "skew": 0
+      "skew": 5222
     },
     {
       "id": "juliusbrussee/caveman",
@@ -2757,9 +2757,9 @@
         "firstSeen": "2026-01-19"
       },
       "skillMd": {
-        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+        "updated": "2026-10-22",
+        "skew": 1577
       }
     },
     {
@@ -3544,9 +3544,9 @@
         "firstSeen": "2026-01-19"
       },
       "skillMd": {
-        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+        "updated": "2026-10-22",
+        "skew": 1023
       }
     },
     {
@@ -4410,9 +4410,9 @@
         "firstSeen": "2026-01-19"
       },
       "skillMd": {
-        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+        "updated": "2026-10-22",
+        "skew": 326
       }
     },
     {
@@ -4517,9 +4517,9 @@
         "firstSeen": "2026-01-19"
       },
       "skillMd": {
-        "version": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+        "updated": "2026-10-22",
+        "skew": 2296
       }
     },
     {
@@ -7248,9 +7248,9 @@
         "firstSeen": "2026-04-08"
       },
       "skillMd": {
-        "version": "dad8dbb3aac21ad1fa236c110315ef4abece23e8",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "2fd24e3a9887e9fc009408ffbbb486e74998694e",
+        "updated": "2026-10-22",
+        "skew": 3
       }
     },
     {
