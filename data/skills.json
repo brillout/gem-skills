@@ -5803,9 +5803,9 @@
         "firstSeen": "2026-04-08"
       },
       "skillMd": {
-        "version": "44c78ed54c4dd0595ee3f3566386c97c5d0c77a6",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "d9f6435fe94ae877d4673e320b8e50f68a84a49b",
+        "updated": "2026-10-23",
+        "skew": 43
       }
     },
     {
@@ -7954,9 +7954,9 @@
         "firstSeen": "2026-05-19"
       },
       "skillMd": {
-        "version": "13ac0ec7e148655948100b6396439e481361d690",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+        "updated": "2026-10-23",
+        "skew": 11499
       }
     },
     {
@@ -9536,9 +9536,9 @@
         "firstSeen": "2026-01-21"
       },
       "skillMd": {
-        "version": "2de80d5c7a89cabfbf6aa4d068418eb569fbc273",
-        "updated": "2026-10-21",
-        "skew": 0
+        "version": "1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0",
+        "updated": "2026-10-23",
+        "skew": 26
       }
     },
     {
@@ -13227,9 +13227,9 @@
         "downloads": 1220832
       },
       "skillMd": {
-        "version": "4.0.3",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "4.0.5",
+        "updated": "2026-10-23",
+        "skew": 227
       },
       "note": "This version is built for OpenClaw only. The multi-agent original lives in pskoett/pskoett-ai-skills."
     },
